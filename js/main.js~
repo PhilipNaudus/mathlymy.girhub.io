@@ -99,7 +99,6 @@ function initInterface()
         document.getElementById("form").style.display = "none";
         document.getElementById("welcome").style.display = "none";
 
-
         promptSelect.style.fontWeight = "normal";
         promptSelect.style.color = "black";
         document.getElementById("promptSelect").style.display = "none";

@@ -165,6 +165,8 @@ window.onload = function()
             document.getElementById("selectLesson").value = "select";
         }
     }
+
+    initInterface();
 }
 
 function loadJS(scriptSrc)
