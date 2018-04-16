@@ -1,0 +1,84 @@
+#math {
+    font-family: "Courier New", monospace;
+    font-size: 2em
+}
+
+.mathinput {
+    font-family: "Courier New", monospace;
+    font-size: .7em;
+    width: .8em;
+    padding: 0;
+}
+
+/* Exponents / subscripts */
+.supsub {
+    display: inline-block;
+}
+
+.supsub sup,
+.supsub sub {
+    position: relative;
+    display: block;
+    font-size: .5em;
+    line-height: 1.2;
+}
+
+.supsub sup {
+    top: .1em;
+}
+
+.supsub sub {
+    top: .3em;
+}
+
+.supsub sup::after, .supsub sub::after {
+    content: "\00a0";
+}
+
+
+sup input, sub input {
+    font-size: .5em;
+    width: .8em;
+    padding: 0;
+}
+
+
+/* Square root */
+.sqrt {
+    display: inline-block
+}
+.sqrt::before {
+    content: "\221A";
+    border-top: none;
+}
+.overline {
+    border-top: 2px solid black;
+}
+
+/* Fractions */
+.fraction {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; 
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+
+.fraction > span { 
+    display: block; 
+    padding: 0.1em; 
+}
+
+.fraction span.fracbot {
+    border-top: thin solid black;
+}
+
+/* Hode spinners on number input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
