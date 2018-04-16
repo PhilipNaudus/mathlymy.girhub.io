@@ -120,20 +120,14 @@ window.onload = function()
     var params = window.location.pathname.split('/');
     lessonId = params[1].substring(1);
 
-    switch(params[1].charAt(0))
+    var c = params[1].charAt(0).toLowerCase();
+    for(courseName in lessons)
     {
-        case 'a':
-            course = "alg1";
+        if(lessons[courseName]["name"][0] == c)
+        {
+            course = courseName;
             break;
-        case 'b':
-            course = "alg2";
-            break;
-        case 'p':
-            course = "precalc";
-            break;
-        case 'c':
-            course = "calc";
-            break;
+        }
     }
 
     if(typeof course === "undefined")
