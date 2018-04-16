@@ -111,7 +111,7 @@ window.onload = function()
     var params = window.location.pathname.split('/');
     lessonId = params[1].substring(1);
 
-    switch(params[1])
+    switch(params[1].charAt(0))
     {
         case 'a':
             course = "alg1";
