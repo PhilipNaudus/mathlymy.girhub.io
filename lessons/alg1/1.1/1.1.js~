@@ -104,7 +104,7 @@ function step1(ifResetScrolling)
         var displayEquations = "<div class='row'>";
         for(var i=0; i<equations.length; i++)
         {
-            displayEquations+="<div class='column'><a href='javascript:step2("+i+", false)'><img src='lessons/"+course+"/"+get["lessonId"]+"/"+equations[i][0]+"' /></a></div>"
+            displayEquations+="<div class='column'><a href='javascript:step2("+i+", false)'><img src='lessons/"+get["course"]+"/"+get["lessonId"]+"/"+equations[i][0]+"' /></a></div>"
         }
         displayEquations += "</div>";
         document.getElementById("math").innerHTML = displayEquations;
