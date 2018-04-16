@@ -8,7 +8,7 @@ function startVideo()
     document.getElementById("playerFrame").style.display = "inline";
 
     var w = Math.min(window.innerWidth, 640);
-    document.getElementById("playerSpan").innerHTML = "<iframe width='"+w+"' height='"+(w*39/64)+"' src='https://www.youtube.com/embed/"+lessons[course][get["lessonId"]][0]+"?autoplay=1'></iframe>";
+    document.getElementById("playerSpan").innerHTML = "<iframe width='"+w+"' height='"+(w*39/64)+"' src='https://www.youtube.com/embed/"+lessons[get["course"]][get["lessonId"]][0]+"?autoplay=1'></iframe>";
 }
 
 function readyForQuiz()
