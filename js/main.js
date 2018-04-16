@@ -157,7 +157,7 @@ window.onload = function()
         }
     }
 
-    document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
+    if(course != "") document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
 }
 
 function loadJS(scriptSrc)

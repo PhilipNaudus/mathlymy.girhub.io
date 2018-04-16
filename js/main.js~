@@ -121,7 +121,6 @@ window.onload = function()
     lessonId = params[1].substring(1);
 
     var c = params[1].charAt(0).toLowerCase();
-
     for(courseName in lessons)
     {
         if(lessons[courseName]["name"][0] == c)
