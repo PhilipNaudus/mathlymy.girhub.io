@@ -1,9 +1,14 @@
 var lessons = {"alg1": {"1.1": ["92aLiyeQj0w", "Distance Formula", 1],
                         "1.2": ["dw41PMWek6U", "Title A2", 1],
-                        "1.3": ["dw41PMWek6U", "Title A3", 1]}, 
-              "alg2": {"1.1": ["_7aUxFzTG5w", "TITLE B1", 1]}, 
-              "precalc": {"1.1": ["H-E5rlpCVu4", "TITLE P1", 1]}, 
-              "calc": {"1.1": ["Ld7Vxb5XV6A", "TITLE C1", 1]}};
+                        "1.3": ["dw41PMWek6U", "Title A3", 1]
+                        "name": ['a', "Algrbra 1"]}, 
+              "alg2": {"1.1": ["_7aUxFzTG5w", "TITLE B1", 1],
+                       "name": ['a', "Algrbra 1"]}, 
+              "precalc": {"1.1": ["H-E5rlpCVu4", "TITLE P1", 1],
+                       "name": ['a', "Algrbra 1"]}, 
+              "calc": {"1.1": ["Ld7Vxb5XV6A", "TITLE C1", 1],
+                       "name": ['a', "Algrbra 1"]}};
+
 var course, lessonId;
 var ifCanvas = isCanvasSupported()?1:0;   // Does the user's browser support canvas?
 ifInit = false;
@@ -87,6 +92,8 @@ function initInterface()
         document.getElementById("welcome").style.display = "none";
         document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
 
+        document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][1]+"'>"+lessons[course]["name"][1]+"</a>";
+
         promptSelect.style.fontWeight = "normal";
         promptSelect.style.color = "black";
         document.getElementById("promptSelect").style.display = "none";
@@ -145,7 +152,7 @@ window.onload = function()
 
             document.getElementById("selectLesson").appendChild(opt);
         }
-        if(lessonId != null)
+        if(lessonId != "")
         {
             document.getElementById("selectLesson").value = lessonId;
         } else
