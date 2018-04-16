@@ -138,7 +138,7 @@ window.onload = function()
         document.getElementById("chooseCourse").style.display = "inline";
         for(courseAbbr in lessons)
         {
-            document.getElementById("courseList").innerHTML += "<form id='submitAnswer' onsubmit='/"+lessons[courseAbbr]["name"][0]+"' action='javascript:void(0);'> <input type='submit' class='btn' value='"+lessons[courseAbbr]["name"][1]+"' /> </form>";
+            document.getElementById("courseList").innerHTML += "<div class='column'><form id='submitAnswer' onsubmit='/"+lessons[courseAbbr]["name"][0]+"' action='javascript:void(0);'> <input type='submit' class='btn' value='"+lessons[courseAbbr]["name"][1]+"' /> </form></div>";
         }
         return false;
     } else
