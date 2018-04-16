@@ -3,11 +3,11 @@ var lessons = {"alg1": {"1.1": ["92aLiyeQj0w", "Distance Formula", 1],
                         "1.3": ["dw41PMWek6U", "Title A3", 1],
                         "name": ['a', "Algebra 1"]}, 
               "alg2": {"1.1": ["_7aUxFzTG5w", "TITLE B1", 1],
-                       "name": ['a', "Algebra 2"]}, 
+                       "name": ['b', "Algebra 2"]}, 
               "precalc": {"1.1": ["H-E5rlpCVu4", "TITLE P1", 1],
-                       "name": ['a', "Precalculus"]}, 
+                       "name": ['p', "Precalculus"]}, 
               "calc": {"1.1": ["Ld7Vxb5XV6A", "TITLE C1", 1],
-                       "name": ['a', "Calculus"]}};
+                       "name": ['c', "Calculus"]}};
 
 var course = "";
 var lessonId = "";
