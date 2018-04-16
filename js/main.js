@@ -86,18 +86,15 @@ function completed()
 function initInterface()
 {
     if(course != "")
-    {
-        document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
-        if(lessonId != "")
-        {
-            document.title = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" (PRACTICE)":"");
-            document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
-        }
-    }
     if(lessons != null)
     {
         document.getElementById("form").style.display = "none";
+
+        document.title = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" (PRACTICE)":"");
         document.getElementById("welcome").style.display = "none";
+        document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
+
+        document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
 
         promptSelect.style.fontWeight = "normal";
         promptSelect.style.color = "black";
@@ -166,7 +163,7 @@ window.onload = function()
         }
     }
 
-    initInterface();
+    document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
 }
 
 function loadJS(scriptSrc)
