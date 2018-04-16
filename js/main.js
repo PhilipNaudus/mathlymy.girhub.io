@@ -1,13 +1,13 @@
 var lessons = {"alg1": {"1.1": ["92aLiyeQj0w", "Distance Formula", 1],
                         "1.2": ["dw41PMWek6U", "Title A2", 1],
                         "1.3": ["dw41PMWek6U", "Title A3", 1],
-                        "name": ['a', "Algrbra 1"]}, 
+                        "name": ['a', "Algebra 1"]}, 
               "alg2": {"1.1": ["_7aUxFzTG5w", "TITLE B1", 1],
-                       "name": ['a', "Algrbra 1"]}, 
+                       "name": ['a', "Algebra 2"]}, 
               "precalc": {"1.1": ["H-E5rlpCVu4", "TITLE P1", 1],
-                       "name": ['a', "Algrbra 1"]}, 
+                       "name": ['a', "Precalculus"]}, 
               "calc": {"1.1": ["Ld7Vxb5XV6A", "TITLE C1", 1],
-                       "name": ['a', "Algrbra 1"]}};
+                       "name": ['a', "Calculus"]}};
 
 var course = "";
 var lessonId = "";
@@ -138,7 +138,7 @@ window.onload = function()
         document.getElementById("chooseCourse").style.display = "inline";
         for(courseAbbr in lessons)
         {
-            document.getElementById("courseList").innerHTML += "<form id='submitAnswer' onsubmit='/"+lessons[courseAbbr]["name"][0]+"' action='javascript:void(0);'> <input type='submit' class='btn' value='"+lessons[courseAbbr]["name"][1]+"' /> </form>";
+            document.getElementById("courseList").innerHTML += "<div class='column'><form id='submitAnswer' onsubmit='/"+lessons[courseAbbr]["name"][0]+"' action='javascript:void(0);'> <input type='submit' class='btn' value='"+lessons[courseAbbr]["name"][1]+"' /> </form></div>";
         }
         return false;
     } else
