@@ -121,11 +121,11 @@ window.onload = function()
     lessonId = params[1].substring(1);
 
     var c = params[1].charAt(0).toLowerCase();
-    for(courseName in lessons)
+    for(courseAbbr in lessons)
     {
-        if(lessons[courseName]["name"][0] == c)
+        if(lessons[courseAbbr]["name"][0] == c)
         {
-            course = courseName;
+            course = courseAbbr;
             break;
         }
     }
@@ -136,6 +136,10 @@ window.onload = function()
         document.getElementById("form").style.display = "none";
         document.getElementById("promptSelect").style.display = "none";
         document.getElementById("chooseCourse").style.display = "inline";
+        for(courseAbbr in lessons)
+        {
+            document.getElementById("courseList").innerHTML += "<form id='submitAnswer' onsubmit='/"+lessons[courseAbbr]["name"][0]+"' action='javascript:void(0);'> <input type='submit' class='btn' value='"+lessons[courseAbbr]["name"][1]+"' /> </form>";
+        }
         return false;
     } else
     {

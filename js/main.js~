@@ -136,6 +136,10 @@ window.onload = function()
         document.getElementById("form").style.display = "none";
         document.getElementById("promptSelect").style.display = "none";
         document.getElementById("chooseCourse").style.display = "inline";
+        for(courseName in lessons)
+        {
+            document.getElementById("courseList").innerHTML += "<form id='submitAnswer' onsubmit='/"+lessons[courseName]["name"][0]+"' action='javascript:void(0);'> <input type='submit' class='btn' value='"+lessons[courseName]["name"][1]+"' /> </form>";
+        }
         return false;
     } else
     {
