@@ -137,15 +137,15 @@ window.onload = function()
     } else
     {
         // Propagate options in the select menu
-        for(lessonId in lessons[course])
+        for(L in lessons[course])
         {
             var opt = document.createElement("option");
-            opt.value = lessonId;
-            opt.innerHTML = lessonId + ": "+lessons[course][lessonId][1];
+            opt.value = L;
+            opt.innerHTML = L + ": "+lessons[course][L][1];
 
             document.getElementById("selectLesson").appendChild(opt);
         }
-        if(typeof lessonId !== "undefined")
+        if(lessonId != null)
         {
             document.getElementById("selectLesson").value = lessonId;
         } else
