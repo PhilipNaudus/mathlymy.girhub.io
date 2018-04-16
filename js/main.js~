@@ -4,8 +4,7 @@ var lessons = {"alg1": {"1.1": ["92aLiyeQj0w", "Distance Formula", 1],
               "alg2": {"1.1": ["_7aUxFzTG5w", "TITLE B1", 1]}, 
               "precalc": {"1.1": ["H-E5rlpCVu4", "TITLE P1", 1]}, 
               "calc": {"1.1": ["Ld7Vxb5XV6A", "TITLE C1", 1]}};
-var get = {};
-var get = {};
+var course, lessonId;
 var ifCanvas = isCanvasSupported()?1:0;   // Does the user's browser support canvas?
 ifInit = false;
 
@@ -16,7 +15,7 @@ function initLesson()
     if(document.getElementById("name").value=="")
     {
         swal("You forgot to enter your name", "Please enter your name", "warning");
-    } else if (typeof get["lessonId"] === "undefined")
+    } else if (typeof lessonId === "undefined")
     {
         promptSelect.style.fontWeight = "bold";
         promptSelect.style.color = "red";
@@ -25,7 +24,7 @@ function initLesson()
         ifInit = true;
 
         // Load the JS corresponding to this lesson
-        loadJS("lessons/"+get["course"]+"/"+get["lessonId"]+"/"+get["lessonId"]+".js");
+        loadJS("lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
 
         initInterface();
 
@@ -84,9 +83,9 @@ function initInterface()
     {
         document.getElementById("form").style.display = "none";
 
-        document.title = "Lesson "+get["lessonId"]+": "+lessons[get["course"]][get["lessonId"]][1] + (practice?" (PRACTICE)":"");
-        document.getElementById("welcome").display = "none";
-        document.getElementById("welcome2").innerHTML = "Lesson "+get["lessonId"]+": "+lessons[get["course"]][get["lessonId"]][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
+        document.title = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" (PRACTICE)":"");
+        document.getElementById("welcome").style.display = "none";
+        document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
 
         promptSelect.style.fontWeight = "normal";
         promptSelect.style.color = "black";
@@ -109,9 +108,26 @@ function initInterface()
 window.onload = function()
 {
     // Parse the URL so that we can figure out which course and lesson the user wants
-    location.search.substr(1).split("&").forEach(function(item) {get[item.split("=")[0]] = item.split("=")[1]});
+    var params = window.location.pathname.split('/');
+    lessonId = params[1].substring(1);
 
-    if(typeof get["course"] === "undefined")
+    switch(params[1])
+    {
+        case 'a':
+            course = "alg1";
+            break;
+        case 'b':
+            course = "alg2";
+            break;
+        case 'p':
+            course = "precalc";
+            break;
+        case 'c':
+            course = "calc";
+            break;
+    }
+
+    if(typeof course === "undefined")
     {
         // We don't know which course the user wants. Ask.
         document.getElementById("form").style.display = "none";
@@ -121,17 +137,17 @@ window.onload = function()
     } else
     {
         // Propagate options in the select menu
-        for(lessonId in lessons[get["course"]])
+        for(lessonId in lessons[course])
         {
             var opt = document.createElement("option");
             opt.value = lessonId;
-            opt.innerHTML = lessonId + ": "+lessons[get["course"]][lessonId][1];
+            opt.innerHTML = lessonId + ": "+lessons[course][lessonId][1];
 
             document.getElementById("selectLesson").appendChild(opt);
         }
-        if(typeof get["lessonId"] !== "undefined")
+        if(typeof lessonId !== "undefined")
         {
-            document.getElementById("selectLesson").value = get["lessonId"];
+            document.getElementById("selectLesson").value = lessonId;
         } else
         {
             document.getElementById("selectLesson").value = "select";

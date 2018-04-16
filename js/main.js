@@ -109,7 +109,7 @@ window.onload = function()
 {
     // Parse the URL so that we can figure out which course and lesson the user wants
     var params = window.location.pathname.split('/');
-    lessonId = params[2].substring(1);
+    lessonId = params[1].substring(1);
 
     switch(params[1])
     {
