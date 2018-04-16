@@ -24,7 +24,7 @@ function initLesson()
         ifInit = true;
 
         // Load the JS corresponding to this lesson
-        loadJS("lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
+        loadJS("/lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
 
         initInterface();
 
@@ -111,7 +111,6 @@ window.onload = function()
     var params = window.location.pathname.split('/');
     lessonId = params[1].substring(1);
 
-    alert(params[1].charAt(0)+"..."+(params[1].charAt(0)=='a'));
     switch(params[1].charAt(0))
     {
         case 'a':
