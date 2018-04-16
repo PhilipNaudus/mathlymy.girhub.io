@@ -21,7 +21,7 @@ function initLesson()
     if(document.getElementById("name").value=="")
     {
         swal("You forgot to enter your name", "Please enter your name", "warning");
-    } else if (typeof lessonId === "undefined")
+    } else if (lessonId == "")
     {
         promptSelect.style.fontWeight = "bold";
         promptSelect.style.color = "red";
@@ -130,7 +130,7 @@ window.onload = function()
         }
     }
 
-    if(typeof course === "undefined")
+    if(course == "")
     {
         // We don't know which course the user wants. Ask.
         document.getElementById("form").style.display = "none";
@@ -155,9 +155,9 @@ window.onload = function()
         {
             document.getElementById("selectLesson").value = "select";
         }
-    }
 
-    document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
+        document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
+    }
 }
 
 function loadJS(scriptSrc)
