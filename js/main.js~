@@ -25,18 +25,30 @@ function initLesson(autoSubmit)
         name = document.getElementById("name").value;
         password = document.getElementById("name").value.hashCode();
 
+        if(name=="select" && !autoSubmit)
+        {
+            swal("You forgot to select your name", "Please select your name", "warning");
+            return false;
+        }
+
         // Verify the name / password combination
         loadJS("google", "?course="+course+"&student="+name+"&password="+password+"&login=1");
     } else
     {
         name = document.getElementById("guestName").value;
         password = "guest";
+
+        if(name=="" && !autoSubmit)
+        {
+            swal("You forgot to enter your name", "Please enter your name", "warning");
+        }
+
         login(true);
     }
 
     if((name=="select" || name=="") && !autoSubmit)
     {
-        swal("You forgot to select your name", "Please select your name", "warning");
+        swal("You forgot to select your name", "Please enter your name", "warning");
     }
     if (lessonId == "")
     {
@@ -89,7 +101,7 @@ function login(success)
               break;
          
             default:
-              init();
+              login(true);
           }
         });
     } else
