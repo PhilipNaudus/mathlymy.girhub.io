@@ -130,6 +130,7 @@ window.onload = function()
     }
   
     lessonId = (typeof lessons[course][params[1].substring(1)] !== "undefined") ? params[1].substring(1) : "";
+    alert(course"+..."+lessonId);
 
     if(course == "")
     {
