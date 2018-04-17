@@ -130,7 +130,7 @@ window.onload = function()
         }
     }
   
-    lessonId = (isset lessons[course][params[1].substring(1)]) ? params[1].substring(1) : "";
+    lessonId = (typeof lessons[course][params[1].substring(1)] != undefined) ? params[1].substring(1) : "";
 
     if(course == "")
     {
