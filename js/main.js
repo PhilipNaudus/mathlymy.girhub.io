@@ -118,7 +118,7 @@ window.onload = function()
 {
     // Parse the URL so that we can figure out which course and lesson the user wants
     var params = window.location.pathname.split('/');
-    lessonId = params[1].substring(1);
+
 
     var c = params[1].charAt(0).toLowerCase();
     for(courseAbbr in lessons)
@@ -129,6 +129,8 @@ window.onload = function()
             break;
         }
     }
+  
+    lessonId = (isset lessons[course][params[1].substring(1)]) ? params[1].substring(1) : "";
 
     if(course == "")
     {
