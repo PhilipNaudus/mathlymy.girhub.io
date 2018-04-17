@@ -146,6 +146,8 @@ window.onload = function()
         // Propagate options in the select menu
         for(L in lessons[course])
         {
+            if(L=="name") break;
+          
             var opt = document.createElement("option");
             opt.value = L;
             opt.innerHTML = L + ": "+lessons[course][L][1];
