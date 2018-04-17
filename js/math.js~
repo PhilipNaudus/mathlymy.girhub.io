@@ -200,7 +200,7 @@ function nextQuestion()
                 var score = 100*numCorrectQuestions/numQuestions;
 
                 // Report the score
-                loadJS("https://script.google.com/macros/s/AKfycbxsI_zUqE78ybmlgVr8trCaq5GM61oIA_cXN4U35mR3M3w2fRY/exec?student="+encodeURIComponent(document.getElementById("name").value)+"&course="+get["course"]+"&lessonId="+get["lessonId"]+"&score="+score+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+                loadJS("google", "?student="+encodeURIComponent(name)+"&course="+course+"&lessonId="+lessonId+"&score="+score+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
 
                 if(score==100)
                 {

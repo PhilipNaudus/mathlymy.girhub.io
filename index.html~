@@ -92,14 +92,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<h2 class="agileits-title" id="welcome">Welcome</h2>
 
-            <form action="javascript:void(0);" onsubmit="initLesson();" id="form">
-                <p class="agile-p">Please enter your name:&nbsp;
-                <input type="text" id="name" class="inp" /><input type="submit" value="Go!" class="btn" /></p>
+            <form action="javascript:void(0);" onsubmit="initLesson();" id="form" style="text-align: center">
+                <p style="text-align: center">Name:&nbsp;<span id="nameFrame"><select id="name" onchange="if(this.value=='guest') document.getElementById('nameFrame').innerHTML = '<input id=\'guestName\' type=\'text\' />';"><option value="select">- Select -</option><option value="guest">Guest</option></select></span></p>
+                <p style="text-align: center">Password:&nbsp;<input id="password" type="password" /></p>
+                <input type="submit" value="Go!" class="btn" style="text-align: center" />
             </form>
 
             <span id="chooseCourse" style="display:none">
                 <h3>Please select your course:</h3>
-                <span id="courseList"></span>
+                    <div class="row">
+                        <span id="courseList"></span>
+                    </div>
             </span>
 
             <span id="playerFrame" style="display:none">
@@ -132,7 +135,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <br />
             <p id="promptSelect">Select a lesson:
                 <select id="selectLesson" class="inp" onchange="lessonId = this.value; if(document.getElementById('name').value!='') initLesson();">
-                    <option value="select">---- Please select a lesson ----</option>
+                    <option value="select">---- Select ----</option>
                 </select>
             </p>
 

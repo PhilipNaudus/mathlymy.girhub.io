@@ -11,31 +11,53 @@ var lessons = {"alg1": {"1.1": ["92aLiyeQj0w", "Distance Formula", 1],
 
 var course = "";
 var lessonId = "";
+var name, password;
 var ifCanvas = isCanvasSupported()?1:0;   // Does the user's browser support canvas?
 ifInit = false;
 
-function initLesson()
+function initLesson(autoSubmit)
 {
     var lessons;
     var promptSelect = document.getElementById("promptSelect");
-    if(document.getElementById("name").value=="")
+
+    if(!!document.getElementById("name"))
     {
-        swal("You forgot to enter your name", "Please enter your name", "warning");
-    } else if (lessonId == "")
+        name = document.getElementById("name").value;
+        password = document.getElementById("name").value.hashCode();
+
+        // Verify the name / password combination
+        loadJS("google", "?course="+course+"&student="+name+"&password="+password+"&login=1");
+    } else
+    {
+        name = document.getElementById("guestName").value;
+        password = "guest";
+        login(true);
+    }
+
+    if((name=="select" || name=="") && !autoSubmit)
+    {
+        swal("You forgot to select your name", "Please select your name", "warning");
+    }
+    if (lessonId == "")
     {
         promptSelect.style.fontWeight = "bold";
         promptSelect.style.color = "red";
-    } else
+    }
+}
+
+function login(success)
+{
+    if(success)
     {
         ifInit = true;
 
         // Load the JS corresponding to this lesson
-        loadJS("/lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
+        loadJS("/", "lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
 
         initInterface();
 
         swal({title: "Welcome",
-          text:"Welcome, "+document.getElementById("name").value+"! How would you like to proceed?",
+          text:"Welcome, "+name+"! How would you like to proceed?",
           icon: "info",
           buttons: {
             video: {
@@ -67,9 +89,12 @@ function initLesson()
               break;
          
             default:
-              init();
+              login(true);
           }
         });
+    } else
+    {
+        swal("Incorrect Login", "Either you selected the wrong name or you entered the wrong password.", "warning");
     }
 }
 
@@ -127,7 +152,7 @@ window.onload = function()
             course = courseAbbr;
             break;
         }
-    }
+    } course="alg1";
   
     lessonId = (typeof lessons[course][params[1].substring(1)] !== "undefined") ? params[1].substring(1) : "";
 
@@ -144,6 +169,9 @@ window.onload = function()
         return false;
     } else
     {
+        // Load the student names
+        loadJS("google", "?course="+course+"&getStudents=1");
+
         // Propagate options in the select menu
         for(L in lessons[course])
         {
@@ -167,10 +195,12 @@ window.onload = function()
     }
 }
 
-function loadJS(scriptSrc)
+function loadJS(root, scriptSrc)
 {
+    if(root=="google") root = "https://script.google.com/macros/s/AKfycbxsI_zUqE78ybmlgVr8trCaq5GM61oIA_cXN4U35mR3M3w2fRY/exec";
+
     var script = document.createElement("script");
-    script.src = scriptSrc;
+    script.src = root+scriptSrc;
     script.type = "text/javascript";
     var head = document.getElementsByTagName("head")[0];
     head.appendChild(script);
@@ -184,4 +214,39 @@ function isCanvasSupported(){
 function error(errCode)
 {
     //TODO: Display errors to user
+}
+
+function propagateStudents(students)
+{
+    var opt;
+    for(var i=0; i<students.length; i++)
+    {
+      if(students[i]=="") break;
+      opt = document.createElement("option");
+      opt.value = students[i];
+      opt.innerHTML = students[i];
+      
+      document.getElementById("name").appendChild(opt);
+    }
+}
+
+String.prototype.hashCode = function() {
+  var hash = 0, i, chr;
+  if (this.length === 0) return hash;
+  for (i = 0; i < this.length; i++) {
+    chr   = this.charCodeAt(i);
+    hash  = ((hash << 5) - hash) + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash.toString();
+};
+
+function makePass() {
+  var text = "";
+  var possible = "abcdefghjkmpqrstvwxyz23456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
 }
