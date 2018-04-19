@@ -2,7 +2,7 @@ var studentGrades;
 
 function initGrades()
 {
-    loadJS("google", "?student="+encodeURIComponent(name)+"&course="+course+"&password="+password+"&getGrades=1");
+    loadJS("google", "?student="+encodeURIComponent(name)+"&course="+course+"&password="+password+(ifStudent?"&getStudentGrades=1":"&getParentGrades=1"));
 }
 
 function displayGrades(grades)
