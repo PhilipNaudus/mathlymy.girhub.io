@@ -9,15 +9,13 @@ var yScale;
 var x_points =  [-1,4];
 var y_points =  [-2,5];
 
-function initCanvas() {
+function initCanvas(xArr, x_step, yArr, y_step) {
 		// set these values for your data 
-	y_max = 5;
-	y_min = -5;
-	var y_step = 1;
+	x_min = xArr[0];
+	x_max = xArr[1];
 
-	x_max = 5;
-	x_min = -5;
-	var x_step = 1;
+	y_min = yArr[0];
+	y_max = yArr[1];
 
 	var columnSize = 50;
 	var rowSize = 50;
