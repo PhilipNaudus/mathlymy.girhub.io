@@ -33,6 +33,7 @@ function quiz(inPractice)
 // Wait a second and try again.
 function goToStep1()
 {
+    startLoading();
     try
     {
         step1(true);

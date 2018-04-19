@@ -97,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h2 class="agileits-title" id="welcome">Welcome</h2>
 
             <form action="javascript:void(0);" onsubmit="initLesson(false);" id="form" style="text-align: center">
-                <p style="text-align: center">Name:&nbsp;<span id="nameFrame"><select id="name" onchange="if(this.value=='guest') document.getElementById('nameFrame').innerHTML = '<input id=\'guestName\' type=\'text\' />';"><option value="select">- Select -</option><option value="guest">Guest</option></select></span></p>
+                <p style="text-align: center"><span id="nametag">Name:</span>&nbsp;<span id="nameFrame"><select id="name" onchange="if(this.value=='guest') document.getElementById('nameFrame').innerHTML = '<input id=\'guestName\' type=\'text\' />';"><option value="select">- Select -</option><option value="guest">Guest</option></select></span></p>
                 <p style="text-align: center">Password:&nbsp;<input id="password" type="password" /></p>
                 <input type="submit" value="Go!" class="btn" style="text-align: center" />
             </form>
