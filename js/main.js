@@ -34,8 +34,8 @@ function initLesson(autoSubmit)
         }
     } else
     {
-        document.getElementById("gradesLi").style.display = "none";
-        document.getElementById("passwordLi").style.display = "none";
+        document.getElementById("gradesLi").style.visibility = "hidden";
+        document.getElementById("passwordLi").style.visibility = "hidden";
         name = document.getElementById("guestName").value;
         password = "guest";
 
@@ -64,21 +64,21 @@ function login(success)
         initInterface();
         if(!ifStudent)
         {
-            document.getElementById("videoLi").style.display = "none";
-            document.getElementById("practiceLi").style.display = "none";
-            document.getElementById("quizLi").style.display = "none";
+            document.getElementById("videoLi").style.visibility = "hidden";
+            document.getElementById("practiceLi").style.visibility = "hidden";
+            document.getElementById("quizLi").style.visibility = "hidden";
             initGrades();
         } else if (lessonId == "")
         {
             document.getElementById("promptSelect").style.display = "inline";
-            document.getElementById("videoLi").style.display = "none";
-            document.getElementById("practiceLi").style.display = "none";
-            document.getElementById("quizLi").style.display = "none";
+            document.getElementById("videoLi").style.visibility = "hidden";
+            document.getElementById("practiceLi").style.visibility = "hidden";
+            document.getElementById("quizLi").style.visibility = "hidden";
         } else
         {
-            document.getElementById("videoLi").style.display = "inline";
-            document.getElementById("practiceLi").style.display = "inline";
-            document.getElementById("quizLi").style.display = "inline";
+            document.getElementById("videoLi").style.visibility = "visible";
+            document.getElementById("practiceLi").style.visibility = "visible";
+            document.getElementById("quizLi").style.visibility = "visible";
 
             // Load the JS corresponding to this lesson
             loadJS("/", "lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
