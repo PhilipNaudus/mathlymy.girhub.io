@@ -123,9 +123,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form id="submitAnswer" onsubmit="submitAnswer();" action="javascript:void(0);">
                     <span id="math"></span><br /><br /><br />
                     <div class="row">
-                        <div class="column"><a href="javascript:eval('step'+(currentStep-1)+'(false);');" style="border: 0;"><img src="images/back.png" alt="Go back to the previous step"  /></a></div>
-                        <div class="column"><input type="submit" id="submit" class="btn" value="Submit Answer" /></div>
-                        <div class="column"><a href="javascript:help();" class="btn">Help!</a></div>
+                        <div class="column"><a href="javascript:eval('step'+(currentStep-1)+'(false);');" id="back" style="border: 0;"><img src="images/back.png" alt="Go back to the previous step"  /></a></div>
+                        <div class="column">
+                            <div class="row">
+                                <div class="column"><input type="submit" id="submit" class="btn" value="Submit Answer" /></div>
+                                <div class="column"><a href="javascript:help();" id="help" class="btn">Help!</a></div>
+                            </div>
                     </div>
                 </form>
             </span>
