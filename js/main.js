@@ -140,6 +140,7 @@ function completed()
 
 function initInterface()
 {
+    endLoading();
     document.getElementById("form").style.display = "none";
     document.getElementById("navigation").style.display = "inline";
     if(course != "")

@@ -140,6 +140,7 @@ function completed()
 
 function initInterface()
 {
+    endLoading();
     document.getElementById("form").style.display = "none";
     document.getElementById("navigation").style.display = "inline";
     if(course != "")
@@ -183,7 +184,7 @@ window.onload = function()
     var params = window.location.pathname.split('/');
 
     // Uncomment for debugging purposes
-    params[1] = "a1.1";
+    //params[1] = "a1.1";
 
     if(params[1].charAt(1).toLowerCase()=='p')
     {

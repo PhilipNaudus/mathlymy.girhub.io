@@ -191,7 +191,8 @@ function nextQuestion()
 
                 if(score==100)
                 {
-                    swal("Perfect score!", "Your score has been recorded. Great job!", "info");
+                    swal("Perfect score!", "Your score has been recorded. Great job!", "info")
+                        .then(function(value) { completed(); });
                 } else
                 {
                     swal({title: "You have finished the quiz",
