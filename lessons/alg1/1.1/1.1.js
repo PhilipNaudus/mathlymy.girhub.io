@@ -96,6 +96,7 @@ function setQuestion()
 
 function step1(ifResetScrolling)
 {
+    endLoading();
     currentStep = 1;
 
     if(practice)

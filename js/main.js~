@@ -11,99 +11,115 @@ var lessons = {"alg1": {"1.1": ["92aLiyeQj0w", "Distance Formula", 1],
 
 var course = "";
 var lessonId = "";
+var ifStudent = true;
 var name, password;
 var ifCanvas = isCanvasSupported()?1:0;   // Does the user's browser support canvas?
-ifInit = false;
-
 function initLesson(autoSubmit)
 {
     var lessons;
-    var promptSelect = document.getElementById("promptSelect");
 
     if(!!document.getElementById("name"))
     {
         name = document.getElementById("name").value;
-        password = document.getElementById("name").value.hashCode();
+        password = document.getElementById("password").value.hashCode();
 
-        if(name=="select" && !autoSubmit)
+        if(name!=="")
+        {
+            // Verify the name / password combination
+            loadJS("google", "?course="+course+"&student="+name+"&password="+password+(ifStudent?"&studentLogin=1":"&parentLogin=1"));
+        } else if(!autoSubmit)
         {
             swal("You forgot to select your name", "Please select your name", "warning");
             return false;
         }
-
-        // Verify the name / password combination
-        loadJS("google", "?course="+course+"&student="+name+"&password="+password+"&login=1");
     } else
     {
+        document.getElementById("gradesLi").style.display = "none";
+        document.getElementById("passwordLi").style.display = "none";
         name = document.getElementById("guestName").value;
         password = "guest";
 
-        if(name=="" && !autoSubmit)
+        if(name!=="")
+        {
+            login(true);
+        } else if(!autoSubmit)
         {
             swal("You forgot to enter your name", "Please enter your name", "warning");
+            return false;
         }
-
-        login(true);
     }
 
     if((name=="select" || name=="") && !autoSubmit)
     {
         swal("You forgot to select your name", "Please enter your name", "warning");
     }
-    if (lessonId == "")
-    {
-        promptSelect.style.fontWeight = "bold";
-        promptSelect.style.color = "red";
-    }
 }
 
 function login(success)
 {
+    endLoading();
+
     if(success)
     {
-        ifInit = true;
-
-        // Load the JS corresponding to this lesson
-        loadJS("/", "lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
-
         initInterface();
+        if(!ifStudent)
+        {
+            document.getElementById("videoLi").style.display = "none";
+            document.getElementById("practiceLi").style.display = "none";
+            document.getElementById("quizLi").style.display = "none";
+            initGrades();
+        } else if (lessonId == "")
+        {
+            document.getElementById("promptSelect").style.display = "inline";
+            document.getElementById("videoLi").style.display = "none";
+            document.getElementById("practiceLi").style.display = "none";
+            document.getElementById("quizLi").style.display = "none";
+        } else
+        {
+            document.getElementById("videoLi").style.display = "inline";
+            document.getElementById("practiceLi").style.display = "inline";
+            document.getElementById("quizLi").style.display = "inline";
 
-        swal({title: "Welcome",
-          text:"Welcome, "+name+"! How would you like to proceed?",
-          icon: "info",
-          buttons: {
-            video: {
-              text: "Watch a video",
-              value: "video",
-            },
-            practice: {
-              text: "Practice",
-              value: "practice",
-            },
-            quiz: {
-              text: "I'm ready to take the quiz",
-              value: "quiz",
-            }
-          }
-        })
-        .then(function(value) {
-          switch (value) {
-            case "video":
-              startVideo();
-              break;
-         
-            case "practice":
-              quiz(true);
-              break;
+            // Load the JS corresponding to this lesson
+            loadJS("/", "lessons/"+course+"/"+lessonId+"/"+lessonId+".js");
 
-            case "quiz":
-              quiz(false);
-              break;
-         
-            default:
-              login(true);
-          }
-        });
+            swal({title: "Welcome",
+                text:"Welcome, "+name+"! How would you like to proceed?",
+                icon: "info",
+                buttons: {
+                    video: {
+                        text: "Watch a video",
+                value: "video",
+                    },
+                practice: {
+                    text: "Practice",
+                value: "practice",
+                },
+                quiz: {
+                    text: "I'm ready to take the quiz",
+                value: "quiz",
+                }
+                }
+            })
+            .then(function(value) {
+                switch (value) {
+                    case "video":
+                        startVideo();
+                        break;
+
+                    case "practice":
+                        quiz(true);
+                        break;
+
+                    case "quiz":
+                        quiz(false);
+                        break;
+
+                    default:
+                        login(true);
+                }
+            });
+        }
     } else
     {
         swal("Incorrect Login", "Either you selected the wrong name or you entered the wrong password.", "warning");
@@ -122,19 +138,12 @@ function completed()
 
 function initInterface()
 {
+    document.getElementById("form").style.display = "none";
+    document.getElementById("navigation").style.display = "inline";
     if(course != "")
     if(lessons != null)
     {
-        document.getElementById("form").style.display = "none";
-
-        document.title = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" (PRACTICE)":"");
-        document.getElementById("welcome").style.display = "none";
-        document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
-
-        document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
-
-        promptSelect.style.fontWeight = "normal";
-        promptSelect.style.color = "black";
+        document.getElementById("gradesFrame").style.display = "none";
         document.getElementById("promptSelect").style.display = "none";
 
         document.getElementById("playerSpan").innerHTML = "";
@@ -142,6 +151,21 @@ function initInterface()
 
         document.getElementById("quizFrame").style.display = "none";
         document.getElementById("completedFrame").style.display = "none";
+
+        if(lessonId != "")
+        {
+            document.title = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" (PRACTICE)":"");
+            document.getElementById("welcome").style.display = "none";
+            document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][1] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
+        } else
+        {
+            document.getElementById("welcome").style.display = "inline";
+            document.getElementById("welcome").innerHTML = name;
+        }
+        if(course != "")
+        {
+            document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
+        }
     } else
     {
         setTimeout(function(){ initInterface(); }, 1000);
@@ -156,6 +180,15 @@ window.onload = function()
     // Parse the URL so that we can figure out which course and lesson the user wants
     var params = window.location.pathname.split('/');
 
+    // Uncomment for debugging purposes
+    params[1] = "ap";
+
+    if(params[1].charAt(1).toLowerCase()=='p')
+    {
+        ifStudent = false;
+        document.getElementById("nametag").innerHTML = "You child's name:";
+    }
+
     var c = params[1].charAt(0).toLowerCase();
     for(courseAbbr in lessons)
     {
@@ -164,7 +197,7 @@ window.onload = function()
             course = courseAbbr;
             break;
         }
-    } course="alg1";
+    }
   
     lessonId = (typeof lessons[course][params[1].substring(1)] !== "undefined") ? params[1].substring(1) : "";
 
@@ -209,6 +242,7 @@ window.onload = function()
 
 function loadJS(root, scriptSrc)
 {
+    startLoading();
     if(root=="google") root = "https://script.google.com/macros/s/AKfycbxsI_zUqE78ybmlgVr8trCaq5GM61oIA_cXN4U35mR3M3w2fRY/exec";
 
     var script = document.createElement("script");
@@ -230,6 +264,7 @@ function error(errCode)
 
 function propagateStudents(students)
 {
+    endLoading();
     var opt;
     for(var i=0; i<students.length; i++)
     {
@@ -253,12 +288,12 @@ String.prototype.hashCode = function() {
   return hash.toString();
 };
 
-function makePass() {
-  var text = "";
-  var possible = "abcdefghjkmpqrstvwxyz23456789";
+function startLoading()
+{
+    document.getElementById("loader").style.display = "inline";
+}
 
-  for (var i = 0; i < 5; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-  return text;
+function endLoading()
+{
+    document.getElementById("loader").style.display = "none";
 }

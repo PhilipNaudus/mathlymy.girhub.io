@@ -29,6 +29,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/player.js" type="text/javascript"></script>  
 <script src="js/math.js" type="text/javascript"></script>  
 <script src="js/canvas.js" type="text/javascript"></script>
+<script src="js/grades.js" type="text/javascript"></script>
+<script src="js/setPassword.js" type="text/javascript"></script>
 <!-- //js -->
 </head>
 <body> 
@@ -61,10 +63,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<div class="w3menu navbar-left">
-					<ul class="nav navbar">
-                        <li><a href="javascript:if(ifInit) startVideo(); else initLesson();">Video</a></li>
-                        <li><a href="javascript:if(ifInit) quiz(true); else initLesson();">Practice</a></li>
-                        <li><a href="javascript:if(ifInit) quiz(false); else initLesson();">Quiz</a></li>
+					<ul class="nav navbar" id="navigation" style="display:none">
+                        <li id="videoLi"><a href="javascript:startVideo();">Video</a></li>
+                        <li id="practiceLi"><a href="javascript:quiz(true);">Practice</a></li>
+                        <li id="quizLi"><a href="javascript:quiz(false);">Quiz</a></li>
+                        <li id="gradesLi"><a href="javascript:initGrades();">Grades</a></li>
+                        <li id="passwordLi"><a href="javascript:changePassword();">Change Password</a></li>
 					</ul>
 				</div> 
 				<div class="clearfix"> </div>  
@@ -92,7 +96,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<h2 class="agileits-title" id="welcome">Welcome</h2>
 
-            <form action="javascript:void(0);" onsubmit="initLesson();" id="form" style="text-align: center">
+            <form action="javascript:void(0);" onsubmit="initLesson(false);" id="form" style="text-align: center">
                 <p style="text-align: center">Name:&nbsp;<span id="nameFrame"><select id="name" onchange="if(this.value=='guest') document.getElementById('nameFrame').innerHTML = '<input id=\'guestName\' type=\'text\' />';"><option value="select">- Select -</option><option value="guest">Guest</option></select></span></p>
                 <p style="text-align: center">Password:&nbsp;<input id="password" type="password" /></p>
                 <input type="submit" value="Go!" class="btn" style="text-align: center" />
@@ -132,9 +136,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <img id="completedImg" class="center" src="images/completed.png" /><br /><br />
                 <p class="center">Feel fee to either exit or work on another lesson.</p>
             </span>
+
+            <span id="gradesFrame" style="display:none">
+                <form action="javascript:void(0);" onsubmit="whatIfGrade();" style="text-align: center">
+                    <span id="grades"></span>
+                    <h1 id="progressGrade"></h1>
+                    <input type="submit" value="Calculate What-If Grade" class="btn" />
+                </form>
+            </span>
+
+            <span id="setPasswordFrame" style="display:none">
+                <form action="javascript:void(0);" onsubmit="initPasswordSet();" style="text-align: center">
+                    <p>New Password: <input type="password" id="newPassword" /></p>
+                    <p>Confirm New Password: <input type="password" id="newPassword2" /></p>
+                    <input type="submit" value="Update Password" class="btn" />
+                </form>
+            </span>
+
             <br />
-            <p id="promptSelect">Select a lesson:
-                <select id="selectLesson" class="inp" onchange="lessonId = this.value; if(document.getElementById('name').value!='') initLesson();">
+            <p id="promptSelect" style="display:none">Select a lesson:
+                <select id="selectLesson" class="inp" onchange="lessonId = this.value; initLesson(true);">
                     <option value="select">---- Select ----</option>
                 </select>
             </p>
@@ -142,6 +163,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		</div>
 	</div>
+
+    <div id="loader"></div>
 <!-- //about -->
 <!-- skills -->
 	<script src="js/skill.bars.jquery.js"></script>
