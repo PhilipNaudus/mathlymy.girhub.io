@@ -203,7 +203,6 @@ window.onload = function()
   
     lessonId = (course!="" && (typeof lessons[course][params[1].substring(1)] !== "undefined")) ? params[1].substring(1) : "";
 
-    course = "";
     if(course == "")
     {
         endLoading();
