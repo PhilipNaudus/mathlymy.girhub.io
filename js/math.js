@@ -1,7 +1,5 @@
 var vars = new Array();
 var questionNum, equationNum, equations, practice, currentStep, numCorrectQuestions;
-var helpMouseover = false; // This is a hack for iPhones, which don't support click events.
-var backMouseover = false; // Instead, we'll have three submit buttons and use hover events to tell them apart.
 
 var ifPractice = 0;        // Did the student take a practice test before taking the quiz?
 var ifEnableHints = false; // Did the student begin taking a quiz and then exit by enabling hints?
@@ -93,20 +91,6 @@ function submitAnswer()
             });
         }
     }
-}
-
-// This is a hack for iPhones, which don't support click events.
-// Instead, we'll have two submit buttons and use hover events to tell them apart.
-function backOrSubmitOrHelp()
-{
-    setTimeout(function()
-            {
-                if(helpMouseover) help();
-                else if(backMouseover) eval("step"+(currentStep-1)+"(false);");
-                else submitAnswer();
-                helpMouseover = false;
-                backMouseover = false;
-            }, 50);
 }
 
 function nextQuestion()
@@ -202,6 +186,8 @@ function nextQuestion()
 
                 // Report the score
                 loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&score="+score+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+                ifPractice = 0;
+                ifVideo = 0;
 
                 if(score==100)
                 {

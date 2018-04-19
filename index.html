@@ -120,13 +120,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h2 id="question"></h2><br />
                 <h3 class="w3title1" id="step"></h3><br />
 
-                <form id="submitAnswer" onsubmit="backOrSubmitOrHelp();" action="javascript:void(0);">
+                <form id="submitAnswer" onsubmit="submitAnswer();" action="javascript:void(0);">
                     <span id="math"></span><br /><br /><br />
                     <div class="row">
-                        <div class="column"><input type="image" id="back" src="images/back.png" border="0" alt="Go back to the previous step"  onmouseover="backMouseover=true;" onmouseout="backMouseover=false;" /></div>
+                        <div class="column"><a href="javascript:eval('step'+(currentStep-1)+'(false);');" style="border: 0;"><img src="images/back.png" alt="Go back to the previous step"  /></a></div>
                         <div class="column"><input type="submit" id="submit" class="btn" value="Submit Answer" /></div>
-                        <div class="column"><input type="submit" id="help" class="btn" value="Help!" onmouseover="helpMouseover=true;" onmouseout="helpMouseover=false;" /></div>
-                        <!-- This is a hack for iPhones, which don't support click events. Instead, we'll have two submit buttons and use hover events to tell them apart. -->
+                        <div class="column"><a href="javascript:help();" class="btn">Help!</a></div>
                     </div>
                 </form>
             </span>

@@ -203,6 +203,7 @@ window.onload = function()
   
     lessonId = (course!="" && (typeof lessons[course][params[1].substring(1)] !== "undefined")) ? params[1].substring(1) : "";
 
+    course = "";
     if(course == "")
     {
         endLoading();
@@ -213,7 +214,7 @@ window.onload = function()
         document.getElementById("chooseCourse").style.display = "inline";
         for(courseAbbr in lessons)
         {
-            document.getElementById("courseList").innerHTML += "<div class='column'><form id='submitAnswer' action='/"+lessons[courseAbbr]["name"][0]+"'> <input type='submit' class='btn' value='"+lessons[courseAbbr]["name"][1]+"' /> </form></div>";
+            document.getElementById("courseList").innerHTML += "<div class='column'><a href='/"+lessons[courseAbbr]["name"][0]+"' class='btn'>"+lessons[courseAbbr]["name"][1]+"</a></div>";
         }
         return false;
     } else
