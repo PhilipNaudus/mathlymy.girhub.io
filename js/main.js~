@@ -199,7 +199,7 @@ window.onload = function()
         }
     }
   
-    lessonId = (typeof lessons[course][params[1].substring(1)] !== "undefined") ? params[1].substring(1) : "";
+    lessonId = (course!="" && (typeof lessons[course][params[1].substring(1)] !== "undefined")) ? params[1].substring(1) : "";
 
     if(course == "")
     {

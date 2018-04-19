@@ -203,6 +203,8 @@ window.onload = function()
 
     if(course == "")
     {
+        endLoading();
+
         // We don't know which course the user wants. Ask.
         document.getElementById("form").style.display = "none";
         document.getElementById("promptSelect").style.display = "none";
