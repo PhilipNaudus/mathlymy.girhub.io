@@ -4,7 +4,7 @@ function changePassword()
     document.getElementById("setPasswordFrame").style.display = "inline";
 }
 
-function initPasswordSet(ifStudent)
+function initPasswordSet()
 {
     if(document.getElementById("newPassword").value == document.getElementById("newPassword2").value)
     {

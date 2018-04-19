@@ -183,12 +183,15 @@ window.onload = function()
     var params = window.location.pathname.split('/');
 
     // Uncomment for debugging purposes
-    //params[1] = "ap";
+    //params[1] = "a1.1";
 
     if(params[1].charAt(1).toLowerCase()=='p')
     {
         ifStudent = false;
         document.getElementById("nametag").innerHTML = "You child's name:";
+    } else
+    {
+        ifStudent = true;
     }
 
     var c = params[1].charAt(0).toLowerCase();
