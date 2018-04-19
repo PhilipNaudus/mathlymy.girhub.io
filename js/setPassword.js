@@ -3,8 +3,15 @@ function changePassword()
     initInterface();
     document.getElementById("setPasswordFrame").style.display = "inline";
     document.getElementById("welcome").style.display = "inline";
-    document.getElementById("welcome").innerHTML = name;
-    document.getElementById("welcome2").innerHTML = name;
+    if(ifStudent)
+    {
+        document.getElementById("welcome").innerHTML = name;
+        document.getElementById("welcome2").innerHTML = name;
+    } else
+    {
+        document.getElementById("welcome").innerHTML = "Parent of "+name;
+        document.getElementById("welcome2").innerHTML = "Parent of "+name;
+    }
 }
 
 function initPasswordSet()

@@ -19,8 +19,15 @@ function displayGrades(grades)
     initInterface();
     document.getElementById("gradesFrame").style.display = "inline";
     document.getElementById("welcome").style.display = "inline";
-    document.getElementById("welcome").innerHTML = name;
-    document.getElementById("welcome2").innerHTML = name;
+    if(ifStudent)
+    {
+        document.getElementById("welcome").innerHTML = name;
+        document.getElementById("welcome2").innerHTML = name;
+    } else
+    {
+        document.getElementById("welcome").innerHTML = "Parent of "+name;
+        document.getElementById("welcome2").innerHTML = "Parent of "+name;
+    }
 
     var html = "<table border='1'>";
 
