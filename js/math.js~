@@ -186,6 +186,8 @@ function nextQuestion()
 
                 // Report the score
                 loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&score="+score+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+                ifPractice = 0;
+                ifVideo = 0;
 
                 if(score==100)
                 {
@@ -431,7 +433,7 @@ function enableHints()
         buttons: true,
         dangerMode: true
         })
-    .then((proceed) => {
+    .then(function(proceed) {
         if (proceed) {
             ifEnableHints = true;
             practice = true;

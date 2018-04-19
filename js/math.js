@@ -433,7 +433,7 @@ function enableHints()
         buttons: true,
         dangerMode: true
         })
-    .then((proceed) => {
+    .then(function(proceed) {
         if (proceed) {
             ifEnableHints = true;
             practice = true;
