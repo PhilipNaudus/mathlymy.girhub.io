@@ -4,6 +4,7 @@ function changePassword()
     document.getElementById("setPasswordFrame").style.display = "inline";
     document.getElementById("welcome").style.display = "inline";
     document.getElementById("welcome").innerHTML = name;
+    document.getElementById("welcome2").innerHTML = name;
 }
 
 function initPasswordSet()

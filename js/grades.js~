@@ -19,6 +19,7 @@ function displayGrades(grades)
     initInterface();
     document.getElementById("gradesFrame").style.display = "inline";
     document.getElementById("welcome").style.display = "inline";
+    document.getElementById("welcome").innerHTML = name;
 
     var html = "<table border='1'>";
 
