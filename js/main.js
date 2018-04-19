@@ -183,7 +183,7 @@ window.onload = function()
     var params = window.location.pathname.split('/');
 
     // Uncomment for debugging purposes
-    params[1] = "a1.1";
+    //params[1] = "a1.1";
 
     if(params[1].charAt(1).toLowerCase()=='p')
     {

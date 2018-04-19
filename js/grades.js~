@@ -44,6 +44,7 @@ function displayGrades(grades)
             html += "<td>"+Math.round(grades[2][i]*100)+"%</td></tr>";
         }
     }
+    alert(html);
 
     document.getElementById("grades").innerHTML = html;
     document.getElementById("progressGrade").innerHTML = "Progress Grade: "+Math.round(grades[3]*100)+"%";
