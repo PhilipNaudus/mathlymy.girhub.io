@@ -2,6 +2,7 @@ function changePassword()
 {
     initInterface();
     document.getElementById("setPasswordFrame").style.display = "inline";
+    document.getElementById("welcome").style.display = "inline";
 }
 
 function initPasswordSet()
