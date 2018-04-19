@@ -129,6 +129,8 @@ function login(success)
 function completed()
 {
     initInterface();
+    endLoading();
+
     document.getElementById("completedFrame").style.display = "inline";
     document.getElementById("promptSelect").style.display = "inline";
     var w = Math.min(window.innerWidth/2, 200);
@@ -261,6 +263,7 @@ function isCanvasSupported(){
 
 function error(errCode)
 {
+    endLoading();
     //TODO: Display errors to user
 }
 
