@@ -71,19 +71,16 @@ function login(success)
         initInterface();
         if(!ifStudent)
         {
-            document.getElementById("videoLi").style.visibility = "hidden";
             document.getElementById("practiceLi").style.visibility = "hidden";
             document.getElementById("quizLi").style.visibility = "hidden";
             initGrades();
         } else if (lessonId == "")
         {
             document.getElementById("promptSelect").style.display = "inline";
-            document.getElementById("videoLi").style.visibility = "hidden";
             document.getElementById("practiceLi").style.visibility = "hidden";
             document.getElementById("quizLi").style.visibility = "hidden";
         } else
         {
-            document.getElementById("videoLi").style.visibility = "visible";
             document.getElementById("practiceLi").style.visibility = "visible";
             document.getElementById("quizLi").style.visibility = "visible";
 
@@ -94,26 +91,18 @@ function login(success)
                 text:"Welcome, "+name+"! How would you like to proceed?",
                 icon: "info",
                 buttons: {
-                    video: {
-                        text: "Watch a video",
-                value: "video",
+                    practice: {
+                        text: "Practice",
+                        value: "practice",
                     },
-                practice: {
-                    text: "Practice",
-                value: "practice",
-                },
-                quiz: {
-                    text: "I'm ready to take the quiz",
-                value: "quiz",
-                }
+                    quiz: {
+                        text: "I'm ready to take the quiz",
+                        value: "quiz",
+                    }
                 }
             })
             .then(function(value) {
                 switch (value) {
-                    case "video":
-                        startVideo();
-                        break;
-
                     case "practice":
                         quiz(true);
                         break;
@@ -155,9 +144,6 @@ function initInterface()
     {
         document.getElementById("gradesFrame").style.display = "none";
         document.getElementById("promptSelect").style.display = "none";
-
-        document.getElementById("playerSpan").innerHTML = "";
-        document.getElementById("playerFrame").style.display = "none";
 
         document.getElementById("quizFrame").style.display = "none";
         document.getElementById("completedFrame").style.display = "none";
@@ -224,7 +210,7 @@ window.onload = function()
         document.getElementById("chooseCourse").style.display = "inline";
         for(courseAbbr in lessons)
         {
-            document.getElementById("courseList").innerHTML += "<div class='column'><a href='/"+lessons[courseAbbr]["name"][0]+"' class='btn'>"+lessons[courseAbbr]["name"][1]+"</a></div>";
+            document.getElementById("courseList").innerHTML += "<div class='column'><a href='/"+lessons[courseAbbr]["name"][0]+"' class='bttn'>"+lessons[courseAbbr]["name"][1]+"</a></div>";
         }
         return false;
     } else

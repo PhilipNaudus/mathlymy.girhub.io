@@ -102,7 +102,7 @@ function nextQuestion()
             icon: "info",
             buttons: {
                 video: {
-                    text: "Go back and watch the video",
+                    text: "Watch a video explanation",
                     value: "video",
                 },
                 practice: {
@@ -119,7 +119,7 @@ function nextQuestion()
             switch (value) {
                 case "video":
                     ifEnableHints = false;
-                    startVideo();
+                    displayVideo();
                     break;
 
                 case "practice":
@@ -151,10 +151,6 @@ function nextQuestion()
                   text: "You have finished with this practice set! What would you like to do next?",
                   icon: "info",
                   buttons: {
-                    video: {
-                      text: "Go back and watch the video",
-                      value: "video",
-                    },
                     practice: {
                       text: "I still need some more practice",
                       value: "practice",
@@ -167,10 +163,6 @@ function nextQuestion()
                 })
                 .then(function(value) {
                   switch (value) {
-                    case "video":
-                      startVideo();
-                      break;
-                 
                     case "practice":
                       quiz(true);
                       break;
@@ -207,10 +199,6 @@ function nextQuestion()
                           text: "Take the quiz again",
                           value: "quiz"
                         },
-                        video: {
-                          text: "Go back and watch the video",
-                          value: "video"
-                        },
                         practice: {
                           text: "I need some more practice",
                           value: "hint"
@@ -221,9 +209,6 @@ function nextQuestion()
                       switch (value) {
                         case "keep":
                           completed();
-                          break;
-                        case "video":
-                          startVideo();
                           break;
                      
                         case "practice":
@@ -373,7 +358,7 @@ function help()
           icon: "info",
           buttons: {
             video: {
-              text: "Go back and watch the video",
+              text: "Watch a video explanation",
               value: "video",
             },
             hint: {
@@ -386,7 +371,7 @@ function help()
         .then(function(value) {
           switch (value) {
             case "video":
-              startVideo();
+              displaytVideo();
               break;
          
             case "hint":
@@ -401,7 +386,7 @@ function help()
           icon: "info",
           buttons: {
             video: {
-              text: "Go back and watch the video",
+              text: "Watch a video explanation",
               value: "video"
             },
             enableHints: {
@@ -414,7 +399,7 @@ function help()
         .then(function(value) {
           switch (value) {
             case "video":
-              startVideo();
+              displaytVideo();
               break;
          
             case "enableHints":

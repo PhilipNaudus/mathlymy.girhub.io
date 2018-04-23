@@ -1,4 +1,5 @@
 var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
@@ -15,7 +16,7 @@ function setQuestion()
         case 1:
         case 3:
             vars = getRandom(0, 9, 4);
-            if(questionNum==2)
+            if(questionNum>1)
             {
                 var rand;
                 var count = 0;

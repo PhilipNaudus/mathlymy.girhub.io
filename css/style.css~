@@ -2010,7 +2010,8 @@ h3.agileits-title, h2.agileits-title {
   display: table;
 }
 
-.btn {
+/* Buttons */
+.bttn {
   background: #34d934;
   background-image: -webkit-linear-gradient(top, #34d934, #4fb84f);
   background-image: -moz-linear-gradient(top, #34d934, #4fb84f);
@@ -2028,17 +2029,36 @@ h3.agileits-title, h2.agileits-title {
   text-decoration: none;
 }
 
-.btn:hover {
-  background: #2fc42f;
-  background-image: -webkit-linear-gradient(top, #2fc42f, #46a646);
-  background-image: -moz-linear-gradient(top, #2fc42f, #46a646);
-  background-image: -ms-linear-gradient(top, #2fc42f, #46a646);
-  background-image: -o-linear-gradient(top, #2fc42f, #46a646);
-  background-image: linear-gradient(to bottom, #2fc42f, #46a646);
+.bttn:hover {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
   text-decoration: none;
   text-shadow: 1px 1px 3px #307530;
   font-family: Arial;
   color: #ffffff;
+}
+
+/* Active buttons */
+.activeBttn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  text-shadow: 1px 1px 3px #307530;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 7px 20px;
+  text-decoration: none;
 }
 
 .inp {
@@ -2055,4 +2075,48 @@ h3.agileits-title, h2.agileits-title {
     display: block;
     margin-left: auto;
     margin-right: auto;
-} 
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Auto-sizing video frames
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; 
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+*/
