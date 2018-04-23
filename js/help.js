@@ -3,7 +3,7 @@ var ifVideo = 0; // Did the student watch the video?
 function displayVideo()
 {
     var player = document.createElement("div");
-    var playerHtml = "<div class='videoWrapper'><iframe width='640' height='390' id='swalIframe' width='100%' src='/loading.html' allowFullScreen></iframe></div><div class='row'>";
+    var playerHtml = "<div class='wrapper'><iframe width='640' height='390' id='swalIframe' width='100%' src='/loading.html' allowFullScreen></iframe></div><div class='row'>";
     for(var i=1; i<=numQuestions; i++)
     {
         playerHtml += "<div class='column'><a href='javascript:setSwalVideo("+i+")' id='swalBtn"+i+"' class='btn'>"+i+"</a></div>";
@@ -47,16 +47,19 @@ function setSwalVideo(vidNum)
 
 function displayAskQuestion()
 {
+    var askDiv = document.createElement("div");
+    askDiv.innerHTML = "<div class='wrapper'><textarea id='askTextarea'></textarea></div>";
+
     swal({
-        title: "Ajax request example",
-    text: "Submit to run ajax request",
-    type: "info",
-    showCancelButton: true,
-    closeOnConfirm: false,
-    showLoaderOnConfirm: true
-    }, function () {
-        setTimeout(function () {
-            swal("Ajax request finished!");
-        }, 2000);
-    });
+        title: "Please enter your question below:",
+        content: askDiv,
+        type: "info",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        showLoaderOnConfirm: true
+    })
+    .then(function(value)
+     {
+         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(document.getElementById("askTextarea"))+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+     });
 }
