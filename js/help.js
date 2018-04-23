@@ -21,7 +21,8 @@ function displayVideo()
         },
     });
 
-    initVideo();
+//    initVideo();
+    setTimeout(function() { setSwalVideo(questionNum); }, 3000);
 }
 
 function initVideo()
