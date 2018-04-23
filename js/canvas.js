@@ -75,5 +75,5 @@ function setAppend(num, append)
     if(num==0) return 0;
     else if(num==1 && append!="") return append;
     else if(num==-1 && append!="") return '-'+append;
-    else return ""+num+append[0];
+    else return ""+num+append;
 }
