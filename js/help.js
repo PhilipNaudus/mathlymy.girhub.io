@@ -69,3 +69,14 @@ function displayAskQuestion()
          loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(document.getElementById("askTextarea").value)+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
      });
 }
+
+function questionSubmitted(success)
+{
+    if(success)
+    {
+        swal("Question Submitted", "Your question has been submitted to Mr. Naudus.", "info");
+    } else
+    {
+        swal("An error has occurred", "Sorry, your question has not been submitted. Please try again.", "warning");
+    }
+}
