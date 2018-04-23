@@ -2011,7 +2011,7 @@ h3.agileits-title, h2.agileits-title {
 }
 
 /* Buttons */
-.bttn {
+.btn {
   background: #34d934;
   background-image: -webkit-linear-gradient(top, #34d934, #4fb84f);
   background-image: -moz-linear-gradient(top, #34d934, #4fb84f);
@@ -2029,7 +2029,7 @@ h3.agileits-title, h2.agileits-title {
   text-decoration: none;
 }
 
-.bttn:hover {
+.btn:hover {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -2043,7 +2043,7 @@ h3.agileits-title, h2.agileits-title {
 }
 
 /* Active buttons */
-.activeBttn {
+.activeBtn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);

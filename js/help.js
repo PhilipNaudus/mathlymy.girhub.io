@@ -6,7 +6,7 @@ function displayVideo()
     var playerHtml = "<div class='videoWrapper'><iframe width='640' height='390' id='swalIframe' width='100%' src='about:blank' allowFullScreen></iframe></div><div class='row'>";
     for(var i=1; i<=numQuestions; i++)
     {
-        playerHtml += "<div class='column'><a href='javascript:setSwalVideo("+i+")' id='swalBtn"+i+"' class='bttn'>"+i+"</a></div>";
+        playerHtml += "<div class='column'><a href='javascript:setSwalVideo("+i+")' id='swalBtn"+i+"' class='btn'>"+i+"</a></div>";
     }
     playerHtml += "</div>";
     player.innerHTML = playerHtml;
@@ -29,14 +29,14 @@ function setSwalVideo(vidNum)
     document.getElementById("swalIframe").src = "https://www.youtube.com/embed/"+videos[vidNum-1]+"?autoplay=1";
 
     // Deactive all the buttons
-    var activeBtns = document.getElementsByClassName("activeBttn");
+    var activeBtns = document.getElementsByClassName("activeBtn");
     for(var i=0; i<activeBtns.length; i++)
     {
-        activeBtns[i].className = "bttn";
+        activeBtns[i].className = "btn";
     }
 
     // Set this button as active
-    document.getElementById("swalBtn"+vidNum).className = "activeBttn";
+    document.getElementById("swalBtn"+vidNum).className = "btn activeBttn";
 
     ifVideo++;
 }

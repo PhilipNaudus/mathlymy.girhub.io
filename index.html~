@@ -97,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <form action="javascript:void(0);" onsubmit="initLesson(false);" id="form" style="text-align: center">
                 <p style="text-align: center"><span id="nametag">Name:</span>&nbsp;<span id="nameFrame"><select id="name" onchange="if(this.value=='guest') document.getElementById('nameFrame').innerHTML = '<input id=\'guestName\' type=\'text\' />';"><option value="select">- Select -</option><option value="guest">Guest</option></select></span></p>
                 <p style="text-align: center">Password:&nbsp;<input id="password" type="password" /></p>
-                <input type="submit" value="Go!" class="btn" style="text-align: center" />
+                <input type="submit" value="Go!" class="bttn" style="text-align: center" />
             </form>
 
             <span id="chooseCourse" style="display:none">
@@ -117,8 +117,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="column"><a href="javascript:eval('step'+(currentStep-1)+'(false);');" id="back" style="border: 0;"><img src="images/back.png" alt="Go back to the previous step"  /></a></div>
                         <div class="column">
                             <div class="row">
-                                <div class="column"><input type="submit" id="submit" class="btn" value="Submit Answer" /></div>
-                                <div class="column"><a href="javascript:help();" id="help" class="btn">Help!</a></div>
+                                <div class="column"><input type="submit" id="submit" class="bttn" value="Submit Answer" /></div>
+                                <div class="column"><a href="javascript:help();" id="help" class="bttn">Help!</a></div>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form action="javascript:void(0);" onsubmit="whatIfGrade();" style="text-align: center">
                     <span id="grades"></span>
                     <h1 id="progressGrade"></h1>
-                    <input type="submit" value="Calculate What-If Grade" class="btn" />
+                    <input type="submit" value="Calculate What-If Grade" class="bttn" />
                 </form>
             </span>
 
@@ -143,7 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form action="javascript:void(0);" onsubmit="initPasswordSet();" style="text-align: center">
                     <p>New Password: <input type="password" id="newPassword" /></p>
                     <p>Confirm New Password: <input type="password" id="newPassword2" /></p>
-                    <input type="submit" value="Update Password" class="btn" />
+                    <input type="submit" value="Update Password" class="bttn" />
                 </form>
             </span>
 

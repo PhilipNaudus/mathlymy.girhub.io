@@ -371,7 +371,7 @@ function help()
         .then(function(value) {
           switch (value) {
             case "video":
-              displaytVideo();
+              displayVideo();
               break;
          
             case "hint":
@@ -399,7 +399,7 @@ function help()
         .then(function(value) {
           switch (value) {
             case "video":
-              displaytVideo();
+              displayVideo();
               break;
          
             case "enableHints":

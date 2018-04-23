@@ -2105,10 +2105,10 @@ h3.agileits-title, h2.agileits-title {
   100% { transform: rotate(360deg); }
 }
 
-/* Auto-sizing video frames
+/* Auto-sizing video frames */
 .videoWrapper {
 	position: relative;
-	padding-bottom: 56.25%; 
+	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
 }
@@ -2119,4 +2119,4 @@ h3.agileits-title, h2.agileits-title {
 	width: 100%;
 	height: 100%;
 }
-*/
+

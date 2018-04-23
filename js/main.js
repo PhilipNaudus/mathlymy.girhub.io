@@ -177,7 +177,7 @@ window.onload = function()
     var params = window.location.pathname.split('/');
 
     // Uncomment for debugging purposes
-    //params[1] = "a1.1";
+    params[1] = "a1.1";
 
     if(params[1].charAt(1).toLowerCase()=='p')
     {
@@ -210,7 +210,7 @@ window.onload = function()
         document.getElementById("chooseCourse").style.display = "inline";
         for(courseAbbr in lessons)
         {
-            document.getElementById("courseList").innerHTML += "<div class='column'><a href='/"+lessons[courseAbbr]["name"][0]+"' class='bttn'>"+lessons[courseAbbr]["name"][1]+"</a></div>";
+            document.getElementById("courseList").innerHTML += "<div class='column'><a href='/"+lessons[courseAbbr]["name"][0]+"' class='btn'>"+lessons[courseAbbr]["name"][1]+"</a></div>";
         }
         return false;
     } else
