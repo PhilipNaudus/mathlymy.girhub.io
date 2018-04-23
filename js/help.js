@@ -21,7 +21,7 @@ function displayVideo()
         },
     });
 
-    initVideo
+    initVideo();
 }
 
 function initVideo()
