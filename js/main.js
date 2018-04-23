@@ -20,6 +20,7 @@ function initLesson(autoSubmit)
 
     if(!!document.getElementById("name"))
     {
+        // If the user is selecting their name from the dropdown menu
         name = document.getElementById("name").value;
         password = document.getElementById("password").value.hashCode();
 
@@ -32,8 +33,14 @@ function initLesson(autoSubmit)
             swal("You forgot to select your name", "Please select your name", "warning");
             return false;
         }
+
+        if (typeof(Storage) !== "undefined")
+        {
+            localStorage.setItem("thisStudent", name)
+        }
     } else
     {
+        // If the user is logging in as a guest and typing in their name
         document.getElementById("gradesLi").style.visibility = "hidden";
         document.getElementById("passwordLi").style.visibility = "hidden";
         name = document.getElementById("guestName").value;
@@ -222,10 +229,10 @@ window.onload = function()
         return false;
     } else
     {
-        // Load the student names... Checking local storage first, falling back to the server
+        // Load student names... Checking local storage first, falling back to the server
         if (typeof(Storage) !== "undefined")
         {
-            studentList = localStorage("studentList"+course);
+            studentList = localStorage.getItem("studentList"+course);
             if(studentList != null)
             {
                 propagateStudents(JSON.parse(studentList));
@@ -233,7 +240,6 @@ window.onload = function()
         }
         if(document.getElementById("name").length <= 2)
         {
-
             loadJS("google", "?course="+course+"&getStudents=1");
         }
 
@@ -287,6 +293,7 @@ function propagateStudents(students)
 {
     endLoading();
     var opt;
+    var selectName = document.getElementById("name");
     for(var i=0; i<students.length; i++)
     {
       if(students[i]=="") break;
@@ -294,7 +301,20 @@ function propagateStudents(students)
       opt.value = students[i];
       opt.innerHTML = students[i];
       
-      document.getElementById("name").appendChild(opt);
+      selectName.appendChild(opt);
+    }
+
+    if (typeof(Storage) !== "undefined")
+    {
+        thisStudent = localStorage.getItem("thisStudent");
+        if(thisStudent != null)
+        {
+            selectName.value = thisStudent;
+        }
+        if(localStorage.getItem("thisStudent") == null)
+        {
+            localStorage.setItem("studentList"+course, JSON.stringify(students))
+        }
     }
 }
 
