@@ -222,8 +222,20 @@ window.onload = function()
         return false;
     } else
     {
-        // Load the student names
-        loadJS("google", "?course="+course+"&getStudents=1");
+        // Load the student names... Checking local storage first, falling back to the server
+        if (typeof(Storage) !== "undefined")
+        {
+            studentList = localStorage("studentList"+course);
+            if(studentList != null)
+            {
+                propagateStudents(JSON.parse(studentList));
+            }
+        }
+        if(document.getElementById("name").length <= 2)
+        {
+
+            loadJS("google", "?course="+course+"&getStudents=1");
+        }
 
         // Propagate options in the select menu
         for(L in lessons[course])
