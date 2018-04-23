@@ -21,7 +21,13 @@ function displayVideo()
         },
     });
 
-    setSwalVideo(questionNum);
+    try
+    {
+        setSwalVideo(questionNum);
+    } catch(e)
+    {
+        setTimeout(function(){ setSwalVideo(questionNum); }, 100);
+    }
 }
 
 function setSwalVideo(vidNum)
@@ -36,7 +42,7 @@ function setSwalVideo(vidNum)
     }
 
     // Set this button as active
-    document.getElementById("swalBtn"+vidNum).className = "btn activeBttn";
+    document.getElementById("swalBtn"+vidNum).className = "activeBttn";
 
     ifVideo++;
 }
