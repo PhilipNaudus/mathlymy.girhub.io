@@ -21,12 +21,17 @@ function displayVideo()
         },
     });
 
+    initVideo
+}
+
+function initVideo()
+{
     try
     {
         setSwalVideo(questionNum);
     } catch(e)
     {
-        setTimeout(function(){ setSwalVideo(questionNum); }, 100);
+        setTimeout(initVideo, 100);
     }
 }
 
