@@ -35,7 +35,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	var count =  0;
 	for (scale=x_min;scale<=x_max;scale = scale + x_step) {
 		var x = rowSize + (xScale * count * x_step); 
-		context.fillText((scale==0)?0:(scale==1)?append[0]:(scale==-1)?'-'+append[0]:""+scale+append[0], x-5, columnSize - margin);
+		context.fillText(setAppend(scale,append[0]), x-5, columnSize - margin);
 		context.moveTo(x, columnSize);
 		context.lineTo(x, canvas.height - margin);
         count++
@@ -44,7 +44,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	var count =  0;
 	for (scale=y_max;scale>=y_min;scale = scale - y_step) {
 		var y = columnSize + (yScale * count * y_step) + 5; 
-		context.fillText((scale==0)?0:(scale==1)?append[1]:(scale==-1)?'-'+append[0]:""+scale+append[1], margin,y + margin);
+		context.fillText(setAppend(scale,append[1]), margin,y + margin);
 		context.moveTo(rowSize,y)
 		context.lineTo(canvas.width,y)
 		count++;
@@ -70,3 +70,10 @@ function plotData(x_points, y_points) {
 	context.stroke();
 }
 
+function setAppend(num, append)
+{
+    if(num==0) return 0;
+    else if(num==1 && append!="") return append;
+    else if(num==-1 && append!="") return '-'+append;
+    else return ""+num+append[0];
+}
