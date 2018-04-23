@@ -21,7 +21,7 @@ function displayVideo()
         },
     });
 
-    setTimeout(function() { setSwalVideo(questionNum+1); }, 3000);
+    setSwalVideo(questionNum+1);
 }
 
 function setSwalVideo(vidNum)

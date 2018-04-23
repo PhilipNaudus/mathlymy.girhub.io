@@ -21,18 +21,7 @@ function displayVideo()
         },
     });
 
-    setTimeout(function() { setSwalVideo(questionNum+1); }, 3000);
-}
-
-function initVideo()
-{
-    try
-    {
-        setSwalVideo(questionNum);
-    } catch(e)
-    {
-        setTimeout(initVideo, 100);
-    }
+    setSwalVideo(questionNum+1);
 }
 
 function setSwalVideo(vidNum)
