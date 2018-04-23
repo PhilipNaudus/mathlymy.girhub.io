@@ -77,3 +77,5 @@ function setAppend(num, append)
     else if(num==-1 && append!="") return '-'+append;
     else return ""+num+append;
 }
+
+// pi = \u{03C0}

@@ -9,6 +9,7 @@ var yScale;
 var x_points =  [-1,4];
 var y_points =  [-2,5];
 
+// pi = \u{03C0}
 function initCanvas(xArr, x_step, yArr, y_step, append) {
 		// set these values for your data 
 	x_min = xArr[0];
@@ -75,5 +76,5 @@ function setAppend(num, append)
     if(num==0) return 0;
     else if(num==1 && append!="") return append;
     else if(num==-1 && append!="") return '-'+append;
-    else return ""+num+append[0];
+    else return ""+num+append;
 }
