@@ -35,7 +35,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	var count =  0;
 	for (scale=x_min;scale<=x_max;scale = scale + x_step) {
 		var x = rowSize + (xScale * count * x_step); 
-		context.fillText((scale==0)?0:(scale==1)?append[0]:""+scale+append[0], x-5, columnSize - margin);
+		context.fillText((scale==0)?0:(scale==1)?append[0]:(scale==-1)?'-'+append[0]:""+scale+append[0], x-5, columnSize - margin);
 		context.moveTo(x, columnSize);
 		context.lineTo(x, canvas.height - margin);
         count++
@@ -44,7 +44,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	var count =  0;
 	for (scale=y_max;scale>=y_min;scale = scale - y_step) {
 		var y = columnSize + (yScale * count * y_step) + 5; 
-		context.fillText((scale==0)?0:(scale==1)?append[1]:""+scale+append[1], margin,y + margin);
+		context.fillText((scale==0)?0:(scale==1)?append[1]:(scale==-1)?'-'+append[0]:""+scale+append[1], margin,y + margin);
 		context.moveTo(rowSize,y)
 		context.lineTo(canvas.width,y)
 		count++;
