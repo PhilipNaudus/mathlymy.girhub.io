@@ -273,7 +273,6 @@ function error(errCode)
 {
     endLoading();
     //TODO: Display errors to user
-    questionSubmitted(true);
 }
 
 function propagateStudents(students)
