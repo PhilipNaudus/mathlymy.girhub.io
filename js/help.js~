@@ -19,6 +19,10 @@ function displayVideo()
                 value: "exit",
             }
         },
+    })
+    .next(function(value)
+    {
+        document.getElementById("swalIframe").src = "/loading.html";
     });
 
     setSwalVideo(questionNum+1);

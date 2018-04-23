@@ -20,7 +20,7 @@ function displayVideo()
             }
         },
     })
-    .next(function(value)
+    .then(function(value)
     {
         document.getElementById("swalIframe").src = "/loading.html";
     });
