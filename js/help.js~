@@ -57,9 +57,13 @@ function displayAskQuestion()
         showCancelButton: true,
         closeOnConfirm: false,
         showLoaderOnConfirm: true
+    }, function () {
+        setTimeout(function () {
+            swal("Ajax request finished!");
+        }, 2000);
     })
     .then(function(value)
      {
-         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&score="+score+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(document.getElementById("askTextarea").value)+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
      });
 }
