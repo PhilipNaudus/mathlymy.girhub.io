@@ -273,6 +273,7 @@ function error(errCode)
 {
     endLoading();
     //TODO: Display errors to user
+    swal("hi!");
 }
 
 function propagateStudents(students)

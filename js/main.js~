@@ -250,26 +250,6 @@ window.onload = function()
 
         document.getElementById("home").innerHTML = "<a href='"+lessons[course]["name"][0]+"'>"+lessons[course]["name"][1]+"</a>";
     }
-
-
-    var player = document.createElement("div");
-    var playerHtml = "<div class='videoWrapper'><iframe width='640' height='390' id='swalIframe' width='100%' src='about:blank' allowFullScreen></iframe></div><div class='row'>";
-    for(var i=1; i<=4; i++)
-    {
-        playerHtml += "<div class='column'><a href='javascript:setSwalVideo("+i+")' id='swalBtn"+i+"' class='btn'>"+i+"</a></div>";
-    }
-    playerHtml += "</div>";
-    player.innerHTML = playerHtml;
-
-    swal({
-        content: player,
-        buttons: {
-            practice: {
-                text: "Exit",
-                value: "exit",
-            }
-        },
-    });
 }
 
 function loadJS(root, scriptSrc)
@@ -293,6 +273,7 @@ function error(errCode)
 {
     endLoading();
     //TODO: Display errors to user
+    swal("hi!");
 }
 
 function propagateStudents(students)

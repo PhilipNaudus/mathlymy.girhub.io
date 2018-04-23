@@ -14,11 +14,11 @@ function displayVideo()
     swal({
         content: player,
         buttons: {
-            practice: {
+            exit: {
                 text: "Exit",
                 value: "exit",
             }
-        },
+        }
     })
     .then(function(value)
     {
@@ -54,13 +54,15 @@ function displayAskQuestion()
         title: "Please enter your question below:",
         content: askDiv,
         type: "info",
-        showCancelButton: true,
-        closeOnConfirm: false,
-        showLoaderOnConfirm: true
-    }, function () {
-        setTimeout(function () {
-            swal("Ajax request finished!");
-        }, 2000);
+        buttons: {
+            submit: {
+                text: "Submit",
+                value: "submit",
+                closeModal: false
+            },
+            cancel: true
+        },
+
     })
     .then(function(value)
      {
