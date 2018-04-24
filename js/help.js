@@ -66,7 +66,10 @@ function displayAskQuestion()
     })
     .then(function(value)
      {
-         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(document.getElementById("askTextarea").value)+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+         var preAsk = "("+(practice?"P":"Q")+questionNum+(practice?"S"+currentStep+"E"+equationNum:"")+" ["+vars.toString()+"]) ";
+
+
+         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(preAsk+document.getElementById("askTextarea").value)+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
      });
 }
 
