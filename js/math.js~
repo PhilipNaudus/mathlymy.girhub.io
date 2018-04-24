@@ -45,10 +45,10 @@ function submitAnswer()
     var slns = testAllSolutions(true);
     studentSln = slns[0];
     testSln = slns[1];
-    ifPractice++;
 
     if(testSln==equations[equationNum][2][studentSln].length)
     {
+        if(practice) ifPractice++;
         swal("Good job!", "You got this problem right!", "success")
             .then(function(value) {
                 numCorrectQuestions++;

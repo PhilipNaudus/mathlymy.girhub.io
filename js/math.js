@@ -1,5 +1,6 @@
 var vars = new Array();
-var questionNum, equationNum, equations, practice, currentStep, numCorrectQuestions;
+var questionNum, equations, practice, currentStep, numCorrectQuestions;
+var equationNum = null;
 
 var ifPractice = 0;        // Did the student take a practice test before taking the quiz?
 var ifEnableHints = false; // Did the student begin taking a quiz and then exit by enabling hints?
