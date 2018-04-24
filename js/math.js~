@@ -15,7 +15,6 @@ function quiz(inPractice)
     if(practice)
     {
         swal("You are about to begin a practice problem set", "This is only to help you practice and will not affect your grade.", "info");
-        ifPractice = 1;
     } else
     {
         swal("You are about to begin a graded quiz", "Your score will be recorded. Please do your best!", "info");
@@ -46,6 +45,7 @@ function submitAnswer()
     var slns = testAllSolutions(true);
     studentSln = slns[0];
     testSln = slns[1];
+    ifPractice++;
 
     if(testSln==equations[equationNum][2][studentSln].length)
     {
@@ -369,6 +369,10 @@ function help()
               displayVideo();
               break;
          
+            case "ask":
+              displayAskQuestion();
+              break;
+         
             case "hint":
               giveHint();
               break;
@@ -399,6 +403,10 @@ function help()
           switch (value) {
             case "video":
               displayVideo();
+              break;
+         
+            case "ask":
+              displayAskQuestion();
               break;
          
             case "enableHints":

@@ -66,7 +66,10 @@ function displayAskQuestion()
     })
     .then(function(value)
      {
-         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(document.getElementById("askTextarea").value)+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
+         var preAsk = "("+(practice?"P":"Q")+questionNum+(practice?"S"+currentStep+"E"+equationNum:"")+" ["+vars.toString()+"]) ";
+
+
+         loadJS("google", "?student="+encodeURIComponent(name)+"&password="+password+"&course="+course+"&lessonId="+lessonId+"&ask="+encodeURIComponent(preAsk+document.getElementById("askTextarea").value)+"&ifVideo="+ifVideo+"&ifPractice="+ifPractice+"&ifCanvas="+ifCanvas);
      });
 }
 
@@ -77,6 +80,6 @@ function questionSubmitted(success)
         swal("Question Submitted", "Your question has been submitted to Mr. Naudus.", "info");
     } else
     {
-        swal("An error has occurred", "Your question has been submitted to Mr. Naudus.", "warning");
+        swal("An error has occurred", "Sorry, your question has not been submitted. Please try again.", "warning");
     }
 }

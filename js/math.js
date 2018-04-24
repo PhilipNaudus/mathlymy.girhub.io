@@ -15,7 +15,6 @@ function quiz(inPractice)
     if(practice)
     {
         swal("You are about to begin a practice problem set", "This is only to help you practice and will not affect your grade.", "info");
-        ifPractice = 1;
     } else
     {
         swal("You are about to begin a graded quiz", "Your score will be recorded. Please do your best!", "info");
@@ -49,6 +48,7 @@ function submitAnswer()
 
     if(testSln==equations[equationNum][2][studentSln].length)
     {
+        if(practice) ifPractice++;
         swal("Good job!", "You got this problem right!", "success")
             .then(function(value) {
                 numCorrectQuestions++;
