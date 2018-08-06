@@ -11,8 +11,8 @@ function setQuestion()
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            plotData([vars[0], vars[2]], [vars[1], vars[3]]);
             addText([0,0], "A");
+            plotData([vars[0], vars[2]], [vars[1], vars[3]]);
             //addText([vars[2], vars[3]], "B");
             break;
         case 1:
