@@ -70,13 +70,8 @@ function plotData(x_points, y_points) {
 	context.stroke();
 }
 
-function addText(coord, text) {
-	context.beginPath();
-	for (i=0;i<y_points.length;i++) {
-		context.lineTo((x_points[i]+5) * xScale, y_points[i]+.1);
-	}
-    context.lineWidth=.1;
-	context.stroke();
+function addText(p, text) {
+	context.fillText(text, p[0]-5, p[1]-margin);
 }
 
 function setAppend(num, append)

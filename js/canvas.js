@@ -8,6 +8,7 @@ var yScale;
 		// Values for the Data Plot, they can also be obtained from a external file
 var x_points =  [-1,4];
 var y_points =  [-2,5];
+var margin = 10;
 
 function initCanvas(xArr, x_step, yArr, y_step, append) {
 		// set these values for your data 
@@ -19,7 +20,6 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 
 	var columnSize = 50;
 	var rowSize = 50;
-	var margin = 10;
 		
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");
