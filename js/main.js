@@ -3,9 +3,9 @@ var lessons = {"geo": {"1.1": ["Distance Formula"],
                        "1.3": ["Title A3"],
                        "name": ['g', "Geometry"]}, 
                "alg": {"1.1": ["TITLE B1"],
-                      "name": ['b', "College Algebra"]}, 
+                      "name": ['c', "College Algebra"]}, 
                "stat":{"1.1": ["TITLE P1"],
-                       "name": ['p', "AP Statistics"]}};
+                       "name": ['s', "AP Statistics"]}};
 
 var course = "";
 var lessonId = "";
@@ -148,7 +148,6 @@ function initInterface()
 
         if(lessonId != "")
         {
-            document.title = "Lesson "+lessonId+": "+lessons[course][lessonId][0] + (practice?" (PRACTICE)":"");
             document.getElementById("welcome").style.display = "none";
             document.getElementById("welcome2").innerHTML = "Lesson "+lessonId+": "+lessons[course][lessonId][0] + (practice?" <span style='color:red'>(PRACTICE)</span>":"");
         } else
@@ -234,7 +233,7 @@ window.onload = function()
           
             var opt = document.createElement("option");
             opt.value = L;
-            opt.innerHTML = L + ": "+lessons[course][L][1];
+            opt.innerHTML = L + ": "+lessons[course][L][0];
 
             document.getElementById("selectLesson").appendChild(opt);
         }
