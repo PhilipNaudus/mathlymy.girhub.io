@@ -71,7 +71,7 @@ function plotData(x_points, y_points) {
 }
 
 function addText(p, text) {
-	context.fillText(text, p[0]-5, p[1]);
+	context.fillText(text, p[0], p[1]);
 }
 
 function setAppend(num, append)
