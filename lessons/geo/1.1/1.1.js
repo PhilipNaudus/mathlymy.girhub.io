@@ -10,7 +10,7 @@ function setQuestion()
     {
         case 0:
         case 2:
-	    if(pickArr==0) pickArr = shuffle([["A", vars[0]], ["B", vars[1]], ["C", vars[2]], ["D", vars[3]]]);
+	    if(questionNum==0) pickArr = shuffle([["A", vars[0]], ["B", vars[1]], ["C", vars[2]], ["D", vars[3]]]);
 	    else pickArr = shuffle([["E", vars[4]], ["F", vars[5]], ["G", vars[6]], ["H", vars[7]]]);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line "+pickArr[0][0]+pickArr[1][0]+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
@@ -28,7 +28,7 @@ function setQuestion()
             break;
         case 1:
         case 3:
-	    if(pickArr==0) pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
+	    pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
 	    alert(pickArr);
             vars = getRandom(-4, 4, 8);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);

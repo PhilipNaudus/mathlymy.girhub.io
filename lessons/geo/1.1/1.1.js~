@@ -28,7 +28,7 @@ function setQuestion()
             break;
         case 1:
         case 3:
-	    if(pickArr==0) var pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
+	    if(pickArr==0) pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
 	    alert(pickArr);
             vars = getRandom(-4, 4, 8);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
