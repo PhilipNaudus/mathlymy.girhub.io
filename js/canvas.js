@@ -76,13 +76,13 @@ function plotData(x_points, y_points) {
 }
 
 function addText(p, text) {
-	context.fillStyle = "#0099ff"
-	context.font = "10pt Verdana"
+	//context.fillStyle = "#0099ff"
+	//context.font = "10pt Verdana"
 	yScale = (canvas.height - 50 - 10) / (y_max - y_min);
 	xScale = (canvas.width - 50) / (x_max - x_min);
 
 	var y = 50 + (yScale * p[1] * gy_step) + 5; 
-	context.fillText("Q", 10, y+10);
+	context.fillText(text, 10, y+10);
 }
 
 function setAppend(num, append)
