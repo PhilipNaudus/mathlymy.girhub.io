@@ -79,6 +79,8 @@ function plotData(x_points, y_points) {
 }
 
 function addText(p, text) {
+	context.fillStyle = "#0099ff"
+	context.font = "10pt Verdana"
 	yScale = (canvas.height - 50 - 10) / (y_max - y_min);
 	xScale = (canvas.width - 50) / (x_max - x_min);
 
