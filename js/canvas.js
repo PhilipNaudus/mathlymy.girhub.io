@@ -90,7 +90,7 @@ function addText(p, text) {
 	context.fillText("ZZZZZZZZZZZZZZZZ", 20, 85);
 
 	context.font="20px Georgia";
-	context.fillText("Hello World!",10,50);
+	context.fillText("Hello World!",1,5);
 }
 
 function setAppend(num, append)
