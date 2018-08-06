@@ -67,7 +67,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 }
 
 function plotData(x_points, y_points) {
-	context.translate(rowSize,canvas.height + y_min * yScale);
+	context.translate(50,canvas.height + y_min * yScale);
 	context.scale(1,-1 * yScale);
 	
 	context.beginPath();

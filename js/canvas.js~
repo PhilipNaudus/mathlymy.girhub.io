@@ -60,17 +60,16 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	}
 	context.stroke();
 	
-	//context.translate(rowSize,canvas.height + y_min * yScale);
-	//context.scale(1,-1 * yScale);
-	
-		// Color of each dataplot items
-		
+	// Color of each dataplot items
 	context.strokeStyle="#FF0066";
 	//plotData(x_points, y_points);
 	context.strokeStyle="#9933FF";
 }
 
 function plotData(x_points, y_points) {
+	context.translate(50,canvas.height + y_min * yScale);
+	context.scale(1,-1 * yScale);
+	
 	context.beginPath();
 	for (i=0;i<y_points.length;i++) {
 		context.lineTo((x_points[i]+5) * xScale, y_points[i]+.1);
