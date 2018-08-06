@@ -46,7 +46,7 @@ function setQuestion()
     }
 
     equations = [["<input type='number' class='mathinput' id='i0' />", [[ans]]],
-	        ["<input type='number' class='mathinput' id='i0' />", [[ans]]]];
+	        [["<input type='text' class='mathinput' id='i0' />", [[ans]]];
 }
 
 function step1(ifResetScrolling)
@@ -55,7 +55,7 @@ function step1(ifResetScrolling)
     currentStep = 1;
 
     document.getElementById("step").innerHTML = "";
-    document.getElementById("math").innerHTML = equations[questionNum][1];
+    document.getElementById("math").innerHTML = equations[questionNum][0];
 
     addInputEventListeners();
 
