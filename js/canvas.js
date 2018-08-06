@@ -7,6 +7,7 @@ var xScale;
 var yScale;
 var gy_step;
 var gx_step;
+vars trans = false;
 		// Values for the Data Plot, they can also be obtained from a external file
 var x_points =  [-1,4];
 var y_points =  [-2,5];
@@ -64,8 +65,12 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 }
 
 function plotData(x_points, y_points) {
-	context.translate(50,canvas.height + y_min * yScale);
-	context.scale(1,-1 * yScale);
+	if(!trans)
+	{
+		context.translate(50,canvas.height + y_min * yScale);
+		context.scale(1,-1 * yScale);
+		trans = true;
+	}
 	
 	context.beginPath();
 	for (i=0;i<y_points.length;i++) {
