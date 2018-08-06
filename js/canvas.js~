@@ -85,11 +85,7 @@ function addText(p, text) {
 	xScale = (canvas.width - 50) / (x_max - x_min);
 
 	var y = 50 + (yScale * p[1] * gy_step) + 5; 
-	alert("+++"+y);
-	context.fillText("QQQQQQQQQQQQQQQQ", 10, y+10);
-	context.fillText("ZZZZZZZZZZZZZZZZ", 20, 85);
-
-	context.fillText("Hello World!",1,5);
+	context.fillText("Q", 10, y+10);
 }
 
 function setAppend(num, append)
