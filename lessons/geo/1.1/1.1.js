@@ -29,7 +29,7 @@ function setQuestion()
         case 1:
         case 3:
 	    pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
-	    alert(pickArr);
+
             vars = getRandom(-4, 4, 8);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the points "+pickArr[0][0]+", "+pickArr[1][0]+", and "+pickArr[2][0]+" collinear?<br />Please enter yes or no.<canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
