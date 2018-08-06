@@ -256,7 +256,7 @@ function testSolution(i, ifFinal)
         {
             input.style.backgroundColor = "#00ff00";
             numCorrect++;
-        } else if(!ifFinal && (inValue == ans.substring(0,Math.min(inValue.length,ans.length))))
+        } else if(!ifFinal && (inValue == ans.toString().substring(0,Math.min(inValue.length,ans.length))))
         {
             input.style.backgroundColor = "";
             numCorrect += 0.5;
