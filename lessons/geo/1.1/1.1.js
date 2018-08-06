@@ -47,17 +47,6 @@ function setQuestion()
 
     equations = [["<input type='number' class='mathinput' id='i0' />", [[ans]]],
 	        ["<input type='number' class='mathinput' id='i0' />", [[ans]]]];
-
-    for(var i=0; i<equations.length; i++)
-    {
-        equations[i][2] = equations[i][2].map(function(j)
-                                              {
-                                                  return j.map(function(k)
-                                                  {
-                                                      return k.toString();
-                                                  })
-                                              });
-    }
 }
 
 function step1(ifResetScrolling)
