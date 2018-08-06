@@ -7,7 +7,7 @@ var xScale;
 var yScale;
 var gy_step;
 var gx_step;
-vars trans = false;
+var trans = false;
 		// Values for the Data Plot, they can also be obtained from a external file
 var x_points =  [-1,4];
 var y_points =  [-2,5];

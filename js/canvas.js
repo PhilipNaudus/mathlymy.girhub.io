@@ -89,7 +89,6 @@ function addText(p, text) {
 	var x = 50 + (xScale * (p[0]-x_min) * gx_step); 
 	var y = 50 + (yScale * (-p[1]-y_min) * gy_step) + 5; 
 	context.fillText(text, x-5, y+10);
-	alert(x+";"+y);
 }
 
 function setAppend(num, append)
