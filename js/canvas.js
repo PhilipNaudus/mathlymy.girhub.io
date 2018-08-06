@@ -47,6 +47,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 		// print row header and draw horizontal grid lines
 	var count =  0;
 	for (scale=y_max;scale>=y_min;scale = scale - y_step) {
+		yScale = (canvas.height - 50 - 10) / (y_max - y_min);
 		//var y = columnSize + (yScale * count * y_step) + 5; 
 		var y = columnSize + (yScale * 0 * y_step) + 5; 
 		context.fillText(setAppend(scale,append[1]), margin,y + margin);
