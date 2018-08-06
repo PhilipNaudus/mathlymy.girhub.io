@@ -52,6 +52,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 		context.fillText(setAppend(scale,append[1]), margin,y + margin);
 		context.fillText("X", 10,y + 10);
 		alert(margin+","+(y + margin));
+		context.fillText("Hello World!",1,5);
 
 		context.moveTo(rowSize,y)
 		context.lineTo(canvas.width,y)
@@ -89,7 +90,6 @@ function addText(p, text) {
 	context.fillText("QQQQQQQQQQQQQQQQ", 10, y+10);
 	context.fillText("ZZZZZZZZZZZZZZZZ", 20, 85);
 
-	context.font="20px Georgia";
 	context.fillText("Hello World!",1,5);
 }
 
