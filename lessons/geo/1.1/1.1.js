@@ -46,7 +46,7 @@ function setQuestion()
     }
 
     equations = [["<input type='number' class='mathinput' id='i0' />", [[ans]]],
-	        [["<input type='text' class='mathinput' id='i0' />", [[ans]]];
+	        ["<input type='text' class='mathinput' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
