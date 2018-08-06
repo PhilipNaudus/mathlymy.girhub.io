@@ -4,7 +4,7 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 function setQuestion()
 {
     var pickArr;
-    var vars = getRandom(-4, 4, 8);
+    var vars = getRandom(-4, 4, 8, 0);
     var ans;
     switch(questionNum)
     {
@@ -54,7 +54,7 @@ function setQuestion()
 function step1(ifResetScrolling)
 {
     endLoading();
-    currentStep = 1;
+    currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];

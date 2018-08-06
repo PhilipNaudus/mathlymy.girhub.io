@@ -54,7 +54,7 @@ function setQuestion()
 function step1(ifResetScrolling)
 {
     endLoading();
-    currentStep = 1;
+    currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
