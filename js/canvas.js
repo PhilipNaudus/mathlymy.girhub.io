@@ -50,7 +50,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 		var y = columnSize + (yScale * count * y_step) + 5; 
 		//var y = columnSize + (yScale * 0 * y_step) + 5; 
 		context.fillText(setAppend(scale,append[1]), margin,y + margin);
-		//context.fillText("X", margin,y + margin);
+		context.fillText("X", 10,y + 10);
 		alert(y);
 
 		context.moveTo(rowSize,y)
