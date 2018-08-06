@@ -47,8 +47,8 @@ function setQuestion()
             break;
     }
 
-    equations = [["<input type='number' class='mathinput' id='i0' />", [[ans]]],
-	        ["<input type='text' class='mathinput' id='i0' />", [[ans]]]];
+    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]],
+	        ["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
@@ -57,7 +57,7 @@ function step1(ifResetScrolling)
     currentStep = 1;
 
     document.getElementById("step").innerHTML = "";
-    document.getElementById("math").innerHTML = equations[equationNum][0];
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
 
