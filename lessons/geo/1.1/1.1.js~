@@ -13,7 +13,7 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
             addText([vars[0], vars[1]], "A");
-            addText([vars[2], vars[3]], "B");
+            //addText([vars[2], vars[3]], "B");
             break;
         case 1:
         case 3:
