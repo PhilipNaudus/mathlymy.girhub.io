@@ -16,7 +16,7 @@ function setQuestion()
             addText([vars[2],0], "C");
             addText([vars[3],0], "D");
             //plotData([-5, 5], [0, 0]);
-            plotData([0, 0], [-5, 5]);
+            plotData([0, 1], [-5, 5]);
             //addText([vars[2], vars[3]], "B");
             break;
         case 1:
