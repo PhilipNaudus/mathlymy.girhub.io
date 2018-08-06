@@ -1,17 +1,19 @@
-var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+//var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
 var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
+    var pickArr;
+    var vars = getRandom(-4, 4, 8);
+    var ans;
     switch(questionNum)
     {
         case 0:
-		var pickArr = shuffle(["A", "B", "C", "D"]);
         case 2:
-	    var pickArr = shuffle(["E", "F", "G", "H"]);
-            vars = getRandom(-4, 4, 8);
+	    if(pickArr==0) pickArr = shuffle([["A", vars[0]], ["B", vars[1]], ["C", vars[2]], ["D", vars[3]]]);
+	    else pickArr = shuffle([["E", vars[4]], ["F", vars[5]], ["G", vars[6]], ["H", vars[7]]]);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line "+pickArr[0]+pickArr[1]+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line "+pickArr[0][0]+pickArr[1][0]+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([vars[0],0], "A");
             addText([vars[1],0], "B");
@@ -21,77 +23,30 @@ function setQuestion()
             addText([0,vars[1]], "F");
             addText([0,vars[2]], "G");
             addText([0,vars[3]], "H");
-            //addText([vars[2], vars[3]], "B");
+	    ans = Math.abs(pickArr[0][1] - pickArr[1][1]);
             break;
         case 1:
         case 3:
-            vars = getRandom(0, 9, 4);
-            if(questionNum>1)
-            {
-                var rand;
-                var count = 0;
-                for(var i=0; i<2; i++)
-                {
-                    rand = Math.round(Math.random()*3);
-                    vars[rand] = -Math.abs(vars[rand]);
-                }
-            }
-
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the distance between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
+	    if(pickArr==0) var pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
+            vars = getRandom(-4, 4, 8);
+            var w = Math.min(window.innerWidth, window.innerHeight, 400);
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the points "+pickArr[0][0]+", "+pickArr[1][0]+", and "+pickArr[2][0]+" collinear?<br />Please enter yes or no.<canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
+            addText([vars[0],0], "A");
+            addText([vars[1],0], "B");
+            addText([vars[2],0], "C");
+            addText([vars[3],0], "D");
+            addText([0,vars[0]], "E");
+            addText([0,vars[1]], "F");
+            addText([0,vars[2]], "G");
+            addText([0,vars[3]], "H");
+	    if(pickArr[0][1] == pickArr[1][1] && pickArr[1][1] == pickArr[2][1]) ans = "yes";
+	    else ans = "no";
             break;
     }
 
-    var ans = Math.pow(vars[0]-vars[2],2)+Math.pow(vars[1]-vars[3],2);
-    equations = [["subtract.gif",
-                    "<div class='sqrt'><span class='overline'>"
-                        +"(<input type='number' class='mathinput' id='i0' />-<input type='number' class='mathinput' id='i1' />)"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i2' /></sup>"
-                            +"<sub></sub>"
-                        +"</span>"
-                        +"+(<input type='number' class='mathinput' id='i3' />-<input type='number' class='mathinput' id='i4' />)"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i5' /></sup>"
-                            +"<sub></sub>"
-                            +"</span>"
-                            +"</span>"
-                    +"</span></div>"
-                    +" =&nbsp;<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i6' /></span></div>",
-                    [[vars[0], vars[2], 2, vars[1], vars[3], 2, ans],
-                     [vars[2], vars[0], 2, vars[1], vars[3], 2, ans],
-                     [vars[0], vars[2], 2, vars[3], vars[1], 2, ans],
-                     [vars[2], vars[0], 2, vars[3], vars[1], 2, ans],
-                     [vars[1], vars[3], 2, vars[0], vars[2], 2, ans],
-                     [vars[1], vars[3], 2, vars[2], vars[0], 2, ans],
-                     [vars[3], vars[1], 2, vars[0], vars[2], 2, ans],
-                     [vars[3], vars[1], 2, vars[2], vars[0], 2, ans]]],
-                    ["delta.gif",
-                    "<div class='sqrt'><span class='overline'>"
-                        +"<input type='number' class='mathinput' id='i0' />"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i1' /></sup>"
-                            +"<sub></sub>"
-                        +"</span>"
-                        +"+<input type='number' class='mathinput' id='i2' />"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i3' /></sup>"
-                            +"<sub></sub>"
-                        +"</span>"
-                    +"</span></div>"
-                    +" =&nbsp;<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i4' /></span></div>",
-                    [[Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
-                     [-Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
-                     [Math.abs(vars[0]-vars[2]), 2, -Math.abs(vars[1]-vars[3]), 2, ans],
-                     [-Math.abs(vars[0]-vars[2]), 2, -Math.abs(vars[1]-vars[3]), 2, ans],
-                     [Math.abs(vars[1]-vars[3]), 2, Math.abs(vars[0]-vars[2]), 2, ans],
-                     [-Math.abs(vars[1]-vars[3]), 2, Math.abs(vars[0]-vars[2]), 2, ans],
-                     [Math.abs(vars[1]-vars[3]), 2, -Math.abs(vars[0]-vars[2]), 2, ans],
-                     [-Math.abs(vars[1]-vars[3]), 2, -Math.abs(vars[0]-vars[2]), 2, ans]]],
-                    ["onestep.gif",
-                    "<span class='sqrt'>"
-                        +"<input type='number' class='mathinput' id='i0' />"
-                    +"</span>",
-                    [[ans]]]];
+    equations = [["<input type='number' class='mathinput' id='i0' />", [[ans]]],
+	        ["<input type='number' class='mathinput' id='i0' />", [[ans]]]];
 
     for(var i=0; i<equations.length; i++)
     {
@@ -110,42 +65,8 @@ function step1(ifResetScrolling)
     endLoading();
     currentStep = 1;
 
-    if(practice)
-    {
-        document.getElementById("step").innerHTML = steps[0];
-        var displayEquations = "<div class='row'>";
-        for(var i=0; i<equations.length; i++)
-        {
-            displayEquations+="<div class='column'><a href='javascript:step2("+i+", false)'><img src='lessons/"+course+"/"+lessonId+"/"+equations[i][0]+"' /></a></div>"
-        }
-        displayEquations += "</div>";
-        document.getElementById("math").innerHTML = displayEquations;
-    } else
-    {
-        step2(equations.length-1, false);
-    }
-
-    if(ifResetScrolling) window.scrollTo(0, 0);
-    enableDisableButtons();
-}
-
-function step2(eqNum, ifResetScrolling)
-{
-    currentStep = 2;
-
-    switch(practice)
-    {
-        case true:
-            equationNum = eqNum;
-            document.getElementById("step").innerHTML = steps[1];
-            document.getElementById("math").innerHTML = equations[equationNum][1];
-            break;
-        case false:
-            equationNum = equations.length-1;
-            document.getElementById("step").innerHTML = "";
-            document.getElementById("math").innerHTML = equations[equations.length-1][1];
-            break;
-    }
+    document.getElementById("step").innerHTML = "";
+    document.getElementById("math").innerHTML = equations[questionNum][1];
 
     addInputEventListeners();
 
