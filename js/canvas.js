@@ -82,7 +82,7 @@ function addText(p, text) {
 
 	var y = 50 + (yScale * p[1] * gy_step) + 5; 
 	alert("+++"+y);
-	context.fillText(text, 10, y+10);
+	context.fillText(text, 30, y+10);
 }
 
 function setAppend(num, append)
