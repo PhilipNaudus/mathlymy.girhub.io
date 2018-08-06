@@ -12,12 +12,11 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line AC?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([vars[0],vars[1]], "A");
-            //addText([vars[1],0], "B");
-            //addText([vars[2],0], "C");
-            //addText([vars[3],0], "D");
+            addText([vars[1],0], "B");
+            addText([vars[2],0], "C");
+            addText([vars[3],0], "D");
 	    alert(vars);
-            plotData([vars[0], vars[2]], [vars[1], vars[3]]);
-            //plotData([-5, 5], [0, 0]);
+            plotData([-5, 5], [0, 0]);
             //addText([vars[2], vars[3]], "B");
             break;
         case 1:
