@@ -75,7 +75,7 @@ function addText(p, text) {
 	xScale = (canvas.width - rowSize) / (x_max - x_min);
 
 	var y = columnSize + (yScale * p[1] * y_step) + 5; 
-	context.fillText(text, 10, y);
+	context.fillText(text, 10, y+10);
 }
 
 function setAppend(num, append)

@@ -71,8 +71,8 @@ function plotData(x_points, y_points) {
 }
 
 function addText(p, text) {
-	yScale = (canvas.height - columnSize - 10) / (y_max - y_min);
-	xScale = (canvas.width - rowSize) / (x_max - x_min);
+	yScale = (canvas.height - 50 - 10) / (y_max - y_min);
+	xScale = (canvas.width - 50) / (x_max - x_min);
 
 	var y = columnSize + (yScale * p[1] * y_step) + 5; 
 	context.fillText(text, 10, y+10);
