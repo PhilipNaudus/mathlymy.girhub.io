@@ -88,6 +88,9 @@ function addText(p, text) {
 	alert("+++"+y);
 	context.fillText("QQQQQQQQQQQQQQQQ", 10, y+10);
 	context.fillText("ZZZZZZZZZZZZZZZZ", 20, 85);
+
+	context.font="20px Georgia";
+	context.fillText("Hello World!",10,50);
 }
 
 function setAppend(num, append)
