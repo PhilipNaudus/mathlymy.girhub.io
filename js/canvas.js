@@ -5,6 +5,8 @@ var y_min;
 var sections;
 var xScale;
 var yScale;
+var gy_step;
+var gx_step;
 		// Values for the Data Plot, they can also be obtained from a external file
 var x_points =  [-1,4];
 var y_points =  [-2,5];
@@ -16,6 +18,8 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 
 	y_min = yArr[0];
 	y_max = yArr[1];
+	gy_step = y_step;
+	gx_step = x_step;
 	var margin = 10;
 
 	var columnSize = 50;
