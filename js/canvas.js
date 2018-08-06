@@ -71,7 +71,11 @@ function plotData(x_points, y_points) {
 }
 
 function addText(p, text) {
-	context.fillText(text, p[0], p[1]);
+	yScale = (canvas.height - columnSize - 10) / (y_max - y_min);
+	xScale = (canvas.width - rowSize) / (x_max - x_min);
+
+	var y = columnSize + (yScale * p[1] * y_step) + 5; 
+	context.fillText(text, 10, p[1]);
 }
 
 function setAppend(num, append)
