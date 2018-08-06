@@ -6,10 +6,10 @@ function setQuestion()
     switch(questionNum)
     {
         case 0:
-		var pickArr = shuffle(["A", "B", "C", "D"]);
         case 2:
-	    var pickArr = shuffle(["E", "F", "G", "H"]);
-            vars = getRandom(-5, 5, 8);
+	    if(pickArr==0) var pickArr = shuffle(["A", "B", "C", "D"]);
+	    else var pickArr = shuffle(["E", "F", "G", "H"]);
+            vars = getRandom(-4, 4, 8);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line "+pickArr[0]+pickArr[1]+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
