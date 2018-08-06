@@ -1,4 +1,5 @@
 var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
@@ -11,6 +12,8 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
+            addText([vars[0], vars[2]], "A");
+            addText([vars[1], vars[3]], "B");
             break;
         case 1:
         case 3:
