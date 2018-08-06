@@ -60,8 +60,8 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	}
 	context.stroke();
 	
-	context.translate(rowSize,canvas.height + y_min * yScale);
-	context.scale(1,-1 * yScale);
+	//context.translate(rowSize,canvas.height + y_min * yScale);
+	//context.scale(1,-1 * yScale);
 	
 		// Color of each dataplot items
 		
