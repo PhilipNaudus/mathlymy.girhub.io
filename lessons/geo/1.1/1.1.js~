@@ -57,7 +57,7 @@ function step1(ifResetScrolling)
     currentStep = 1;
 
     document.getElementById("step").innerHTML = "";
-    document.getElementById("math").innerHTML = equations[equationNum][0];
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
 

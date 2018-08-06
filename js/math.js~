@@ -313,7 +313,7 @@ function indexOfMax(arr) {
     return maxIndex;
 }
 
-function getRandom(min, max, n)
+function getRandom(min, max, n, ommit)
 {
     var rand;
     var vars = new Array();
@@ -322,7 +322,7 @@ function getRandom(min, max, n)
         do
         {
             rand = Math.round(Math.random()*(max-min)+min);
-        } while(i>0 && vars.indexOf(rand) > -1);
+        } while((i>0 && vars.indexOf(rand) > -1) || rand==ommit);
         vars[i] = rand;
     }
 
