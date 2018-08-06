@@ -49,6 +49,8 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	for (scale=y_max;scale>=y_min;scale = scale - y_step) {
 		var y = columnSize + (yScale * count * y_step) + 5; 
 		context.fillText(setAppend(scale,append[1]), margin,y + margin);
+		alert(y);
+
 		context.moveTo(rowSize,y)
 		context.lineTo(canvas.width,y)
 		count++;
@@ -79,6 +81,7 @@ function addText(p, text) {
 	xScale = (canvas.width - 50) / (x_max - x_min);
 
 	var y = 50 + (yScale * (p[1]+2) * gy_step) + 5; 
+	alert("+++"+y);
 	context.fillText(text, 10, y+10);
 }
 
