@@ -252,11 +252,11 @@ function testSolution(i, ifFinal)
         inValue = inValue;
 
         ans = equations[equationNum][2][i][j]
-        if(inValue==ans)
+        if(inValue.toLowerCase()==ans)
         {
             input.style.backgroundColor = "#00ff00";
             numCorrect++;
-        } else if(!ifFinal && (inValue == ans.toString().substring(0,Math.min(inValue.length,ans.length))))
+        } else if(!ifFinal && (inValue.toLowerCase() == ans.toString().substring(0,Math.min(inValue.length,ans.length))))
         {
             input.style.backgroundColor = "";
             numCorrect += 0.5;
