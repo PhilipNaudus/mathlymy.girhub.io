@@ -82,7 +82,7 @@ function addText(p, text) {
 	xScale = (canvas.width - 50) / (x_max - x_min);
 
 	var x = 50 + (xScale * (p[0]+5) * gx_step); 
-	var y = 50 + (yScale * (p[1]+5) * gy_step) + 5; 
+	var y = 50 + (yScale * (-p[1]+5) * gy_step) + 5; 
 	context.fillText(text, x-5, y+10);
 }
 
