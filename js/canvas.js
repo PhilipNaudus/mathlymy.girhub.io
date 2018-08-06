@@ -50,7 +50,7 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 		var y = columnSize + (yScale * count * y_step) + 5; 
 		//var y = columnSize + (yScale * 0 * y_step) + 5; 
 		context.fillText(setAppend(scale,append[1]), margin,y + margin);
-		context.fillText("X", margin,y + margin);
+		//context.fillText("X", margin,y + margin);
 		alert(y);
 
 		context.moveTo(rowSize,y)
@@ -84,7 +84,7 @@ function addText(p, text) {
 
 	var y = 50 + (yScale * p[1] * gy_step) + 5; 
 	alert("+++"+y);
-	context.fillText(text, 10, y+10);
+	context.fillText("Q", 10, y+10);
 }
 
 function setAppend(num, append)
