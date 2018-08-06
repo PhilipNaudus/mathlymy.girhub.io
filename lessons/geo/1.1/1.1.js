@@ -19,10 +19,10 @@ function setQuestion()
             addText([vars[1],0], "B");
             addText([vars[2],0], "C");
             addText([vars[3],0], "D");
-            addText([0,vars[0]], "E");
-            addText([0,vars[1]], "F");
-            addText([0,vars[2]], "G");
-            addText([0,vars[3]], "H");
+            addText([0,vars[4]], "E");
+            addText([0,vars[5]], "F");
+            addText([0,vars[6]], "G");
+            addText([0,vars[7]], "H");
 	    ans = Math.abs(pickArr[0][1] - pickArr[1][1]);
 	    equationNum = 0
             break;
