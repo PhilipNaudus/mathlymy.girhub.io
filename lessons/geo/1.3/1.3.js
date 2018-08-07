@@ -118,7 +118,7 @@ function setQuestion()
 	    //alert(i+";"+equations[i][0]+"..."+equations[i][1]+"..."+equations[i][2]+"...");
         equations[i][2] = equations[i][2].map(function(j)
                                               {
-					      alert(j);
+					      alert(i+"..."+j);
                                                   return j.map(function(k)
                                                   {
                                                       return k.toString();
