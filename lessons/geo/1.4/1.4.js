@@ -31,6 +31,7 @@ function setQuestion()
     addText([-1.5,-0.5], "c");
     plotData([-5,5], [0,0]);
     plotData([-4,3], [-5,5]);
+    equationNum = 0;
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
 }
@@ -41,7 +42,7 @@ function step1(ifResetScrolling)
     currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
-    document.getElementById("math").innerHTML = equations[0][1];
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
 
