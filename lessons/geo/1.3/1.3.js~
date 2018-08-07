@@ -93,7 +93,7 @@ function setQuestion()
 			+"</span>"
                     +"<span style='font-size:300%'>)</span>",
                     [[vars[0], vars[2], vars[1], vars[3]],
-                     [vars[2], vars[0], vars[3], vars[1]]]];
+                     [vars[2], vars[0], vars[3], vars[1]]]]];
 
     for(var i=0; i<equations.length; i++)
     {
