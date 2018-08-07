@@ -21,7 +21,7 @@ function setQuestion()
         case 1:
         case 3:
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Plot A(-4,"+vars[1]+"), B("+vars[0]+","+vars[1]+"), C("vars[1]",-4), and D("+vars[1]+","(vars[0]-ifCon)") in a coordinate plane. Then determine whether AB and CD are congruent.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            document.getElementById("question").innerHTML = "Plot A(-4,"+vars[1]+"), B("+vars[0]+","+vars[1]+"), C("+vars[1]+",-4), and D("+vars[1]+","(vars[0]-ifCon)") in a coordinate plane. Then determine whether AB and CD are congruent.";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    plotData([-4,vars[0]], [vars[1],vars[1]]);
 	    plotData([vars[1]+0.1,vars[1]+0.1], [-4,vars[0]-ifCon]);
