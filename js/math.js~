@@ -251,8 +251,8 @@ function testSolution(i, ifFinal)
 
         inValue = inValue;
 
-	alert(ans.toString().substring(0,Math.min(inValue.length,ans.length)));
         ans = equations[equationNum][2][i][j]
+	alert(ans.toString().substring(0,Math.min(inValue.length,ans.length)));
         if(inValue.toLowerCase()==ans)
         {
             input.style.backgroundColor = "#00ff00";
