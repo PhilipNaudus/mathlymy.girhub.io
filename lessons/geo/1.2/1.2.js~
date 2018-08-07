@@ -15,7 +15,7 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the below lines congruent?<br />Please enter yes or no.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    plotData([-4,vars[0]], [vars[1],vars[1]]);
-	    plotData([vars[1]+0.1,vars[1]+0.1], [-4,vars[0]-ifCon]);
+	    plotData([vars[2]+0.1,vars[2]+0.1], [-4,vars[0]-ifCon]);
 	    equationNum = 0;
 	    alert(vars);
             break;

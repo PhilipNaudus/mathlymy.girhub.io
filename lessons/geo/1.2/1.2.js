@@ -17,7 +17,6 @@ function setQuestion()
 	    plotData([-4,vars[0]], [vars[1],vars[1]]);
 	    plotData([vars[2]+0.1,vars[2]+0.1], [-4,vars[0]-ifCon]);
 	    equationNum = 0;
-	    alert(vars);
             break;
         case 1:
         case 3:
