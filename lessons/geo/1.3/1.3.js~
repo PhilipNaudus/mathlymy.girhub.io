@@ -156,6 +156,7 @@ function step1(ifResetScrolling)
 
 function step2(eqNum, ifResetScrolling)
 {
+	alert(eqNum);
     if(practice && eqNum!=correctEq)
     {
         swal("Wrong equation", "Please try again", "error");

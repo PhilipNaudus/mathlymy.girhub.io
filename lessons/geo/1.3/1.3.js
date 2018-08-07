@@ -163,16 +163,15 @@ function step2(eqNum, ifResetScrolling)
 	return;
     }
     currentStep = 2;
+    equationNum = eqNum;
 
     switch(practice)
     {
         case true:
-            equationNum = eqNum;
             document.getElementById("step").innerHTML = steps[1];
             document.getElementById("math").innerHTML = equations[equationNum][1];
             break;
         case false:
-            equationNum = equations.length-1;
             document.getElementById("step").innerHTML = "";
             document.getElementById("math").innerHTML = equations[equations.length-1][1];
             break;
