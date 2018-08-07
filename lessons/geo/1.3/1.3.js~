@@ -101,7 +101,7 @@ function setQuestion()
                     [[vars[0], vars[2], 2, vars[1], vars[3], 2],
                      [vars[2], vars[0], 2, vars[3], vars[1], 2]]],
 		     ["onestep.gif",
-		     "input type='number' class='mathinput' id='i0' />",
+		     "<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i0' /></span></div>",
 		     [[ans]]],
 		    ["added.gif",
                     "<span style='font-size:300%'>(</span>"
@@ -167,13 +167,12 @@ function step2(eqNum, ifResetScrolling)
     {
         case true:
             document.getElementById("step").innerHTML = steps[1];
-            document.getElementById("math").innerHTML = equations[equationNum][1];
             break;
         case false:
             document.getElementById("step").innerHTML = "";
-            document.getElementById("math").innerHTML = equations[equations.length-1][1];
             break;
     }
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
 

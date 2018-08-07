@@ -101,7 +101,7 @@ function setQuestion()
                     [[vars[0], vars[2], 2, vars[1], vars[3], 2],
                      [vars[2], vars[0], 2, vars[3], vars[1], 2]]],
 		     ["onestep.gif",
-		     "input type='number' class='mathinput' id='i0' />",
+		     "<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i0' /></span></div>",
 		     [[ans]]],
 		    ["added.gif",
                     "<span style='font-size:300%'>(</span>"
