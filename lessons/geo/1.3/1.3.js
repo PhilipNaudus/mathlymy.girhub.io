@@ -15,6 +15,7 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
 	    correctEq = 0;
+	    quizEq = 2;
             break;
         case 1:
             vars = getRandom(0, 9, 4);
@@ -31,6 +32,7 @@ function setQuestion()
 
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the distance between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
 	    correctEq = 0;
+	    quizEq = 2;
             break;
 	    //TODO////////
         case 2:
@@ -40,6 +42,7 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
 	    correctEq = 1;
+	    quizEq = 3;
             break;
         case 3:
             vars = getRandom(0, 9, 4);
@@ -56,6 +59,7 @@ function setQuestion()
 
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the midpoint between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
 	    correctEq = 1;
+	    quizEq = 3;
             break;
     }
 
