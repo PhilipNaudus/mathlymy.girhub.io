@@ -3,6 +3,7 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
+    var correctEqn;
     switch(questionNum)
     {
         case 0:
@@ -11,6 +12,7 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
+	    correctEqn = 0;
             break;
         case 1:
             vars = getRandom(0, 9, 4);
@@ -26,6 +28,7 @@ function setQuestion()
             }
 
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the distance between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
+	    correctEqn = 0;
             break;
 	    //TODO////////
         case 2:
@@ -34,6 +37,7 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the midpoint of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
+	    correctEqn = 1;
             break;
         case 3:
             vars = getRandom(0, 9, 4);
@@ -49,6 +53,7 @@ function setQuestion()
             }
 
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the midpoint between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
+	    correctEqn = 1;
             break;
     }
 
@@ -77,30 +82,18 @@ function setQuestion()
                      [vars[3], vars[1], 2, vars[0], vars[2], 2, ans],
                      [vars[3], vars[1], 2, vars[2], vars[0], 2, ans]]],
                     ["midpoint.gif",
-                    "("
+                    "<span style='font-size:300%'>(</span>"
 			+"<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' />+<input type='number' class='mathinput' id='i1' /></span>"
-			  +"<span class='fracbot'>2</span>"
+			  +"<span class='fracbot'><input type='number' class='mathinput' id='i2' /></span>"
 			+"</span>,"
 			+"<span class='fraction'>"
-                          +"<span class='fractop'><input type='number' class='mathinput' id='i2' />+<input type='number' class='mathinput' id='i3' /></span>"
-			  +"<span class='fracbot'>2</span>"
+                          +"<span class='fractop'><input type='number' class='mathinput' id='i3' />+<input type='number' class='mathinput' id='i4' /></span>"
+			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>"
 			+"</span>"
-                    +")"
-                    +" =&nbsp;<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i4' /></span></div>",
-                    [[Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
-                     [-Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
-                     [Math.abs(vars[0]-vars[2]), 2, -Math.abs(vars[1]-vars[3]), 2, ans],
-                     [-Math.abs(vars[0]-vars[2]), 2, -Math.abs(vars[1]-vars[3]), 2, ans],
-                     [Math.abs(vars[1]-vars[3]), 2, Math.abs(vars[0]-vars[2]), 2, ans],
-                     [-Math.abs(vars[1]-vars[3]), 2, Math.abs(vars[0]-vars[2]), 2, ans],
-                     [Math.abs(vars[1]-vars[3]), 2, -Math.abs(vars[0]-vars[2]), 2, ans],
-                     [-Math.abs(vars[1]-vars[3]), 2, -Math.abs(vars[0]-vars[2]), 2, ans]]],
-                    ["onestep.gif",
-                    "<span class='sqrt'>"
-                        +"<input type='number' class='mathinput' id='i0' />"
-                    +"</span>",
-                    [[ans]]]];
+                    +"<span style='font-size:300%'>)</span>",
+                    [[vars[0], vars[2], vars[1], vars[3]],
+                     [vars[2], vars[0], vars[3], vars[1]]]];
 
     for(var i=0; i<equations.length; i++)
     {
