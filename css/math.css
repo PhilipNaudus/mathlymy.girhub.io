@@ -73,7 +73,7 @@ sup input, sub input {
     border-top: thin solid black;
 }
 
-/* Hode spinners on number input fields */
+/* Hide spinners on number input fields */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
