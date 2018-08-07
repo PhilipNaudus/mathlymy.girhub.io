@@ -30,9 +30,9 @@ function setQuestion()
     addText([0.5,0.5], pickArr[0]);
     addText([0,-0.5], pickArr[1]);
     addText([-1.5,-0.5], pickArr[2]);
-    plotData([-5,5], [0,0]);
-    plotData([0,5], [3,5]);
-    plotData([0,-5], [3,0]);
+    plotData([-5,5], [0.1,0]);
+    plotData([0.1,3], [0,5]);
+    plotData([0.1,0.1], [0,-5]);
     equationNum = 0;
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
