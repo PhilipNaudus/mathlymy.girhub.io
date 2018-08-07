@@ -6,6 +6,7 @@ function setQuestion()
     var pickArr;
     var vars = getRandom(-4, 4, 8, 0);
     var ans;
+    vars = getRandom(91, 150, 1);
     switch(questionNum)
     {
         case 0:
@@ -15,6 +16,10 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    plotData([-5,5], [0,0]);
 	    plotData([-4,3], [-5,5]);
+	    addText([-1,0.5], vars[0]);
+	    addText([0.5,0.5], a);
+	    addText([-0.5,0.5], b);
+	    addText([-0.5,-0.5], c);
 	    equationNum = 0
             break;
         case 1:
