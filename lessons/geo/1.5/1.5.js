@@ -3,7 +3,7 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
-    var pickArr;
+    var pickArr = shuffle("a", "b", "c");
     var vars = getRandom(-4, 4, 8, 0);
     var ans;
     vars = getRandom(91, 150, 1);
@@ -27,11 +27,12 @@ function setQuestion()
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle "+ang+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([-1,0.5], vars[0]);
-    addText([0.5,0.5], "a");
-    addText([0,-0.5], "b");
-    addText([-1.5,-0.5], "c");
+    addText([0.5,0.5], pickArr[0]);
+    addText([0,-0.5], pickArr[1]);
+    addText([-1.5,-0.5], pickArr[2]);
     plotData([-5,5], [0,0]);
-    plotData([-4,3], [-5,5]);
+    plotData([0,5], [3,5]);
+    plotData([0,-5], [3,0]);
     equationNum = 0;
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
