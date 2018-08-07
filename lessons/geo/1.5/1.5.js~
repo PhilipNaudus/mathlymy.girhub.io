@@ -40,7 +40,7 @@ function setQuestion()
     plotData([0.1,0.1], [0,-5]);
     equationNum = 0;
 
-    equations = [["", "<input type='number' class='mathinput' id='i0' />"+" and <input type='number' class='mathinput' id='i1' />", ans]];
+    equations = [["", "<input type='number' class='mathinput' id='i0' />"+questionNum==0?" and <input type='number' class='mathinput' id='i1' />":"", ans]];
 }
 
 function step1(ifResetScrolling)

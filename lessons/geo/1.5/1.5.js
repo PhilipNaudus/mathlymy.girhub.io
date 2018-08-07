@@ -28,7 +28,7 @@ function setQuestion()
             break;
     }
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle "+ang+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([-0.5,0.5], pickArr[0]);
     addText([0.5,0.5], pickArr[1]);
