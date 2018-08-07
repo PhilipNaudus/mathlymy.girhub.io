@@ -25,13 +25,12 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    plotData([-4,vars[0]], [vars[1],vars[1]]);
 	    plotData([vars[1]+0.1,vars[1]+0.1], [-4,vars[0]-ifCon]);
-	    equationNum = 1;
+	    equationNum = 0;
             break;
     }
     ans = (ifCon==0)?"yes":"no";
 
-    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]],
-	        ["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
+    equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
