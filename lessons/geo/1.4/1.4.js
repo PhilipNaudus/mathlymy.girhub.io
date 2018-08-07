@@ -13,7 +13,7 @@ function setQuestion()
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle a?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-	    plotData([0.1,0.1], [-5,5]);
+	    plotData([-5,5], [0,0]);
 	    plotData([-4,3], [-5,5]);
 	    equationNum = 0
             break;
