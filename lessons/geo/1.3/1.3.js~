@@ -1,9 +1,11 @@
 var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
 var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
+var correctEq;
+var quizEq;
+var numEqs = 2;
 
 function setQuestion()
 {
-    var correctEq;
     switch(questionNum)
     {
         case 0:
@@ -92,8 +94,24 @@ function setQuestion()
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>"
 			+"</span>"
                     +"<span style='font-size:300%'>)</span>",
-                    [[vars[0], vars[2], vars[1], vars[3]],
-                     [vars[2], vars[0], vars[3], vars[1]]]]];
+                    [[vars[0], vars[2], 2, vars[1], vars[3], 2],
+                     [vars[2], vars[0], 2, vars[3], vars[1], 2]]],
+		     ["onestep.gif",
+		     "input type='number' class='mathinput' id='i0' />",
+		     [[ans]]],
+		    ["added.gif",
+                    "<span style='font-size:300%'>(</span>"
+			+"<span class='fraction'>"
+                          +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
+			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"
+			+"</span>,"
+			+"<span class='fraction'>"
+                          +"<span class='fractop'><input type='number' class='mathinput' id='i2' /></span>"
+			  +"<span class='fracbot'><input type='number' class='mathinput' id='i3' /></span>"
+			+"</span>"
+                    +"<span style='font-size:300%'>)</span>",
+                    [[vars[0]+vars[2], 2, vars[1]+vars[3], 2]]
+                     [vars[2]+vars[0], 2, vars[3]+vars[1], 2]]];
 
     for(var i=0; i<equations.length; i++)
     {
@@ -116,7 +134,7 @@ function step1(ifResetScrolling)
     {
         document.getElementById("step").innerHTML = steps[0];
         var displayEquations = "<div class='row'>";
-        for(var i=0; i<equations.length; i++)
+        for(var i=0; i<numEqs; i++)
         {
             displayEquations+="<div class='column'><a href='javascript:step2("+i+", false)'><img src='lessons/"+course+"/"+lessonId+"/"+equations[i][0]+"' /></a></div>"
         }
@@ -124,7 +142,7 @@ function step1(ifResetScrolling)
         document.getElementById("math").innerHTML = displayEquations;
     } else
     {
-        step2(equations.length-1, false);
+        step2(quizEq, false);
     }
 
     if(ifResetScrolling) window.scrollTo(0, 0);
@@ -133,7 +151,7 @@ function step1(ifResetScrolling)
 
 function step2(eqNum, ifResetScrolling)
 {
-    if(eqNum!=correctEq)
+    if(practice && eqNum!=correctEq)
     {
         swal("Wrong equation", "Please try again", "error");
     }
