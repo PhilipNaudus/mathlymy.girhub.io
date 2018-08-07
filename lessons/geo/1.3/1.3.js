@@ -85,7 +85,7 @@ function setQuestion()
 			+"<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i2' />+<input type='number' class='mathinput' id='i3' /></span>"
 			  +"<span class='fracbot'>2</span>"
-			+"</span>
+			+"</span>"
                     +")"
                     +" =&nbsp;<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i4' /></span></div>",
                     [[Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
