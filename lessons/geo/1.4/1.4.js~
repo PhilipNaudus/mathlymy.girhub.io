@@ -7,42 +7,31 @@ function setQuestion()
     var vars = getRandom(-4, 4, 8, 0);
     var ans;
     vars = getRandom(91, 150, 1);
+    var ang;
     switch(questionNum)
     {
         case 0:
-        case 2:
-            var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle a?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-	    addText([-1,0.5], vars[0]);
-	    addText([0.5,0.5], "a");
-	    addText([0.5,-0.5], "b");
-	    addText([-1.5,-0.5], "c");
-	    plotData([-5,5], [0,0]);
-	    plotData([-4,3], [-5,5]);
-	    equationNum = 0
-            break;
+	    ang = "a";
+	    ans = 180-vars[0];
         case 1:
-        case 3:
-	    pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
-
-            vars = getRandom(-4, 4, 8);
-            var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the points "+pickArr[0][0]+", "+pickArr[1][0]+", and "+pickArr[2][0]+" collinear?<br />Please enter yes or no.<canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([vars[0],0], "A");
-            addText([vars[1],0], "B");
-            addText([vars[2],0], "C");
-            addText([vars[3],0], "D");
-            addText([0,vars[0]], "E");
-            addText([0,vars[1]], "F");
-            addText([0,vars[2]], "G");
-            addText([0,vars[3]], "H");
-	    if(pickArr[0][1] == pickArr[1][1] && pickArr[1][1] == pickArr[2][1]) ans = "yes";
-	    else ans = "no";
-	    equationNum = 1;
+	    ang = "b";
+	    ans = vars[0];
+            break;
+        case 2:
+	    ang = "c";
+	    ans = 180-vars[0];
             break;
     }
+    var w = Math.min(window.innerWidth, window.innerHeight, 400);
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle "+ang+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
+    addText([-1,0.5], vars[0]);
+    addText([0.5,0.5], "a");
+    addText([0,-0.5], "b");
+    addText([-1.5,-0.5], "c");
+    plotData([-5,5], [0,0]);
+    plotData([-4,3], [-5,5]);
+
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]],
 	        ["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
@@ -92,4 +81,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 4;
+var numQuestions = 3;
