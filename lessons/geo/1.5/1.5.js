@@ -26,7 +26,7 @@ function setQuestion()
     addText([-0.5,0.5], pickArr[0]);
     addText([0.5,0.5], pickArr[1]);
     addText([0.5,-0.5], pickArr[2]);
-    addText([0,-1], pickArr[3]);
+    addText([-0.2,-1], pickArr[3]);
     addText([-0.5,-0.3], pickArr[4]);
     plotData([-5,5], [0.1,0]);
     plotData([-2.9,3.1], [-5,5]);
