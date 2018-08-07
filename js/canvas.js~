@@ -76,7 +76,7 @@ function plotData(x_points, y_points) {
 	for (i=0;i<y_points.length;i++) {
 		context.lineTo((x_points[i]+5) * xScale, y_points[i]+.1);
 	}
-    context.lineWidth=.1;
+    context.lineWidth=.5;
 	context.stroke();
 }
 

@@ -62,6 +62,8 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	context.strokeStyle="#FF0066";
 	//plotData(x_points, y_points);
 	context.strokeStyle="#9933FF";
+
+	trans = false;
 }
 
 function plotData(x_points, y_points) {
@@ -76,7 +78,7 @@ function plotData(x_points, y_points) {
 	for (i=0;i<y_points.length;i++) {
 		context.lineTo((x_points[i]+5) * xScale, y_points[i]+.1);
 	}
-    context.lineWidth=.5;
+    context.lineWidth=.1;
 	context.stroke();
 }
 
