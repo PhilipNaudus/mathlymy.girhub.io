@@ -105,18 +105,8 @@ function setQuestion()
 		     "<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i0' /></span></div>",
 		     [[ans]]],
 		    ["added.gif",
-                    "<span style='font-size:300%'>(</span>"
-			+"<span class='fraction'>"
-                          +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
-			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"
-			+"</span>,"
-			+"<span class='fraction'>"
-                          +"<span class='fractop'><input type='number' class='mathinput' id='i2' /></span>"
-			  +"<span class='fracbot'><input type='number' class='mathinput' id='i3' /></span>"
-			+"</span>"
-                    +"<span style='font-size:300%'>)</span>",
-                    [[vars[0]+vars[2], 2, vars[1]+vars[3], 2],
-                     [vars[2]+vars[0], 2, vars[3]+vars[1], 2]]]];
+                    "(<input type='number' class='mathinput' id='i0' />, <input type='number' class='mathinput' id='i1' />)",
+                    [[(vars[0]+vars[2])/2, (vars[1]+vars[3])/2]]]];
 
     for(var i=0; i<equations.length; i++)
     {
