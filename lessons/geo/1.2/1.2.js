@@ -11,36 +11,24 @@ function setQuestion()
     {
         case 0:
         case 2:
-	    if(questionNum==0) pickArr = shuffle([["A", vars[0]], ["B", vars[1]], ["C", vars[2]], ["D", vars[3]]]);
-	    else pickArr = shuffle([["E", vars[4]], ["F", vars[5]], ["G", vars[6]], ["H", vars[7]]]);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the below lines congruent?<br />Please enter yes or no.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    plotData([-4,vars[0]], [vars[1],vars[1]]);
 	    plotData([vars[1]+0.1,vars[1]+0.1], [-4,vars[0]-ifCon]);
-	    ans = Math.abs(pickArr[0][1] - pickArr[1][1]);
 	    equationNum = 0
             break;
         case 1:
         case 3:
-	    pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
-            vars = getRandom(-4, 4, 8);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the points "+pickArr[0][0]+", "+pickArr[1][0]+", and "+pickArr[2][0]+" collinear?<br />Please enter yes or no.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            document.getElementById("question").innerHTML = "Plot A(-4,"+vars[1]+"), B("+vars[0]+","+vars[1]+"), C("vars[1]",-4), and D("+vars[1]+","(vars[0]-ifCon)") in a coordinate plane. Then determine whether AB and CD are congruent.";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([vars[0],0], "A");
-            addText([vars[1],0], "B");
-            addText([vars[2],0], "C");
-            addText([vars[3],0], "D");
-            addText([0,vars[0]], "E");
-            addText([0,vars[1]], "F");
-            addText([0,vars[2]], "G");
-            addText([0,vars[3]], "H");
-	    if(pickArr[0][1] == pickArr[1][1] && pickArr[1][1] == pickArr[2][1]) ans = "yes";
-	    else ans = "no";
+	    plotData([-4,vars[0]], [vars[1],vars[1]]);
+	    plotData([vars[1]+0.1,vars[1]+0.1], [-4,vars[0]-ifCon]);
 	    equationNum = 1;
             break;
     }
+    ans = (ifCon==0)?"yes":"no";
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]],
 	        ["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
