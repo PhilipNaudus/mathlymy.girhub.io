@@ -115,10 +115,8 @@ function setQuestion()
 
     for(var i=0; i<equations.length; i++)
     {
-	    //alert(i+";"+equations[i][0]+"..."+equations[i][1]+"..."+equations[i][2]+"...");
         equations[i][2] = equations[i][2].map(function(j)
                                               {
-					      alert(i+"..."+j);
                                                   return j.map(function(k)
                                                   {
                                                       return k.toString();
@@ -156,6 +154,7 @@ function step2(eqNum, ifResetScrolling)
     if(practice && eqNum!=correctEq)
     {
         swal("Wrong equation", "Please try again", "error");
+	return;
     }
     currentStep = 2;
 
