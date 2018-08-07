@@ -5,19 +5,26 @@ function setQuestion()
 {
     var pickArr = shuffle(["a", "b", "c", "d", "e"]);
     var ans;
+    var quest;
     switch(questionNum)
     {
         case 0:
-	    ang = "a";
-	    ans = 180-vars[0];
+            quest = "Angle "+pickArr[0]+" has two supplements. What are they?";
+	    ans = [[pickArr[1], pickArr[4]], [pickArr[4], pickArr[1]]];
 	    break;
         case 1:
-	    ang = "b";
-	    ans = vars[0];
+            quest = "Angle "+pickArr[3]+" has one compliment. What is it?";
+	    ans = [[pickArr[4]]];
             break;
         case 2:
-	    ang = "c";
-	    ans = 180-vars[0];
+	    var vars = getRandom(91, 150, 1);
+	    quest = "The measure of angle "+pickArr[0]+" is "+vars[0]+" degrees. What is the measure of its supplement?";
+	    ans = [[180-vars[0]]];
+            break;
+        case 3:
+	    var vars = getRandom(1, 69, 1);
+	    quest = "The measure of angle "+pickArr[0]+" is "+vars[0]+" degrees. What is the measure of its compliment?";
+	    ans = [[90-vars[0]]];
             break;
     }
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
@@ -26,14 +33,14 @@ function setQuestion()
     addText([-0.5,0.5], pickArr[0]);
     addText([0.5,0.5], pickArr[1]);
     addText([0.5,-0.5], pickArr[2]);
-    addText([0,-1], pickArr[3]);
+    addText([-0.2,-1], pickArr[3]);
     addText([-0.5,-0.3], pickArr[4]);
     plotData([-5,5], [0.1,0]);
     plotData([-2.9,3.1], [-5,5]);
     plotData([0.1,0.1], [0,-5]);
     equationNum = 0;
 
-    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
+    equations = [["", "<input type='number' class='mathinput' id='i0' />"+" and <input type='number' class='mathinput' id='i1' />", ans]];
 }
 
 function step1(ifResetScrolling)
