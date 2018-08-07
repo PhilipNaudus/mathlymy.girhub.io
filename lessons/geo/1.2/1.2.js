@@ -10,29 +10,21 @@ function setQuestion()
     {
         case 0:
         case 2:
-	    if(pickArr==0) pickArr = shuffle([["A", vars[0]], ["B", vars[1]], ["C", vars[2]], ["D", vars[3]]]);
+	    if(questionNum==0) pickArr = shuffle([["A", vars[0]], ["B", vars[1]], ["C", vars[2]], ["D", vars[3]]]);
 	    else pickArr = shuffle([["E", vars[4]], ["F", vars[5]], ["G", vars[6]], ["H", vars[7]]]);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line "+pickArr[0][0]+pickArr[1][0]+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the below lines congruent?<br />Please enter yes or no.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([vars[0],0], "A");
-            addText([vars[1],0], "B");
-            addText([vars[2],0], "C");
-            addText([vars[3],0], "D");
-            addText([0,vars[4]], "E");
-            addText([0,vars[5]], "F");
-            addText([0,vars[6]], "G");
-            addText([0,vars[7]], "H");
+	    plotData([-5,5], [0,0])
 	    ans = Math.abs(pickArr[0][1] - pickArr[1][1]);
 	    equationNum = 0
             break;
         case 1:
         case 3:
-	    if(pickArr==0) pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
-	    alert(pickArr);
+	    pickArr = shuffle([["A",0], ["B",0], ["C",0], ["D",0], ["E",1], ["F",1], ["G",1], ["H",1]]);
             vars = getRandom(-4, 4, 8);
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the points "+pickArr[0][0]+", "+pickArr[1][0]+", and "+pickArr[2][0]+" collinear?<br />Please enter yes or no.<canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the points "+pickArr[0][0]+", "+pickArr[1][0]+", and "+pickArr[2][0]+" collinear?<br />Please enter yes or no.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([vars[0],0], "A");
             addText([vars[1],0], "B");
