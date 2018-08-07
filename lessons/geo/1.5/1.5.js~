@@ -3,7 +3,7 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
-    var pickArr = shuffle("a", "b", "c");
+    var pickArr = shuffle("a", "b", "c", "d", "e");
     var vars = getRandom(-4, 4, 8, 0);
     var ans;
     vars = getRandom(91, 150, 1);
@@ -31,7 +31,7 @@ function setQuestion()
     addText([0,-0.5], pickArr[1]);
     addText([-1.5,-0.5], pickArr[2]);
     plotData([-5,5], [0.1,0]);
-    plotData([0.1,3], [0,5]);
+    plotData([-2.9,3.1], [-5,5]);
     plotData([0.1,0.1], [0,-5]);
     equationNum = 0;
 
