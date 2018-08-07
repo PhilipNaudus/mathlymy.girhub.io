@@ -110,8 +110,8 @@ function setQuestion()
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i3' /></span>"
 			+"</span>"
                     +"<span style='font-size:300%'>)</span>",
-                    [[vars[0]+vars[2], 2, vars[1]+vars[3], 2]
-                     [vars[2]+vars[0], 2, vars[3]+vars[1], 2]]]];
+                    [[(vars[0]+vars[2]), 2, (vars[1]+vars[3]), 2]
+                     [(vars[2]+vars[0]), 2, (vars[3]+vars[1]), 2]]]];
 
     for(var i=0; i<equations.length; i++)
     {
