@@ -11,7 +11,7 @@ function setQuestion()
         case 0:
         case 2:
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of the line "+pickArr[0][0]+pickArr[1][0]+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle a?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    plotData([0,0], [-5,5]);
 	    plotData([-4,-3], [-5,5]);
