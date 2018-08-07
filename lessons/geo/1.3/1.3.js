@@ -97,9 +97,10 @@ function setQuestion()
                           +"<span class='fractop'><input type='number' class='mathinput' id='i3' />+<input type='number' class='mathinput' id='i4' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>"
 			+"</span>"
-                    +"<span style='font-size:300%'>)</span>",
-                    [[vars[0], vars[2], 2, vars[1], vars[3], 2],
-                     [vars[2], vars[0], 2, vars[3], vars[1], 2]]],
+                    +"<span style='font-size:300%'>)</span>"
+                    +" =&nbsp;(<input type='number' class='mathinput' id='i6' />, <input type='number' class='mathinput' id='i7' />)",
+                    [[vars[0], vars[2], 2, vars[1], vars[3], 2, (vars[0]+vars[2])/2, (vars[1]+vars[3])/2],
+                     [vars[2], vars[0], 2, vars[3], vars[1], 2, (vars[0]+vars[2])/2, (vars[1]+vars[3])/2]]],
 		     ["onestep.gif",
 		     "<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i0' /></span></div>",
 		     [[ans]]],
