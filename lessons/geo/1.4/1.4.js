@@ -16,8 +16,8 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 	    addText([-1,0.5], vars[0]);
 	    addText([0.5,0.5], "a");
-	    addText([-0.5,0.5], "b");
-	    addText([-0.5,-0.5], "c");
+	    addText([0.5,-0.5], "b");
+	    addText([-1.5,-0.5], "c");
 	    plotData([-5,5], [0,0]);
 	    plotData([-4,3], [-5,5]);
 	    equationNum = 0
