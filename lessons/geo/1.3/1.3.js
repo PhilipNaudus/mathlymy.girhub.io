@@ -62,7 +62,6 @@ function setQuestion()
 	    quizEq = 3;
             break;
     }
-    alert(quizEq);
 
     var ans = Math.pow(vars[0]-vars[2],2)+Math.pow(vars[1]-vars[3],2);
     equations = [["distance.gif",
@@ -156,7 +155,6 @@ function step1(ifResetScrolling)
 
 function step2(eqNum, ifResetScrolling)
 {
-	alert(eqNum);
     if(practice && eqNum!=correctEq)
     {
         swal("Wrong equation", "Please try again", "error");
