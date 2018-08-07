@@ -3,7 +3,7 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
 {
-    var correctEqn;
+    var correctEq;
     switch(questionNum)
     {
         case 0:
@@ -12,7 +12,7 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
-	    correctEqn = 0;
+	    correctEq = 0;
             break;
         case 1:
             vars = getRandom(0, 9, 4);
@@ -28,7 +28,7 @@ function setQuestion()
             }
 
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the distance between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
-	    correctEqn = 0;
+	    correctEq = 0;
             break;
 	    //TODO////////
         case 2:
@@ -37,7 +37,7 @@ function setQuestion()
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the midpoint of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             plotData([vars[0], vars[2]], [vars[1], vars[3]]);
-	    correctEqn = 1;
+	    correctEq = 1;
             break;
         case 3:
             vars = getRandom(0, 9, 4);
@@ -53,7 +53,7 @@ function setQuestion()
             }
 
             document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the midpoint between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
-	    correctEqn = 1;
+	    correctEq = 1;
             break;
     }
 
@@ -133,6 +133,10 @@ function step1(ifResetScrolling)
 
 function step2(eqNum, ifResetScrolling)
 {
+    if(eqNum!=correctEq)
+    {
+        swal("Wrong equation", "Please try again", "error");
+    }
     currentStep = 2;
 
     switch(practice)
