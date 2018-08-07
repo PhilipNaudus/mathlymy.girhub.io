@@ -17,9 +17,9 @@ function setQuestion()
 	    plotData([-5,5], [0,0]);
 	    plotData([-4,3], [-5,5]);
 	    addText([-1,0.5], vars[0]);
-	    addText([0.5,0.5], a);
-	    addText([-0.5,0.5], b);
-	    addText([-0.5,-0.5], c);
+	    addText([0.5,0.5], "a");
+	    addText([-0.5,0.5], "b");
+	    addText([-0.5,-0.5], "c");
 	    equationNum = 0
             break;
         case 1:
