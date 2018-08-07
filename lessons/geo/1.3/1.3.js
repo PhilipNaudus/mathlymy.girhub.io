@@ -167,13 +167,12 @@ function step2(eqNum, ifResetScrolling)
     {
         case true:
             document.getElementById("step").innerHTML = steps[1];
-            document.getElementById("math").innerHTML = equations[equationNum][1];
             break;
         case false:
             document.getElementById("step").innerHTML = "";
-            document.getElementById("math").innerHTML = equations[equations.length-1][1];
             break;
     }
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
 
