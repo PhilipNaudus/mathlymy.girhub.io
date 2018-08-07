@@ -115,6 +115,7 @@ function setQuestion()
 
     for(var i=0; i<equations.length; i++)
     {
+	    alert(i+";"+equations[i]);
         equations[i][2] = equations[i][2].map(function(j)
                                               {
                                                   return j.map(function(k)
