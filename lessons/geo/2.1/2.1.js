@@ -47,7 +47,7 @@ function setQuestion()
 	    var vars = getRandom(1, 5, 2);
 	    var text = ""+vars[0]+", ";
 	    var temp;
-	    for(var i=1; i<=4; i++)
+	    for(var i=1; i<=5; i++)
 	    {
 		text += vars[1] + ", ";
 		temp = vars[1];
