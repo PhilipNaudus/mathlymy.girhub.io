@@ -25,6 +25,7 @@ function setQuestion()
 	    ans = polygonNames[vars[0]-1];
             break;
     }
+    equationNum = 0;
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='"+vars[0]+".png' /></canvas>";
 
