@@ -39,7 +39,7 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
 
-    equations = [["", "Hypothesis: <input type='number' class='mathinput' id='i0' /><br />Conclusion: <input type='number' class='mathinput' id='i1' />", [ans]],
+    equations = [["", "Hypothesis: <input type='text' class='mathinput' id='i0' /><br />Conclusion: <input type='text' class='mathinput' id='i1' />", [ans]],
 	        ["", "<input type='text' class='mathinput' id='i0' />", [ans]]];
 }
 

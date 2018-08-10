@@ -35,7 +35,6 @@ function setQuestion()
 	    equationNum = 1;
 	    break;
     }
-    equationNum = 0;
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
 
