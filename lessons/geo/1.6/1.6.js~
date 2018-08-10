@@ -21,13 +21,13 @@ function setQuestion()
             break;
         case 4:
         case 5:
-            quest = "Please enter the type of polygon shown below based on its number of sides.<br /><img src='polygonchart.gif' />";
+            quest = "Please enter the type of polygon shown below based on its number of sides.<br /><img src='/lessons/geo/1.6/polygonchart.gif' />";
 	    ans = polygonNames[vars[0]-1];
             break;
     }
     equationNum = 0;
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='"+vars[0]+".png' /></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='/lessons/geo/1.6/"+vars[0]+".png' /></canvas>";
 
     equations = [["", "<input type='text' class='mathinput' id='i0' />", ans]];
 }

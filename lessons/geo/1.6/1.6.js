@@ -13,6 +13,7 @@ function setQuestion()
 	case 1:
             quest = "Please tell whether the polygon shown below is concave or convex.";
 	    ans = concaveConvex[vars[0]-1];
+	    alert(ans);
 	    break;
         case 2:
         case 3:
