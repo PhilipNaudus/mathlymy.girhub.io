@@ -5,9 +5,9 @@ function setQuestion()
     var hypo = ["it rains", "I eat an apple", "my friend gives me a call", "I read a book", "my computer breaks", "I lose my keys", "I have money"];
     var concl = ["I will go to the store", "I will watch a movie", "I will go to my friend's house", "I will clean my room", "I will eat a banana", "I will do my homework", "I will close my book"];
     var ans;
+    var vars = getRandom(0, 6, 2);
     switch(questionNum)
     {
-        var vars = getRandom(0, 6, 2);
         case 0:
         case 1:
             quest = "Please enter the <b>hypothesis</b> and <b>conclusion<b> of the below conditional statement:<br />If "+hypo[vars[0]]+", then "+concl[vars[1]]+".";

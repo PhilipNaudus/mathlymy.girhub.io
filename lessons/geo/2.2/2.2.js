@@ -10,7 +10,7 @@ function setQuestion()
     {
         case 0:
         case 1:
-            quest = "Please enter the <b>hypothesis</b> and <b>conclusion<b> of the below conditional statement:<br />If "+hypo[vars[0]]+", then "+concl[vars[1]]+".";
+            quest = "Please enter the <b>hypothesis</b> and <b>conclusion</b> of the below conditional statement:<br />If "+hypo[vars[0]]+", then "+concl[vars[1]]+".";
 	    ans = [hypo[vars[0]], concl[vars[1]]];
 	    equationNum = 0;
 	    break;
