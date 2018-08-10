@@ -13,7 +13,6 @@ function setQuestion()
 	case 1:
             quest = "Please tell whether the polygon shown below is concave or convex.";
 	    ans = concaveConvex[vars[0]-1];
-	    alert(ans);
 	    break;
         case 2:
         case 3:
@@ -30,7 +29,7 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='/lessons/geo/1.6/"+vars[0]+".png' /></canvas>";
 
-    equations = [["", "<input type='text' class='mathinput' id='i0' />", ans]];
+    equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
