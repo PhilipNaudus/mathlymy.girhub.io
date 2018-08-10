@@ -60,7 +60,7 @@ function setQuestion()
     }
     equationNum = 0;
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
 }
@@ -109,4 +109,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 6;
+var numQuestions = 4;
