@@ -21,24 +21,25 @@ function setQuestion()
         case 2:
         case 3:
             quest = "Please enter the <b>converse</b> of the below conditional statement:<br /><b>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".</b>";
-	    ans = ["If "+concl[vars[1]]+", then "+hypo[vars[0]]+"."];
+	    ans = [concl[vars[1]], hypo[vars[0]]];
 	    equationNum = 1;
 	    break;
         case fourFive[0]:
             quest = "Please examine the two conditional sentences below and determine whether the second one is a contrapositive or inverse of the first. Please enter <b>contrapositive</b> or <b>inverse</b>.<br /><b>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".<br />If "+nhypo[vars[0]]+", then "+nconcl[vars[1]]+".</b>";
 	    ans = ["inverse"];
-	    equationNum = 1;
+	    equationNum = 2;
 	    break;
 	default:
             quest = "Please examine the two conditional sentences below and determine whether the second one is a contrapositive or inverse of the first. Please enter <b>contrapositive</b> or <b>inverse</b>.<br /><b>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".<br />If "+nconcl[vars[1]]+", then "+nhypo[vars[0]]+".</b>";
 	    ans = ["contrapositive"];
-	    equationNum = 1;
+	    equationNum = 2;
 	    break;
     }
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
 
     equations = [["", "Hypothesis: <input type='text' class='mathinput' id='i0' /><br />Conclusion: <input type='text' class='mathinput' id='i1' />", [ans]],
+	        ["", "If <input type='text' class='mathinput' id='i0' />, then <input type='text' class='mathinput' id='i1' />", [ans]],
 	        ["", "<input type='text' class='mathinput' id='i0' />", [ans]]];
 }
 
