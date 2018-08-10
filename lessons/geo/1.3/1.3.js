@@ -177,7 +177,7 @@ function giveHint()
 {
     if(currentStep==1)
     {
-        swal("Use the first equation if you are given two points and cannot see the graph of the line. Use the second equation if you are given the graph of the line. Use the third equation if you are confident in your ability to apply the Pythagorean Theorem in your head.");
+        swal("Use the first equation if you are asked for the length of a line. Use the second equation if you are asked for the midpoint.");
     } else
     {
         var numCorrect = new Array();

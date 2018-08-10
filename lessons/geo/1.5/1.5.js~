@@ -42,7 +42,6 @@ function setQuestion()
     plotData([-5,5], [0.1,0]);
     plotData([-2.9,3.1], [-5,5]);
     plotData([0.1,0.1], [0,-5]);
-    equationNum = 0;
 
     equations = [["", "<input type='text' class='mathinput' id='i0' /> and <input type='text' class='mathinput' id='i1' />", ans],
 	        ["", "<input type='text' class='mathinput' id='i0' />", ans],

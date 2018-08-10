@@ -1,51 +1,34 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
 var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
+var polygonNames = ["heptagon", "nonagon", "octagon", "hexagon", "octagon", "pentagon", "quadrilateral", "hexagon", "pentagon", "quadrilateral", "hexagon", "heptagon"];
+var concaveConvex = ["convex", "concave", "convex", "concave", "convex", "convex", "convex", "concave", "convex", "convex", "convex", "concave"];
+var regularIrregular = ["regular", "irregular", "regular", "irregular", "irregular", "regular", "irregular", "irregular", "irregular", "regular", "irregular", "irregular"];
 
 function setQuestion()
 {
-    var pickArr = shuffle(["a", "b", "c", "d", "e"]);
-    var ans;
-    var quest;
+    var vars = getRandom(1, 12, 1);
     switch(questionNum)
     {
         case 0:
-            quest = "Angle "+pickArr[0]+" has two supplements. What are they?";
-	    ans = [[pickArr[1], pickArr[4]], [pickArr[4], pickArr[1]]];
-	    equationNum = 0;
+	case 1:
+            quest = "Please tell whether the polygon shown below is concave or convex.";
+	    ans = concaveConvex[vars[0]-1];
 	    break;
-        case 1:
-            quest = "Angle "+pickArr[3]+" has one complement. What is it?";
-	    ans = [[pickArr[4]]];
-	    equationNum = 1;
-            break;
         case 2:
-	    var vars = getRandom(91, 150, 1);
-	    quest = "The measure of angle "+pickArr[0]+" is "+vars[0]+" degrees. What is the measure of its supplement?";
-	    ans = [[180-vars[0]]];
-	    equationNum = 2;
-            break;
         case 3:
-	    var vars = getRandom(1, 69, 1);
-	    quest = "The measure of angle "+pickArr[0]+" is "+vars[0]+" degrees. What is the measure of its complement?";
-	    ans = [[90-vars[0]]];
-	    equationNum = 2;
+            quest = "Please tell whether the polygon shown below is regular or irregular.";
+	    ans = regularIrregular[vars[0]-1];
+            break;
+        case 4:
+        case 5:
+            quest = "Please enter the type of polygon shown below based on its number of sides.<br /><img src='polygonchart.gif' />";
+	    ans = polygonNames[vars[0]-1];
             break;
     }
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    addText([-0.5,0.5], pickArr[0]);
-    addText([0.5,0.5], pickArr[1]);
-    addText([0.5,-0.5], pickArr[2]);
-    addText([-0.2,-1], pickArr[3]);
-    addText([-0.5,-0.3], pickArr[4]);
-    plotData([-5,5], [0.1,0]);
-    plotData([-2.9,3.1], [-5,5]);
-    plotData([0.1,0.1], [0,-5]);
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='"+vars[0]+".png' /></canvas>";
 
-    equations = [["", "<input type='text' class='mathinput' id='i0' /> and <input type='text' class='mathinput' id='i1' />", ans],
-	        ["", "<input type='text' class='mathinput' id='i0' />", ans],
-		["", "<input type='number' class='mathinput' id='i0' />", ans]];
+    equations = [["", "<input type='text' class='mathinput' id='i0' />", ans]];
 }
 
 function step1(ifResetScrolling)
@@ -92,4 +75,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 4;
+var numQuestions = 6;
