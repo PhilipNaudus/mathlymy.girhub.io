@@ -1,35 +1,68 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
-var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
-var polygonNames = ["heptagon", "nonagon", "octagon", "hexagon", "octagon", "pentagon", "quadrilateral", "hexagon", "pentagon", "quadrilateral", "hexagon", "heptagon"];
-var concaveConvex = ["convex", "concave", "convex", "concave", "convex", "convex", "convex", "concave", "convex", "convex", "convex", "concave"];
-var regularIrregular = ["regular", "irregular", "regular", "irregular", "irregular", "regular", "irregular", "irregular", "irregular", "regular", "irregular", "irregular"];
 
 function setQuestion()
 {
-    var vars = getRandom(1, 12, 1);
+    var ans;
     switch(questionNum)
     {
         case 0:
-	case 1:
-            quest = "Please tell whether the polygon shown below is concave or convex.";
-	    ans = concaveConvex[vars[0]-1];
+	    var vars = getRandom(1, 5, 1);
+	    var num = 1;
+	    var text = "";
+	    for(var i=1; i<=4; i++)
+	    {
+		text += num + ", ";
+	        num = num * vars[0];
+	    }
+            quest = "Please enter the next number in the following sequence:<br />"+text+"...";
+	    ans = num;
+	    break;
+        case 1:
+	    var vars = getRandom(10, 20, 1);
+	    var num = 200;
+	    var text = "";
+	    for(var i=1; i<=4; i++)
+	    {
+		text += num + ", ";
+	        num = num - vars[0];
+	    }
+            quest = "Please enter the next number in the following sequence:<br />"+text+"...";
+	    ans = num;
 	    break;
         case 2:
+	    var vars = getRandom(1, 5, 2);
+	    var text = ""+vars[0]+", ";
+	    var temp;
+	    for(var i=1; i<=4; i++)
+	    {
+		text += vars[1] + ", ";
+		temp = vars[1];
+		vars[1] = vars[0] + vars[1];
+		vars[0] = temp;
+	    }
+            quest = "Please enter the next number in the following sequence:<br />"+text+"...";
+	    ans = vars[1];
+	    break;
         case 3:
-            quest = "Please tell whether the polygon shown below is regular or irregular.";
-	    ans = regularIrregular[vars[0]-1];
-            break;
-        case 4:
-        case 5:
-            quest = "Please enter the type of polygon shown below based on its number of sides.<br /><img src='/lessons/geo/1.6/polygonchart.gif' />";
-	    ans = polygonNames[vars[0]-1];
-            break;
+	    var vars = getRandom(1, 5, 2);
+	    var text = ""+vars[0]+", ";
+	    var temp;
+	    for(var i=1; i<=4; i++)
+	    {
+		text += vars[1] + ", ";
+		temp = vars[1];
+		vars[1] = vars[0] * vars[1];
+		vars[0] = temp;
+	    }
+            quest = "Please enter the next number in the following sequence:<br />"+text+"...";
+	    ans = vars[1];
+	    break;
     }
     equationNum = 0;
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='/lessons/geo/1.6/"+vars[0]+".png' />";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest";
 
-    equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
+    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
