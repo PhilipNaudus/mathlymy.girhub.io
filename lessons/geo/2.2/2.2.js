@@ -87,4 +87,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 4;
+var numQuestions = 6;

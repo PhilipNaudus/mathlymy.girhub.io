@@ -21,7 +21,7 @@ function setQuestion()
         case 2:
         case 3:
             quest = "Please enter the <b>converse</b> of the below conditional statement:<br /><b>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".</b>";
-	    ans = ["If "+concl[vars[1]]+", then "+hypo[vars[0]]+"."];
+	    ans = [concl[vars[1]], hypo[vars[0]]];
 	    equationNum = 1;
 	    break;
         case fourFive[0]:
