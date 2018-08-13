@@ -9,17 +9,11 @@ function setQuestion()
         case 0:
         case 1:
         case 2:
-	    var statement = (trueFalse[0]==0)?onePlaneTrue[vars[0]]:onePlaneFalse[vars[0]];
-	    ans = (trueFalse[0]==0)?"true":"false";
-            quest = "Please determine whether this statement is true or false for the diagram shown below:<br /><b>"+statement+"</b><br />Please enter <b>true</b> or <b>false</b><br /><img src='/lessons/geo/2.4/oneplane.png' />";
 	    equationNum = 0;
 	    break;
         case 3:
         case 4:
         case 5:
-	    var statement = (trueFalse[0]==0)?twoPlanesTrue[vars[0]]:twoPlanesFalse[vars[0]];
-	    ans = (trueFalse[0]==0)?"true":"false";
-            quest = "Please determine whether this statement is true or false for the diagram shown below:<br /><b>"+statement+"</b><br />Please enter <b>true</b> or <b>false</b><br /><img src='/lessons/geo/2.4/twoplanes.png' />";
 	    equationNum = 0;
 	    break;
     }
