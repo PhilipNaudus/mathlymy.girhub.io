@@ -25,12 +25,12 @@ function setQuestion()
 	    equationNum = 1;
 	    break;
         case fourFive[0]:
-            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li><li>"+hypo1[vars[0]].replace(/^\w/, c => c.toUpperCase())+". "+concl2[vars[2]].replace(/^\w/, c => c.toUpperCase())+".</li></ul>";
+            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li><li>"+hypo1[vars[0]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+". "+concl2[vars[2]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+".</li></ul>";
 	    ans = ["deductive"];
 	    equationNum = 2;
 	    break;
 	default:
-            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>Every time "+hypo1[vars[0]]+", "+concl1[vars[1]]+".</li><li>The next time"+hypo1[vars[0]]+". "+concl1[vars[1]].replace(/^\w/, c => c.toUpperCase());+".</li></ul>";
+            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>Every time "+hypo1[vars[0]]+", "+concl1[vars[1]]+".</li><li>The next time"+hypo1[vars[0]]+". "+concl1[vars[1]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+".</li></ul>";
 	    ans = ["inductive"];
 	    equationNum = 2;
 	    break;
