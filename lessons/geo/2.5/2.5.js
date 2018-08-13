@@ -19,11 +19,12 @@ function setQuestion()
     }
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please fill in the steps to solve the equation while giving reasons for each step.";
 alert(vars);
-    options = "<option value='add'>Addition Property of Equality</option><option value='sub'>Subtraction Property of Equality</option><option value='mult'>Multiplication Property of Equality</option><option value='div'>Division Property of Equality</option>";
+    options = "<option value=''>Select one</option><option value='add'>Addition Property of Equality</option><option value='sub'>Subtraction Property of Equality</option><option value='mult'>Multiplication Property of Equality</option><option value='div'>Division Property of Equality</option>";
     equations = [["", "<table border='0'><tr><td>"+(-vars[0]+vars[1])+"x</td><td>-"+vars[2]+"</td><td>=</td><td>"+vars[1]+"x</td><td>"+signNumber((vars[0]*vars[3])-vars[2])+"</td><td>&nbsp;&nbsp;&nbsp;</td><td><b>Given</b></td></tr>"
 	              +"<tr><td><input type='text' class='mathinput' id='i0' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i1' /></td><td></td><td></td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
-		      +"<tr><td>"+-vars[0]+"x</td><td>-"+vars[2]+"</td><td>=</td><td></td><td>+"+((vars[0]*vars[3])-vars[2])+"</td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
+		      +"<tr><td>"+-vars[0]+"x</td><td>-"+vars[2]+"</td><td>=</td><td></td><td>+"+((vars[0]*vars[3])-vars[2])+"</td></tr>"
 	              +"<tr><td></td><td><input type='text' class='mathinput' id='i3' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i4' /></td><td></td><td></td><td><select class='mathinput' id='i5'>"+options+"</select></td></tr></table>", [[ans]]]];
+    document.getElementById("i2").style.width = "22em";
 }
 
 function step1(ifResetScrolling)
