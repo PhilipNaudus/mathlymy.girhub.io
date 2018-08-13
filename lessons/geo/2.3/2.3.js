@@ -14,13 +14,13 @@ function setQuestion()
     {
         case 0:
         case 2:
-            quest = "Please use deductive reasoning to enter the <b>conclusion</b> of the final conditional statement.<br /><b>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</b><br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li></ul>";
+            quest = "Please use deductive reasoning to enter the <b>conclusion</b> of the final conditional statement.<br /><br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li></ul>";
 	    ans = [concl2[vars[2]]];
 	    equationNum = 0;
 	    break;
         case 1:
         case 3:
-            quest = "Please use deductive reasoning to enter the <b>hypothesis</b> of the final conditional statement.<br /><b>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</b><br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li></ul>";
+            quest = "Please use deductive reasoning to enter the <b>hypothesis</b> of the final conditional statement.<br /><br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li></ul>";
 	    ans = [hypo2[vars[0]]];
 	    equationNum = 1;
 	    break;
