@@ -5,7 +5,7 @@ function setQuestion()
     var hypo1 = ["my team loses", "I forget to pack my lunch", "I win a prize", "my teacher calls me", "my computer breaks", "I lose my keys", "I get sick"];
     var concl1 = ["I will ask a question", "I will eat candy", "I will drink water", "I will go to the library", "my friend will help me", "my dog will get sick", "I will go to the doctor"];
 
-    var hypo2 = ["I ask a question", "I eat candy", "I drink water", "I go to the library", "my friend will help me", "I dog will get sick", "I go to the doctor"];
+    var hypo2 = ["I ask a question", "I eat candy", "I drink water", "I go to the library", "my friend will help me", "my dog will get sick", "I go to the doctor"];
     var concl2 = ["I will go to the store", "I will watch a movie", "I will go to my friend's house", "I will clean my room", "I will eat a banana", "I will do my homework", "I will close my book"];
     var ans;
     var vars = getRandom(0, 6, 3);
@@ -21,7 +21,7 @@ function setQuestion()
         case 1:
         case 3:
             quest = "Please use deductive reasoning to enter the <b>hypothesis</b> of the final conditional statement.<br /><b>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</b><br /><ul><li>If "+hypo1[vars[0]]+", then "+concl1[vars[1]]+".</li><li>If "+hypo2[vars[1]]+", then "+concl2[vars[2]]+".</li></ul>";
-	    ans = [hypo2[vars[1]]];
+	    ans = [hypo2[vars[0]]];
 	    equationNum = 1;
 	    break;
         case fourFive[0]:
