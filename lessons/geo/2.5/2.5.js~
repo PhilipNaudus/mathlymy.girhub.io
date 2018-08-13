@@ -24,8 +24,8 @@ alert(vars);
 	              +"<tr><td><input type='text' class='mathinput' id='i0' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i1' /></td><td></td><td></td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 		      +"<tr><td>-"+vars[0]+"x</td><td>-"+vars[2]+"</td><td>=</td><td></td><td>+"+((vars[0]*vars[3])-vars[2])+"</td></tr>"
 	              +"<tr><td></td><td><input type='text' class='mathinput' id='i3' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i4' /></td><td></td><td></td><td><select class='mathinput' id='i5'>"+options+"</select></td></tr></table>"
-		      +"<tr><td>-"+vars[0]+"x</td><td>-"+vars[2]+"</td><td>=</td><td></td><td>+"+((vars[0]*vars[3])-vars[2])+"</td></tr>"
-	              +"<tr><td></td><td><input type='text' class='mathinput' id='i3' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i4' /></td><td></td><td></td><td><select class='mathinput' id='i5'>"+options+"</select></td></tr></table>"
+		      +"<tr><td>-"+vars[0]+"x</td><td></td><td>=</td><td></td><td>+"+((vars[0]*vars[3]))+"</td></tr>"
+	              +"<tr><td>&divide;<input type='text' class='mathinput' id='i6' /></td><td></td><td></td><td></td>&divide;<input type='text' class='mathinput' id='i7' /><td></td><td></td><td></td><td><select class='mathinput' id='i8'>"+options+"</select></td></tr></table>"
 		      
 		      , [[ans]]]];
     document.getElementById("i2").style.width = "22em";
