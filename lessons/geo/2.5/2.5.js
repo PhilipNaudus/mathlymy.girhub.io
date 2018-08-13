@@ -26,7 +26,7 @@ function setQuestion()
 		      +"<tr><td>-"+vars[0]+"x</td><td></td><td>=</td><td></td><td>+"+(vars[0]*vars[3])+"</td></tr>"
 	              +"<tr><td>&divide;<input type='text' class='mathinput' id='i6' /></td><td></td><td></td><td></td><td>&divide;<input type='text' class='mathinput' id='i7' /></td><td></td><td><select class='mathinput' id='i8'>"+options+"</select></td></tr>"
 		      +"<tr><td>x</td><td></td><td>=</td><td></td><td>+"+(vars[3])+"</td></tr>"
-		      +"</table>", [["-"+ans[1]+"x", "-"+ans[1]+"x", "sub", "+"+ans[2], "-"+ans[2], "add",  ans[0], ans[0], "div", ans[3]]]]];
+		      +"</table>", [["-"+vars[1]+"x", "-"+vars[1]+"x", "sub", "+"+vars[2], "-"+vars[2], "add",  vars[0], vars[0], "div", vars[3]]]]];
     
 }
 

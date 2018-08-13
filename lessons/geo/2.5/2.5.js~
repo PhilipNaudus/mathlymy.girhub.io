@@ -38,7 +38,7 @@ function step1(ifResetScrolling)
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
     document.getElementById('i2').style.width = '22em';
-    k
+    
     addInputEventListeners();
 
     if(ifResetScrolling) window.scrollTo(0, 0);
