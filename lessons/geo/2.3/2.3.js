@@ -38,7 +38,7 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
 
-    equations = [["", "If "+hypo2[vars[1]]+", <input type='text' class='mathinput' id='i0' /><br />Conclusion: <input type='text' class='mathinput' id='i1' />", [ans]],
+    equations = [["", "If "+hypo2[vars[1]]+", <input type='text' class='mathinput' id='i0' />", [ans]],
 	        ["", "If <input type='text' class='mathinput' id='i0' />, "+concl2[vars[2]]+".", [ans]],
 	        ["", "<input type='text' class='mathinput' id='i0' />", [ans]]];
 }
