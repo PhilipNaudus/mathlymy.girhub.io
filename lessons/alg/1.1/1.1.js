@@ -50,7 +50,10 @@ function setQuestion()
 			  +"<span class='fracbot'>11</span>"
 			+"</span>";
 	    var ans = [((vars[0]*vars[1]*11)+vars[3]*vars[2]), (vars[2]*11)];
-	    var eq = 
+	    var eq = "<span class='fraction'>"
+                          +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
+			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"
+			+"</span>";
 ;
 	    equationNum = 0;
             break;
