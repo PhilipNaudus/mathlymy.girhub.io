@@ -21,18 +21,17 @@ function setQuestion()
     options = "<option value=''>Select one</option><option value='Addition Property of Equality'>Addition Property of Equality</option><option value='Subtraction Property of Equality'>Subtraction Property of Equality</option><option value='Multiplication Property of Equality'>Multiplication Property of Equality</option><option value='Division Property of Equality'>Division Property of Equality</option>";
     equations = [["", "<table border='0'><tr><td>"+(-vars[0]+vars[1])+"x</td><td>-"+vars[2]+"</td><td>=</td><td>"+vars[1]+"x</td><td>"+signNumber((vars[0]*vars[3])-vars[2])+"</td><td>&nbsp;&nbsp;&nbsp;</td><td><b>Given</b></td></tr>"
 	              +"<tr><td><input type='text' class='mathinput' id='i0' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i1' /></td><td></td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
-		      +"<tr><td>-"+vars[0]+"x</td><td>-"+vars[2]+"</td><td>=</td><td></td><td>+"+((vars[0]*vars[3])-vars[2])+"</td></tr>"
-	              +"<tr><td></td><td><input type='number' class='mathinput' id='i3' /></td><td></td><td></td><td><input type='number' class='mathinput' id='i4' /></td><td></td><td><select class='mathinput' id='i5'>"+options+"</select></td></tr>"
+		      +"<tr><td>-"+vars[0]+"x</td><td>-"+vars[2]+"</td><td>=</td><td></td><td>"+signNumber((vars[0]*vars[3])-vars[2])+"</td></tr>"
+	              +"<tr><td></td><td><input type='text' class='mathinput' id='i3' /></td><td></td><td></td><td><input type='text' class='mathinput' id='i4' /></td><td></td><td><select class='mathinput' id='i5'>"+options+"</select></td></tr>"
 		      +"<tr><td>-"+vars[0]+"x</td><td></td><td>=</td><td></td><td>+"+(vars[0]*vars[3])+"</td></tr>"
-	              +"<tr><td>&divide;<input type='number' class='mathinput' id='i6' /></td><td></td><td></td><td></td><td>&divide;<input type='number' class='mathinput' id='i7' /></td><td></td><td><select class='mathinput' id='i8'>"+options+"</select></td></tr>"
-		      +"<tr><td>x</td><td></td><td>=</td><td></td><td><input type='number' class='mathinput' id='i9' /></td></tr>"
-		      +"</table>", [["-"+vars[1]+"x", "-"+vars[1]+"x", "Subtraction Property of Equality", "+"+vars[2], "+"+vars[2], "Addition Property of Equality",  vars[0], vars[0], "Division Property of Equality", vars[3]]]],
-	        ["", "<table border='0'><td>["+(vars[0]+vars[1])+"x </td><td>"+signNumber(vars[2]]*vars[3])+"</td><td> =</td><td>"+(vars[1]*vars[3])+"x </td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
+	              +"<tr><td>&divide;<input type='text' class='mathinput' id='i6' /></td><td></td><td></td><td></td><td>&divide;<input type='text' class='mathinput' id='i7' /></td><td></td><td><select class='mathinput' id='i8'>"+options+"</select></td></tr>"
+		      +"<tr><td>x</td><td></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i9' /></td></tr>"
+		      +"</table>", [["-"+vars[1]+"x", "-"+vars[1]+"x", "Subtraction Property of Equality", "+"+vars[2], "+"+vars[2], "Addition Property of Equality", "-"+vars[0], "-"+vars[0], "Division Property of Equality", "-"+vars[3]]]]];
+	        ["", "<table border='0'><td>["+(vars[0]+vars[1])+"x </td><td>"+signNumber(vars[2]*vars[3])+"</td><td> =</td><td>"+(vars[1]*vars[3])+"x </td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			"<tr><td>"+((vars[0]*vars[3])+(vars[1]vars[3]))+"x</td><td>"signNumber(vars[2]*vars[3])+"</td><td>=</td><td>"+(vars[1]vars[3])+"x</td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			"<tr><td>"+(vars[0]*vars[3])+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td></td><td>"+((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))"+</td></tr>"
 			"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
 			"<tr><td>x</td><td></td><td>=</td><td></td><td>"+vars[4]+"</td></tr></table>", [[vars[4]]]];
-    
 }
 
 function step1(ifResetScrolling)
@@ -43,7 +42,10 @@ function step1(ifResetScrolling)
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
     document.getElementById('i2').style.width = '22em';
-    
+	
+    document.getElementById('i5').style.width = '22em';
+	document.getElementById('i8').style.width = '22em';
+	
     addInputEventListeners();
 
     if(ifResetScrolling) window.scrollTo(0, 0);
