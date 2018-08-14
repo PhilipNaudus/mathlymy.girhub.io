@@ -1,4 +1,4 @@
-var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+//var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
 var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
@@ -45,7 +45,6 @@ function setQuestion()
             break;
     }
 
-    var ans = Math.pow(vars[0]-vars[2],2)+Math.pow(vars[1]-vars[3],2);
     equations = [["", eq, [ans]]];
 
     for(var i=0; i<equations.length; i++)

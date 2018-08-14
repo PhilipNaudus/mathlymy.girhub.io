@@ -1,4 +1,4 @@
-var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+//var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
 var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 
 function setQuestion()
@@ -62,44 +62,10 @@ function setQuestion()
 function step1(ifResetScrolling)
 {
     endLoading();
-    currentStep = 1;
-
-    if(practice)
-    {
-        document.getElementById("step").innerHTML = steps[0];
-        var displayEquations = "<div class='row'>";
-        for(var i=0; i<equations.length; i++)
-        {
-            displayEquations+="<div class='column'><a href='javascript:step2("+i+", false)'><img src='lessons/"+course+"/"+lessonId+"/"+equations[i][0]+"' /></a></div>"
-        }
-        displayEquations += "</div>";
-        document.getElementById("math").innerHTML = displayEquations;
-    } else
-    {
-        step2(equations.length-1, false);
-    }
-
-    if(ifResetScrolling) window.scrollTo(0, 0);
-    enableDisableButtons();
-}
-
-function step2(eqNum, ifResetScrolling)
-{
     currentStep = 2;
 
-    switch(practice)
-    {
-        case true:
-            equationNum = eqNum;
-            document.getElementById("step").innerHTML = steps[1];
-            document.getElementById("math").innerHTML = equations[equationNum][1];
-            break;
-        case false:
-            equationNum = equations.length-1;
-            document.getElementById("step").innerHTML = "";
-            document.getElementById("math").innerHTML = equations[equations.length-1][1];
-            break;
-    }
+    document.getElementById("step").innerHTML = "";
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
 
