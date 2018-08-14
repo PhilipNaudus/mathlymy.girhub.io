@@ -4,14 +4,14 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 function setQuestion()
 {
     var quest;
-    var vars = getRandom(-5, 5, 4);
-    var A = getRandom(0, 9, 7).sort();
-    var B = getRandom(0, 9, 7).sort();
     var ans;
     var eq;
     switch(questionNum)
     {
         case 0:
+        case 2:
+	    var A = getRandom(0, 9, 3).sort();
+	    var B = getRandom(0, 9, 3).sort();
 	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cup; B:";
 	    var ans = union(A, B).sort();
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
@@ -22,13 +22,21 @@ function setQuestion()
 	    equationNum = 0;
             break;
         case 1:
+        case 3:
 	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cap; B:";
-	    var ans = A.filter(value => -1 !== B.indexOf(value));
+	    var ans = (A.filter(value => -1 !== B.indexOf(value))).sort();
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    for(var i=1; i<+ans.length; i++)
 	    {
 	       eq += ", <input type='number' class='mathinput' id='i"+i+"' />";
 	    }
+	    equationNum = 0;
+            break;
+	case 4:
+	    var vars = getRandom(1, 9, 6);
+	    quest = "Please evaluate "+vars[0]+" - ["+vars[1]+"&times;"+vars[2]+" + ("+vars[3]+" - "+vars[4]+")] &times; "+vars[5];
+	    var ans = [vars[0] - (((vars[1]*vars[2]) + vars[3]-vars[4])*vars[5])];
+	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    equationNum = 0;
             break;
     }
