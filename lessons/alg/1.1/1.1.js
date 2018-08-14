@@ -8,7 +8,7 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 2:
+        case 0:
         case 2:
 	    var A = getRandom(0, 9, 3).sort();
 	    var B = getRandom(0, 9, 3).sort();
@@ -39,7 +39,7 @@ function setQuestion()
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    equationNum = 0;
             break;
-	case 0:
+	case 5:
 	    var vars = getRandom(1, 9, 6);
 	    quest = "Please evaluate "+vars[0]+"&times; <span class='fraction'>"
                           +"<span class='fractop'>"+vars[1]+"</span>"
@@ -116,4 +116,4 @@ function union(x, y) {
 };
 
 
-var numQuestions = 4;
+var numQuestions = 5;
