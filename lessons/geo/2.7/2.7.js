@@ -21,7 +21,7 @@ function setQuestion()
 	    break;
         case 1:
 	    equationNum = 1;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &parp; <span style='text-decoration: overline'>BC</span>, prove that &angB &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &angB &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-4,-0.5], "A");
             addText([-0.5,-0.1], "B");
@@ -30,7 +30,7 @@ function setQuestion()
 	    plotData([-4,-0.1], [-1,-1]);
 	    plotData([-0.1,-0.1], [2,0.1]);
 	    plotData([0.1,4], [2, 2]);
-	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
+	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
 	    break;
         case 2:
 	    equationNum = 2;
@@ -43,9 +43,14 @@ function setQuestion()
     }
 
     equations = [["", "<table border='0'><tr><td>&ang;A and &ang;B are right angles</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;A = 90&deg; and m&ang;B = 90&deg;</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
+		    +"<tr><td>m&ang;A = 90&deg; and m&ang;B = 90&deg;</td><td></td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
 		    +"<tr><td>m&ang;A = m&ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 		    +"<tr><td>&ang;A &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
+		    , [["Given", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]],
+	        ["", "<table border='0'><tr><td><span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span></td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		    +"<tr><td>&ang;B and &ang;C are right angles</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
+		    +"<tr><td>m&ang;B = 90&deg; and m&ang;C = 90&deg;</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
+		    +"<tr><td>&ang;B &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
 		    , [["Given", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]]];
 }
 
