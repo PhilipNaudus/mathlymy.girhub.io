@@ -9,6 +9,7 @@ function setQuestion()
     var B = getRandom(0, 9, 7);
     var ans;
     var eq;
+    var equationNum;
     switch(questionNum)
     {
         case 0:
@@ -19,6 +20,7 @@ function setQuestion()
 	    {
 	       eq += ", <input type='number' class='mathinput' id='i"+i+"' />";
 	    }
+	    equationNum = 0;
             break;
     }
 

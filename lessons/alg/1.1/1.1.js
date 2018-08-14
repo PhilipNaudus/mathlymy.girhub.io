@@ -25,6 +25,7 @@ function setQuestion()
     }
 
     equations = [["", eq, [ans]]];
+    alert(equations);
 }
 
 function step1(ifResetScrolling)
