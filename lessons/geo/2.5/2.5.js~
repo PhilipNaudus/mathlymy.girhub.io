@@ -52,7 +52,7 @@ function setQuestion()
 			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
 			+"<tr><td>&divide;<input type='text' class='mathinput' id='i7' /></td><td></td><td>=</td><td>&divide;<input type='text' class='mathinput' id='i8' /></td><td></td><td></td><td><select class='mathinput' id='i9'>"+options+"</select></td></tr>"
 
-			+"<tr><td>x</td><td></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i10' /></td></tr></table>", [["Distributive Property", signNumber(-vars[1]*vars[3]), signNumber(-vars[1]*vars[3]), addOrSub(-vars[1]*vars[3]), signNumber(-vars[2]*vars[3]), signNumber(-vars[2]*vars[3]), addOrSub(-vars[2]*vars[3]), (vars[0]*vars[3]), (vars[0]*vars[3]), "Division Property of Equality", vars[4]]]]];
+			+"<tr><td>x</td><td></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i10' /></td></tr></table>", [["Distributive Property", signNumber(-vars[1]*vars[3])+"x", signNumber(-vars[1]*vars[3])+"x", addOrSub(-vars[1]*vars[3]), signNumber(-vars[2]*vars[3]), signNumber(-vars[2]*vars[3]), addOrSub(-vars[2]*vars[3]), (vars[0]*vars[3]), (vars[0]*vars[3]), "Division Property of Equality", vars[4]]]]];
 }
 
 function step1(ifResetScrolling)
