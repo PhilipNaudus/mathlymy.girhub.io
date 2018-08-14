@@ -36,12 +36,12 @@ function setQuestion()
 	    equationNum = 2;
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are supplements and &ang;B and &ang;C are supplements, prove that &ang;A &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([-0.5,-0.5], "A");
-            addText([-0.5,0.5], "B");
-            addText([0.5,0.5], "C");
+            addText([-1,-0.2], "A");
+            addText([-0.2,0.5], "B");
+            addText([1,0.5], "C");
 	    plotData([-4,4], [0,0]);
 	    plotData([-4,4], [-3,3]);
-	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
+	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of supplementary angles'>Definition of supplementary angles</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option><option value='Addition Property of Equality'>Addition Property of Equality</option><option value='Subtraction Property of Equality'>Subtraction Property of Equality</option>";
 	    break;
     }
 
@@ -55,7 +55,14 @@ function setQuestion()
 		    +"<tr><td>m&ang;B = 90&deg; and m&ang;C = 90&deg;</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 		    +"<tr><td>m&ang;B = m&ang;C</td><td></td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
 		    +"<tr><td>&ang;B &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
-		    , [["Given", "Definition of perpendicular lines", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]]];
+		    , [["Given", "Definition of perpendicular lines", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]],
+		["", "<table border='0'><tr><td>&ang;A and &ang;B are supplements and &ang;B and &ang;C are supplements</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		    +"<tr><td>m&ang;A+m&ang;B 180&deg; and m&ang;B+m&ang;C = 180&deg;</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
+		    +"<tr><td>m&ang;A+m&ang;B = m&ang;B+m&ang;C</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
+		    +"<tr><td>m&ang;A = m&ang;B</td><td></td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
+		    +"<tr><td>m&ang;B = m&ang;C</td><td></td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
+		    +"<tr><td>&ang;B &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
+		    , [["Given", "Definition of perpendicular lines", "Definition of right angle", "Transitive Property of Equality", "Subtraction Property of Equality", "Definition of congruent angles"]]]];
 }
 
 function step1(ifResetScrolling)
