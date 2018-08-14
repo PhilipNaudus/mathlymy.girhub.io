@@ -19,29 +19,6 @@ function setQuestion()
 	    {
 	       eq += ", <input type='number' class='mathinput' id='i"+i+"' />";
 	    }
-        case 1:
-	    quest = "Please evaluate and enter the answer below: ";
-        case 2:
-            var w = Math.min(window.innerWidth, window.innerHeight, 400);
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the length of this line?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            plotData([vars[0], vars[2]], [vars[1], vars[3]]);
-            break;
-        case 1:
-        case 3:
-            vars = getRandom(0, 9, 4);
-            if(questionNum>1)
-            {
-                var rand;
-                var count = 0;
-                for(var i=0; i<2; i++)
-                {
-                    rand = Math.round(Math.random()*3);
-                    vars[rand] = -Math.abs(vars[rand]);
-                }
-            }
-
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
             break;
     }
 
