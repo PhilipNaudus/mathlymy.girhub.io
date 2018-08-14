@@ -45,7 +45,6 @@ function setQuestion()
             break;
     }
 
-    var ans = Math.pow(vars[0]-vars[2],2)+Math.pow(vars[1]-vars[3],2);
     equations = [["", eq, [ans]]];
 
     for(var i=0; i<equations.length; i++)
