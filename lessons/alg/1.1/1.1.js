@@ -5,8 +5,8 @@ function setQuestion()
 {
     var quest;
     var vars = getRandom(-5, 5, 4);
-    var A = getRandom(0, 9, 7);
-    var B = getRandom(0, 9, 7);
+    var A = getRandom(0, 9, 7).sort();
+    var B = getRandom(0, 9, 7).sort();
     var ans;
     var eq;
     var equationNum;
@@ -25,7 +25,6 @@ function setQuestion()
     }
 
     equations = [["", eq, [ans]]];
-    alert(equations);
 }
 
 function step1(ifResetScrolling)
@@ -34,6 +33,8 @@ function step1(ifResetScrolling)
     currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
+    alert(equationNum);
+    alert(equations[0]);
     document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();

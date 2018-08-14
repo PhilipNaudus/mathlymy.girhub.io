@@ -33,6 +33,8 @@ function step1(ifResetScrolling)
     currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
+    alert(equationNum);
+    alert(equations[0]);
     document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
