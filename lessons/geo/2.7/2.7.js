@@ -30,7 +30,7 @@ function setQuestion()
 	    plotData([-4,-0.1], [-1,-1]);
 	    plotData([-0.1,-0.1], [-1,2]);
 	    plotData([-0.1,4], [2, 2]);
-	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
+	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
 	    break;
         case 2:
 	    equationNum = 2;

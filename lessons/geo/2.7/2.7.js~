@@ -25,7 +25,7 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-4,-0.5], "A");
             addText([-0.5,-0.1], "B");
-            addText([2.5,2.5], "C");
+            addText([-0.1,2.5], "C");
             addText([4,2.5], "D");
 	    plotData([-4,-0.1], [-1,-1]);
 	    plotData([-0.1,-0.1], [-1,2]);
