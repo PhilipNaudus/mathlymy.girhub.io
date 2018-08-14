@@ -45,7 +45,7 @@ function setQuestion()
                           +"<span class='fractop'>"+vars[1]+"</span>"
 			  +"<span class='fracbot'>"+vars[2]+"</span>"
 			+"</span>"
-	             " - <span class='fraction'>"
+			+" + <span class='fraction'>"
                           +"<span class='fractop'>"+vars[3]+"</span>"
 			  +"<span class='fracbot'>11</span>"
 			+"</span>";
