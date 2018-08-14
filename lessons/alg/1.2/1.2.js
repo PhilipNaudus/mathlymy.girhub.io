@@ -29,10 +29,10 @@ function setQuestion()
         case 3:
 	    var vars = getRandom(1, 9, 4)
 	    quest = "In the blank below, please enter &gt;, &lt;, or = to make a true expression."
-	    eq = "<span class='fractop'>"+vars[0]+"</span>"
+	    eq = "<span class='fraction'><span class='fractop'>"+vars[0]+"</span>"
 			  +"<span class='fracbot'>"+vars[1]+"</span>"
 			+"</span>"
-			+"<input type='text' class='mathinput' id='i0' />"
+			+"&nbsp;<input type='text' class='mathinput' id='i0' />&nbsp;"
 			+ (vars[2]/vars[3]);
 	    if(Math.abs((vars[0]/vars[1]) - (vars[2]/vars[3])) < 0.01) ans = ["="];
 	    else if((vars[0]/vars[1]) > (vars[2]/vars[3])) ans = [">"];
