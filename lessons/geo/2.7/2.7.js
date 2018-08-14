@@ -9,7 +9,7 @@ function setQuestion()
     {
         case 0:
 	    equationNum = 0;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are right angles, prove that &ang;A &cong &ang;B.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are right angles, prove that &ang;A &cong; &#8773; &ang;B.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-1.5,0.5], "A");
             addText([1.5,-0.5], "B");
