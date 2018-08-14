@@ -118,11 +118,11 @@ function giveHint()
 
 function signNumber(theNumber)
 {
-    if(theNumber > 0){
+    if(theNumber >= 0){
         return "+" + theNumber;
     }else{
         return theNumber.toString();
     }
 }
 
-var numQuestions = 8;
+var numQuestions = 10;
