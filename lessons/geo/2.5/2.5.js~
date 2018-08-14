@@ -111,5 +111,10 @@ function signNumber(theNumber)
     }
 }
 
+function addOrSub(num)
+{
+	return (num>0)?"Addition Property of Equality":"Subtraction Property of Equality";
+
+}
 
 var numQuestions = 6;
