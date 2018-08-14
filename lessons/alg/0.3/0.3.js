@@ -19,42 +19,42 @@ function setQuestion()
         case 2:
 	    var vars = getRandom(1, 9, 2);
 	    quest = "Please find the area of a rectangle whose length is "+vars[0]+" inches and width is "+vars[1]+" inches."
-	    eq = "<input type='number' class='mathinput' id='i0' /> inches";
+	    eq = "<input type='number' class='mathinput' id='i0' /> inches<sup>2</sup>";
 	    ans = [vars[0]*vars[1]];
 	    equationNum = 0;
             break;
         case 3:
 	    var vars = getRandom(1, 9, 2);
 	    quest = "Please find the area of a triangle whose length is "+vars[0]+" inches and width is "+vars[1]+" inches."
-	    eq = "<input type='number' class='mathinput' id='i0' /> inches";
+	    eq = "<input type='number' class='mathinput' id='i0' /> inches<sup>2</sup>";
 	    ans = [vars[0]*vars[1]/2];
 	    equationNum = 0;
             break;
         case 4:
 	    var vars = getRandom(1, 9, 1);
 	    quest = "Please find the area and circumference of a circle whose radius is "+vars[0]+" inches";
-	    eq = "Area: <input type='number' class='mathinput' id='i0' />&pi; inches<br />Circumference: <input type='number' class='mathinput' id='i1' />&pi; inches";
+	    eq = "Area: <input type='number' class='mathinput' id='i0' />&pi; inches<sup>2</sup><br />Circumference: <input type='number' class='mathinput' id='i1' />&pi; inches";
 	    ans = [vars[0]*vars[0], 2*vars[0]];
 	    equationNum = 0;
             break;
         case 5:
 	    var vars = getRandom(1, 9, 3);
 	    quest = "Please find the volume of a closed rectangular box with length "+vars[0]+" inches, width "+vars[1]+" inches, and height "+vars[2]+" inches.";
-	    eq = "<input type='number' class='mathinput' id='i0' /> inches";
+	    eq = "<input type='number' class='mathinput' id='i0' /> inches<sup>3</sup>";
 	    ans = [vars[0]*vars[1]*vars[2]];
 	    equationNum = 0;
             break;
         case 6:
 	    var vars = getRandom(1, 9, 2);
 	    quest = "Please find the volume of a closed right cylinder with radius "+vars[0]+" inches and height "+vars[1]+" inches.";
-	    eq = "<input type='number' class='mathinput' id='i0' />&pi; inches";
+	    eq = "<input type='number' class='mathinput' id='i0' />&pi; inches<sup>3</sup>";
 	    ans = [vars[0]*vars[0]*vars[1]];
 	    equationNum = 0;
             break;
         case 7:
 	    var vars = getRandom(1, 9, 2);
 	    quest = "Please find the surface area of a sphere with radius "+vars[0]+" inches";
-	    eq = "<input type='number' class='mathinput' id='i0' />&pi; inches";
+	    eq = "<input type='number' class='mathinput' id='i0' />&pi; inches<sup>2</sup>";
 	    ans = [4*vars[0]*vars[0]];
 	    equationNum = 0;
             break;
