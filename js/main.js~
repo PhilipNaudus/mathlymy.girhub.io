@@ -13,6 +13,7 @@ var lessons = {"geo": {"1.1": ["Identify points, lines, and planes"],
                        "2.7": ["Prove angle pair relationships"],
                        "name": ['g', "Geometry"]}, 
                "alg": {"1.1": ["Real numbers"],
+		       "1.2": ["Algebra essentials"],
                       "name": ['c', "College Algebra"]}, 
                "stat":{"1.1": ["TITLE P1"],
                        "name": ['s', "AP Statistics"]}};

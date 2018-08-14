@@ -60,7 +60,7 @@ function setQuestion()
             break;
         case 8:
         case 9:
-	    var vars = getRandom(1, 9, 2)
+	    var vars = getRandom(1, 9, 3)
 	    quest = "Please write "+vars[0]+"."+vars[1]+" &times; 10<sup>"+vars[2]+"</sup> as a decimal.";
 	    eq = "<input type='number' class='mathinput' id='i0' />"
 	    ans = (vars[0]+(vars[1]/10))*(Math.pow(10,vars[2]))
