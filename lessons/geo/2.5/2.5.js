@@ -42,12 +42,13 @@ function setQuestion()
 		      ["", "<table border='0'><tr><td>("+(vars[0]+vars[1])+"x </td><td>"+signNumber(vars[2])+")"+vars[3]+"</td><td> =</td><td>"+(vars[1]*vars[3])+"x </td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td><td>&nbsp;&nbsp;&nbsp;</td><td><b>Given</b></td></tr>"
 
 			+"<tr><td>"+((vars[0]*vars[3])+(vars[1]*vars[3]))+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td>"+(vars[1]*vars[3])+"x</td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
-
-			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td></td><td>"+((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			+"<tr><td><input type='text' class='mathinput' id='i9' /></td><td></td><td>=</td><td><input type='text' class='mathinput' id='i9' /></td><td></td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 
-			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
+			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td></td><td>"+((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			+"<tr><td></td><td><input type='text' class='mathinput' id='i9' /></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i9' /></td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
+
+			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
+			+"<tr><td>&divide;<input type='text' class='mathinput' id='i9' /></td><td></td><td>=</td><td>&divide;<input type='text' class='mathinput' id='i9' /></td><td></td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 
 			+"<tr><td>x</td><td></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i9' /></td></tr></table>", [[vars[4]]]]];
 }
