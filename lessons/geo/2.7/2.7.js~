@@ -13,10 +13,10 @@ function setQuestion()
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-1.5,0.5], "A");
             addText([1.5,0.5], "B");
-	    plotData([-4,-1], [0,0]);
-	    plotData([-1,-1], [4,0]);
-	    plotData([4,1], [0,0]);
-	    plotData([1,1], [-4,0]);
+	    plotData([-4,-1.1], [0,0]);
+	    plotData([-1.1,-1.1], [4,0]);
+	    plotData([4,1.1], [0,0]);
+	    plotData([1.1,1.1], [-4,0]);
 	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of EqualityTransitive Property of Equality</option>";
 	    break;
         case 1:
