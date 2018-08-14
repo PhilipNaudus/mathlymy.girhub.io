@@ -19,12 +19,12 @@ function setQuestion()
 	    plotData([1.1,1.1], [-4,0]);
 	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
 	    break;
-        case 0:
+        case 2:
 	    equationNum = 1;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &angB &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &ang;B &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-4,-0.5], "A");
-            addText([-0.5,-1.5], "B");
+            addText([0,-1.5], "B");
             addText([-0.1,2.5], "C");
             addText([4,2.5], "D");
 	    plotData([-4,-0.1], [-1,-1]);
@@ -32,13 +32,16 @@ function setQuestion()
 	    plotData([-0.1,4], [2, 2]);
 	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
 	    break;
-        case 2:
+        case 0:
 	    equationNum = 2;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>transitive</b> property to fill in the blanks.";
-	    break;
-        case 3:
-	    equationNum = 3;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that AC = AB + AB, prove that AB = BC. The proof is given on the left. Please select the reasons on the right.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are supplements and &ang;B and &ang;C are supplements, prove that &ang;A &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
+            addText([-0.5,-0.5], "A");
+            addText([-0.5,0.5], "B");
+            addText([0.5,0.5], "C");
+	    plotData([-4,4], [0,0]);
+	    plotData([-4,4], [-3,3]);
+	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
 	    break;
     }
 
