@@ -35,6 +35,7 @@ function setQuestion()
 	    equationNum = 0;
             break;
 	case 4:
+	case 6:
 	    var vars = getRandom(1, 9, 6);
 	    quest = "Please evaluate "+vars[0]+" - ["+vars[1]+"&times;"+vars[2]+" + ("+vars[3]+" - "+vars[4]+")] &times; "+vars[5];
 	    var ans = [vars[0] - (((vars[1]*vars[2]) + vars[3]-vars[4])*vars[5])];
@@ -42,6 +43,7 @@ function setQuestion()
 	    equationNum = 0;
             break;
 	case 5:
+	case 7:
 	    var vars = getRandom(1, 9, 6);
 	    quest = "Please evaluate "+vars[0]+"&times; <span class='fraction'>"
                           +"<span class='fractop'>"+vars[1]+"</span>"
@@ -118,4 +120,4 @@ function union(x, y) {
 };
 
 
-var numQuestions = 5;
+var numQuestions = 8;
