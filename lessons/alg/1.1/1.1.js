@@ -52,7 +52,7 @@ function setQuestion()
 			+" + <span class='fraction'>"
                           +"<span class='fractop'>"+vars[3]+"</span>"
 			  +"<span class='fracbot'>11</span>"
-			+"</span>";
+			+"</span>. Do not simplify.";
 	    var ans = [((vars[0]*vars[1]*11)+vars[3]*vars[2]), (vars[2]*11)];
 	    var eq = "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
