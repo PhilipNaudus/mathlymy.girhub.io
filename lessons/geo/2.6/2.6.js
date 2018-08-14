@@ -107,4 +107,4 @@ function addOrSub(num)
 
 }
 
-var numQuestions = 2;
+var numQuestions = 4;

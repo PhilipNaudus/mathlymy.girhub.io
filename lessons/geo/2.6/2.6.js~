@@ -36,7 +36,7 @@ function setQuestion()
     }
 
     equations = [["", alph[0]+" = <input type='text' class='mathinput' id='i0' />", [[alph[0]]]],
-	        ["", "If "+alph[0]+" = <input type='text' class='mathinput' id='i0' />, then "+alph[1]+" = <input type='text' class='mathinput' id='i0' />", [[alph[1], alph[0]]]],
+	        ["", "If "+alph[0]+" = <input type='text' class='mathinput' id='i0' />, then "+alph[1]+" = <input type='text' class='mathinput' id='i1' />", [[alph[1], alph[0]]]],
 	        ["", "If "+alph[0]+" = "+alph[1]+" and "+alph[1]+" = "+alph[2]+", then <input type='text' class='mathinput' id='i0' /> = <input type='text' class='mathinput' id='i1' />", [[alph[0], alph[2]]]],
 		["", "<table border='0'><tr><td>AC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
 		    +"<tr><td>AB + BC = AC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
@@ -107,4 +107,4 @@ function addOrSub(num)
 
 }
 
-var numQuestions = 2;
+var numQuestions = 5;
