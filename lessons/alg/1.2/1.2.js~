@@ -55,7 +55,7 @@ function setQuestion()
 			  +"<span class='fracbot'>x "+signNumber(vars[1])+"</span>"
 			+"</span>?";
 	    eq = "<input type='number' class='mathinput' id='i0' />"
-	    ans = [-vars[2]];
+	    ans = [-vars[1]];
 	    equationNum = 0;
             break;
         case 1:

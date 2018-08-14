@@ -8,7 +8,7 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 2:
+        case 0:
         case 2:
 	    var vars = getRandom(1, 9, 4)
 	    quest = "In the blank below, please enter &gt;, &lt;, or = to make a true expression."
@@ -25,7 +25,7 @@ function setQuestion()
 	    else ans = "<";
 	    equationNum = 0;
             break;
-        case 3:
+        case 1:
         case 3:
 	    var vars = getRandom(1, 9, 4)
 	    quest = "In the blank below, please enter &gt;, &lt;, or = to make a true expression."
@@ -47,7 +47,7 @@ function setQuestion()
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    equationNum = 0;
             break;
-        case 0:
+        case 6:
         case 7:
 	    var vars = getRandom(-9, 9, 2)
 	    quest = "What value of x must be excluded from the domain of "
@@ -58,7 +58,7 @@ function setQuestion()
 	    ans = [-vars[1]];
 	    equationNum = 0;
             break;
-        case 1:
+        case 8:
         case 9:
 	    var vars = getRandom(1, 9, 3)
 	    quest = "Please write "+vars[0]+"."+vars[1]+" &times; 10<sup>"+vars[2]+"</sup> as a decimal.";
