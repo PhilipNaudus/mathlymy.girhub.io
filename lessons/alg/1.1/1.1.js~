@@ -8,7 +8,7 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 0:
+        case 2:
         case 2:
 	    var A = getRandom(0, 9, 3).sort();
 	    var B = getRandom(0, 9, 3).sort();
@@ -39,6 +39,21 @@ function setQuestion()
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    equationNum = 0;
             break;
+	case 5:
+	    var vars = getRandom(1, 9, 6);
+	    quest = "Please evaluate "+vars[0] "&times; <span class='fraction'>"
+                          +"<span class='fractop'>"+vars[1]+"</span>"
+			  +"<span class='fracbot'>"+vars[2]+"</span>"
+			+"</span>"
+	             " - <span class='fraction'>"
+                          +"<span class='fractop'>"+vars[3]+"</span>"
+			  +"<span class='fracbot'>11</span>"
+			+"</span>";
+	    var ans = [((vars[0]*vars[1]*11)+vars[3]*vars[2]), (vars[2]*11)];
+	    var eq = 
+;
+	    equationNum = 0;
+            break;
     }
 
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
@@ -51,8 +66,6 @@ function step1(ifResetScrolling)
     currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
-    alert(equationNum);
-    alert(equations[0]);
     document.getElementById("math").innerHTML = equations[equationNum][1];
 
     addInputEventListeners();
