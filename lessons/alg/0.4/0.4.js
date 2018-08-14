@@ -11,7 +11,7 @@ function setQuestion()
         case 0:
 	    var vars = getRandom(1, 9, 2)
 	    quest = "Please find the coefficient and degree of the monomial "+vars[0]+"x<sup>"+vars[1]+"</sup>"
-	    eq = "Coefficient: <input type='number' class='mathinput' id='i0' /><br />Degree: <input type='number' class='mathinput' id='i0' />";
+	    eq = "Coefficient: <input type='number' class='mathinput' id='i0' /><br />Degree: <input type='number' class='mathinput' id='i1' />";
 	    ans = [vars[0], vars[1]];
 	    equationNum = 0;
             break;
