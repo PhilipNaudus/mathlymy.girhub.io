@@ -12,15 +12,15 @@ function setQuestion()
     {
         case 0:
 	    equationNum = 0;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>reflexive<b> property to fill in the blank.";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>reflexive</b> property to fill in the blank.";
 	    break;
         case 1:
 	    equationNum = 1;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>symmetric<b> property to fill in the blanks.";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>symmetric</b> property to fill in the blanks.";
 	    break;
         case 2:
 	    equationNum = 2;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>transitive<b> property to fill in the blanks.";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>transitive</b> property to fill in the blanks.";
 	    break;
         case 3:
 	    equationNum = 3;
@@ -37,12 +37,12 @@ function setQuestion()
 
     equations = [["", alph[0]+" = <input type='text' class='mathinput' id='i0' />", [[alph[0]]]],
 	        ["", "If "+alph[0]+" = <input type='text' class='mathinput' id='i0' />, then "+alph[1]+" = <input type='text' class='mathinput' id='i0' />", [[alph[1], alph[0]]]],
-	        ["", "If "+alph[0]+" = "+alph[1]+" and "+alph[1]+" = "+alph[2]+", then <input type='text' class='mathinput' id='i0' /> = <input type='text' class='mathinput' id='i0' />", [[alph[0], alph[2]]]],
+	        ["", "If "+alph[0]+" = "+alph[1]+" and "+alph[1]+" = "+alph[2]+", then <input type='text' class='mathinput' id='i0' /> = <input type='text' class='mathinput' id='i1' />", [[alph[0], alph[2]]]],
 		["", "<table border='0'><tr><td>AC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>AB + BC = AC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>AB + BC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>BC = AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>AB = BC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>", [["Given", "Segment Addition Postulate", "Transitive Property of Equality", "Subtraction Property of Equality", "Symmetric Property of Equality"]]]];
+		    +"<tr><td>AB + BC = AC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
+		    +"<tr><td>AB + BC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
+		    +"<tr><td>BC = AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
+		    +"<tr><td>AB = BC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>", [["Given", "Segment Addition Postulate", "Transitive Property of Equality", "Subtraction Property of Equality", "Symmetric Property of Equality"]]]];
 }
 
 function step1(ifResetScrolling)

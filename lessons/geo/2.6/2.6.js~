@@ -12,15 +12,15 @@ function setQuestion()
     {
         case 0:
 	    equationNum = 0;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>reflexive<b> property to fill in the blank.";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>reflexive</b> property to fill in the blank.";
 	    break;
         case 1:
 	    equationNum = 1;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>symmetric<b> property to fill in the blanks.";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>symmetric</b> property to fill in the blanks.";
 	    break;
         case 2:
 	    equationNum = 2;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>transitive<b> property to fill in the blanks.";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>transitive</b> property to fill in the blanks.";
 	    break;
         case 3:
 	    equationNum = 3;
@@ -34,12 +34,10 @@ function setQuestion()
 	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Reflexive Property of Equality'>Reflexive Property of Equality</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option><option value='Segment Addition Postulate'>Segment Addition Postulate</option><option value='Addition Property of Equality'>Addition Property of Equality</option><option value='Subtraction Property of Equality'>Subtraction Property of Equality</option>";
 	    break;
     }
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
-
 
     equations = [["", alph[0]+" = <input type='text' class='mathinput' id='i0' />", [[alph[0]]]],
 	        ["", "If "+alph[0]+" = <input type='text' class='mathinput' id='i0' />, then "+alph[1]+" = <input type='text' class='mathinput' id='i0' />", [[alph[1], alph[0]]]],
-	        ["", "If "+alph[0]+" = "+alph[1]+" and "+alph[1]+" = "+alph[2]+", then <input type='text' class='mathinput' id='i0' /> = <input type='text' class='mathinput' id='i0' />", [[alph[0], alph[2]]]],
+	        ["", "If "+alph[0]+" = "+alph[1]+" and "+alph[1]+" = "+alph[2]+", then <input type='text' class='mathinput' id='i0' /> = <input type='text' class='mathinput' id='i1' />", [[alph[0], alph[2]]]],
 		["", "<table border='0'><tr><td>AC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
 		    +"<tr><td>AB + BC = AC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
 		    +"<tr><td>AB + BC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
