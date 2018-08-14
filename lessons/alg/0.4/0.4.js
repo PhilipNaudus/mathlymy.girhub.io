@@ -27,7 +27,7 @@ function setQuestion()
         case 4:
 	    var vars = getRandom(1, 15, 9)
 	    quest = "Please add the polynomials: ("+vars[0]+"x<sup>"+vars[1]+"</sup> + "+vars[2]+"x<sup>"+vars[3]+"</sup>) + ("+vars[4]+"x<sup>"+vars[5]+"</sup> + "+vars[5]+"x<sup>"+vars[6]+"</sup> + "+vars[7]+"x<sup>"+vars[3]+"</sup> + "+vars[8]+"x<sup>"+vars[1]+"</sup>)"
-	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>"+vars[1]+"</sup> + <input type='number' class='mathinput' id='i1' />x<sup>"+vars[3]+"</sup> + <input type='number' class='mathinput' id='i2' />x<sup>"+vars[5]+"</sup> + <input type='number' class='mathinput' id='i3' />x<sup>"+vars[6]+"</sup> + ";
+	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>"+vars[1]+"</sup> + <input type='number' class='mathinput' id='i1' />x<sup>"+vars[3]+"</sup> + <input type='number' class='mathinput' id='i2' />x<sup>"+vars[5]+"</sup> + <input type='number' class='mathinput' id='i3' />x<sup>"+vars[6]+"</sup>";
 	    ans = [(vars[0]+vars[8]), (vars[2]+vars[7]), vars[4], vars[5]];
 	    equationNum = 0;
             break;
@@ -36,13 +36,13 @@ function setQuestion()
 	    var vars = getRandom(1, 9, 4)
 	    quest = "Please multiply the polynomials: ("+vars[0]+"x + "+vars[1]+") &times; ("+vars[2]+"x + "+vars[3]+")"
 	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>2</sup> + <input type='number' class='mathinput' id='i1' />x + <input type='number' class='mathinput' id='i2' />";
-	    ans = [(vars[0]+vars[2]), ((vars[1]+vars[2])+(vars[0]+vars[3])), (vars[1]+vars[3])];
+	    ans = [(vars[0]*vars[2]), ((vars[1]*vars[2])+(vars[0]*vars[3])), (vars[1]*vars[3])];
 	    equationNum = 0;
             break;
         case 7:
         case 8:
 	    var vars = getRandom(1, 9, 4)
-	    quest = "Please divide the polynomials: ("+(vars[0]+vars[2])+"x<sup>2</sup>"+((vars[1]+vars[2])+(vars[0]+vars[3]))+"x + "+(vars[1]+vars[3])+") &divide; ("+vars[2]+"x + "+vars[3]+")"
+	    quest = "Please divide the polynomials: ("+(vars[0]*vars[2])+"x<sup>2</sup>"+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+") &divide; ("+vars[2]+"x + "+vars[3]+")"
 	    eq = "<input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' />";
 	    ans = [vars[0], vars[1]];
 	    equationNum = 0;

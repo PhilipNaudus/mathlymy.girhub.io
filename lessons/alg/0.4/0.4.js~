@@ -27,7 +27,7 @@ function setQuestion()
         case 4:
 	    var vars = getRandom(1, 15, 9)
 	    quest = "Please add the polynomials: ("+vars[0]+"x<sup>"+vars[1]+"</sup> + "+vars[2]+"x<sup>"+vars[3]+"</sup>) + ("+vars[4]+"x<sup>"+vars[5]+"</sup> + "+vars[5]+"x<sup>"+vars[6]+"</sup> + "+vars[7]+"x<sup>"+vars[3]+"</sup> + "+vars[8]+"x<sup>"+vars[1]+"</sup>)"
-	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>"+vars[1]+"</sup> + <input type='number' class='mathinput' id='i1' />x<sup>"+vars[3]+"</sup> + <input type='number' class='mathinput' id='i2' />x<sup>"+vars[5]+"</sup> + <input type='number' class='mathinput' id='i3' />x<sup>"+vars[6]+"</sup> + ";
+	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>"+vars[1]+"</sup> + <input type='number' class='mathinput' id='i1' />x<sup>"+vars[3]+"</sup> + <input type='number' class='mathinput' id='i2' />x<sup>"+vars[5]+"</sup> + <input type='number' class='mathinput' id='i3' />x<sup>"+vars[6]+"</sup>";
 	    ans = [(vars[0]+vars[8]), (vars[2]+vars[7]), vars[4], vars[5]];
 	    equationNum = 0;
             break;
