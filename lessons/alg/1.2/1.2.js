@@ -53,9 +53,9 @@ function setQuestion()
 	    quest = "What value of x must be excluded from the domain of "
 	                +"<span class='fraction'><span class='fractop'>x "+signNumber(vars[0])+"</span>"
 			  +"<span class='fracbot'>x "+signNumber(vars[1])+"</span>"
-			+"</span>";
-	    eq = "<input type='number' class='mathinput' id='i0' />?"
-	    ans = [-vars[2]];
+			+"</span>?";
+	    eq = "<input type='number' class='mathinput' id='i0' />"
+	    ans = [-vars[1]];
 	    equationNum = 0;
             break;
         case 1:
