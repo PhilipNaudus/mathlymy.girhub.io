@@ -36,10 +36,9 @@ function setQuestion()
 	    equationNum = 2;
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are supplements and &ang;B and &ang;C are supplements, prove that &ang;A &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([0.5,0.5], "A");
-            addText([-0.5,-0.5], "B");
-            addText([-0.1,2.5], "C");
-            addText([4,2.5], "D");
+            addText([-0.5,-0.5], "A");
+            addText([-0.5,0.5], "B");
+            addText([0.5,0.5], "C");
 	    plotData([-4,4], [0,0]);
 	    plotData([-4,4], [-3,3]);
 	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
