@@ -60,7 +60,6 @@ function setQuestion()
 		    +"<tr><td>m&ang;A+m&ang;B = 180&deg; and m&ang;B+m&ang;C = 180&deg;</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
 		    +"<tr><td>m&ang;A+m&ang;B = m&ang;B+m&ang;C</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 		    +"<tr><td>m&ang;A = m&ang;B</td><td></td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;B = m&ang;C</td><td></td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
 		    +"<tr><td>&ang;B &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
 		    , [["Given", "Definition of supplementary angles", "Transitive Property of Equality", "Subtraction Property of Equality", "Definition of congruent angles"]]]];
 }
