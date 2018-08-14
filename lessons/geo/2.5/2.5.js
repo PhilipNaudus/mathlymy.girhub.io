@@ -31,7 +31,7 @@ function setQuestion()
 			+"<tr><td>"+((vars[0]*vars[3])+(vars[1]*vars[3]))+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td>"+(vars[1]*vars[3])+"x</td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td></td><td>"+((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
-			+"<tr><td>x</td><td></td><td>=</td><td></td><td>"+vars[4]+"</td></tr></table>", [[vars[4]]]];
+			+"<tr><td>x</td><td></td><td>=</td><td></td><td>"+vars[4]+"</td></tr></table>", [[vars[4]]]]];
 }
 
 function step1(ifResetScrolling)
