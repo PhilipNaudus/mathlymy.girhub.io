@@ -46,17 +46,6 @@ function setQuestion()
     }
 
     equations = [["", eq, [ans]]];
-
-    for(var i=0; i<equations.length; i++)
-    {
-        equations[i][2] = equations[i][2].map(function(j)
-                                              {
-                                                  return j.map(function(k)
-                                                  {
-                                                      return k.toString();
-                                                  })
-                                              });
-    }
 }
 
 function step1(ifResetScrolling)
