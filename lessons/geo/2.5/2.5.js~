@@ -3,12 +3,13 @@
 function setQuestion()
 {
     var ans;
-    var vars = getRandom(1, 9, 4);
+    var vars = getRandom(1, 9, 5);
     switch(questionNum)
     {
         case 0:
         case 1:
         case 2:
+	    vars[1] = vars[1]*(Math.round(Math.random())==0)?-1:1;
 	    equationNum = 1;
 	    break;
         case 3:
