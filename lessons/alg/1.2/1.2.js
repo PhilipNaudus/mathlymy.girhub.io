@@ -54,8 +54,8 @@ function setQuestion()
 	                +"<span class='fraction'><span class='fractop'>x "+signNumber(vars[0])+"</span>"
 			  +"<span class='fracbot'>x "+signNumber(vars[1])+"</span>"
 			+"</span>";
-	    eq = "<input type='number' class='mathinput' id='i0' />"
-	    ans = -vars[2];
+	    eq = "<input type='number' class='mathinput' id='i0' />?"
+	    ans = [-vars[2]];
 	    equationNum = 0;
             break;
         case 1:
@@ -63,7 +63,7 @@ function setQuestion()
 	    var vars = getRandom(1, 9, 3)
 	    quest = "Please write "+vars[0]+"."+vars[1]+" &times; 10<sup>"+vars[2]+"</sup> as a decimal.";
 	    eq = "<input type='number' class='mathinput' id='i0' />"
-	    ans = (vars[0]+(vars[1]/10))*(Math.pow(10,vars[2]))
+	    ans = [(vars[0]+(vars[1]/10))*(Math.pow(10,vars[2]))];
 	    equationNum = 0;
             break;
     }
