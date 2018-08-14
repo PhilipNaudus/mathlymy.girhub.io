@@ -25,7 +25,7 @@ function setQuestion()
             break;
         case 3:
 	    var vars = getRandom(1, 9, 2);
-	    quest = "Please find the area of a triangle whose length is "+vars[0]+" inches and width is "+vars[1]+" inches".
+	    quest = "Please find the area of a triangle whose length is "+vars[0]+" inches and width is "+vars[1]+" inches."
 	    eq = "<input type='number' class='mathinput' id='i0' /> inches";
 	    ans = [vars[0]*vars[1]/2];
 	    equationNum = 0;

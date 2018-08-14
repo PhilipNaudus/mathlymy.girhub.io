@@ -33,7 +33,7 @@ function setQuestion()
         case 4:
 	    var vars = getRandom(1, 9, 1);
 	    quest = "Please find the area and circumference of a circle whose radius is "+vars[0]+" inches";
-	    eq = "Area: <input type='number' class='mathinput' id='i0' />&pi; inches<br />Circumference: <input type='number' class='mathinput' id='i0' />&pi; inches";
+	    eq = "Area: <input type='number' class='mathinput' id='i0' />&pi; inches<br />Circumference: <input type='number' class='mathinput' id='i1' />&pi; inches";
 	    ans = [vars[0]*vars[0], 2*vars[0]];
 	    equationNum = 0;
             break;
