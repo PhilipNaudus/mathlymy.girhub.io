@@ -39,7 +39,7 @@ function setQuestion()
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    equationNum = 0;
             break;
-	case 5:
+	case 0:
 	    var vars = getRandom(1, 9, 6);
 	    quest = "Please evaluate "+vars[0] "&times; <span class='fraction'>"
                           +"<span class='fractop'>"+vars[1]+"</span>"
