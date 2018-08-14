@@ -7,15 +7,11 @@ function setQuestion()
     switch(questionNum)
     {
         case 0:
+	    equationNum = 0;
+	    break;
         case 1:
-        case 2:
 	    vars[1] = vars[1]*(Math.round(Math.random())==0)?-1:1;
 	    vars[2] = vars[2]*(Math.round(Math.random())==0)?-1:1;
-	    equationNum = 1;
-	    break;
-        case 3:
-        case 4:
-        case 5:
 	    equationNum = 1;
 	    break;
     }
@@ -50,7 +46,7 @@ function setQuestion()
 			+"<tr><td></td><td><input type='text' class='mathinput' id='i4' /></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i5' /></td><td></td><td><select class='mathinput' id='i6'>"+options+"</select></td></tr>"
 
 			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
-			+"<tr><td>&divide;<input type='text' class='mathinput' id='i7' /></td><td></td><td>=</td><td>&divide;<input type='text' class='mathinput' id='i8' /></td><td></td><td></td><td><select class='mathinput' id='i9'>"+options+"</select></td></tr>"
+			+"<tr><td>&divide;<input type='text' class='mathinput' id='i7' /></td><td></td><td>=</td><td></td><td>&divide;<input type='text' class='mathinput' id='i8' /></td><td></td><td><select class='mathinput' id='i9'>"+options+"</select></td></tr>"
 
 			+"<tr><td>x</td><td></td><td>=</td><td></td><td><input type='text' class='mathinput' id='i10' /></td></tr></table>", [["Distributive Property", signNumber(-vars[1]*vars[3])+"x", signNumber(-vars[1]*vars[3])+"x", addOrSub(-vars[1]*vars[3]), signNumber(-vars[2]*vars[3]), signNumber(-vars[2]*vars[3]), addOrSub(-vars[2]*vars[3]), (vars[0]*vars[3]), (vars[0]*vars[3]), "Division Property of Equality", vars[4]]]]];
 }

@@ -7,15 +7,11 @@ function setQuestion()
     switch(questionNum)
     {
         case 0:
+	    equationNum = 0;
+	    break;
         case 1:
-        case 2:
 	    vars[1] = vars[1]*(Math.round(Math.random())==0)?-1:1;
 	    vars[2] = vars[2]*(Math.round(Math.random())==0)?-1:1;
-	    equationNum = 1;
-	    break;
-        case 3:
-        case 4:
-        case 5:
 	    equationNum = 1;
 	    break;
     }
@@ -117,4 +113,4 @@ function addOrSub(num)
 
 }
 
-var numQuestions = 6;
+var numQuestions = 2;
