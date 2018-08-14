@@ -23,6 +23,8 @@ function setQuestion()
             break;
         case 1:
         case 3:
+	    var A = getRandom(0, 9, 6).sort();
+	    var B = getRandom(0, 9, 6).sort();
 	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cap; B:";
 	    var ans = (A.filter(value => -1 !== B.indexOf(value))).sort();
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
