@@ -9,7 +9,6 @@ function setQuestion()
     var B = getRandom(0, 9, 7).sort();
     var ans;
     var eq;
-    var equationNum;
     switch(questionNum)
     {
         case 0:

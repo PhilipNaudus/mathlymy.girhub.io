@@ -23,6 +23,7 @@ function setQuestion()
             break;
     }
 
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
     equations = [["", eq, [ans]]];
 }
 
