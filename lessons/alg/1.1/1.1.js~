@@ -41,61 +41,12 @@ function setQuestion()
                 }
             }
 
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the distance between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
             break;
     }
 
     var ans = Math.pow(vars[0]-vars[2],2)+Math.pow(vars[1]-vars[3],2);
-    equations = [["subtract.gif",
-                    "<div class='sqrt'><span class='overline'>"
-                        +"(<input type='number' class='mathinput' id='i0' />-<input type='number' class='mathinput' id='i1' />)"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i2' /></sup>"
-                            +"<sub></sub>"
-                        +"</span>"
-                        +"+(<input type='number' class='mathinput' id='i3' />-<input type='number' class='mathinput' id='i4' />)"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i5' /></sup>"
-                            +"<sub></sub>"
-                            +"</span>"
-                            +"</span>"
-                    +"</span></div>"
-                    +" =&nbsp;<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i6' /></span></div>",
-                    [[vars[0], vars[2], 2, vars[1], vars[3], 2, ans],
-                     [vars[2], vars[0], 2, vars[1], vars[3], 2, ans],
-                     [vars[0], vars[2], 2, vars[3], vars[1], 2, ans],
-                     [vars[2], vars[0], 2, vars[3], vars[1], 2, ans],
-                     [vars[1], vars[3], 2, vars[0], vars[2], 2, ans],
-                     [vars[1], vars[3], 2, vars[2], vars[0], 2, ans],
-                     [vars[3], vars[1], 2, vars[0], vars[2], 2, ans],
-                     [vars[3], vars[1], 2, vars[2], vars[0], 2, ans]]],
-                    ["delta.gif",
-                    "<div class='sqrt'><span class='overline'>"
-                        +"<input type='number' class='mathinput' id='i0' />"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i1' /></sup>"
-                            +"<sub></sub>"
-                        +"</span>"
-                        +"+<input type='number' class='mathinput' id='i2' />"
-                        +"<span class='supsub'>"
-                            +"<sup><input type='number' class='mathinput' id='i3' /></sup>"
-                            +"<sub></sub>"
-                        +"</span>"
-                    +"</span></div>"
-                    +" =&nbsp;<div class='sqrt'><span class='overline'><input type='number' class='mathinput' id='i4' /></span></div>",
-                    [[Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
-                     [-Math.abs(vars[0]-vars[2]), 2, Math.abs(vars[1]-vars[3]), 2, ans],
-                     [Math.abs(vars[0]-vars[2]), 2, -Math.abs(vars[1]-vars[3]), 2, ans],
-                     [-Math.abs(vars[0]-vars[2]), 2, -Math.abs(vars[1]-vars[3]), 2, ans],
-                     [Math.abs(vars[1]-vars[3]), 2, Math.abs(vars[0]-vars[2]), 2, ans],
-                     [-Math.abs(vars[1]-vars[3]), 2, Math.abs(vars[0]-vars[2]), 2, ans],
-                     [Math.abs(vars[1]-vars[3]), 2, -Math.abs(vars[0]-vars[2]), 2, ans],
-                     [-Math.abs(vars[1]-vars[3]), 2, -Math.abs(vars[0]-vars[2]), 2, ans]]],
-                    ["onestep.gif",
-                    "<span class='sqrt'>"
-                        +"<input type='number' class='mathinput' id='i0' />"
-                    +"</span>",
-                    [[ans]]]];
+    equations = [["", eq, [ans]]];
 
     for(var i=0; i<equations.length; i++)
     {

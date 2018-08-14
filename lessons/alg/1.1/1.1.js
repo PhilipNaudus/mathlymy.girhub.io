@@ -41,7 +41,7 @@ function setQuestion()
                 }
             }
 
-            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Find the distance between ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+").";
+            document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
             break;
     }
 
