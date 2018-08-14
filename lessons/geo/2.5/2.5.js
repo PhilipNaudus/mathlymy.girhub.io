@@ -29,7 +29,7 @@ function setQuestion()
 		      +"</table>", [["-"+vars[1]+"x", "-"+vars[1]+"x", "Subtraction Property of Equality", "+"+vars[2], "+"+vars[2], "Addition Property of Equality", "-"+vars[0], "-"+vars[0], "Division Property of Equality", "-"+vars[3]]]]];
 	        ["", "<table border='0'><td>["+(vars[0]+vars[1])+"x </td><td>"+signNumber(vars[2]*vars[3])+"</td><td> =</td><td>"+(vars[1]*vars[3])+"x </td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			+"<tr><td>"+((vars[0]*vars[3])+(vars[1]*vars[3]))+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td>"+(vars[1]*vars[3])+"x</td><td>"+signNumber((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
-			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td></td><td>"+((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))"+</td></tr>"
+			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td>"+signNumber(vars[2]*vars[3])+"</td><td>=</td><td></td><td>"+((vars[0]*vars[3]*vars[4])+(vars[2]*vars[3]))+"</td></tr>"
 			+"<tr><td>"+(vars[0]*vars[3])+"x</td><td></td><td>=</td><td></td><td>"+(vars[0]*vars[3]*vars[4])+"</td></tr>"
 			+"<tr><td>x</td><td></td><td>=</td><td></td><td>"+vars[4]+"</td></tr></table>", [[vars[4]]]];
 }
