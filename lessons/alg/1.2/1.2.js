@@ -15,7 +15,7 @@ function setQuestion()
 	    eq = "<span class='fraction'><span class='fractop'>"+vars[0]+"</span>"
 			  +"<span class='fracbot'>"+vars[1]+"</span>"
 			+"</span>"
-			+"&nbsp;<input type='number' class='mathinput' id='i0' />&nbsp;"
+			+"&nbsp;<input type='text' class='mathinput' id='i0' />&nbsp;"
 			+"<span class='fraction'>"
                           +"<span class='fractop'>"+vars[2]+"</span>"
 			  +"<span class='fracbot'>"+vars[3]+"</span>"
@@ -32,7 +32,7 @@ function setQuestion()
 	    eq = "<span class='fractop'>"+vars[0]+"</span>"
 			  +"<span class='fracbot'>"+vars[1]+"</span>"
 			+"</span>"
-			+"<input type='number' class='mathinput' id='i0' />"
+			+"<input type='text' class='mathinput' id='i0' />"
 			+ (vars[2]/vars[3]);
 	    if(((vars[0]/vars[1]) - (vars[2]/vars[3])) < 0.01) ans = ["="];
 	    else if((vars[0]/vars[1]) > (vars[2]/vars[3])) ans = [">"];

@@ -12,10 +12,10 @@ function setQuestion()
         case 2:
 	    var vars = getRandom(1, 9, 4)
 	    quest = "In the blank below, please enter &gt;, &lt;, or = to make a true expression."
-	    eq = "<span class='fractop'>"+vars[0]+"</span>"
+	    eq = "<span class='fraction'><span class='fractop'>"+vars[0]+"</span>"
 			  +"<span class='fracbot'>"+vars[1]+"</span>"
 			+"</span>"
-			+"&nbsp;<input type='number' class='mathinput' id='i0' />&nbsp;"
+			+"&nbsp;<input type='text' class='mathinput' id='i0' />&nbsp;"
 			+"<span class='fraction'>"
                           +"<span class='fractop'>"+vars[2]+"</span>"
 			  +"<span class='fracbot'>"+vars[3]+"</span>"
