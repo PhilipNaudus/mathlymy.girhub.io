@@ -20,7 +20,7 @@ function setQuestion()
                           +"<span class='fractop'>"+vars[2]+"</span>"
 			  +"<span class='fracbot'>"+vars[3]+"</span>"
 			+"</span>";
-	    if(((vars[0]/vars[1]) - (vars[2]/vars[3])) < 0.01) ans = "=";
+	    if((Math.abs(vars[0]/vars[1]) - (vars[2]/vars[3])) < 0.01) ans = "=";
 	    else if((vars[0]/vars[1]) > (vars[2]/vars[3])) ans = ">";
 	    else ans = "<";
 	    equationNum = 0;
@@ -34,7 +34,7 @@ function setQuestion()
 			+"</span>"
 			+"<input type='text' class='mathinput' id='i0' />"
 			+ (vars[2]/vars[3]);
-	    if(((vars[0]/vars[1]) - (vars[2]/vars[3])) < 0.01) ans = ["="];
+	    if(Math.abs((vars[0]/vars[1]) - (vars[2]/vars[3])) < 0.01) ans = ["="];
 	    else if((vars[0]/vars[1]) > (vars[2]/vars[3])) ans = [">"];
 	    else ans = ["<"];
 	    equationNum = 0;
