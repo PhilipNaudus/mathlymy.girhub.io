@@ -12,8 +12,18 @@ function setQuestion()
     switch(questionNum)
     {
         case 0:
+	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cup; B:";
+	    var ans = union(A, B).sort();
+	    var eq = "<input type='number' class='mathinput' id='i0' />";
+	    for(var i=1; i<+ans.length; i++)
+	    {
+	       eq += ", <input type='number' class='mathinput' id='i"+i+"' />";
+	    }
+	    equationNum = 0;
+            break;
+        case 1:
 	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cap; B:";
-	    var ans = A.filter(value => -1 !== B.indexOf(value));
+	    var ans = (A.filter(value => -1 !== B.indexOf(value))).sort();
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    for(var i=1; i<+ans.length; i++)
 	    {
@@ -72,5 +82,14 @@ function giveHint()
         checkChanged(input);
     }
 }
+
+function unique(x) {
+  return x.filter(function(elem, index) { return x.indexOf(elem) === index; });
+};
+
+function union(x, y) {
+  return unique(x.concat(y));
+};
+
 
 var numQuestions = 4;
