@@ -12,7 +12,7 @@ function setQuestion()
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are right angles, prove that &ang;A &cong; &ang;B.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-1.5,0.5], "A");
-            addText([1.5,-1.5], "B");
+            addText([1.5,-0.5], "B");
 	    plotData([-4,-1.1], [0,0]);
 	    plotData([-1.1,-1.1], [4,0]);
 	    plotData([4,1.1], [0,0]);
@@ -24,7 +24,7 @@ function setQuestion()
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &angB &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-4,-0.5], "A");
-            addText([-0.5,-0.1], "B");
+            addText([-0.5,-1.5], "B");
             addText([-0.1,2.5], "C");
             addText([4,2.5], "D");
 	    plotData([-4,-0.1], [-1,-1]);
