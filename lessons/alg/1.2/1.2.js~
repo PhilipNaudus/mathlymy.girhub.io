@@ -15,7 +15,7 @@ function setQuestion()
 	    eq = "<span class='fractop'>"+vars[0]+"</span>"
 			  +"<span class='fracbot'>"+vars[1]+"</span>"
 			+"</span>"
-			+"<input type='number' class='mathinput' id='i0' />"
+			+"&nbsp;<input type='number' class='mathinput' id='i0' />&nbsp;"
 			+"<span class='fraction'>"
                           +"<span class='fractop'>"+vars[2]+"</span>"
 			  +"<span class='fracbot'>"+vars[3]+"</span>"
