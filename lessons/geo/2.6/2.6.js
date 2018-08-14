@@ -7,6 +7,7 @@ function setQuestion()
     var quest;
     var alph = ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "P", "R", "S", "T", "W", "X", "Y", "Z"];
     alph = shuffle(alph);
+    var options;
     switch(questionNum)
     {
         case 0:

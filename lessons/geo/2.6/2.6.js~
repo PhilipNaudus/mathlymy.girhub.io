@@ -43,7 +43,7 @@ function setQuestion()
 		    +"<tr><td>AB + BC = AC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
 		    +"<tr><td>AB + BC = AB + AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
 		    +"<tr><td>BC = AB</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>AB = BC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>", [["Given", "Segment Addition Postulate", "Transitive Property of Equality", ""]]]];
+		    +"<tr><td>AB = BC</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>", [["Given", "Segment Addition Postulate", "Transitive Property of Equality", "Subtraction Property of Equality", "Symmetric Property of Equality"]]]];
 }
 
 function step1(ifResetScrolling)
