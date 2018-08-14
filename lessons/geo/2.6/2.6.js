@@ -23,7 +23,7 @@ function setQuestion()
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please use the <b>transitive<b> property to fill in the blanks.";
 	    break;
         case 3:
-	    equationNum = 2;
+	    equationNum = 3;
             var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that AC = AB + AB, prove that AB = BC. The proof is given on the left. Please select the reasons on the right.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
@@ -34,8 +34,6 @@ function setQuestion()
 	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Reflexive Property of Equality'>Reflexive Property of Equality</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option><option value='Segment Addition Postulate'>Segment Addition Postulate</option><option value='Addition Property of Equality'>Addition Property of Equality</option><option value='Subtraction Property of Equality'>Subtraction Property of Equality</option>";
 	    break;
     }
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
-
 
     equations = [["", alph[0]+" = <input type='text' class='mathinput' id='i0' />", [[alph[0]]]],
 	        ["", "If "+alph[0]+" = <input type='text' class='mathinput' id='i0' />, then "+alph[1]+" = <input type='text' class='mathinput' id='i0' />", [[alph[1], alph[0]]]],
