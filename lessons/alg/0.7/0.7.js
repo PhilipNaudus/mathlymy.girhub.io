@@ -6,7 +6,7 @@ function setQuestion()
     var quest;
     var ans;
     var eq;
-    var vars = getRandom(1, 10, 10);
+    var vars = getRandom(2, 15, 10, [8, 10, 12, 14]);
     switch(questionNum)
     {
         case 0:
@@ -52,7 +52,7 @@ function setQuestion()
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+(vars[0]*vars[2])+"x<sup>2</sup> + "+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+"</span>"
 		       +"<span class='fracbot'>"+vars[6]+"x + "+vars[7]+"</span>"
-		   +"</span> &times;";
+		   +"</span> &times;"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[8]+"x + "+vars[9]+"</span>"
 		       +"<span class='fracbot'>"+(vars[0]*vars[4])+"x<sup>2</sup> + "+((vars[1]*vars[4])+(vars[0]*vars[5]))+"x + "+(vars[1]*vars[5])+"</span>"
@@ -72,7 +72,7 @@ function setQuestion()
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+(vars[0]*vars[2])+"x<sup>2</sup> + "+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+"</span>"
 		       +"<span class='fracbot'>"+vars[6]+"x + "+vars[7]+"</span>"
-		   +"</span> &divide;";
+		   +"</span> &divide;"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+(vars[0]*vars[4])+"x<sup>2</sup> + "+((vars[1]*vars[4])+(vars[0]*vars[5]))+"x + "+(vars[1]*vars[5])+"</span>"
 		       +"<span class='fracbot'>"+vars[8]+"x + "+vars[9]+"</span>"
@@ -91,7 +91,7 @@ function setQuestion()
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
-		   +"</span> +";
+		   +"</span> +"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
@@ -106,7 +106,7 @@ function setQuestion()
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
-		   +"</span> -";
+		   +"</span> -"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5]+"</span>"
 		       +"<span class='fracbot'>"+vars[6]+"x + "+vars[7]+"</span>"
