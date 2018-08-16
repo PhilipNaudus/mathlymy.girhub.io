@@ -8,8 +8,8 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 2:
-        case 3:
+        case 0:
+        case 1:
 	    var vars = getRandom(1, 9, 8);
 	
 	    var x = new Array();	    
@@ -26,8 +26,8 @@ function setQuestion()
 	    ans = [vars[0], vars[1], vars[2], vars[3], vars[4], vars[5]];
 	    equationNum = 0;
             break;
-        case 0:
-        case 1:
+        case 2:
+        case 3:
 	    var vars = getRandom(1, 9, 6);
 	
 	    var x = new Array();
