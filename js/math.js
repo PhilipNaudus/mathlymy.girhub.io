@@ -318,6 +318,7 @@ function getRandom(min, max, n, ommit)
     if(arguments.length==3) ommit = [];
     var rand;
     var vars = new Array();
+    var doAgain = false;
     for(var i=0; i<n; i++)
     {
         do
@@ -327,8 +328,14 @@ function getRandom(min, max, n, ommit)
 	    {
 	       if(rand == ommit[j])
 	       {
-		  continue;
+		  doAgain = true;
+		  break;
 	       }
+	    }
+	    if(doAgain)
+	    {
+	        doAgain = false;
+		continue;
 	    }
         } while((i>0 && vars.indexOf(rand) > -1));
         vars[i] = rand;
