@@ -18,7 +18,7 @@ function setQuestion()
             break;
         case 2:
         case 3:
-            var n = getRandom(1, 5, 4);
+            var n = getRandom(2, 5, 4);
             quest = "Please simplify the following expression:<br /><sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span></div>";
 	    eq = "x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>"
 		 +"y<span class='supsub'><sup><input type='number' class='mathinput' id='i1' /></sup><sub></sub></span>"
@@ -27,13 +27,13 @@ function setQuestion()
             break;
         case 4:
         case 5:
-            var n = getRandom(1, 7, 7);
+            var n = getRandom(2, 8, 7);
             quest = "Please simplify the following expression:<br /><span style='font-size:300%'>(</span>"
 			+"<span class='fraction'>"
                           +"<span class='fractop'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span>"
 			  +"<span class='fracbot'>a<sup>"+(n[0]*n[4])+"</sup>b<sup>"+(n[0]*n[5])+"</sup>c<sup>"+(n[0]*n[6])+"</sup></span>"
 			+"</span>"
-			+"<span style='font-size:300%'>)</span><sup>"+n[0]+"</sup>";
+			+"<span style='font-size:300%'>)</span><sup>1/"+n[0]+"</sup>";
 	    eq = "<span class='fraction'>"
                           +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
 			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
