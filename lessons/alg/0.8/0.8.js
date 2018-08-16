@@ -12,7 +12,7 @@ function setQuestion()
         case 1:
             var radic = getRandom(4, 9, 1)
             var n = getRandom(3, 5, 1)
-            quest = "Please find the value of <sup>+"+n[0]+"+</sup><div class='sqrt'><span class='overline'>"+Math.pow(radic[0],n[0])+"</span></div>;
+            quest = "Please find the value of <sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>"+Math.pow(radic[0],n[0])+"</span></div>";
 	    eq = "<input type='number' class='mathinput' id='i0' />";
 	    ans = [radic[0]];
             break;
