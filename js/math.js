@@ -315,7 +315,8 @@ function indexOfMax(arr) {
 
 function getRandom(min, max, n, ommit)
 {
-    if(typeof ommit=="undefined") ommit = [];
+    if((typeof ommit)=="undefined") ommit = [];
+    alert(typeof ommit);
     alert(ommit);
     var rand;
     var vars = new Array();
