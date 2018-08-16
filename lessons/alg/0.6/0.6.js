@@ -10,25 +10,46 @@ function setQuestion()
     {
         case 0:
         case 1:
-        case 2:
-        case 3:
-        case 4:
-	    var vars = getRandom(1, 9, 8);
-	    var elems = getRandom(0, 6, 3);
-	    for(var i=0; i<elems.length; i++)
+	    var vars = getRandom(0, 9, 8);
+	
+	    var x = new Array();	    
+            x[6] = vars[0]*vars[6];
+	    x[5] = (vars[0]*vars[7])+(vars[1]*vars[6]);
+	    x[4] = (vars[1]*vars[7])+(vars[2]*vars[6]);
+	    x[3] = (vars[2]*vars[7])+(vars[3]*vars[6]);
+	    x[2] = (vars[3]*vars[7])+(vars[4]*vars[6]);
+	    x[1] = (vars[4]*vars[7])+(vars[5]*vars[6]);
+	    x[0] = vars[5]*vars[7];
+		    
+	    quest = "Please divide the polynomials using synthetic division:<br />("+((x[6]==0)?"":(x[6]+"x<sup>6</sup> + "))+((x[5]==0)?"":(x[5]+"x<sup>5</sup> + "))+((x[4]==0)?"":(x[4]+"x<sup>4</sup> + "))+((x[3]==0)?"":(x[3]+"x<sup>3</sup> + "))+((x[2]==0)?"":(x[2]+"x<sup>2</sup> + "))+((x[1]==0)?"":(x[1]+"x + "))+x[0]+") &divide; ("+vars[6]+"x + "+vars[7]+")";
+	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>5</sup> + <input type='number' class='mathinput' id='i1' />x<sup>4</sup> + <input type='number' class='mathinput' id='i2' />x<sup>3</sup> + <input type='number' class='mathinput' id='i3' />x<sup>2</sup> + <input type='number' class='mathinput' id='i4' />x + <input type='number' class='mathinput' id='i5' />";
+	    ans = [vars[0], vars[1], vars[2], vars[3], vars[4], vars[5]];
+	    equationNum = 0;
+            break;
+        case 0:
+        case 1:
+	    var vars = getRandom(0, 9, 6);
+	
+	    var j = 0;
+	    x[6] = vars[0];
+	    x[0] = vars[5]
+            for(var i=5; i>=0; i--)
 	    {
-	        vars[elems[i]] = 0;
+		if((Math.round(Math.random())==0)?false:true)
+		{
+		   vars[j] = vars[j-1];
+		}
+	        x[i] = vars[j] - vars[j-1];
+		j--;
 	    }
+
+	    /*x[5] = vars[0]-vars[1];
+	    x[4] = vars[1]-vars[2];
+	    x[3] = vars[2]-vars[3];
+	    x[2] = vars[3]-vars[4];
+	    x[1] = vars[4]-vars[5];*/
 		    
-            var x6 = vars[0]*vars[6];
-	    var x5 = (vars[0]*vars[7])+(vars[1]*vars[6]);
-	    var x4 = (vars[1]*vars[7])+(vars[2]*vars[6]);
-	    var x3 = (vars[2]*vars[7])+(vars[3]*vars[6]);
-	    var x2 = (vars[3]*vars[7])+(vars[4]*vars[6]);
-	    var x1 = (vars[4]*vars[7])+(vars[5]*vars[6]);
-	    var x0 = vars[5]*vars[7];
-		    
-	    quest = "Please divide the polynomials using synthetic division:<br />("+((x6==0)?"":(x6+"x<sup>6</sup> + "))+((x5==0)?"":(x5+"x<sup>5</sup> + "))+((x4==0)?"":(x4+"x<sup>4</sup> + "))+((x3==0)?"":(x3+"x<sup>3</sup> + "))+((x2==0)?"":(x2+"x<sup>2</sup> + "))+((x1==0)?"":(x1+"x + "))+x0+") &divide; ("+vars[6]+"x + "+vars[7]+")";
+	    quest = "Please divide the polynomials using synthetic division:<br />("+((x[6]==0)?"":(x[6]+"x<sup>6</sup> + "))+((x[5]==0)?"":(x[5]+"x<sup>5</sup> + "))+((x[4]==0)?"":(x[4]+"x<sup>4</sup> + "))+((x[3]==0)?"":(x[3]+"x<sup>3</sup> + "))+((x[2]==0)?"":(x[2]+"x<sup>2</sup> + "))+((x[1]==0)?"":(x[1]+"x + "))+x[0]+") &divide; (x + 1)";
 	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>5</sup> + <input type='number' class='mathinput' id='i1' />x<sup>4</sup> + <input type='number' class='mathinput' id='i2' />x<sup>3</sup> + <input type='number' class='mathinput' id='i3' />x<sup>2</sup> + <input type='number' class='mathinput' id='i4' />x + <input type='number' class='mathinput' id='i5' />";
 	    ans = [vars[0], vars[1], vars[2], vars[3], vars[4], vars[5]];
 	    equationNum = 0;
