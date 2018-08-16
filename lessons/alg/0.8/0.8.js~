@@ -8,7 +8,7 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 0:
+        case 1:
         case 1:
             var radic = getRandom(4, 9, 1)
             var n = getRandom(3, 5, 1)
@@ -25,7 +25,7 @@ function setQuestion()
 		 +"z<span class='supsub'><sup><input type='number' class='mathinput' id='i2' /></sup><sub></sub></span>";
 	    ans = [n[1], n[2], n[3]];
             break;
-        case 4:
+        case 0:
         case 5:
             var n = getRandom(2, 8, 7);
             quest = "Please simplify the following expression:<br /><span style='font-size:300%'>(</span>"
