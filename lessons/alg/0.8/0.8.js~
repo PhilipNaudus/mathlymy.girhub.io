@@ -33,7 +33,7 @@ function setQuestion()
                           +"<span class='fractop'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span>"
 			  +"<span class='fracbot'>a<sup>"+(n[0]*n[4])+"</sup>b<sup>"+(n[0]*n[5])+"</sup>c<sup>"+(n[0]*n[6])+"</sup></span>"
 			+"</span>"
-			+"<span style='font-size:300%'>)</span><sup style='top: -0.5em;'>1/"+n[0]+"</sup>";
+			+"<span style='font-size:300%'>)</span><sup style='top: -1em;'>1/"+n[0]+"</sup>";
 	    eq = "<span class='fraction'>"
                           +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i1' /></sup><sub></sub></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i2' /></sup><sub></sub></span></span>"
 			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i3' /></sup><sub></sub></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i4' /></sup><sub></sub></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i5' /></sup><sub></sub></span></span>"
