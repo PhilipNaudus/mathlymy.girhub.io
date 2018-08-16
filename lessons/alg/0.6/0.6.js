@@ -28,9 +28,10 @@ function setQuestion()
             break;
         case 0:
         case 1:
-	    var vars = getRandom(1, 9, 7);
+	    var vars = getRandom(1, 9, 6);
 	
 	    var j = 0;
+	    var x = new Array();
 	    x[6] = vars[0];
 	    x[0] = vars[5]
             for(var i=5; i>=0; i--)
