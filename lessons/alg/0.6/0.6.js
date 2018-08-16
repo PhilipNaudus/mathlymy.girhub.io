@@ -10,7 +10,7 @@ function setQuestion()
     {
         case 0:
         case 1:
-	    var vars = getRandom(0, 9, 8);
+	    var vars = getRandom(1, 9, 8);
 	
 	    var x = new Array();	    
             x[6] = vars[0]*vars[6];
@@ -28,7 +28,7 @@ function setQuestion()
             break;
         case 0:
         case 1:
-	    var vars = getRandom(0, 9, 6);
+	    var vars = getRandom(1, 9, 6);
 	
 	    var j = 0;
 	    x[6] = vars[0];
