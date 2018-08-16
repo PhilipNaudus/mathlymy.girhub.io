@@ -92,7 +92,7 @@ function setQuestion()
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
-		   +"</span> +"
+		   +"</span> + "
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
@@ -102,13 +102,14 @@ function setQuestion()
 		       +"<span class='fracbot'><input type='number' class='mathinput' id='i2' />x + <input type='number' class='mathinput' id='i3' /></span>"
 		   +"</span>";
 	    ans = [[(vars[0]+vars[4]), (vars[1]+vars[5]), vars[2], vars[3]]];
+	    break;
         case 9:
 	    var vars = getRandom(2, 9, 6);
             quest = "Please perform the indicated operation and simplify the result:<br />"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
-		   +"</span> -"
+		   +"</span> - "
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5]+"</span>"
 		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
