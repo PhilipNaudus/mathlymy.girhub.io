@@ -31,14 +31,14 @@ function setQuestion()
 	    var vars = getRandom(1, 9, 6);
 	
 	    var x = new Array();
-	    var j = 0;
+	    var j = 1;
             for(var i=5; i>=1; i--)
 	    {
 		if(Math.random() > 0.3)
 		{
-		   vars[j] = vars[j+1];
+		   vars[j] = vars[j-1];
 		}
-		j--;
+		j++;
 	    }
 
 	    x[6] = vars[0];

@@ -38,7 +38,7 @@ function setQuestion()
 		{
 		   vars[j] = vars[j-1];
 		}
-		j--;
+		j++;
 	    }
 
 	    x[6] = vars[0];
