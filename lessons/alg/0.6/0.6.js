@@ -44,11 +44,11 @@ function setQuestion()
 		j++;
 	    }
 
-	    /*x[5] = vars[0]-vars[1];
-	    x[4] = vars[1]-vars[2];
-	    x[3] = vars[2]-vars[3];
-	    x[2] = vars[3]-vars[4];
-	    x[1] = vars[4]-vars[5];*/
+	    x[5] = vars[1]-vars[0];
+	    x[4] = vars[2]-vars[1];
+	    x[3] = vars[3]-vars[2];
+	    x[2] = vars[4]-vars[3];
+	    x[1] = vars[5]-vars[4];
 		    
 	    quest = "Please divide the polynomials using synthetic division:<br />("+((x[6]==0)?"":(x[6]+"x<sup>6</sup>"))+((x[5]==0)?"":(signNumber(x[5]))+"x<sup>5</sup>")+((x[4]==0)?"":(signNumber(x[4]))+"x<sup>4</sup>")+((x[3]==0)?"":(signNumber(x[3])+"x<sup>3</sup>"))+((x[2]==0)?"":(signNumber(x[2])+"x<sup>2</sup>"))+((x[1]==0)?"":(signNumber(x[1])+"x"))+signNumber(x[0])+") &divide; (x - 1)";
 	    eq = "<input type='number' class='mathinput' id='i0' />x<sup>5</sup> + <input type='number' class='mathinput' id='i1' />x<sup>4</sup> + <input type='number' class='mathinput' id='i2' />x<sup>3</sup> + <input type='number' class='mathinput' id='i3' />x<sup>2</sup> + <input type='number' class='mathinput' id='i4' />x + <input type='number' class='mathinput' id='i5' />";
