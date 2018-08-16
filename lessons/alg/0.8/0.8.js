@@ -35,8 +35,8 @@ function setQuestion()
 			+"</span>"
 			+"<span style='font-size:300%'>)<sup>1/"+n[0]+"</sup></span>";
 	    eq = "<span class='fraction'>"
-                          +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
-			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
+                          +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i1' /></sup><sub></sub></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i2' /></sup><sub></sub></span></span>"
+			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i3' /></sup><sub></sub></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i4' /></sup><sub></sub></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i5' /></sup><sub></sub></span></span>"
 			+"</span>";
 	    ans = [n[1], n[2], n[3], n[4], n[5], n[6]];
             break;
