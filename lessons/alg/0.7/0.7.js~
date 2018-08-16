@@ -9,7 +9,7 @@ function setQuestion()
     switch(questionNum)
     {
         case 0:
-	    var vars = getRandom(2, 9, 5);
+	    var vars = getRandom(2, 9, 5, [6, 8]);
             quest = "Please reduce the rational expression to lowest terms:<br />"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+(vars[0]*vars[1])+"x + "+(vars[0]*vars[2])+"</span>"
@@ -22,7 +22,7 @@ function setQuestion()
 	    ans = [[vars[0], vars[3], vars[4]]];
             break;
         case 1:
-	    var vars = getRandom(2, 9, 5);
+	    var vars = getRandom(2, 9, 5, [6, 8]);
             quest = "Please reduce the rational expression to lowest terms:<br />"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+(vars[1]*vars[3])+"x<sup>2</sup> + "+((vars[2]*vars[3])+(vars[1]*vars[4]))+"x + "+(vars[2]*vars[4])+"</span>"
