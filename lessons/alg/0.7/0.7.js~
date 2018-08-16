@@ -89,12 +89,12 @@ function setQuestion()
         case 8:
             quest = "Please perform the indicated operation and simplify the result:<br />"
 		   +"<span class='fraction'>"
-		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1])+"</span>"
-		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3])+"</span>"
+		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1]+"</span>"
+		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
 		   +"</span> +";
 		   +"<span class='fraction'>"
-		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5])+"</span>"
-		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3])+"</span>"
+		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5]+"</span>"
+		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
 		   +"</span>";
 	    eq = "<span class='fraction'>"
 		       +"<span class='fractop'><input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' /></span>"
@@ -104,12 +104,12 @@ function setQuestion()
         case 9:
             quest = "Please perform the indicated operation and simplify the result:<br />"
 		   +"<span class='fraction'>"
-		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1])+"</span>"
-		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3])+"</span>"
+		       +"<span class='fractop'>"+vars[0]+"x + "+vars[1]+"</span>"
+		       +"<span class='fracbot'>"+vars[2]+"x + "+vars[3]+"</span>"
 		   +"</span> -";
 		   +"<span class='fraction'>"
-		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5])+"</span>"
-		       +"<span class='fracbot'>"+vars[6]+"x + "+vars[7])+"</span>"
+		       +"<span class='fractop'>"+vars[4]+"x + "+vars[5]+"</span>"
+		       +"<span class='fracbot'>"+vars[6]+"x + "+vars[7]+"</span>"
 		   +"</span>";
 	    eq = "<span class='fraction'>"
 		       +"<span class='fractop'><input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' /></span>"

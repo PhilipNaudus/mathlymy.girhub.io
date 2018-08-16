@@ -121,7 +121,7 @@ function setQuestion()
 
     equationNum = 0;
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
-    equations = [["", eq, [ans]]];
+    equations = [["", eq, ans]];
 }
 
 function step1(ifResetScrolling)
