@@ -6,7 +6,7 @@ function setQuestion()
     var quest;
     var ans;
     var eq;
-    var vars = getRandom(2, 10, 4)
+    var vars = getRandom(2, 7, 4, [4, 6])
     switch(questionNum)
     {
         case 0:
