@@ -334,11 +334,12 @@ function getRandom(min, max, n, ommit)
 	    }
 	    if(doAgain)
 	    {
-		alert("doAgain");
+		alert("doAgain"+rand);
 	        doAgain = false;
 		continue;
 	    }
         } while((i>0 && vars.indexOf(rand) > -1));
+	alert("success"+rand);
         vars[i] = rand;
     }
 
