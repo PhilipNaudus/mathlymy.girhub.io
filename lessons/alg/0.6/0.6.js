@@ -108,9 +108,9 @@ function giveHint()
 function signNumber(theNumber)
 {
     if(theNumber >= 0){
-        return "+" + theNumber;
+        return " + " + theNumber;
     }else{
-        return theNumber.toString();
+        return " - " + Math.abs(theNumber);
     }
 }
 
