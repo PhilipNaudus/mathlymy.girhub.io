@@ -327,8 +327,11 @@ function getRandom(min, max, n, ommit)
             rand = Math.round(Math.random()*(max-min)+min);
 	    for(var i=0; i<ommit.length; i++)
 	    {
-	       if(rand == ommit[i]) continue;
-	       alert(ommit.length);
+	       if(rand == ommit[i])
+	       {
+		  continue;
+	          alert(ommit.length);
+	       }
 	    }
         } while((i>0 && vars.indexOf(rand) > -1));
         vars[i] = rand;
