@@ -34,7 +34,7 @@ function setQuestion()
 	    var j = 0;
             for(var i=5; i>=1; i--)
 	    {
-		if(Math.random()>0.2)
+		if(Math.random()>0.1)
 		{
 		   vars[j] = vars[j+1];
 		}
