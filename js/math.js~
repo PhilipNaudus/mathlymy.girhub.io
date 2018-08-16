@@ -330,7 +330,7 @@ function getRandom(min, max, n, ommit)
 	       if(rand == ommit[i])
 	       {
 		  continue;
-	          alert(ommit.length);
+	          alert(ommit.length+"..."+ommit[i]);
 	       }
 	    }
         } while((i>0 && vars.indexOf(rand) > -1));

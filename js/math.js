@@ -329,8 +329,8 @@ function getRandom(min, max, n, ommit)
 	    {
 	       if(rand == ommit[i])
 	       {
-		  continue;
 	          alert(ommit.length+"..."+ommit[i]);
+		  continue;
 	       }
 	    }
         } while((i>0 && vars.indexOf(rand) > -1));
