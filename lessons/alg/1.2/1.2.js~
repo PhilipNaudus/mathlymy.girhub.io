@@ -23,8 +23,8 @@ function setQuestion()
 		   +"- <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>";
 	    ans = [vars[1], vars[0], vars[3], vars[2]];
             break;
-        case 2:
-        case 3:
+        case 4:
+        case 5:
             quest = "Please xolve for x using the quadratic formula:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+" = 0";
 	    eq = "x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>, "
 		   +"- <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>";
@@ -90,4 +90,4 @@ function signNumber(theNumber)
     }
 }
 
-var numQuestions = 12;
+var numQuestions = 6;
