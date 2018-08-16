@@ -335,7 +335,7 @@ function getRandom(min, max, n, ommit)
 	       {
 		  doAgain = false;
 	       }
-		alert(doAgain+""+rand+"..."+ommit);
+	       alert(doAgain+""+rand+"..."+ommit);
 	    }
         } while(doAgain || vars.indexOf(rand) > -1);
 	alert("success"+rand);
