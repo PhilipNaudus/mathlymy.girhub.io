@@ -54,20 +54,18 @@ function setQuestion()
             quest = "Please perform the indicated operation and simplify the result:<br />"
 		   +"<span class='fraction'>"
 		       +"<span class='fractop'>"+(vars[0]*vars[2])+"x<sup>2</sup> + "+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+"</span>"
-		       +"<span class='fracbot'>"+vars[6]+"x + "+vars[7]+"</span>"
+		       +"<span class='fracbot'>"+vars[4]+"x + "+vars[5]+"</span>"
 		   +"</span> &times;"
 		   +"<span class='fraction'>"
-		       +"<span class='fractop'>"+vars[8]+"x + "+vars[9]+"</span>"
-		       +"<span class='fracbot'>"+(vars[0]*vars[4])+"x<sup>2</sup> + "+((vars[1]*vars[4])+(vars[0]*vars[5]))+"x + "+(vars[1]*vars[5])+"</span>"
+		       +"<span class='fractop'>"+(vars[4]*vars[6])+"x<sup>2</sup> + "+((vars[5]*vars[6])+(vars[4]*vars[7]))+"x + "+(vars[5]*vars[7])+"</span>"
+		       +"<span class='fracbot'>"+vars[0]+"x + "+vars[1]+"</span>"
 		   +"</span>";
 	    eq = "<span class='fraction'>"
 		       +"<span class='fractop'>(<input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' />)(<input type='number' class='mathinput' id='i2' />x + <input type='number' class='mathinput' id='i3' />)</span>"
 		       +"<span class='fracbot'>(<input type='number' class='mathinput' id='i4' />x + <input type='number' class='mathinput' id='i5' />)(<input type='number' class='mathinput' id='i6' />x + <input type='number' class='mathinput' id='i7' />)</span>"
 		   +"</span>";
-	    ans = [[vars[2], vars[3], vars[8], vars[9], vars[4], vars[5], vars[6], vars[7]],
-		   [vars[8], vars[9], vars[2], vars[3], vars[4], vars[5], vars[6], vars[7]],
-		   [vars[2], vars[3], vars[8], vars[9], vars[6], vars[7], vars[4], vars[5]],
-		   [vars[8], vars[9], vars[2], vars[3], vars[6], vars[7], vars[4], vars[5]]];
+	    ans = [[vars[2], vars[3], vars[6], vars[7], 1],
+		  [vars[2], vars[3], vars[6], vars[7], 1]];
             break;
         case 6:
         case 7:
