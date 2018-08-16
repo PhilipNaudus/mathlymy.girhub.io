@@ -8,8 +8,8 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 0:
-        case 1:
+        case 2:
+        case 3:
 	    var vars = getRandom(1, 9, 8);
 	
 	    var x = new Array();	    
@@ -113,4 +113,4 @@ function signNumber(theNumber)
     }
 }
 
-var numQuestions = 9;
+var numQuestions = 4;
