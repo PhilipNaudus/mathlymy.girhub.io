@@ -32,7 +32,7 @@ function setQuestion()
 	
 	    var x = new Array();
 	    x[6] = vars[0];
-	    x[0] = vars[5];
+	    x[0] = -vars[5];
 	    var j = 0;
             for(var i=5; i>=1; i--)
 	    {
@@ -40,7 +40,7 @@ function setQuestion()
 		{
 		   vars[j] = vars[j+1];
 		}
-	        x[i] = vars[j] - vars[j+1];
+	        x[i] = vars[j+1] - vars[j];
 		j++;
 	    }
 
