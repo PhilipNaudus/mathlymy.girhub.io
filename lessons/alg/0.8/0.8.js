@@ -19,7 +19,7 @@ function setQuestion()
         case 2:
         case 3:
             var n = getRandom(1, 5, 4);
-            quest = "Please simplify the following expression:<br /><sup>+"+n[0]+"+</sup><div class='sqrt'><span class='overline'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span></div>;
+            quest = "Please simplify the following expression:<br /><sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span></div>";
 	    eq = "x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span>"
 		 +"y<span class='supsub'><sup><input type='number' class='mathinput' id='i1' /></sup></span>"
 		 +"z<span class='supsub'><sup><input type='number' class='mathinput' id='i2' /></sup></span>";
