@@ -6,7 +6,8 @@ function setQuestion()
     var quest;
     var ans;
     var eq;
-    var vars = getRandom(2, 10, 10)
+    var vars = getRandom(2, 10, 10);
+    alert("hi");
     switch(questionNum)
     {
         case 0:
@@ -121,7 +122,7 @@ function setQuestion()
 
     equationNum = 0;
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
-    equations = [["", eq, [ans]]];
+    equations = [["", eq, ans]];
 }
 
 function step1(ifResetScrolling)
