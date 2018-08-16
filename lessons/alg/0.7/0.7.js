@@ -128,6 +128,7 @@ function setQuestion()
 
 function step1(ifResetScrolling)
 {
+	alert("step1");
     endLoading();
     currentStep = 2;
 
