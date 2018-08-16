@@ -28,18 +28,16 @@ function setQuestion()
         case 4:
         case 5:
             var n = getRandom(1, 7, 7);
-            quest = "Please simplify the following expression:<br /><sup>+"+n[0]+"+</sup><div class='sqrt'><span class='overline'>"
+            quest = "Please simplify the following expression:<br /><span style='font-size:300%'>(</span>"
 			+"<span class='fraction'>"
                           +"<span class='fractop'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span>"
 			  +"<span class='fracbot'>a<sup>"+(n[0]*n[4])+"</sup>b<sup>"+(n[0]*n[5])+"</sup>c<sup>"+(n[0]*n[6])+"</sup></span>"
 			+"</span>"
-			+"</span></div>";
-	    eq = "<div class='sqrt'><span class='overline'>"
-			+"<span class='fraction'>"
+			+"<span style='font-size:300%'>)</span><sup>"+n[0]+"</sup>";
+	    eq = "<span class='fraction'>"
                           +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
 			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
-			+"</span>"
-			+"</span></div>";
+			+"</span>";
 	    ans = [n[1], n[2], n[3], n[4], n[5], n[6]];
             break;
     }
