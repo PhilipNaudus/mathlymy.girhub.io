@@ -325,11 +325,11 @@ function getRandom(min, max, n, ommit)
         do
         {
             rand = Math.round(Math.random()*(max-min)+min);
-	    for(var i=0; i<ommit.length; i++)
+	    for(var j=0; i<ommit.length; j++)
 	    {
-	       if(rand == ommit[i])
+	       if(rand == ommit[j])
 	       {
-	          alert(ommit.length+"..."+ommit[i]);
+	          alert(ommit.length+"..."+ommit[j]);
 		  continue;
 	       }
 	    }

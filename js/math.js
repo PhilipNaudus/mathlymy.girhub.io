@@ -325,7 +325,7 @@ function getRandom(min, max, n, ommit)
         do
         {
             rand = Math.round(Math.random()*(max-min)+min);
-	    for(var j=0; i<ommit.length; j++)
+	    for(var j=0; j<ommit.length; j++)
 	    {
 	       if(rand == ommit[j])
 	       {
