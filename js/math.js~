@@ -332,6 +332,12 @@ function getRandom(min, max, n, ommit)
 		  break;
 	       }
 	    }
+	    if(doAgain)
+	    {
+		alert("doAgain");
+	        doAgain = false;
+		continue;
+	    }
         } while((i>0 && vars.indexOf(rand) > -1));
         vars[i] = rand;
     }
