@@ -17,7 +17,7 @@ function setQuestion()
             break;
         case 2:
         case 3:
-            quest = "Please factor the difference of two squares:<br />("+(vars[0]*vars[0])+"x<sup>2</sup> - " + (vars[1]*vars[1]);
+            quest = "Please factor the difference of two squares:<br />"+(vars[0]*vars[0])+"x<sup>2</sup> - " + (vars[1]*vars[1]);
 	    eq = "(<input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' />) (<input type='number' class='mathinput' id='i2' />x - <input type='number' class='mathinput' id='i3' />)";
 	    ans = [vars[0], vars[1], vars[0], vars[1]];
             break;
@@ -29,7 +29,7 @@ function setQuestion()
             break;
         case 5:
         case 6:
-            var posNeg = (Math.round(Math.rand())==0)?"-":"+";
+            var posNeg = (Math.round(Math.random())==0)?"-":"+";
             var negPos = (posNeg=="-")?"+":"-";
 
 	    quest = "Please factor:<br />"+Math.pow(vars[0],3)+"x<sup>3</sup> "+posNeg+" "+Math.pow(vars[1],3);
