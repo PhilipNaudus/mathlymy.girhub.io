@@ -15,6 +15,7 @@ var lessons = {"geo": {"1.1": ["Identify points, lines, and planes"],
                "alg": {"0.1": ["Real numbers"],
 		       "0.2": ["Algebra essentials"],
 		       "0.3": ["Geometry essentials"],
+		       "0.4": ["Polynomials"],
                       "name": ['c', "College Algebra"]}, 
                "stat":{"1.1": ["TITLE P1"],
                        "name": ['s', "AP Statistics"]}};
