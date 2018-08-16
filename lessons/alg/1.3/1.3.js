@@ -6,19 +6,27 @@ function setQuestion()
     var quest;
     var ans;
     var eq;
-    var vars = getRandom(2, 7, 4, [4, 6])
     switch(questionNum)
     {
         case 0:
         case 1:
-            quest = "Please xolve for x:<br />"+(vars[0]*vars[0])+"x<sup>2</sup> - " + (vars[1]*vars[1]) + " = 0";
-	    eq = "x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>, "
-		 +"x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>";
-	    ans = [vars[1], vars[0], vars[1], vars[0]];
+            var vars = getRandom(-9, 9, 4)
+            var posNeg = (Math.round(Math.random())==0)?"-":"+";
+            quest = "Please evaluate:<br />("+signNumber(vars[0])+""+signNumber(vars[1])"i) "+posNeg+" ("+signNumber(vars[2])+""+signNumber(vars[3])"i)";
+	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
+	    ans = [((posNeg=="-")?(vars[0]-vars[2]):(vars[0]+vars[2])), ((posNeg=="-")?(vars[1]-vars[3]):(vars[1]+vars[3]))];
             break;
+        case 0:
+        case 1:
+            var vars = getRandom(1, 9, 4)
+            quest = "Please evaluate:<br />("+signNumber(vars[0])+""+signNumber(vars[1])"i) &times; ("+signNumber(vars[2])+""+signNumber(vars[3])"i)";
+	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
+	    ans = [(vars[0]*vars[2] - vars[1]*vars[3]), (vars[0]*vars[3] + vars[1]*vars[2])];
+            break;
+	    /* to do: quadratic equation with imaginary solutions. Just do what you were doing before but make things negative... and add an 'i' in the answer. */
         case 2:
         case 3:
-            quest = "Please xolve for x by factoring:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+(vars[1]*vars[2])+"x + "+(vars[0]*vars[3])+"x + "+(vars[1]*vars[3])+" = 0";
+            quest = "Please solve for x by factoring:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+(vars[1]*vars[2])+"x + "+(vars[0]*vars[3])+"x + "+(vars[1]*vars[3])+" = 0";
 	    eq = "x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>, "
 		 +"x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>";
 	    ans = [[vars[1], vars[0], vars[3], vars[2]],
@@ -26,7 +34,7 @@ function setQuestion()
             break;
         case 4:
         case 5:
-            quest = "Please xolve for x using the quadratic formula:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+" = 0";
+            quest = "Please solve for x using the quadratic formula:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+((vars[1]*vars[2])+(vars[0]*vars[3]))+"x + "+(vars[1]*vars[3])+" = 0";
 	    eq = "x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>, "
 		 +"x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>";
 	    ans = [[vars[1], vars[0], vars[3], vars[2]],
@@ -86,9 +94,9 @@ function giveHint()
 function signNumber(theNumber)
 {
     if(theNumber >= 0){
-        return "+" + theNumber;
+        return " + " + theNumber;
     }else{
-        return theNumber.toString();
+        return " - " + theNumber;
     }
 }
 
