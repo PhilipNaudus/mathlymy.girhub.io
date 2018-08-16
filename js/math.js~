@@ -20,7 +20,7 @@ function quiz(inPractice)
     {
         swal("You are about to begin a graded quiz", "Your score will be recorded. Please do your best!", "info");
     }
-
+alert("a2sq");
     questionNum = 0;
     setQuestion();
     goToStep1();

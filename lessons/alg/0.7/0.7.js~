@@ -6,7 +6,7 @@ function setQuestion()
     var quest;
     var ans;
     var eq;
-    var vars = getRandom(2, 10, 10);
+    var vars = getRandom(1, 10, 10);
     alert("hi");
     switch(questionNum)
     {
@@ -128,6 +128,7 @@ function setQuestion()
 
 function step1(ifResetScrolling)
 {
+	alert("step1");
     endLoading();
     currentStep = 2;
 

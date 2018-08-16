@@ -6,8 +6,7 @@ function setQuestion()
     var quest;
     var ans;
     var eq;
-    var vars = getRandom(2, 10, 10);
-    alert("hi");
+    var vars = getRandom(1, 10, 10);
     switch(questionNum)
     {
         case 0:
@@ -119,7 +118,6 @@ function setQuestion()
 	    ans = [[(vars[0]-vars[4]), (vars[1]-vars[5]), vars[2], vars[3]]];
             break;
     }
-    alert("DWS");
 
     equationNum = 0;
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
@@ -128,7 +126,6 @@ function setQuestion()
 
 function step1(ifResetScrolling)
 {
-	alert("step1");
     endLoading();
     currentStep = 2;
 
