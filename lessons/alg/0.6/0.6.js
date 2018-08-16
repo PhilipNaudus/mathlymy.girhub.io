@@ -36,7 +36,7 @@ function setQuestion()
 	    {
 		if(Math.random() > 0.3)
 		{
-		   vars[j] = vars[j-1];
+		   vars[j] = vars[j+1];
 		}
 		j--;
 	    }
