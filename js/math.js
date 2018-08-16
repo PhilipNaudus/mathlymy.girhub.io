@@ -331,15 +331,13 @@ function getRandom(min, max, n, ommit)
 	       {
 		  doAgain = true;
 		  break;
+	       } else
+	       {
+		  doAgain = false;
 	       }
+	       alert(doAgain+""+rand+"..."+ommit);
 	    }
-	    if(doAgain)
-	    {
-		alert("doAgain"+rand+"..."+ommit);
-	        doAgain = false;
-		continue;
-	    }
-        } while((i>0 && vars.indexOf(rand) > -1));
+        } while(doAgain || vars.indexOf(rand) > -1);
 	alert("success"+rand);
         vars[i] = rand;
     }
