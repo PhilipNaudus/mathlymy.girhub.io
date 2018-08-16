@@ -30,10 +30,10 @@ function setQuestion()
         case 1:
 	    var vars = getRandom(1, 9, 6);
 	
-	    var j = 0;
 	    var x = new Array();
 	    x[6] = vars[0];
 	    x[0] = vars[5]
+	    var j = 5;
             for(var i=5; i>=0; i--)
 	    {
 		if((Math.round(Math.random())==0)?false:true)
