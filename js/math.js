@@ -315,8 +315,7 @@ function indexOfMax(arr) {
 
 function getRandom(min, max, n, ommit)
 {
-	alert(ommit);
-    if(ommit==null) ommit = [];
+    if(typeof ommit=="undefined") ommit = [];
     var rand;
     var vars = new Array();
     for(var i=0; i<n; i++)
@@ -326,7 +325,6 @@ function getRandom(min, max, n, ommit)
             rand = Math.round(Math.random()*(max-min)+min);
 	    for(var i=0; i<ommit.length; i++)
 	    {
-		   alert(ommit.length);
 	       if(rand == ommit[i]) continue;
 	    }
         } while((i>0 && vars.indexOf(rand) > -1));
