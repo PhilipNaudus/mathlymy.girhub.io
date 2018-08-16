@@ -20,9 +20,9 @@ function setQuestion()
         case 3:
             var n = getRandom(1, 5, 4);
             quest = "Please simplify the following expression:<br /><sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>x<sup>"+(n[0]*n[1])+"</sup>y<sup>"+(n[0]*n[2])+"</sup>z<sup>"+(n[0]*n[3])+"</sup></span></div>";
-	    eq = "x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span>"
-		 +"y<span class='supsub'><sup><input type='number' class='mathinput' id='i1' /></sup></span>"
-		 +"z<span class='supsub'><sup><input type='number' class='mathinput' id='i2' /></sup></span>";
+	    eq = "x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>"
+		 +"y<span class='supsub'><sup><input type='number' class='mathinput' id='i1' /></sup><sub></sub></span>"
+		 +"z<span class='supsub'><sup><input type='number' class='mathinput' id='i2' /></sup><sub></sub></span>";
 	    ans = [n[1], n[2], n[3]];
             break;
         case 4:
@@ -36,8 +36,8 @@ function setQuestion()
 			+"</span></div>";
 	    eq = "<div class='sqrt'><span class='overline'>"
 			+"<span class='fraction'>"
-                          +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span></span>"
-			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup></span></span>"
+                          +"<span class='fractop'>x<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>y<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>z<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
+			  +"<span class='fracbot'>a<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>b<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span>c<span class='supsub'><sup><input type='number' class='mathinput' id='i0' /></sup><sub></sub></span></span>"
 			+"</span>"
 			+"</span></div>";
 	    ans = [n[1], n[2], n[3], n[4], n[5], n[6]];
