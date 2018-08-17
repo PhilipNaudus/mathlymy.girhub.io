@@ -18,6 +18,7 @@ function setQuestion()
             break;
         case 2:
         case 3:
+            var vars = getRandom(-9, 9, 4)
             quest = "Please evaluate:<br />("+vars[0]+""+signNumber(vars[1])+"i) &times; ("+vars[2]+""+signNumber(vars[3])+"i)";
 	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
 	    ans = [(vars[0]*vars[2] - vars[1]*vars[3]), (vars[0]*vars[3] + vars[1]*vars[2])];
