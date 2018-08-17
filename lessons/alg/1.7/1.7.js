@@ -15,7 +15,7 @@ function setQuestion()
 			vars = vars.sort().reverse();
 
 			quest = "If it takes "+vars[0]+" hours to complete a job, what fraction of the job is done in "+vars[1]+" hours?"
-			eq = "x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>";
+			eq = "Answer: <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>";
 			ans = [vars[1], vars[0]];
 			break;
 		case 2:
@@ -24,7 +24,7 @@ function setQuestion()
 			vars = vars.sort().reverse();
 
 			quest = "You want to mix two chemicals to produce a new mixture, totaling "+vars[0]+" pounds. If you must use "+vars[1]+" gallons of the first chemical, how many gallons of the second chemical should you use?";
-			eq = "x = <input type='number' class='mathinput' id='i0' />";
+			eq = "Answer: <input type='number' class='mathinput' id='i0' />";
 			ans = [(vars[0]-vars[1])];
 			break;
 	}
