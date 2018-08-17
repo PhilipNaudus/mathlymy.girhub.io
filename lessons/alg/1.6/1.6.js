@@ -35,13 +35,13 @@ function setQuestion()
 					break;
 			}
 
-			quest = "If x "+ineq+" "+vars[0]+", please fill in the blanks below to make a true statement:";
+			quest = "If |x| "+ineq+" "+vars[0]+", please fill in the blanks below to make a true statement:";
 			eq = "x <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' /><br />and<br />x <select class='mathinput' id='i2'>"+options+"</select> <input type='number' class='mathinput' id='i3' />";
 	}
 
 	equationNum = 0;
 	document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
-	equations = [["", eq, [ans]]];
+	equations = [["", eq, ans]];
 }
 
 function step1(ifResetScrolling)
