@@ -12,13 +12,13 @@ function setQuestion()
         case 1:
             var vars = getRandom(-9, 9, 4)
             var posNeg = (Math.round(Math.random())==0)?"-":"+";
-            quest = "Please evaluate:<br />("+signNumber(vars[0])+""+signNumber(vars[1])"i) "+posNeg+" ("+signNumber(vars[2])+""+signNumber(vars[3])"i)";
+            quest = "Please evaluate:<br />("+signNumber(vars[0])+""+signNumber(vars[1])+"i) "+posNeg+" ("+signNumber(vars[2])+""+signNumber(vars[3])+"i)";
 	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
 	    ans = [((posNeg=="-")?(vars[0]-vars[2]):(vars[0]+vars[2])), ((posNeg=="-")?(vars[1]-vars[3]):(vars[1]+vars[3]))];
             break;
         case 0:
         case 1:
-            quest = "Please evaluate:<br />("+signNumber(vars[0])+""+signNumber(vars[1])"i) &times; ("+signNumber(vars[2])+""+signNumber(vars[3])"i)";
+            quest = "Please evaluate:<br />("+signNumber(vars[0])+""+signNumber(vars[1])+"i) &times; ("+signNumber(vars[2])+""+signNumber(vars[3])+"i)";
 	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
 	    ans = [(vars[0]*vars[2] - vars[1]*vars[3]), (vars[0]*vars[3] + vars[1]*vars[2])];
             break;

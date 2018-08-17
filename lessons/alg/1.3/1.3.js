@@ -29,9 +29,9 @@ function setQuestion()
 	    vars[3] = -vars[3];
             quest = "Please solve for x:<br />"+(vars[0]*vars[0])+"x<sup>2</sup>"+signNumber(2*(vars[1]*vars[0]))+"x"+signNumber((vars[1]*vars[1])+(vars[2]*vars[2]))+" = 0";
 	    eq = "x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span> + "
-		    +"x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>" i, ;
+		    +"x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span> i, ";
 	         +"x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span> - "
-		    +"x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span>" i;
+		    +"x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span> i";
 	    ans = [vars[1], vars[0], vars[2], vars[0], vars[1], vars[0], vars[2], vars[0]];
             break;
         case 4:
