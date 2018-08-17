@@ -19,24 +19,24 @@ function setQuestion()
 			{
 				case 0:
 					ineq = "&lt;";
-					ans = ["lt", (vars[0]+vars[1])];
+					ans = ["lt0", (vars[0]+vars[1])];
 					break;
 				case 1:
 					ineq = "&le;";
-					ans = ["le", (vars[0]+vars[1])];
+					ans = ["le0", (vars[0]+vars[1])];
 					break;
 				case 2:
 					ineq = "&gt;";
-					ans = ["gt", (vars[0]+vars[1])];
+					ans = ["gt0", (vars[0]+vars[1])];
 					break;
 				case 3:
 					ineq = "&ge;";
-					ans = ["ge", (vars[0]+vars[1])];
+					ans = ["ge0", (vars[0]+vars[1])];
 					break;
 			}
 
 			quest = "if x "+ineq+" "+vars[0]+", please fill in the blank below to make a true statement:";
-			eq = "x"+signNumber(vars[1])+"<select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' />";
+			eq = "x"+signNumber(vars[1])+" <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' />";
 			break;
 		case 2:
 		case 3:
@@ -47,19 +47,19 @@ function setQuestion()
 			{
 				case 0:
 					ineq = "&lt;";
-					ans = [((vars[1]>0)?"lt":"gt"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"lt0":"gt0"), (vars[0]*vars[1])];
 					break;
 				case 1:
 					ineq = "&le;";
-					ans = [((vars[1]>0)?"le":"ge"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"le0":"ge0"), (vars[0]*vars[1])];
 					break;
 				case 2:
 					ineq = "&gt;";
-					ans = [((vars[1]>0)?"gt":"lt"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"gt0":"lt0"), (vars[0]*vars[1])];
 					break;
 				case 3:
 					ineq = "&ge;";
-					ans = [((vars[1]>0)?"ge":"le"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"ge0":"le0"), (vars[0]*vars[1])];
 					break;
 			}
 

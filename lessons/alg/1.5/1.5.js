@@ -6,7 +6,7 @@ function setQuestion()
 	var quest;
 	var ans;
 	var eq;
-	var options = "<option value=''>Select</option><option value='gt0'>&gt;</option><option value='lt0'>&lt;</option><option value='ge0'>&ge;</option><option value='le'>&le;</option>";
+	var options = "<option value=''>Select</option><option value='gt0'>&gt;</option><option value='lt0'>&lt;</option><option value='ge0'>&ge;</option><option value='le0'>&le;</option>";
 	switch(questionNum)
 	{
 		case 0:
@@ -36,7 +36,7 @@ function setQuestion()
 			}
 
 			quest = "if x "+ineq+" "+vars[0]+", please fill in the blank below to make a true statement:";
-			eq = "x"+signNumber(vars[1])+"<select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' />";
+			eq = "x"+signNumber(vars[1])+" <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' />";
 			break;
 		case 2:
 		case 3:
