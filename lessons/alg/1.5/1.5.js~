@@ -11,8 +11,8 @@ function setQuestion()
 	{
 		case 0:
 		case 1:
-			var n = getRand(0,3,1);
-			var vars = getRand(-9,9,2,[0]);
+			var n = getRandom(0,3,1);
+			var vars = getRandom(-9,9,2,[0]);
 			var ineq;
 
 			switch(n[0])
@@ -40,8 +40,8 @@ function setQuestion()
 			break;
 		case 2:
 		case 3:
-			var n = getRand(0,3,1);
-			var vars = getRand(-9,9,2,[0]);
+			var n = getRandom(0,3,1);
+			var vars = getRandom(-9,9,2,[0]);
 			var ineq;
 			switch(n[0])
 			{

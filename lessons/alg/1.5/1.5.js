@@ -36,7 +36,7 @@ function setQuestion()
 			}
 
 			quest = "if x "+ineq+" "+vars[0]+", please fill in the blank below to make a true statement:";
-			eq = "x"+signNumber(vars[1])+"<select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i0' />";
+			eq = "x"+signNumber(vars[1])+"<select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' />";
 			break;
 		case 2:
 		case 3:
@@ -64,7 +64,7 @@ function setQuestion()
 			}
 
 			quest = "if x "+ineq+" "+vars[0]+", please fill in the blank below to make a true statement:";
-			eq = signNumber(vars[1])+"x <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i0' />";
+			eq = signNumber(vars[1])+"x <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' />";
 			break;
 	}
 
