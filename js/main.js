@@ -24,6 +24,8 @@ var lessons = {"geo": {"1.1": ["Identify points, lines, and planes"],
 		       "1.2": ["Quadratic equations"],
 		       "1.3": ["Complex numbers; quadratic equations in the complex number system"],
 		       "1.4": ["Radical equations; Equations in quadratic form; Factorable equations"],
+		       "1.5": ["Solving inequalities"],
+		       "1.6": ["Equations and inequalities involving absolute value"],
                       "name": ['c', "College Algebra"]}, 
                "stat":{"1.1": ["TITLE P1"],
                        "name": ['s', "AP Statistics"]}};
