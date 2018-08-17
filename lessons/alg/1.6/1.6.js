@@ -12,9 +12,8 @@ function setQuestion()
 		case 0:
 		case 1:
 			var vars = getRandom(-9,9,3,[0]);
-			vars[2] = Math.abs(vars[2]);
 
-			quest = "If |"+vars[0]+"x"+signNumber(vars[0]*vars[1])+"| = "+(vars[0]*vars[2])+", please fill in the blanks below to make a true statement:";
+			quest = "If |"+vars[0]+"x"+signNumber(vars[0]*vars[1])+"| = "+Math.abs(vars[0]*vars[2])+", please fill in the blanks below to make a true statement:";
 			eq = "x = <input type='number' class='mathinput' id='i0' /><br />and<br />x = <input type='number' class='mathinput' id='i1' />";
 			ans = [[(vars[2]-vars[1]), (-vars[2]-vars[1])], [(-vars[2]-vars[1]), (vars[2]-vars[1])]];
 			break;
