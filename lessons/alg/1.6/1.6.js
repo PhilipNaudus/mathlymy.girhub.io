@@ -37,6 +37,35 @@ function setQuestion()
 
 			quest = "If |x| "+ineq+" "+vars[0]+", please fill in the blanks below to make a true statement:";
 			eq = "x <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' /><br />and<br />x <select class='mathinput' id='i2'>"+options+"</select> <input type='number' class='mathinput' id='i3' />";
+		case 0:
+		case 1:
+			var n = getRandom(0,3,1);
+			var vars = getRandom(-9,9,2,[0]);
+			vars[0] = Math.abs(vars[0]);
+			var ineq;
+
+			switch(n[0])
+			{
+				case 0:
+					ineq = "&lt;";
+					ans = [["gt0", vars[1]-vars[0], "lt0", vars[0]+vars[1]], ["lt0", vars[0]+vars[1]], "gt0", vars[1]-vars[0]];
+					break;
+				case 1:
+					ineq = "&le;";
+					ans = [["ge0", vars[1]-vars[0], "le0", vars[0]+vars[1]], ["le0", vars[0]+vars[1], "ge0", vars[1]-vars[0]]];
+					break;
+				case 2:
+					ineq = "&gt;";
+					ans = [["lt0", vars[1]-vars[0], "gt0", vars[0]+vars[1]], ["gt0", vars[0]+vars[1], "lt0", vars[1]-vars[0]]];
+					break;
+				case 3:
+					ineq = "&ge;";
+					ans = [["le0", vars[1]-vars[0], "ge0", vars[0]+vars[1]], ["ge0", vars[0]+vars[1], "le0", vars[1]-vars[0]]];
+					break;
+			}
+
+			quest = "If |x"+signNumber(vars[0])+"| "+ineq+" "+vars[1]+", please fill in the blanks below to make a true statement:";
+			eq = "x <select class='mathinput' id='i0'>"+options+"</select> <input type='number' class='mathinput' id='i1' /><br />and<br />x <select class='mathinput' id='i2'>"+options+"</select> <input type='number' class='mathinput' id='i3' />";
 	}
 
 	equationNum = 0;
