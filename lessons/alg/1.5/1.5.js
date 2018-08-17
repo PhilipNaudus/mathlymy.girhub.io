@@ -6,7 +6,7 @@ function setQuestion()
 	var quest;
 	var ans;
 	var eq;
-	var options = "<option value=''>Select</option><option value='gt00'>&gt;</option><option value='lt00'>&lt;</option><option value='ge00'>&ge;</option><option value='le00'>&le;</option>";
+	var options = "<option value=''>Select</option><option value='gt0'>&gt;</option><option value='lt0'>&lt;</option><option value='ge0'>&ge;</option><option value='le'>&le;</option>";
 	switch(questionNum)
 	{
 		case 0:
@@ -19,19 +19,19 @@ function setQuestion()
 			{
 				case 0:
 					ineq = "&lt;";
-					ans = ["&lt;", (vars[0]+vars[1])];
+					ans = ["lt0", (vars[0]+vars[1])];
 					break;
 				case 1:
 					ineq = "&le;";
-					ans = ["&le;", (vars[0]+vars[1])];
+					ans = ["le0", (vars[0]+vars[1])];
 					break;
 				case 2:
 					ineq = "&gt;";
-					ans = ["&gt;", (vars[0]+vars[1])];
+					ans = ["gt0", (vars[0]+vars[1])];
 					break;
 				case 3:
 					ineq = "&ge;";
-					ans = ["&ge;", (vars[0]+vars[1])];
+					ans = ["ge0", (vars[0]+vars[1])];
 					break;
 			}
 
@@ -47,19 +47,19 @@ function setQuestion()
 			{
 				case 0:
 					ineq = "&lt;";
-					ans = [((vars[1]>0)?"&lt;":"&gt;"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"lt0":"gt0"), (vars[0]*vars[1])];
 					break;
 				case 1:
 					ineq = "&le;";
-					ans = [((vars[1]>0)?"&le;":"&ge;"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"le0":"ge0"), (vars[0]*vars[1])];
 					break;
 				case 2:
 					ineq = "&gt;";
-					ans = [((vars[1]>0)?"&gt;":"&lt;"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"gt0":"lt0"), (vars[0]*vars[1])];
 					break;
 				case 3:
 					ineq = "&ge;";
-					ans = [((vars[1]>0)?"&ge;":"&le;"), (vars[0]*vars[1])];
+					ans = [((vars[1]>0)?"ge0":"le0"), (vars[0]*vars[1])];
 					break;
 			}
 
