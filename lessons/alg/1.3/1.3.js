@@ -33,7 +33,7 @@ function setQuestion()
 		    +"<span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i2' /></span><span class='fracbot'><input type='number' class='mathinput' id='i3' /></span></span> i, "
 	         +"x = <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i4' /></span><span class='fracbot'><input type='number' class='mathinput' id='i5' /></span></span> - "
 		    +"<span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i6' /></span><span class='fracbot'><input type='number' class='mathinput' id='i7' /></span></span> i";
-	    ans = [vars[1], vars[0], Math.abs(vars[2]), Math.abs(vars[0]), vars[1], vars[0], Math.abs(vars[2]), Math.abs(vars[0])];
+	    ans = [Math.abs(vars[1]), vars[0], Math.abs(vars[2]), vars[0], Math.abs(vars[1]), vars[0], Math.abs(vars[2]), vars[0]];
             break;
     }
 
