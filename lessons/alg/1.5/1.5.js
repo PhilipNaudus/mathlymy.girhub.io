@@ -6,7 +6,7 @@ function setQuestion()
 	var quest;
 	var ans;
 	var eq;
-	var options = "<option value=''>Select</option><option value='gt'>&gt;</option><option value='lt'>&lt;</option><option value='ge'>&ge;</option><option value='le'>&le;</option>";
+	var options = "<option value=''>Select</option><option value='&gt;'>&gt;</option><option value='&lt;'>&lt;</option><option value='&ge;'>&ge;</option><option value='&le;'>&le;</option>";
 	switch(questionNum)
 	{
 		case 0:
