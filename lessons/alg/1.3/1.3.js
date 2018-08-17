@@ -16,14 +16,14 @@ function setQuestion()
 	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
 	    ans = [((posNeg=="-")?(vars[0]-vars[2]):(vars[0]+vars[2])), ((posNeg=="-")?(vars[1]-vars[3]):(vars[1]+vars[3]))];
             break;
-        case 0:
-        case 1:
+        case 2:
+        case 3:
             quest = "Please evaluate:<br />("+vars[0]+""+signNumber(vars[1])+"i) &times; ("+vars[2]+""+signNumber(vars[3])+"i)";
 	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
 	    ans = [(vars[0]*vars[2] - vars[1]*vars[3]), (vars[0]*vars[3] + vars[1]*vars[2])];
             break;
-        case 2:
-        case 3:
+        case 4:
+        case 5:
             var vars = getRandom(1, 9, 3);
 	    vars[2] = -vars[2];
 	    vars[3] = -vars[3];
@@ -94,4 +94,4 @@ function signNumber(theNumber)
     }
 }
 
-var numQuestions = 4;
+var numQuestions = 6;
