@@ -25,7 +25,7 @@ function setQuestion()
             break;
         case 0:
         case 1:
-            var vars = getRandom(1, 9, 3, [4, 6, 8]);
+            var vars = getRandom(1, 7, 3, [4, 6]);
 	    vars[1] = -vars[1];
 	    vars[2] = -vars[2];
             quest = "Please solve for x:<br />"+(vars[0]*vars[0])+"x<sup>2</sup>"+signNumber(2*(vars[1]*vars[0]))+"x"+signNumber((vars[1]*vars[1])+(vars[2]*vars[2]))+" = 0";
