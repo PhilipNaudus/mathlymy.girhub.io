@@ -10,7 +10,7 @@ function setQuestion()
     {
         case 0:
         case 1:
-            var vars = getRandom(1, 9, 3);
+            var vars = getRandom(1, 3, 3);
             var n = getRandom(2, 4, 1, [3]);
             var posNeg = (Math.random()>0.5)?"-":"";
             quest = "Please solve for x:<br /><div class='sqrt'><span class='overline'>"+(Math.pow(vars[0],n[0]))+"x + "+(Math.pow(vars[0],n[0])*vars[1])+"</span></div> = "+posNeg+(vars[0]*vars[2]);
