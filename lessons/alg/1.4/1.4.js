@@ -18,7 +18,7 @@ function setQuestion()
             break;
         case 2:
         case 3:
-            var vars = getRandom(1, 3, 3);
+	    var vars = getRandom(2, 7, 4, [4, 6])
             var n = getRandom(2, 4, 1, [3]);
             quest = "Please solve for x:<br /><sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>"+vars[0]*vars[2]+"x<sup>2</sup> + "+(vars[1]*vars[2])+"x</span></div> = <sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>- "+(vars[0]*vars[3])+"x - "+(vars[1]*vars[3])+"</span></div>";
 	    eq = "x = - <span class='fraction'><span class='fractop'><input type='number' class='mathinput' id='i0' /></span><span class='fracbot'><input type='number' class='mathinput' id='i1' /></span></span>, "

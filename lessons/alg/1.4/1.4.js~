@@ -16,8 +16,8 @@ function setQuestion()
 	    eq = "x = <input type='number' class='mathinput' id='i0' />";
 	    ans = [[(Math.pow(vars[2],n[0]) - vars[1])]];
             break;
-        case 0:
-        case 1:
+        case 2:
+        case 3:
             var vars = getRandom(1, 3, 3);
             var n = getRandom(2, 4, 1, [3]);
             quest = "Please solve for x:<br /><sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>"+vars[0]*vars[2]+"x<sup>2</sup> + "+(vars[1]*vars[2])+"x</span></div> = <sup>"+n[0]+"</sup><div class='sqrt'><span class='overline'>- "+(vars[0]*vars[3])+"x - "+(vars[1]*vars[3])+"</span></div>";
@@ -86,4 +86,4 @@ function signNumber(theNumber)
     }
 }
 
-var numQuestions = 6;
+var numQuestions = 4;
