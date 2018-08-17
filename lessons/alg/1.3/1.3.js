@@ -8,8 +8,8 @@ function setQuestion()
     var eq;
     switch(questionNum)
     {
-        case 4:
-        case 5:
+        case 0:
+        case 1:
             var vars = getRandom(-9, 9, 4)
             var posNeg = (Math.round(Math.random())==0)?"-":"+";
             quest = "Please evaluate:<br />("+vars[0]+""+signNumber(vars[1])+"i) "+posNeg+" ("+vars[2]+""+signNumber(vars[3])+"i)";
@@ -23,8 +23,8 @@ function setQuestion()
 	    eq = "<input type='number' class='mathinput' id='i0' /> + <input type='number' class='mathinput' id='i1' /> i";
 	    ans = [(vars[0]*vars[2] - vars[1]*vars[3]), (vars[0]*vars[3] + vars[1]*vars[2])];
             break;
-        case 0:
-        case 1:
+        case 4:
+        case 5:
             var vars = getRandom(1, 7, 3, [4, 6]);
 	    vars[1] = -vars[1];
 	    vars[2] = -vars[2];
