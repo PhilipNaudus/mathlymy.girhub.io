@@ -27,6 +27,7 @@ var lessons = {"geo": {"1.1": ["Identify points, lines, and planes"],
 		       "1.5": ["Solving inequalities"],
 		       "1.6": ["Equations and inequalities involving absolute value"],
 		       "1.7": ["Problem solving: Interest, mixture, uniform motion, constant rate job applications"],
+		       "2.1": ["The distance and midpoint formulas"],
                       "name": ['c', "College Algebra"]}, 
                "stat":{"1.1": ["TITLE P1"],
                        "name": ['s', "AP Statistics"]}};
