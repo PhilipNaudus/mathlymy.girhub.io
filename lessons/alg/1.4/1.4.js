@@ -11,7 +11,7 @@ function setQuestion()
         case 0:
         case 1:
             var vars = getRandom(1, 9, 3);
-            quest = "Please solve for x:<br /><div class='sqrt'><span class='overline'>"+(vars[0]*vars[0])+"x"+(vars[0]*vars[0]*vars[1])+" = "+(vars[0]*vars[2]);
+            quest = "Please solve for x:<br /><div class='sqrt'><span class='overline'>"+(vars[0]*vars[0])+"x + "+(vars[0]*vars[0]*vars[1])+"</span></div> = "+(vars[0]*vars[2]);
 	    eq = "x = <input type='number' class='mathinput' id='i0' />";
 	    ans = [((vars[2]*vars[2]) - vars[1])];
             break;
