@@ -98,7 +98,7 @@ function signNumber(theNumber)
     if(theNumber >= 0){
         return " + " + theNumber;
     }else{
-        return " - " + theNumber;
+        return " - " + Math.abs(theNumber);
     }
 }
 
