@@ -81,24 +81,24 @@ function setQuestion()
 				{
 					case 0:
 						x.push(i);
-						y.push(vars[0]*Math.pow((i+vars[1]),2));
-						ans = "x-axis";
+						y.push(vars[0]*Math.pow(i,2)+vars[1]);
+						ans = ["x-axis"];
 						break;
 					case 1:
 						y.push(i);
-						x.push(vars[0]*Math.pow((i+vars[1]),2));
-						ans = "y-axis";
+						x.push(vars[0]*Math.pow(i,2)+vars[1]);
+						ans = ["y-axis"];
 						break;
 					case 2:
 						if(i==0) continue;
 						x.push(i);
 						y.push(vars[0]/i);
-						ans = "origin";
+						ans = ["origin"];
 						break;
 					case 3:
 						x.push(i);
 						y.push(vars[0]*Math.pow(i),3);
-						ans = "origin";
+						ans = ["origin"];
 						break;
 				}
 			}
@@ -109,7 +109,6 @@ function setQuestion()
 			plotData(x, y);
 
 			eq = "Symmetric about the <select class='mathinput' id='i0'><option value='x-axis'>x-axis</option><option value='y-axis'>y-axis</option><option value='origin'>origin</option></select>)";
-			ans = [-vars[0]];
 			break;
 	}
 
