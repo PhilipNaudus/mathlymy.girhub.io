@@ -2,7 +2,7 @@
 var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 var polygonNames = ["heptagon", "nonagon", "octagon", "hexagon", "octagon", "pentagon", "quadrilateral", "hexagon", "pentagon", "quadrilateral", "hexagon", "heptagon"];
 var concaveConvex = ["convex", "concave", "convex", "concave", "convex", "convex", "convex", "concave", "convex", "convex", "convex", "concave"];
-var regularIrregular = ["regular", "irregular", "regular", "irregular", "irregular", "regular", "irregular", "irregular", "irregular", "regular", "irregular", "irregular"];
+var regularIrregular = ["regular", "irregular", "regular", "irregular", "irregular", "regular", "irregular", "irregular", "irregular", "irregular", "irregular", "irregular"];
 
 function setQuestion()
 {

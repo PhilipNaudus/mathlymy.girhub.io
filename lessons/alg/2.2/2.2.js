@@ -112,7 +112,7 @@ function setQuestion()
 			plotData([0.01,0.01], [-5,5], "#000000");
 			plotData(x, y);
 
-			eq = "Symmetric about the <select class='mathinput' id='i0'><option value='x-axis'>x-axis</option><option value='y-axis'>y-axis</option><option value='origin'>origin</option></select>)";
+			eq = "Symmetric about the <select class='mathinput' id='i0'><option value='select'>select</option><option value='x-axis'>x-axis</option><option value='y-axis'>y-axis</option><option value='origin'>origin</option></select>)";
 			break;
 	}
 

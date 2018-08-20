@@ -76,8 +76,8 @@ function setQuestion()
 			var y = new Array();
 			var vars = getRandom(-3,3,2,[0]);
 			var n = getRandom(0,3,1);
-			var even = getRandom(1,9,1,[2,4,6,8]);
-			var odd = getRandom(2,8,1,[3,5,7]);
+			var even = getRandom(2,8,1,[3,5,7]);
+			var odd = getRandom(1,9,1,[2,4,6,8]);
 
 			for(var i=-5; i<5; i+=0.01)
 			{
