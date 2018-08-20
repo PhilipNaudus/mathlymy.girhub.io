@@ -12,7 +12,7 @@ function setQuestion()
 		case 0:
 		case 1:
 			var n = getRandom(2,3,2);
-			var vars = getRandom(2,3,1);
+			var vars = getRandom(2,9,1);
 
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please fill in the blank below to produce a point which lies on the graph of y.<br />y = x<sup>"+n[0]+"</sup> - <sup>"+n[1]+"</sup><div class='sqrt'><span class='overline'>x</span></div>";
 			eq = "("+Math.pow(vars[0], n[1])+", <input type='number' class='mathinput' id='i0' />)";
@@ -21,7 +21,7 @@ function setQuestion()
 		case 2:
 		case 3:
 			var n = getRandom(2,3,2);
-			var vars = getRandom(1,3,2);
+			var vars = getRandom(1,9,2);
 
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Please fill in the blank below to produce a point which lies on the graph of y.<br />x<sup>"+n[0]+"</sup> + y<sup>"+n[1]+"</sup> = "+(Math.pow(vars[0],n[0])+Math.pow(vars[1],n[1]));
 			eq = "("+vars[0]+", <input type='number' class='mathinput' id='i0' />)";
