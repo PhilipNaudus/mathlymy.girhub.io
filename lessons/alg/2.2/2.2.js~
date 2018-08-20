@@ -30,7 +30,7 @@ function setQuestion()
 		case 0:
 			x = new Array();
 			y = new Array();
-			var vars = getRandom(-3,3,1);
+			var vars = getRandom(-3,3,2,[0]);
 
 			for(var i=-5; i<5; i+=0.01)
 			{
@@ -42,7 +42,6 @@ function setQuestion()
 			plotData([-5,5], [0,0]);
 			plotData([0.01,0.01], [-5,5]);
 			plotData(x, y);
-			alert(y);
 
 			eq = "x-intercept: <input type='number' class='mathinput' id='i0' />)";
 			ans = [-vars[0]];
@@ -50,7 +49,7 @@ function setQuestion()
 		case 5:
 			x = new Array();
 			y = new Array();
-			var vars = getRandom(-3,3,1);
+			var vars = getRandom(-3,3,2,[0]);
 
 			for(var i=-5; i<5; i+=0.01)
 			{
@@ -73,7 +72,7 @@ function setQuestion()
 		case 9:
 			x = new Array();
 			y = new Array();
-			var vars = getRandom(-3,3,2);
+			var vars = getRandom(-3,3,2,[0]);
 			var n = getRandom(0,3,1);
 
 			for(var i=-5; i<5; i+=0.01)
