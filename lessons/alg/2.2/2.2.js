@@ -28,8 +28,8 @@ function setQuestion()
 			ans = [vars[1]];
 			break;
 		case 4:
-			x = new Array();
-			y = new Array();
+			var x = new Array();
+			var y = new Array();
 			var n = getRandom(2,9,1);
 			var vars = getRandom(-3,3,2,[0]);
 
@@ -48,8 +48,8 @@ function setQuestion()
 			ans = [-vars[1]];
 			break;
 		case 5:
-			x = new Array();
-			y = new Array();
+			var x = new Array();
+			var y = new Array();
 			var vars = getRandom(-3,3,2,[0]);
 			var n = getRandom(2,9,1);
 
@@ -72,8 +72,8 @@ function setQuestion()
 		case 7:
 		case 8:
 		case 9:
-			x = new Array();
-			y = new Array();
+			var x = new Array();
+			var y = new Array();
 			var vars = getRandom(-3,3,2,[0]);
 			var n = getRandom(0,3,1);
 

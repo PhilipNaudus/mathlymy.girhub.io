@@ -28,8 +28,8 @@ function setQuestion()
 			ans = [vars[1]];
 			break;
 		case 4:
-			x = new Array();
-			y = new Array();
+			var x = new Array();
+			var y = new Array();
 			var n = getRandom(2,9,1);
 			var vars = getRandom(-3,3,2,[0]);
 
@@ -48,8 +48,8 @@ function setQuestion()
 			ans = [-vars[1]];
 			break;
 		case 5:
-			x = new Array();
-			y = new Array();
+			var x = new Array();
+			var y = new Array();
 			var vars = getRandom(-3,3,2,[0]);
 			var n = getRandom(2,9,1);
 
@@ -61,8 +61,8 @@ function setQuestion()
 
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the y-intercept of the graph shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-			plotData([-5,5], [0,0]);
-			plotData([0.01,0.01], [-5,5]);
+			plotData([-5,5], [0,0], "#000000");
+			plotData([0.01,0.01], [-5,5], "#000000");
 			plotData(x, y);
 
 			eq = "y-intercept: <input type='number' class='mathinput' id='i0' />)";
@@ -72,8 +72,8 @@ function setQuestion()
 		case 7:
 		case 8:
 		case 9:
-			x = new Array();
-			y = new Array();
+			var x = new Array();
+			var y = new Array();
 			var vars = getRandom(-3,3,2,[0]);
 			var n = getRandom(0,3,1);
 
@@ -109,8 +109,8 @@ function setQuestion()
 			}
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Is the graph shown below symmetric about the x-axis, y-axis, or the origin?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-			plotData([-5,5], [0,0]);
-			plotData([0.01,0.01], [-5,5]);
+			plotData([-5,5], [0,0], "#000000");
+			plotData([0.01,0.01], [-5,5], "#000000");
 			plotData(x, y);
 
 			eq = "Symmetric about the <select class='mathinput' id='i0'><option value='x-axis'>x-axis</option><option value='y-axis'>y-axis</option><option value='origin'>origin</option></select>)";
