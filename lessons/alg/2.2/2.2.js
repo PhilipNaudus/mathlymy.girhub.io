@@ -38,6 +38,7 @@ function setQuestion()
 				y.push(Math.pow((i+vars[0]),2));
 			}
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the y-intercept of the graph shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 			plotData(x, y);
 
 			eq = "x-intercept: <input type='number' class='mathinput' id='i0' />)";
@@ -55,6 +56,7 @@ function setQuestion()
 			}
 
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the y-intercept of the graph shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 			plotData(x, y);
 
 			eq = "y-intercept: <input type='number' class='mathinput' id='i0' />)";
@@ -97,6 +99,7 @@ function setQuestion()
 				}
 			}
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Is the graph shown below symmetric about the x-axis, y-axis, or the origin?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 			plotData(x, y);
 
 			eq = "Symmetric about the <select class='mathinput' id='i1'><option value='x-axis'>x-axis</option><option value='y-axis'>y-axis</option><option value='origin'>origin</option></select>)";
