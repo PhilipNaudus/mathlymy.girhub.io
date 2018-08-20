@@ -58,15 +58,17 @@ function initCanvas(xArr, x_step, yArr, y_step, append) {
 	}
 	context.stroke();
 	
-	// Color of each dataplot items
-	context.strokeStyle="#FF0066";
-	//plotData(x_points, y_points);
-	context.strokeStyle="#9933FF";
-
 	trans = false;
 }
 
-function plotData(x_points, y_points) {
+function plotData(x_points, y_points, color) {
+	if(arguments.length==2)
+	{
+		context.strokeStyle="#9933FF";
+	} else
+	{
+		context.strokeStyle=color;
+	}
 	if(!trans)
 	{
 		context.translate(50,canvas.height + y_min * yScale);
