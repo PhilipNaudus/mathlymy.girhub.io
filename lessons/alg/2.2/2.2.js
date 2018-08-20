@@ -160,4 +160,4 @@ function signNumber(theNumber)
 	}
 }
 
-var numQuestions = 4;
+var numQuestions = 9;

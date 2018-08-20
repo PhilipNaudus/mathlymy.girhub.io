@@ -98,7 +98,7 @@ function setQuestion()
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Is the graph shown below symmetric about the x-axis, y-axis, or the origin?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 			plotData(x, y);
 
-			eq = "Symmetric about the <input type='number' class='mathinput' id='i0' />)";
+			eq = "Symmetric about the <select class='mathinput' id='i1'><option value='x-axis'>x-axis</option><option value='y-axis'>y-axis</option><option value='origin'>origin</option></select>)";
 			ans = [-vars[0]];
 			break;
 	}
