@@ -9,7 +9,7 @@ function setQuestion()
 	var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	switch(questionNum)
 	{
-		case 1:
+		case 0:
 		case 1:
 			var n = getRandom(2,3,2);
 			var vars = getRandom(2,9,1);
@@ -68,7 +68,7 @@ function setQuestion()
 			eq = "y-intercept: <input type='number' class='mathinput' id='i0' />)";
 			ans = [-vars[1]];
 			break;
-		case 0:
+		case 6:
 		case 7:
 		case 8:
 		case 9:
@@ -82,15 +82,13 @@ function setQuestion()
 				switch(n[0])
 				{
 					case 0:
-						var even = getRandom(1,9,[2,4,6,8]);
-						alert(even[0]+"..."+vars);
+						var even = getRandom(1,9,1[2,4,6,8]);
 						x.push(i);
 						y.push(vars[0]*Math.pow(i,even[0])+vars[1]);
 						ans = ["x-axis"];
 						break;
 					case 1:
-						var even = getRandom(1,9,[2,4,6,8]);
-						alert(even[0]+"..."+vars);
+						var even = getRandom(1,9,1[2,4,6,8]);
 						y.push(i);
 						x.push(vars[0]*Math.pow(i,even[0])+vars[1]);
 						ans = ["y-axis"];
@@ -102,7 +100,7 @@ function setQuestion()
 						ans = ["origin"];
 						break;
 					case 3:
-						var odd = getRandom(2,8,[3,5,7]);
+						var odd = getRandom(2,8,1[3,5,7]);
 						x.push(i);
 						y.push(vars[0]*Math.pow(i),odd[0]);
 						ans = ["origin"];
