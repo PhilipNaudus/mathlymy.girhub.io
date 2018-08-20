@@ -35,7 +35,7 @@ function setQuestion()
 			for(var i=-5; i<5; i+=0.01)
 			{
 				x.push(i);
-				y.push(Math.pow((i+vars[0]),2));
+				y.push(vars[0]*Math.pow((i+vars[1]),3));
 			}
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the y-intercept of the graph shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
