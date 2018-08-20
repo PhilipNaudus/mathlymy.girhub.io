@@ -6,6 +6,7 @@ function setQuestion()
 	var quest;
 	var ans;
 	var eq;
+	var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	switch(questionNum)
 	{
 		case 0:
