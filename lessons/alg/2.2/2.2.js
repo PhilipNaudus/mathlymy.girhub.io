@@ -9,7 +9,7 @@ function setQuestion()
 	var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	switch(questionNum)
 	{
-		case 1:
+		case 0:
 		case 1:
 			var n = getRandom(2,3,2);
 			var vars = getRandom(2,9,1);
@@ -27,7 +27,7 @@ function setQuestion()
 			eq = "("+vars[0]+", <input type='number' class='mathinput' id='i0' />)";
 			ans = [vars[1]];
 			break;
-		case 0:
+		case 4:
 			x = new Array();
 			y = new Array();
 			var n = getRandom(2,9,1);
