@@ -83,12 +83,14 @@ function setQuestion()
 				{
 					case 0:
 						var even = getRandom(1,9,[2,4,6,8]);
+						alert(even[0]+"..."+vars);
 						x.push(i);
 						y.push(vars[0]*Math.pow(i,even[0])+vars[1]);
 						ans = ["x-axis"];
 						break;
 					case 1:
 						var even = getRandom(1,9,[2,4,6,8]);
+						alert(even[0]+"..."+vars);
 						y.push(i);
 						x.push(vars[0]*Math.pow(i,even[0])+vars[1]);
 						ans = ["y-axis"];
