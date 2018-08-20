@@ -9,7 +9,7 @@ function setQuestion()
 	var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	switch(questionNum)
 	{
-		case 0:
+		case 1:
 		case 1:
 			var n = getRandom(2,3,2);
 			var vars = getRandom(2,9,1);
@@ -27,7 +27,7 @@ function setQuestion()
 			eq = "("+vars[0]+", <input type='number' class='mathinput' id='i0' />)";
 			ans = [vars[1]];
 			break;
-		case 4:
+		case 0:
 			x = new Array();
 			y = new Array();
 			var vars = getRandom(-3,3,1);
@@ -37,11 +37,12 @@ function setQuestion()
 				x.push(i);
 				y.push(vars[0]*Math.pow((i+vars[1]),3));
 			}
-			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the y-intercept of the graph shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the x-intercept of the graph shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 			plotData([-5,5], [0,0]);
 			plotData([0.01,0.01], [-5,5]);
 			plotData(x, y);
+			alert(y);
 
 			eq = "x-intercept: <input type='number' class='mathinput' id='i0' />)";
 			ans = [-vars[0]];
