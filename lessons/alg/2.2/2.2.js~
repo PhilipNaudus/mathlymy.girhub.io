@@ -42,6 +42,7 @@ function setQuestion()
 			plotData([-5,5], [0,0]);
 			plotData([0.01,0.01], [-5,5]);
 			plotData(x, y);
+			alert(y);
 
 			eq = "x-intercept: <input type='number' class='mathinput' id='i0' />)";
 			ans = [-vars[0]];
