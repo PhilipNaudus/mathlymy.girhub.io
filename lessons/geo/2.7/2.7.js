@@ -50,7 +50,7 @@ function setQuestion()
 		    +"<tr><td>m&ang;A = m&ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 		    +"<tr><td>&ang;A &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
 		    , [["Given", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]],
-	        ["", "<table border='0'><tr><td><span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span></td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+	        ["", "<table border='0'><tr><td><span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>BC</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span></td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
 		    +"<tr><td>&ang;B and &ang;C are right angles</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
 		    +"<tr><td>m&ang;B = 90&deg; and m&ang;C = 90&deg;</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
 		    +"<tr><td>m&ang;B = m&ang;C</td><td></td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
