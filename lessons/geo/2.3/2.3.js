@@ -30,7 +30,7 @@ function setQuestion()
 	    equationNum = 2;
 	    break;
 	default:
-            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>Every time "+hypo1[vars[0]]+", "+concl1[vars[1]]+".</li><li>The next time "+hypo1[vars[0]]+". "+concl1[vars[1]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+".</li></ul>";
+            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>Every time "+hypo1[vars[0]]+", "+concl1[vars[1]]+".</li><li>The next time "+hypo1[vars[0]]+", "+concl1[vars[1]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+".</li></ul>";
 	    ans = ["inductive"];
 	    equationNum = 2;
 	    break;

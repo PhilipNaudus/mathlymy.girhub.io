@@ -21,7 +21,7 @@ function setQuestion()
 	    break;
         case 1:
 	    equationNum = 1;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>AB</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &ang;B &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>BC</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &ang;B &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
             addText([-4,-0.5], "A");
             addText([0,-1.5], "B");
