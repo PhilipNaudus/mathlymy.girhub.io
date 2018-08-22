@@ -25,12 +25,12 @@ function setQuestion()
 	    equationNum = 1;
 	    break;
         case fourFive[0]:
-            quest = "Please examine the two conditional sentences below and determine whether the second one is a contrapositive or inverse of the first. Please enter <b>contrapositive</b> or <b>inverse</b>.<br /><b>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".<br />If "+nhypo[vars[0]]+", then "+nconcl[vars[1]]+".</b>";
+            quest = "Please examine the two conditional sentences below and determine whether the second one is a contrapositive or inverse of the first. Please enter <b>contrapositive</b> or <b>inverse</b>.<br /><ul><li>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".</li><li>If "+nhypo[vars[0]]+", then "+nconcl[vars[1]]+".</li></ul>";
 	    ans = ["inverse"];
 	    equationNum = 2;
 	    break;
 	default:
-            quest = "Please examine the two conditional sentences below and determine whether the second one is a contrapositive or inverse of the first. Please enter <b>contrapositive</b> or <b>inverse</b>.<br /><b>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".<br />If "+nconcl[vars[1]]+", then "+nhypo[vars[0]]+".</b>";
+            quest = "Please examine the two conditional sentences below and determine whether the second one is a contrapositive or inverse of the first. Please enter <b>contrapositive</b> or <b>inverse</b>.<br /><ul><li>If "+hypo[vars[0]]+", then "+concl[vars[1]]+".</li><li>If "+nconcl[vars[1]]+", then "+nhypo[vars[0]]+".</li></ul>";
 	    ans = ["contrapositive"];
 	    equationNum = 2;
 	    break;

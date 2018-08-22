@@ -1,4 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var videos = ["urfSZQqolPo", "YosKmAV4OxE", "-rdOLhPTc-4", "aKF3MhWk_eE"];
 
 function setQuestion()
 {
@@ -47,7 +48,7 @@ function setQuestion()
 	    var vars = getRandom(1, 5, 2);
 	    var text = ""+vars[0]+", ";
 	    var temp;
-	    for(var i=1; i<=4; i++)
+	    for(var i=1; i<=5; i++)
 	    {
 		text += vars[1] + ", ";
 		temp = vars[1];

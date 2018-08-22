@@ -1,5 +1,5 @@
 var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
-var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
+var videos = ["Scp40aPgazw", "DIzYSCpHI6A", "L3L58N2PSRE", "_3Lb-rydX4k"];
 var correctEq;
 var quizEq;
 var numEqs = 2;
@@ -177,7 +177,7 @@ function giveHint()
 {
     if(currentStep==1)
     {
-        swal("Use the first equation if you are given two points and cannot see the graph of the line. Use the second equation if you are given the graph of the line. Use the third equation if you are confident in your ability to apply the Pythagorean Theorem in your head.");
+        swal("Use the first equation if you are asked for the length of a line. Use the second equation if you are asked for the midpoint.");
     } else
     {
         var numCorrect = new Array();

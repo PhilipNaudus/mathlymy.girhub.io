@@ -1,4 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var videos = ["TuBJ7l4qYJ0", "5_DNMtXnNxE"];
 
 function setQuestion()
 {
@@ -113,4 +114,4 @@ function addOrSub(num)
 
 }
 
-var numQuestions = 6;
+var numQuestions = 2;

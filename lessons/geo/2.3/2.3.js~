@@ -1,4 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var videos = ["malMOLyf8Dg", "LU-952DFEV8", "malMOLyf8Dg", "LU-952DFEV8", "Xt3YsHsAvWM"];
 
 function setQuestion()
 {
@@ -30,7 +31,7 @@ function setQuestion()
 	    equationNum = 2;
 	    break;
 	default:
-            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>Every time "+hypo1[vars[0]]+", "+concl1[vars[1]]+".</li><li>The next time "+hypo1[vars[0]]+". "+concl1[vars[1]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+".</li></ul>";
+            quest = "Please examine the logic below and determine if it is inductive or deductive reasoning. Please enter <b>inductive</b> or <b>deductive</b>.<br /><ul><li>Every time "+hypo1[vars[0]]+", "+concl1[vars[1]]+".</li><li>The next time "+hypo1[vars[0]]+", "+concl1[vars[1]].replace(/^\w/, function (chr) { return chr.toUpperCase(); })+".</li></ul>";
 	    ans = ["inductive"];
 	    equationNum = 2;
 	    break;

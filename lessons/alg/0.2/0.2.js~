@@ -42,7 +42,7 @@ function setQuestion()
         case 4:
         case 5:
 	    var vars = getRandom(1, 9, 6)
-	    quest = "Please evaluate:<br />|"+vars[0]+" - ["+vars[1]+"&times;"+vars[2]+" + ("+vars[3]+" - "+vars[4]+")] &times; "+vars[5]+"|";
+	    quest = "Please evaluate |"+vars[0]+" - ["+vars[1]+"&times;"+vars[2]+" + ("+vars[3]+" - "+vars[4]+")] &times; "+vars[5]+"|";
 	    var ans = [Math.abs(vars[0] - (((vars[1]*vars[2]) + vars[3]-vars[4])*vars[5]))];
 	    var eq = "<input type='number' class='mathinput' id='i0' />";
 	    equationNum = 0;

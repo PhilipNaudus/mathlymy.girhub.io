@@ -1,5 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
-var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
+var videos = ["uIZX5kwzHyI", "biJQwQfQrZc", "eJQ-IvBhbQI", "25xQ05F_BO8", "Vh5NyHflwL0", "Vh5NyHflwL0"];
 var polygonNames = ["heptagon", "nonagon", "octagon", "hexagon", "octagon", "pentagon", "quadrilateral", "hexagon", "pentagon", "quadrilateral", "hexagon", "heptagon"];
 var concaveConvex = ["convex", "concave", "convex", "concave", "convex", "convex", "convex", "concave", "convex", "convex", "convex", "concave"];
 var regularIrregular = ["regular", "irregular", "regular", "irregular", "irregular", "regular", "irregular", "irregular", "irregular", "irregular", "irregular", "irregular"];

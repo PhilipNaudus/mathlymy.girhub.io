@@ -1,4 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var videos = ["x6CPPzii7eI", "anueSivoknw", "Jy9fmzXYo_M", "uIWWjgWClxo", "UTBWld8_jTE", "UTBWld8_jTE"];
 
 function setQuestion()
 {

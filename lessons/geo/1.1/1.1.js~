@@ -4,7 +4,7 @@ var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
 function setQuestion()
 {
     var pickArr;
-    var vars = getRandom(-4, 4, 8, 0);
+    var vars = getRandom(-4, 4, 8, [0]);
     var ans;
     switch(questionNum)
     {

@@ -1,5 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
-var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
+var videos = ["un1YXbfM3OQ", "Igx2vBA6iLs", "un1YXbfM3OQ", "Igx2vBA6iLs"];
 
 function setQuestion()
 {
@@ -17,7 +17,6 @@ function setQuestion()
 	    plotData([-4,vars[0]], [vars[1],vars[1]]);
 	    plotData([vars[2]+0.1,vars[2]+0.1], [-4,vars[0]-ifCon]);
 	    equationNum = 0;
-	    alert(vars);
             break;
         case 1:
         case 3:
