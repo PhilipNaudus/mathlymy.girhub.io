@@ -40,7 +40,7 @@ function setQuestion()
         case 9:
             quest = "Please factor by grouping:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+(vars[1]*vars[2])+"x + "+(vars[0]*vars[3])+"x + "+(vars[1]*vars[3]);
 	    eq = "(<input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' />) (<input type='number' class='mathinput' id='i2' />x + <input type='number' class='mathinput' id='i3' />)";
-	    ans = [[vars[0], vars[1], vars[2], vars[3]],;
+	    ans = [[vars[0], vars[1], vars[2], vars[3]],
 	           [vars[2], vars[3], vars[0], vars[1]]];
             break;
         case 10:
