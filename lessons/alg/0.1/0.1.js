@@ -44,7 +44,7 @@ function setQuestion()
             break;
 	case 5:
 	case 7:
-	    var vars = getRandom(1, 9, 6);
+	    var vars = getRandom(1, 9, 6, [2,3]);
 	    quest = "Please evaluate "+vars[0]+"&times; <span class='fraction'>"
                           +"<span class='fractop'>"+vars[1]+"</span>"
 			  +"<span class='fracbot'>"+vars[2]+"</span>"
