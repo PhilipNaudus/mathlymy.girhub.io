@@ -1,5 +1,5 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
-var videos = ["tyBiHyazMOc", "ST4Jq80MWFw", "asobS45OFJY", "ewukx8sw2D8"];
+var videos = ["SJXAiT_EKlI", "SJXAiT_EKlI", "moyEyIcDhII", "W0N8-wxmaGc", "PF1Zl6xdHRI"];
 
 function setQuestion()
 {
@@ -117,4 +117,4 @@ function signNumber(theNumber)
     }
 }
 
-var numQuestions = 8;
+var numQuestions = 5;
