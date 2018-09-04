@@ -241,11 +241,14 @@ window.onload = function()
         // Load student names... Checking local storage first, falling back to the server
         if (typeof(Storage) !== "undefined")
         {
+		//TODO: After a while, delete this line and uncomment...
+            localStorage.removeItem("studentList"+course);
+	    /*
             studentList = localStorage.getItem("studentList"+course);
             if(studentList != null)
-            {
+            {*/
                 propagateStudents(JSON.parse(studentList));
-            }
+            //}
         }
         if(document.getElementById("name").length <= 2)
         {
