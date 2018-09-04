@@ -11,6 +11,7 @@ var lessons = {"geo": {"1.1": ["Identify points, lines, and planes"],
                        "2.5": ["Reasoning using properties from algebra"],
                        "2.6": ["Prove statements about segments and angles"],
                        "2.7": ["Prove angle pair relationships"],
+                       "3E": ["Sets and Venn Diagrams"],
                        "name": ['g', "Geometry"]}, 
                "alg": {"0.1": ["Real numbers"],
 		       "0.2": ["Algebra essentials"],
@@ -246,9 +247,9 @@ window.onload = function()
 	    /*
             studentList = localStorage.getItem("studentList"+course);
             if(studentList != null)
-            {*/
+            {
                 propagateStudents(JSON.parse(studentList));
-            //}
+            }*/
         }
         if(document.getElementById("name").length <= 2)
         {
