@@ -1,70 +1,45 @@
 //var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
-var videos = ["ug7conmwAGk", "yUFB4TaCsz0", "gle8iZuP428"];
+var videos = ["-ipi4voo86I", "SBUmnWfwAOQ", "-ipi4voo86I", "SBUmnWfwAOQ", "-ipi4voo86I"];
 
 function setQuestion()
 {
-    var vars = getRandom(1, 9, 5);
-    var options;
-    var w = Math.min(window.innerWidth, window.innerHeight, 400);
+    var quest;
+    var ans;
+    var eq;
     switch(questionNum)
     {
         case 0:
-	    equationNum = 0;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are right angles, prove that &ang;A &cong; &ang;B.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-            initCanvas([-5, 5], 10, [-5, 5], 10, ["", ""]);
-	    addCircle([-2,0], 40);
-	    addCircle([2,0], 40);
-            addText([-1.5,0.5], "A");
-            addText([1.5,-0.5], "B");
-	    plotData([-4,-1.1], [0,0]);
-	    plotData([-1.1,-1.1], [4,0]);
-	    plotData([4,1.1], [0,0]);
-	    plotData([1.1,1.1], [-4,0]);
-	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
-	    break;
-        case 1:
-	    equationNum = 1;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that <span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>BC</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span>, prove that &ang;B &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([-4,-0.5], "A");
-            addText([0,-1.5], "B");
-            addText([-0.1,2.5], "C");
-            addText([4,2.5], "D");
-	    plotData([-4,-0.1], [-1,-1]);
-	    plotData([-0.1,-0.1], [-1,2]);
-	    plotData([-0.1,4], [2, 2]);
-	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of perpendicular lines'>Definition of perpendicular lines</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option>";
-	    break;
         case 2:
-	    equationNum = 2;
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are supplements and &ang;B and &ang;C are supplements, prove that &ang;A &cong; &ang;C.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-            initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-            addText([-1,-0.2], "A");
-            addText([-0.2,0.5], "B");
-            addText([1,0.5], "C");
-	    plotData([-4,4], [0,0]);
-	    plotData([-4,4], [-3,3]);
-	    options = "<option value=''>Select</option><option value='Given'>Given</option><option value='Definition of congruent angles'>Definition of congruent angles</option><option value='Definition of supplementary angles'>Definition of supplementary angles</option><option value='Definition of right angle'>Definition of right angle</option><option value='Symmetric Property of Equality'>Symmetric Property of Equality</option><option value='Transitive Property of Equality'>Transitive Property of Equality</option><option value='Addition Property of Equality'>Addition Property of Equality</option><option value='Subtraction Property of Equality'>Subtraction Property of Equality</option>";
-	    break;
+        case 4:
+	    var A = getRandom(0, 9, 3).sort();
+	    var B = getRandom(0, 9, 3).sort();
+	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cup; B:";
+	    var ans = union(A, B).sort();
+	    var eq = "<input type='number' class='mathinput' id='i0' />";
+	    for(var i=1; i<+ans.length; i++)
+	    {
+	       eq += ", <input type='number' class='mathinput' id='i"+i+"' />";
+	    }
+	    equationNum = 0;
+            break;
+        case 1:
+        case 3:
+        case 5:
+	    var A = getRandom(0, 9, 6).sort();
+	    var B = getRandom(0, 9, 6).sort();
+	    quest = "If A = {"+A.join()+"}  and B = {"+B.join()+"}, please enter the elements of A &cap; B:";
+	    var ans = (A.filter(value => -1 !== B.indexOf(value))).sort();
+	    var eq = "<input type='number' class='mathinput' id='i0' />";
+	    for(var i=1; i<+ans.length; i++)
+	    {
+	       eq += ", <input type='number' class='mathinput' id='i"+i+"' />";
+	    }
+	    equationNum = 0;
+            break;
     }
 
-    equations = [["", "<table border='0'><tr><td>&ang;A and &ang;B are right angles</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;A = 90&deg; and m&ang;B = 90&deg;</td><td></td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;A = m&ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
-		    +"<tr><td>&ang;A &cong; &ang;B</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
-		    , [["Given", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]],
-	        ["", "<table border='0'><tr><td><span style='text-decoration: overline'>AB</span> &perp; <span style='text-decoration: overline'>BC</span> and <span style='text-decoration: overline'>DC</span> &perp; <span style='text-decoration: overline'>BC</span></td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>&ang;B and &ang;C are right angles</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;B = 90&deg; and m&ang;C = 90&deg;</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;B = m&ang;C</td><td></td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
-		    +"<tr><td>&ang;B &cong; &ang;C</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
-		    , [["Given", "Definition of perpendicular lines", "Definition of right angle", "Transitive Property of Equality", "Definition of congruent angles"]]],
-		["", "<table border='0'><tr><td>&ang;A and &ang;B are supplements<br />and &ang;B and &ang;C are supplements</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;A+m&ang;B = 180&deg; and m&ang;B+m&ang;C = 180&deg;</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;A+m&ang;B = m&ang;B+m&ang;C</td><td></td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
-		    +"<tr><td>m&ang;A = m&ang;C</td><td></td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
-		    +"<tr><td>&ang;A &cong; &ang;C</td><td>&nbsp;&nbsp;&nbsp;</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
-		    , [["Given", "Definition of supplementary angles", "Transitive Property of Equality", "Subtraction Property of Equality", "Definition of congruent angles"]]]];
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
+    equations = [["", eq, [ans]]];
 }
 
 function step1(ifResetScrolling)
@@ -74,10 +49,7 @@ function step1(ifResetScrolling)
 
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
-    /*document.getElementById('i2').style.width = '22em';
-    document.getElementById('i5').style.width = '22em';
-    document.getElementById('i8').style.width = '22em';*/
-	
+
     addInputEventListeners();
 
     if(ifResetScrolling) window.scrollTo(0, 0);
@@ -114,19 +86,13 @@ function giveHint()
     }
 }
 
-function signNumber(theNumber)
-{
-    if(theNumber > 0){
-        return "+" + theNumber;
-    }else{
-        return theNumber.toString();
-    }
-}
+function unique(x) {
+  return x.filter(function(elem, index) { return x.indexOf(elem) === index; });
+};
 
-function addOrSub(num)
-{
-	return (num>0)?"Addition Property of Equality":"Subtraction Property of Equality";
+function union(x, y) {
+  return unique(x.concat(y));
+};
 
-}
 
-var numQuestions = 3;
+var numQuestions = 6;
