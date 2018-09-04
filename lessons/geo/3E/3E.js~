@@ -12,7 +12,8 @@ function setQuestion()
 	    equationNum = 0;
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Given that &ang;A and &ang;B are right angles, prove that &ang;A &cong; &ang;B.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
             initCanvas([-5, 5], 10, [-5, 5], 10, ["", ""]);
-	    addCircle();
+	    addCircle([-2,0], 4);
+	    addCircle([2,0], 4);
             addText([-1.5,0.5], "A");
             addText([1.5,-0.5], "B");
 	    plotData([-4,-1.1], [0,0]);
