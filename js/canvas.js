@@ -95,6 +95,14 @@ function addText(p, text) {
 	context.fillText(text, x-5, y+10);
 }
 
+function addCircle(p, r) {
+	var x = 50 + (xScale * (p[0]-x_min) * gx_step); 
+	var y = 50 + (yScale * (-p[1]-y_min) * gy_step) + 5; 
+	context.beginPath();
+	context.arc(x,y,r,0,2*Math.PI);
+	context.stroke();
+}
+
 function setAppend(num, append)
 {
     if(num==0) return 0;
