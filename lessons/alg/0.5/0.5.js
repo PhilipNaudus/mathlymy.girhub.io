@@ -9,7 +9,7 @@ function setQuestion()
     var vars = getRandom(4, 10, 4, [8])
     switch(questionNum)
     {
-        case 1:
+        case 0:
         case 1:
             quest = "Please factor the polynomial by removing the common term:<br />"+(vars[0]*vars[1])+"x<sup>2</sup> + "+(vars[0]*vars[2])+"x + "+(vars[0]*vars[3]);
 	    eq = "<input type='number' class='mathinput' id='i0' /> (<input type='number' class='mathinput' id='i1' />x<sup>2</sup> + <input type='number' class='mathinput' id='i2' />x + <input type='number' class='mathinput' id='i3' />)";
@@ -36,7 +36,7 @@ function setQuestion()
 	    eq = "(<input type='number' class='mathinput' id='i0' />x "+posNeg+" <input type='number' class='mathinput' id='i1' />) (<input type='number' class='mathinput' id='i2' />x<sup>2</sup> "+negPos+" <input type='number' class='mathinput' id='i3' />x + <input type='number' class='mathinput' id='i4' />)";
 	    ans = [[vars[0], vars[1], (vars[0]*vars[0]), (vars[0]*vars[1]), (vars[1]*vars[1])]];
             break;
-        case 0:
+        case 8:
         case 9:
             quest = "Please factor by grouping:<br />"+(vars[0]*vars[2])+"x<sup>2</sup> + "+(vars[1]*vars[2])+"x + "+(vars[0]*vars[3])+"x + "+(vars[1]*vars[3]);
 	    eq = "(<input type='number' class='mathinput' id='i0' />x + <input type='number' class='mathinput' id='i1' />) (<input type='number' class='mathinput' id='i2' />x + <input type='number' class='mathinput' id='i3' />)";
