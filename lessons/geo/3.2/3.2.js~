@@ -27,9 +27,14 @@ function setQuestion()
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle "+ang+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([-1,0.5], vars[0]);
-    addText([0.5,0.5], "a");
-    addText([0,-0.5], "b");
-    addText([-1.5,-0.5], "c");
+    addText([0.5,2.5], "a");
+    addText([2,2.5], "b");
+    addText([-0.5,0], "c");
+    addText([-0.5,1], "d");
+    addText([-1.5,-2], "e");
+    addText([-1.5,-1], "f");
+    addText([-3,-2.5], "g");
+    addText([-2,-2.5], "h");
     plotData([-5,5], [2,2]);
     plotData([-5,5], [-2,-2]);
     plotData([-4,3], [-5,5]);

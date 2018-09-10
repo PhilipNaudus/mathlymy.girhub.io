@@ -29,12 +29,12 @@ function setQuestion()
     addText([-1,0.5], vars[0]);
     addText([0.5,2.5], "a");
     addText([2,2.5], "b");
-    addText([-0.5,0], "c");
-    addText([-0.5,1], "d");
-    addText([-1.5,-2], "e");
-    addText([-1.5,-1], "f");
+    addText([-0.5,1.5], "c");
+    addText([1,1.5], "d");
+    addText([-2, -1.5], "e");
+    addText([-1,-1.5], "f");
     addText([-3,-2.5], "g");
-    addText([-2,-2.5], "h");
+    addText([-1.5,-2.5], "h");
     plotData([-5,5], [2,2]);
     plotData([-5,5], [-2,-2]);
     plotData([-4,3], [-5,5]);
