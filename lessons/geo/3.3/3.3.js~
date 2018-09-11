@@ -74,7 +74,7 @@ function setQuestion()
     addText(, "g");
     addText(, "h");*/
     plotData([-5,5], [0,0]);
-    plotData([-1,5], [-5,8]);
+    plotData([-1,5], [-5,5]);
     plotData([-5,2], [-5,5]);
     equationNum = 0;
 
