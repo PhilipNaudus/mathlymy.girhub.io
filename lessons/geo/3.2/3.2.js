@@ -4,10 +4,25 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 function setQuestion()
 {
     var pickArr;
-    var vars = getRandom(1, 9, 2);
+    var vars = getRandom(2, 9, 2);
     var ans;
+    var ang;
     //var pos = shuffle([[0.5,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-2, -1.5,1], [-1,-1.5,0], [-3,-2.5,0], [-1.5,-2.5,1]]);
     var pos = [[0.4,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-2.5, -1.5,1], [-1,-1.5,0], [-3.2,-2.5,0], [-1.5,-2.5,1]];
+
+    if(pos[1][2]==0)
+    {
+	    do
+	    {
+		    ang = (getRandom(5, 45, 1)-vars[1])*vars[0];
+	    } while(ang < 90);
+    } else
+    {
+	    do
+	    {
+		    ang = (getRandom(5, 90, 1)-vars[1])*vars[0];
+	    } while(ang > 90 && ang < 180);
+    }
     /*switch(questionNum)
     {
         case 0:
@@ -27,8 +42,8 @@ function setQuestion()
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([pos[0][0], pos[0][1]], "x+"+vars[0]);
-    addText([pos[1][0], pos[1][1]], "x+"+vars[1]);
-    addText([pos[2][0], pos[2][1]], "x+"+vars[1]);
+    addText([pos[1][0], pos[1][1]], ang);
+    /*addText([pos[2][0], pos[2][1]], "x+"+vars[1]);
     addText([pos[3][0], pos[3][1]], "x+"+vars[1]);
     addText([pos[4][0], pos[4][1]], "x+"+vars[1]);
     addText([pos[5][0], pos[5][1]], "x+"+vars[1]);
