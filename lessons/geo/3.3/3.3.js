@@ -12,19 +12,19 @@ function setQuestion()
     if(pos[0][2]==0 && pos[1][2]==0)
     {
 	    ang[0] = getRandom(10, 80, 1);
-	    ang[1] = ang[0]+off[0];
+	    ang[1] = parseInt(ang[0])+parseInt(off[0]);
     } else if(pos[0][2]==1 && pos[1][2]==1)
     {
 	    ang[0] = getRandom(100, 170, 1);
-	    ang[1] = ang[0]+off[0];
+	    ang[1] = parseInt(ang[0])+parseInt(off[0]);
     } else if(pos[0][2]==0 && pos[1][2]==1)
     {
 	    ang[0] = getRandom(10, 80, 1);
-	    ang[1] = 180-ang[0]+off[0];
+	    ang[1] = 180-parseInt(ang[0])+parseInt(off[0]);
     } else if(pos[0][2]==1 && pos[1][2]==0)
     {
 	    ang[0] = getRandom(100, 170, 1);
-	    ang[1] = 180-ang[0]+off[0];
+	    ang[1] = 180-parseInt(ang[0])+parseInt(off[0]);
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
@@ -84,4 +84,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 3;
+var numQuestions = 6;
