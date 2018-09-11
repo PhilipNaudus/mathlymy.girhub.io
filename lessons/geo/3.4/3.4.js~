@@ -27,8 +27,9 @@ function setQuestion()
                           +"<span class='fractop'><input type='number' class='mathinput' id='i4' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>"
 			+"</span>", [[vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])],
-		                     [vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign]
-		                    [vars[2], vars[0], vars[3], vars[1]]]],
+		                     [vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign],
+		                     [vars[2], vars[0], vars[3], vars[1], Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])],
+				     [vars[2], vars[0], vars[3], vars[1], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign]]],
 	            ["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"

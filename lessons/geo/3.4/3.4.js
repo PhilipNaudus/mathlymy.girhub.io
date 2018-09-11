@@ -33,7 +33,7 @@ function setQuestion()
 	            ["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"
-			+"</span>" , [[ans]]]];
+			+"</span>" , [[Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])], [Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign]]]];
 }
 
 function step1(ifResetScrolling)
