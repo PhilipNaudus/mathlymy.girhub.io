@@ -3,9 +3,8 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 
 function setQuestion()
 {
-    var pickArr;
-    var ang = new Array();
     var pos = shuffle([[-2,0.5,1], [-0.5,0.5,0], [2,0.5,1], [3.5,0.5,0], [-2.5, -0.5,0], [-1,-0.5,1], [1.3,-0.5,0], [3,-0.5,1]]);
+    var ang = new Array();
 
     var off = getRandom(-1,1,1);
     var ans = (off[0]==0)?"yes":"no";

@@ -37,7 +37,7 @@ function setQuestion()
     plotData([-5,2], [-5,5]);
     equationNum = 0;
 
-    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
+    equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
