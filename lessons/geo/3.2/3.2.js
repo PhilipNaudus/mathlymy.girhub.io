@@ -29,14 +29,14 @@ function setQuestion()
 	    {
 		    ans = getRandom(5, 90, 1);
 		    ang = 180-((ans*vars[0])+vars[1]);
-	    } while(ang > 90 && ang < 180);
+	    } while(ang > 90 && ang < 180 && ang > 0);
     } else if(pos[0][2]==1 && pos[1][2]==0)
     {
 	    do
 	    {
 		    ans = getRandom(5, 90, 1);
 		    ang = 180-((ans*vars[0])+vars[1]);
-	    } while(ang < 90);
+	    } while(ang < 90 && ang > 0);
     }
     /*switch(questionNum)
     {
