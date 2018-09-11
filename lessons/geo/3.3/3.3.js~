@@ -73,9 +73,10 @@ function setQuestion()
     addText(, "f");
     addText(, "g");
     addText(, "h");*/
-    plotData([-5,5], [2,2]);
-    plotData([-5,5], [-2,-2]);
+    plotData([-5,5], [0,0]);
     plotData([-4,3], [-5,5]);
+    plotData([-3,4], [-5,5]);
+    plotData([-5,2], [-5,5]);
     equationNum = 0;
 
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
