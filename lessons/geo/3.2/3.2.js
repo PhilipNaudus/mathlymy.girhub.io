@@ -14,13 +14,15 @@ function setQuestion()
     {
 	    do
 	    {
-		    ang = (getRandom(5, 45, 1)-vars[1])*vars[0];
+		    ans = getRandom(5, 45, 1);
+		    ang = (ans-vars[1])*vars[0];
 	    } while(ang < 90);
     } else
     {
 	    do
 	    {
-		    ang = (getRandom(5, 90, 1)-vars[1])*vars[0];
+		    ans = getRandom(5, 90, 1);
+		    ang = (ans-vars[1])*vars[0];
 	    } while(ang > 90 && ang < 180);
     }
     /*switch(questionNum)
@@ -42,13 +44,7 @@ function setQuestion()
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([pos[0][0], pos[0][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[1][0], pos[1][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[2][0], pos[2][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[3][0], pos[3][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[4][0], pos[4][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[5][0], pos[5][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[6][0], pos[6][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[7][0], pos[7][1]], vars[0]+"x+"+vars[1]);
+    addText([pos[1][0], pos[1][1]], ang);
     /*addText([pos[2][0], pos[2][1]], "x+"+vars[1]);
     addText([pos[3][0], pos[3][1]], "x+"+vars[1]);
     addText([pos[4][0], pos[4][1]], "x+"+vars[1]);
