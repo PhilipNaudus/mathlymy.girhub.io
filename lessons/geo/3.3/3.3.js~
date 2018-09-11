@@ -4,82 +4,35 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 function setQuestion()
 {
     var pickArr;
-    var vars = getRandom(2, 9, 2);
-    var ans;
-    var ang;
-    //var pos = shuffle([[0,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-3, -1.5,1], [-1,-1.5,0], [-3.5,-2.5,0], [-1.5,-2.5,1]]);
-    var pos = [[-2,0.5], [-0.5,0.5], [2,0.5], [3.5,0.5], [-2.5, -0.5], [-1,-0.5], [1.5,-0.5], [3,-0.5]];
+    var ang = new Array();
+    var pos = shuffle([[-2,0.5,1], [-0.5,0.5,0], [2,0.5,1], [3.5,0.5,0], [-2.5, -0.5,0], [-1,-0.5,1], [1.3,-0.5,0], [3,-0.5,1]]);
+
+    var off = getRandom(-1,1,1);
+    var ans = (off[0]==0)?"yes":"no";
 
     if(pos[0][2]==0 && pos[1][2]==0)
     {
-	    do
-	    {
-		    ans = getRandom(5, 45, 1);
-		    ang = (ans*vars[0])+vars[1];
-	    } while(ang >= 90);
+	    ang[0] = getRandom(10, 80, 1);
+	    ang[1] = ang[0]+off[0];
     } else if(pos[0][2]==1 && pos[1][2]==1)
     {
-	    do
-	    {
-		    ans = getRandom(5, 90, 1);
-		    ang = (ans*vars[0])+vars[1];
-	    } while(ang <= 90 || ang >= 180);
+	    ang[0] = getRandom(100, 170, 1);
+	    ang[1] = ang[0]+off[0];
     } else if(pos[0][2]==0 && pos[1][2]==1)
     {
-	    do
-	    {
-		    ans = getRandom(5, 90, 1);
-		    ang = 180-((ans*vars[0])+vars[1]);
-	    } while(ang <= 90 || ang >= 180 || ang <= 0);
+	    ang[0] = getRandom(10, 80, 1);
+	    ang[1] = 180-ang[0]+off[0];
     } else if(pos[0][2]==1 && pos[1][2]==0)
     {
-	    do
-	    {
-		    ans = getRandom(5, 90, 1);
-		    ang = 180-((ans*vars[0])+vars[1]);
-	    } while(ang >= 90 || ang <= 0);
+	    ang[0] = getRandom(100, 170, 1);
+	    ang[1] = 180-ang[0]+off[0];
     }
-    /*switch(questionNum)
-    {
-        case 0:
-	    ang = "a";
-	    ans = 180-vars[0];
-	    break;
-        case 1:
-	    ang = "b";
-	    ans = vars[0];
-            break;
-        case 2:
-	    ang = "c";
-	    ans = 180-vars[0];
-            break;
-    }*/
+
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    addText(pos[0], "180");
-    addText(pos[1], "180");
-    addText(pos[2], "180");
-    addText(pos[3], "180");
-    addText(pos[4], "180");
-    addText(pos[5], "180");
-    addText(pos[6], "180");
-    addText(pos[7], "180");
-    /*addText([pos[2][0], pos[2][1]], "x+"+vars[1]);
-    addText([pos[3][0], pos[3][1]], "x+"+vars[1]);
-    addText([pos[4][0], pos[4][1]], "x+"+vars[1]);
-    addText([pos[5][0], pos[5][1]], "x+"+vars[1]);
-    addText([pos[6][0], pos[6][1]], "x+"+vars[1]);
-    addText([pos[7][0], pos[7][1]], "x+"+vars[1]);
-    /*addText([-1,0.5], vars[0]);
-    addText(, "a");
-    addText(, "b");
-    addText(, "c");
-    addText(, "d");
-    addText(, "e");
-    addText(, "f");
-    addText(, "g");
-    addText(, "h");*/
+    addText([pos[0][0], pos[0][1]], ang[0]);
+    addText([pos[1][0], pos[1][1]], ang[1]);
     plotData([-5,5], [0,0]);
     plotData([-1,6], [-5,5]);
     plotData([-5,2], [-5,5]);
