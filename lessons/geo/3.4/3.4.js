@@ -9,7 +9,7 @@ function setQuestion()
 	{
 		case 0:
 			var w = Math.min(window.innerWidth, window.innerHeight, 400);
-			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the slope of the line segment shown below?.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the slope of the line segment shown below?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 			initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 			plotData([vars[0],vars[1]], [vars[2],vars[3]]);
 			break;
@@ -19,13 +19,17 @@ function setQuestion()
 	}
 	equationNum = (practice)?0:1;
 
+	var slopeSign = ((vars[0]-vars[2])/(vars[1]-vars[3]))>0?1:-1;
 	equations = [["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' />-<input type='number' class='mathinput' id='i1' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i2' />-<input type='number' class='mathinput' id='i3' /></span>"
 			+"</span> = <span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i4' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>"
-			+"</span>" , [[ans]]],
+			+"</span>", [[vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])],
+		                     [vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign],
+		                     [vars[2], vars[0], vars[3], vars[1], Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])],
+				     [vars[2], vars[0], vars[3], vars[1], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign]]],
 	            ["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"
