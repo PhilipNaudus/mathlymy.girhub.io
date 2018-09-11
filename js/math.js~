@@ -324,7 +324,6 @@ function getRandom(min, max, n, ommit)
         do
         {
             rand = Math.round(Math.random()*(max-min)+min);
-	    alert("start"+rand);
 	    for(var j=0; j<ommit.length; j++)
 	    {
 	       if(rand == ommit[j])
@@ -335,10 +334,8 @@ function getRandom(min, max, n, ommit)
 	       {
 		  doAgain = false;
 	       }
-	       alert(doAgain+""+rand+"..."+ommit);
 	    }
         } while(doAgain || vars.indexOf(rand) > -1);
-	alert("success"+rand);
         vars[i] = rand;
     }
 

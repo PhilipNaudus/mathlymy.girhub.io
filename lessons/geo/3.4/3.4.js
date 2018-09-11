@@ -20,20 +20,21 @@ function setQuestion()
 	equationNum = (practice)?0:1;
 
 	var slopeSign = ((vars[0]-vars[2])/(vars[1]-vars[3]))>0?1:-1;
+	var ans = reduce(Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3]));
 	equations = [["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' />-<input type='number' class='mathinput' id='i1' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i2' />-<input type='number' class='mathinput' id='i3' /></span>"
-			+"</span> = <span class='fraction'>"
-                          +"<span class='fractop'><input type='number' class='mathinput' id='i4' /></span>"
-			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>"
-			+"</span>", [[vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])],
-		                     [vars[0], vars[2], vars[1], vars[3], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign],
-		                     [vars[2], vars[0], vars[3], vars[1], Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])],
-				     [vars[2], vars[0], vars[3], vars[1], Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign]]],
+			+"</span> = "+(ans[1]==1)?"":("<span class='fraction'>"
+                          +"<span class='fractop'>")+"<input type='number' class='mathinput' id='i4' />"+(ans[1]==1)?"":("</span>"
+			  +"<span class='fracbot'><input type='number' class='mathinput' id='i5' /></span>")
+			+"</span>", [[vars[0], vars[2], vars[1], vars[3], ans[0]*slopeSign, ans[1]],
+		                     [vars[0], vars[2], vars[1], vars[3], ans[0], ans[1]*slopeSign],
+		                     [vars[2], vars[0], vars[3], vars[1], ans[0]*slopeSign, ans[1]],
+				     [vars[2], vars[0], vars[3], vars[1], ans[0], ans[1]*slopeSign]]],
 	            ["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i1' /></span>"
-			+"</span>" , [[Math.abs(vars[0]-vars[2])*slopeSign, Math.abs(vars[1]-vars[3])], [Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3])*slopeSign]]]];
+			+"</span>" , [[ans[0]*slopeSign, ans[1]], [ans[0], ans[1]*slopeSign]]]];
 }
 
 function step1(ifResetScrolling)

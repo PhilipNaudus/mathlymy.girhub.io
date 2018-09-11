@@ -501,3 +501,11 @@ function shuffle(array) {
   return array;
 }
 
+// Reduce a fraction by finding the Greatest Common Divisor and dividing by it.
+function reduce(numerator,denominator){
+  var gcd = function gcd(a,b){
+    return b ? gcd(b, a%b) : a;
+  };
+  gcd = gcd(numerator,denominator);
+  return [numerator/gcd, denominator/gcd];
+}
