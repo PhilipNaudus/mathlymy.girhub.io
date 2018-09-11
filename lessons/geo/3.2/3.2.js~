@@ -4,11 +4,12 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 function setQuestion()
 {
     var pickArr;
-    var vars = getRandom(-4, 4, 8, [0]);
+    var vars = getRandom(1, 9, 2);
     var ans;
     vars = getRandom(91, 150, 1);
-    var ang;
-    switch(questionNum)
+    //var pos = shuffle([[0.5,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-2, -1.5,1], [-1,-1.5,0], [-3,-2.5,0], [-1.5,-2.5,1]]);
+    var pos = [[0.5,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-2, -1.5,1], [-1,-1.5,0], [-3,-2.5,0], [-1.5,-2.5,1]];
+    /*switch(questionNum)
     {
         case 0:
 	    ang = "a";
@@ -22,19 +23,27 @@ function setQuestion()
 	    ang = "c";
 	    ans = 180-vars[0];
             break;
-    }
+    }*/
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the measure of angle "+ang+"?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    addText([-1,0.5], vars[0]);
-    addText([0.5,2.5], "a");
-    addText([2,2.5], "b");
-    addText([-0.5,0], "c");
-    addText([-0.5,1], "d");
-    addText([-1.5,-2], "e");
-    addText([-1.5,-1], "f");
-    addText([-3,-2.5], "g");
-    addText([-2,-2.5], "h");
+    addText([pos[0][0], pos[0][1]], "x+"+vars[0]);
+    addText([pos[1][0], pos[1][1]], "x+"+vars[1]);
+    addText([pos[2][0], pos[2][1]], "x+"+vars[1]);
+    addText([pos[3][0], pos[3][1]], "x+"+vars[1]);
+    addText([pos[4][0], pos[4][1]], "x+"+vars[1]);
+    addText([pos[5][0], pos[5][1]], "x+"+vars[1]);
+    addText([pos[6][0], pos[6][1]], "x+"+vars[1]);
+    addText([pos[7][0], pos[7][1]], "x+"+vars[1]);
+    /*addText([-1,0.5], vars[0]);
+    addText(, "a");
+    addText(, "b");
+    addText(, "c");
+    addText(, "d");
+    addText(, "e");
+    addText(, "f");
+    addText(, "g");
+    addText(, "h");*/
     plotData([-5,5], [2,2]);
     plotData([-5,5], [-2,-2]);
     plotData([-4,3], [-5,5]);
