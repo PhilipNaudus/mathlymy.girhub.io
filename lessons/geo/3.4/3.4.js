@@ -22,8 +22,8 @@ function setQuestion()
 	var slopeSign = ((vars[0]-vars[2])/(vars[1]-vars[3]))>0?1:-1;
 	var ans = reduce(Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3]));
 
-	if(ans[1]==1) equationNum = (practice)?0:2;
-	else equationNum = (practice)?1:3;
+	if(ans[1]==1) equationNum = (practice)?1:3;
+	else equationNum = (practice)?0:2;
 	equations = [["", "<span class='fraction'>"
                           +"<span class='fractop'><input type='number' class='mathinput' id='i0' />-<input type='number' class='mathinput' id='i1' /></span>"
 			  +"<span class='fracbot'><input type='number' class='mathinput' id='i2' />-<input type='number' class='mathinput' id='i3' /></span>"
