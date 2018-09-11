@@ -54,7 +54,7 @@ function setQuestion()
             break;
     }*/
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": If both horizontal lines are parallel, what is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([pos[0][0], pos[0][1]], vars[0]+"x+"+vars[1]);
     addText([pos[1][0], pos[1][1]], ang);
