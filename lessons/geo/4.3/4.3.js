@@ -30,10 +30,10 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    plotData(pos[0][0], pos[0][1]);
-    plotData(pos[1][0], pos[1][1]);
-    plotData(pos[2][0], pos[2][1]);
-    plotData(pos[3][0], pos[3][1]);
+    plotData([pos[0][0], pos[0][1]], [pos[1][0], pos[1][1]]);
+    plotData([pos[1][0], pos[1][1]], [pos[2][0], pos[2][1]]);
+    plotData([pos[2][0], pos[2][1]], [pos[3][0], pos[3][1]]);
+    plotData([pos[3][0], pos[3][1]], [pos[0][0], pos[0][1]]);
     equationNum = 0;
 
     equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
