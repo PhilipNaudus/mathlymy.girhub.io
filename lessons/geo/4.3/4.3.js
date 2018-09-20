@@ -3,7 +3,7 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 
 function setQuestion()
 {
-    var pos = [[-1,-1],[0,0.2],[1,-1],[0,1]];
+    var pos = [[-1,-1],[0,-0.5],[1,-1],[0,1]];
     var ang = new Array();
 
     var off = getRandom(-1,1,1);

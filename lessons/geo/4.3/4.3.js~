@@ -3,7 +3,7 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 
 function setQuestion()
 {
-    var pos = [[-1,-1],[1,-1],[0,1]];
+    var pos = [[-1,-1],[0,0.2],[1,-1],[0,1]];
     var ang = new Array();
 
     var off = getRandom(-1,1,1);
@@ -32,7 +32,8 @@ function setQuestion()
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     plotData([pos[0][0], pos[1][0]], [pos[0][1], pos[1][1]]);
     plotData([pos[1][0], pos[2][0]], [pos[1][1], pos[2][1]]);
-    plotData([pos[2][0], pos[0][0]], [pos[2][1], pos[0][1]]);
+    plotData([pos[2][0], pos[3][0]], [pos[2][1], pos[3][1]]);
+    plotData([pos[3][0], pos[0][0]], [pos[3][1], pos[0][1]]);
     equationNum = 0;
 
     equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
