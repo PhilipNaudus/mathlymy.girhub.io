@@ -28,7 +28,7 @@ function setQuestion()
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": THIS LESSON IS NOT YET COMPLETE!! Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     plotData([pos[0][0], pos[1][0]], [pos[0][1], pos[1][1]]);
     plotData([pos[1][0], pos[2][0]], [pos[1][1], pos[2][1]]);
@@ -81,6 +81,31 @@ function giveHint()
         }
         checkChanged(input);
     }
+}
+
+function translate(pos, x, y)
+{
+	return [[pos[0][0]+x, pos[0][1]+y], [pos[1][0]+x, pos[1][1]+y], [pos[2][0]+x, pos[2][1]+y], [pos[3][0]+x, pos[3][1]+y]];
+}
+
+function reflectX(pos)
+{
+	return [[pos[0][0], -pos[0][1]], [pos[1][0], -pos[1][1]], [pos[2][0], -pos[2][1]], [pos[3][0], -pos[3][1]]];
+}
+
+function rotate(pos, angle)
+{
+	return [[(pos[0][0]*cos(angle))+(pos[0][1]*sin(angle)), (-pos[0][0]*sin(angle))+(pos[1][1]*cos(angle))], [(pos[1][0]*cos(angle))+(pos[1][1]*sin(angle)), (-pos[1][0]*sin(angle))+(pos[1][1]*cos(angle))],[(pos[2][0]*cos(angle))+(pos[2][1]*sin(angle)), (-pos[2][0]*sin(angle))+(pos[2][1]*cos(angle))],[(pos[3][0]*cos(angle))+(pos[3][1]*sin(angle)), (-pos[3][0]*sin(angle))+(pos[3][1]*cos(angle))]];
+}
+
+function enlarge(pos, factor)
+{
+	return [[factor*pos[0][0], factor*pos[0][1]], [factor*pos[1][0], factor*pos[1][1]], [factor*pos[2][0], factor*pos[2][1]], [factor*pos[3][0], factor*pos[3][1]]];
+}
+
+function rotate(pos, angle)
+{
+	return [[-pos[0][0], pos[0][1]], [-pos[1][0], pos[1][1]], [-pos[2][0], pos[2][1]], [-pos[3][0], pos[3][1]]];
 }
 
 var numQuestions = 6;
