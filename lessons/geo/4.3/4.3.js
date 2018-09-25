@@ -4,27 +4,29 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 function setQuestion()
 {
     var pos = [[-1,-1],[0,-0.5],[1,-1],[0,1]];
-    var ang = new Array();
 
-    var off = getRandom(-1,1,1);
-    var ans = (off[0]==0)?"yes":"no";
-
-    if(pos[0][2]==0 && pos[1][2]==0)
+    case(questionNum)
     {
-	    ang[0] = getRandom(10, 80, 1);
-	    ang[1] = parseInt(ang[0])+parseInt(off[0]);
-    } else if(pos[0][2]==1 && pos[1][2]==1)
-    {
-	    ang[0] = getRandom(100, 170, 1);
-	    ang[1] = parseInt(ang[0])+parseInt(off[0]);
-    } else if(pos[0][2]==0 && pos[1][2]==1)
-    {
-	    ang[0] = getRandom(10, 80, 1);
-	    ang[1] = 180-parseInt(ang[0])+parseInt(off[0]);
-    } else if(pos[0][2]==1 && pos[1][2]==0)
-    {
-	    ang[0] = getRandom(100, 170, 1);
-	    ang[1] = 180-parseInt(ang[0])+parseInt(off[0]);
+	    switch 0:
+		    var transPos = getRandom(-3,3,2);
+		    newPos = translate(pos, transPos[0], transPos[1]);
+		    break;
+	    switch 1:
+		    newPos = reflectX(pos);
+		    break;
+	    switch 2:
+		    newPos = reflectY(pos);
+		    break;
+	    switch 3:
+		    var chooseAngles = [45, 90, 135, 180];
+		    var choose = getRandom(0,3,1);
+		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
+		    break;
+	    switch 4:
+		    var chooseEnlarge = [2, 3, 4];
+		    var choose = getRandom(0,3,1);
+		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
+		    break;
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
@@ -93,6 +95,11 @@ function reflectX(pos)
 	return [[pos[0][0], -pos[0][1]], [pos[1][0], -pos[1][1]], [pos[2][0], -pos[2][1]], [pos[3][0], -pos[3][1]]];
 }
 
+function reflectY(pos)
+{
+	return [[-pos[0][0], pos[0][1]], [-pos[1][0], pos[1][1]], [-pos[2][0], pos[2][1]], [-pos[3][0], pos[3][1]]];
+}
+
 function rotate(pos, angle)
 {
 	return [[(pos[0][0]*cos(angle))+(pos[0][1]*sin(angle)), (-pos[0][0]*sin(angle))+(pos[1][1]*cos(angle))], [(pos[1][0]*cos(angle))+(pos[1][1]*sin(angle)), (-pos[1][0]*sin(angle))+(pos[1][1]*cos(angle))],[(pos[2][0]*cos(angle))+(pos[2][1]*sin(angle)), (-pos[2][0]*sin(angle))+(pos[2][1]*cos(angle))],[(pos[3][0]*cos(angle))+(pos[3][1]*sin(angle)), (-pos[3][0]*sin(angle))+(pos[3][1]*cos(angle))]];
@@ -103,9 +110,4 @@ function enlarge(pos, factor)
 	return [[factor*pos[0][0], factor*pos[0][1]], [factor*pos[1][0], factor*pos[1][1]], [factor*pos[2][0], factor*pos[2][1]], [factor*pos[3][0], factor*pos[3][1]]];
 }
 
-function rotate(pos, angle)
-{
-	return [[-pos[0][0], pos[0][1]], [-pos[1][0], pos[1][1]], [-pos[2][0], pos[2][1]], [-pos[3][0], pos[3][1]]];
-}
-
-var numQuestions = 6;
+var numQuestions = 5;
