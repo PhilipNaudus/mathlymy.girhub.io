@@ -6,8 +6,8 @@ function setQuestion()
 {
     var pos = [[0,0],[1,0.5],[2,0],[3,1],[1,2]];
     var ifRigid;
-    var mixup = getRandom(5,9,1);
-    var rigid = getRandom(10,14,1);
+    var mixup = shuffle([5, 6, 7, 8, 9]);
+    var rigid = shuffle([10, 11, 12, 13, 14]);
 
     switch(questionNum)
     {
@@ -20,22 +20,22 @@ function setQuestion()
 		    ifRigid = true;
 		    break;
 	    case 1:
-	    case mixup[0]:
-	    case rigid[0]:
+	    case mixup[1]:
+	    case rigid[1]:
 		    newPos = reflectX(pos);
 		    ans = ["Reflection", 'x'];
 		    ifRigid = true;
 		    break;
 	    case 2:
-	    case mixup[0]:
-	    case rigid[0]:
+	    case mixup[2]:
+	    case rigid[2]:
 		    newPos = reflectY(pos);
 		    ans = ["Reflection", 'y'];
 		    ifRigid = true;
 		    break;
 	    case 3:
-	    case mixup[0]:
-	    case rigid[0]:
+	    case mixup[3]:
+	    case rigid[3]:
 		    var chooseAngles = [90, 180];
 		    var choose = getRandom(0,1,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
@@ -43,8 +43,8 @@ function setQuestion()
 		    ifRigid = true;
 		    break;
 	    case 4:
-	    case mixup[0]:
-	    case rigid[0]:
+	    case mixup[4]:
+	    case rigid[4]:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
@@ -54,10 +54,10 @@ function setQuestion()
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    if(questionNum<10) quest = ": What type of transformation has been performed on the purple figure to produce the red figure?";
-    else quest = "";
+    if(questionNum<10) quest = "What type of transformation has been performed on the purple figure to produce the red figure?";
+    else quest = "Is the transformation shown below (from the purple figure to the red figure) a rigid transformation?";
 
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     for(var i=0; i<pos.length; i++)
     {
