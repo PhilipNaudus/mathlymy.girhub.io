@@ -10,27 +10,27 @@ function setQuestion()
 	    case 0:
 		    var transPos = getRandom(-3,3,2);
 		    newPos = translate(pos, transPos[0], transPos[1]);
-		    ans = "Translation";
+		    ans1 = "Translation";
 		    break;
 	    case 1:
 		    newPos = reflectX(pos);
-		    ans = "Reflection";
+		    ans1 = "Reflection";
 		    break;
 	    case 2:
 		    newPos = reflectY(pos);
-		    ans = "Reflection";
+		    ans1 = "Reflection";
 		    break;
 	    case 3:
 		    var chooseAngles = [45, 90, 135, 180];
 		    var choose = getRandom(0,3,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
-		    ans = "Rotation";
+		    ans1 = "Rotation";
 		    break;
 	    case 4:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
-		    ans = "Enlargement";
+		    ans1 = "Enlargement";
 		    break;
     }
 
@@ -43,8 +43,8 @@ function setQuestion()
     plotData([newPos[3][0], newPos[0][0]], [newPos[3][1], newPos[0][1]]);
     equationNum = 0;
 
-    options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotationn'>Rotationn</option><option value='Enlargement'>Enlargement</option>";
-    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
+    options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotationn'>Rotation</option><option value='Enlargement'>Enlargement</option>";
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans1]]]];
 }
 
 function step1(ifResetScrolling)
