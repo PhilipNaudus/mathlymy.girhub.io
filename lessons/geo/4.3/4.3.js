@@ -23,7 +23,7 @@ function setQuestion()
 		    break;
 	    case 3:
 		    var chooseAngles = [90, 180];
-		    var choose = getRandom(0,3,1);
+		    var choose = getRandom(0,1,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
 		    ans = ["Rotation", chooseAngles[choose[0]]];
 		    break;
