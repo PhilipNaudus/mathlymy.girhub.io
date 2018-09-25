@@ -46,7 +46,7 @@ function setQuestion()
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
-    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input type='text' id='i1'> <span id='exp2'></span> <input type='text' id='i2'> <span id='exp2'></span>", [[ans]]]];
+    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input type='text' id='i1'> <span id='exp2'></span> <input type='text' id='i2'> <span id='exp3'></span>", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
@@ -71,7 +71,7 @@ function changeSelect()
 	{
 		case "Translation":
 			document.getElementById("exp1").innerHTML = "";
-			document.getElementById("exp2").innerHTML = "units in the X direction";
+			document.getElementById("exp2").innerHTML = "units in the X direction and ";
 			document.getElementById("exp3").innerHTML = "units in the Y direction";
 			document.getElementById("i2").style.display = "inline";
 			break;
