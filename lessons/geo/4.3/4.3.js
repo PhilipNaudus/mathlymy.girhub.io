@@ -4,12 +4,12 @@ var ans;
 
 function setQuestion()
 {
-    var pos = [[-1,-1],[0,-0.5],[1,-1],[-0.2,0],[0,1]];
+    var pos = [[0,0],[1,0.5],[2,0],[0.8,1],[1,2]];
 
     switch(questionNum)
     {
 	    case 0:
-		    var transPos = getRandom(-3,3,2,[0]);
+		    var transPos = getRandom(-4,2,2,[0]);
 		    newPos = translate(pos, transPos[0], transPos[1]);
 		    ans = ["Translation", transPos[0], transPos[1]];
 		    break;
