@@ -108,7 +108,7 @@ function reflectY(pos)
 
 function rotate(pos, angle)
 {
-	return [[(pos[0][0]*cos(angle))+(pos[0][1]*sin(angle)), (-pos[0][0]*sin(angle))+(pos[1][1]*cos(angle))], [(pos[1][0]*cos(angle))+(pos[1][1]*sin(angle)), (-pos[1][0]*sin(angle))+(pos[1][1]*cos(angle))],[(pos[2][0]*cos(angle))+(pos[2][1]*sin(angle)), (-pos[2][0]*sin(angle))+(pos[2][1]*cos(angle))],[(pos[3][0]*cos(angle))+(pos[3][1]*sin(angle)), (-pos[3][0]*sin(angle))+(pos[3][1]*cos(angle))]];
+	return [[(pos[0][0]*Math.cos(angle))+(pos[0][1]*Math.sin(angle)), (-pos[0][0]*Math.sin(angle))+(pos[1][1]*Math.cos(angle))], [(pos[1][0]*Math.cos(angle))+(pos[1][1]*Math.sin(angle)), (-pos[1][0]*Math.sin(angle))+(pos[1][1]*Math.cos(angle))],[(pos[2][0]*Math.cos(angle))+(pos[2][1]*Math.sin(angle)), (-pos[2][0]*Math.sin(angle))+(pos[2][1]*Math.cos(angle))],[(pos[3][0]*Math.cos(angle))+(pos[3][1]*Math.sin(angle)), (-pos[3][0]*Math.sin(angle))+(pos[3][1]*Math.cos(angle))]];
 }
 
 function enlarge(pos, factor)

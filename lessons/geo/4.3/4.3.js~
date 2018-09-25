@@ -10,22 +10,27 @@ function setQuestion()
 	    case 0:
 		    var transPos = getRandom(-3,3,2);
 		    newPos = translate(pos, transPos[0], transPos[1]);
+		    ans = "Translation";
 		    break;
 	    case 1:
 		    newPos = reflectX(pos);
+		    ans = "Reflection";
 		    break;
 	    case 2:
 		    newPos = reflectY(pos);
+		    ans = "Reflection";
 		    break;
 	    case 3:
 		    var chooseAngles = [45, 90, 135, 180];
 		    var choose = getRandom(0,3,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
+		    ans = "Rotation";
 		    break;
 	    case 4:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
+		    ans = "Enlargement";
 		    break;
     }
 
