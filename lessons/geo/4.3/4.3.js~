@@ -4,12 +4,12 @@ var ans;
 
 function setQuestion()
 {
-    var pos = [[-1,-1],[0,-0.5],[1,-1],[0.2,0],[0,1]];
+    var pos = [[-1,-1],[0,-0.5],[1,-1],[-0.2,0],[0,1]];
 
     switch(questionNum)
     {
 	    case 0:
-		    var transPos = getRandom(-3,3,2);
+		    var transPos = getRandom(-3,3,2,[0]);
 		    newPos = translate(pos, transPos[0], transPos[1]);
 		    ans = ["Translation", transPos[0], transPos[1]];
 		    break;
@@ -38,15 +38,20 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": THIS LESSON IS NOT YET COMPLETE!! Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    plotData([newPos[0][0], newPos[1][0]], [newPos[0][1], newPos[1][1]]);
-    plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
+    for(int i=0; i<pos.length; i++)
+    {
+	    j = (i==pos.length-1)?0:i+1;
+	    plotData([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]]);
+	    plotData([newPos[i][0], newPos[j][0]], [newPos[i][1], newPos[j][1]]);
+    }
+    /*plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
     plotData([newPos[2][0], newPos[3][0]], [newPos[2][1], newPos[3][1]]);
     plotData([newPos[3][0], newPos[4][0]], [newPos[3][1], newPos[4][1]]);
-    plotData([newPos[4][0], newPos[0][0]], [newPos[4][1], newPos[0][1]]);
+    plotData([newPos[4][0], newPos[0][0]], [newPos[4][1], newPos[0][1]])*/
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
-    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input type='text' id='i1'> <span id='exp2'></span> <input type='text' id='i2'> <span id='exp3'></span>", [[ans]]]];
+    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input type='text' id='i1'> <span id='exp2'></span> <input type='text' id='i2'> <span id='exp3'></span>", [ans]]];
 }
 
 function step1(ifResetScrolling)
@@ -56,8 +61,8 @@ function step1(ifResetScrolling)
 
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
-    document.getElementById("i1").style.display = "none";
-    document.getElementById("i2").style.display = "none";
+    document.getElementById("i1").style.visibility = "hidden";
+    document.getElementById("i2").style.visibility = "hidden";
 
     addInputEventListeners();
 
@@ -73,29 +78,29 @@ function changeSelect()
 			document.getElementById("exp1").innerHTML = "";
 			document.getElementById("exp2").innerHTML = "units in the X direction and ";
 			document.getElementById("exp3").innerHTML = "units in the Y direction";
-			document.getElementById("i1").style.display = "inline";
-			document.getElementById("i2").style.display = "inline";
+			document.getElementById("i1").style.visibility = "visible";
+			document.getElementById("i2").style.visibility = "visible";
 			break;
 		case "Reflection":
 			document.getElementById("exp1").innerHTML = "about the";
 			document.getElementById("exp2").innerHTML = "axis";
 			document.getElementById("exp3").innerHTML = "";
-			document.getElementById("i1").style.display = "inline";
-			document.getElementById("i2").style.display = "none";
+			document.getElementById("i1").style.visibility = "visible";
+			document.getElementById("i2").style.visibility = "hidden";
 			break;
 		case "Rotation":
 			document.getElementById("exp1").innerHTML = "of";
 			document.getElementById("exp2").innerHTML = "degrees";
 			document.getElementById("exp3").innerHTML = "";
-			document.getElementById("i1").style.display = "inline";
-			document.getElementById("i2").style.display = "none";
+			document.getElementById("i1").style.visibility = "visible";
+			document.getElementById("i2").style.visibility = "hidden";
 			break;
 		case "Enlargement":
 			document.getElementById("exp1").innerHTML = "by a factor of";
 			document.getElementById("exp2").innerHTML = "";
 			document.getElementById("exp3").innerHTML = "";
-			document.getElementById("i1").style.display = "inline";
-			document.getElementById("i2").style.display = "none";
+			document.getElementById("i1").style.visibility = "visible";
+			document.getElementById("i2").style.visibility = "hidden";
 			break;
 	}
 }
