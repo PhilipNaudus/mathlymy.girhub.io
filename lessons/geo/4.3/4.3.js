@@ -4,7 +4,7 @@ var ans;
 
 function setQuestion()
 {
-    var pos = [[0,0],[1,0.5],[2,0],[0.8,1],[1,2]];
+    var pos = [[0,0],[1,0.5],[2,0],[3,1],[1,2]];
 
     switch(questionNum)
     {
