@@ -61,7 +61,7 @@ function step1(ifResetScrolling)
 
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
-    setTimeout(function(){ document.getElementById("i1").style.visibility = "hidden"; document.getElementById("i1").style.width = "1em"; document.getElementById("i2").style.visibility = "hidden"; document.getElementById("i2").style.width = "1em";}, 1000);
+    //setTimeout(function(){ document.getElementById("i1").style.visibility = "hidden"; document.getElementById("i1").style.width = "1em"; document.getElementById("i2").style.visibility = "hidden"; document.getElementById("i2").style.width = "1em";}, 1000);
 
     addInputEventListeners();
 
