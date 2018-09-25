@@ -71,9 +71,10 @@ function changeSelect()
 	{
 		case "Translation":
 			document.getElementById("exp1").innerHTML = "";
-			document.getElementById("exp2").innerHTML = "units in the";
-			document.getElementById("exp3").innerHTML = "direction";
-			document.getElementById("i2").style.display = "inline";
+			document.getElementById("exp2").innerHTML = "units in the X direction and ";
+			document.getElementById("exp3").innerHTML = "units in the Y direction";
+			document.getElementById("i1").style.display = "visible";
+			document.getElementById("i2").style.display = "visible";
 			break;
 		case "Reflection":
 			document.getElementById("exp1").innerHTML = "about the";
