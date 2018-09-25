@@ -1,5 +1,6 @@
-//var steps = ["Step 1: Select the best equation", "Step 2: Enter numbers into the equation"];
+var steps = ["Step 1: What type of transformation has been performed on the graph on the left to produce the graph on the right?", "Step 2: What is the degree of the transformation?"];
 var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
+var ans;
 
 function setQuestion()
 {
@@ -10,27 +11,27 @@ function setQuestion()
 	    case 0:
 		    var transPos = getRandom(-3,3,2);
 		    newPos = translate(pos, transPos[0], transPos[1]);
-		    ans1 = "Translation";
+		    ans = ["Translation", transPos[0], transPos[1]];
 		    break;
 	    case 1:
 		    newPos = reflectX(pos);
-		    ans1 = "Reflection";
+		    ans = ["Reflection", 'x'];
 		    break;
 	    case 2:
 		    newPos = reflectY(pos);
-		    ans1 = "Reflection";
+		    ans = ["Reflection", 'y'];
 		    break;
 	    case 3:
 		    var chooseAngles = [45, 90, 135, 180];
 		    var choose = getRandom(0,3,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
-		    ans1 = "Rotation";
+		    ans = ["Rotation", chooseAngles[choose[0]];
 		    break;
 	    case 4:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
-		    ans1 = "Enlargement";
+		    ans = ["Enlargement", chooseEnlarge[choose[0]];
 		    break;
     }
 
@@ -44,7 +45,7 @@ function setQuestion()
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
-    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans1]]]];
+    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input type='text' id='i1'> <span id='exp2'></span> <input type='text' id='i2'> <span id='exp2'></span>", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
@@ -54,11 +55,44 @@ function step1(ifResetScrolling)
 
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
+    document.getElementById("i1").style.display = "none";
+    document.getElementById("i2").style.display = "none";
 
     addInputEventListeners();
 
     if(ifResetScrolling) window.scrollTo(0, 0);
     enableDisableButtons();
+}
+
+function changeSelect()
+{
+	switch(document.getElementById("i0").value)
+	{
+		case "Translation":
+			document.getElementById("exp1").innerHTML = "";
+			document.getElementById("exp2").innerHTML = "units in the X direction";
+			document.getElementById("exp3").innerHTML = "units in the Y direction";
+			document.getElementById("i2").style.display = "inline";
+			break;
+		case "Reflection":
+			document.getElementById("exp1").innerHTML = "about the";
+			document.getElementById("exp2").innerHTML = "axis";
+			document.getElementById("exp3").innerHTML = "";
+			document.getElementById("i2").style.display = "none";
+			break;
+		case "Rotation":
+			document.getElementById("exp1").innerHTML = "of";
+			document.getElementById("exp2").innerHTML = "degrees";
+			document.getElementById("exp3").innerHTML = "";
+			document.getElementById("i2").style.display = "none";
+			break;
+		case "Enlargement":
+			document.getElementById("exp1").innerHTML = "by a factor of";
+			document.getElementById("exp2").innerHTML = "";
+			document.getElementById("exp3").innerHTML = "";
+			document.getElementById("i2").style.display = "none";
+			break;
+	}
 }
 
 function giveHint()
