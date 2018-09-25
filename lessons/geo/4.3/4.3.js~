@@ -45,10 +45,9 @@ function setQuestion()
 	    case 4:
 	    case mixup[4]:
 	    case rigid[4]:
-		    var chooseEnlarge = [2, 3, 4];
-		    var choose = getRandom(0,3,1);
-		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
-		    ans = ["Enlargement", chooseEnlarge[choose[0]]];
+		    var factor = getRandom(2,3,1);
+		    newPos = enlarge(pos, factor[0]);
+		    ans = ["Enlargement", factor[0]];
 		    ifRigid = false;
 		    break;
     }
