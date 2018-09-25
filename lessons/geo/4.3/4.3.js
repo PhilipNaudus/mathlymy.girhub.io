@@ -5,24 +5,24 @@ function setQuestion()
 {
     var pos = [[-1,-1],[0,-0.5],[1,-1],[0,1]];
 
-    case(questionNum)
+    switch(questionNum)
     {
-	    switch 0:
+	    case 0:
 		    var transPos = getRandom(-3,3,2);
 		    newPos = translate(pos, transPos[0], transPos[1]);
 		    break;
-	    switch 1:
+	    case 1:
 		    newPos = reflectX(pos);
 		    break;
-	    switch 2:
+	    case 2:
 		    newPos = reflectY(pos);
 		    break;
-	    switch 3:
+	    case 3:
 		    var chooseAngles = [45, 90, 135, 180];
 		    var choose = getRandom(0,3,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
 		    break;
-	    switch 4:
+	    case 4:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
@@ -32,10 +32,10 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": THIS LESSON IS NOT YET COMPLETE!! Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    plotData([pos[0][0], pos[1][0]], [pos[0][1], pos[1][1]]);
-    plotData([pos[1][0], pos[2][0]], [pos[1][1], pos[2][1]]);
-    plotData([pos[2][0], pos[3][0]], [pos[2][1], pos[3][1]]);
-    plotData([pos[3][0], pos[0][0]], [pos[3][1], pos[0][1]]);
+    plotData([newPos[0][0], newPos[1][0]], [newPos[0][1], newPos[1][1]]);
+    plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
+    plotData([newPos[2][0], newPos[3][0]], [newPos[2][1], newPos[3][1]]);
+    plotData([newPos[3][0], newPos[0][0]], [newPos[3][1], newPos[0][1]]);
     equationNum = 0;
 
     equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
