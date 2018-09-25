@@ -53,8 +53,15 @@ function setQuestion()
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    if(questionNum<10) quest = "What type of transformation has been performed on the purple figure to produce the red figure?";
-    else quest = "Is the transformation shown below (from the purple figure to the red figure) a rigid transformation?";
+    if(questionNum<10)
+    {
+	    quest = "What type of transformation has been performed on the purple figure to produce the red figure?";
+	    equationNum = 0;
+    } else
+    {
+	    quest = "Is the transformation shown below (from the purple figure to the red figure) a rigid transformation?";
+	    equationNum = 1;
+    }
 
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
@@ -64,7 +71,6 @@ function setQuestion()
 	    plotData([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]]);
 	    plotData([newPos[i][0], newPos[j][0]], [newPos[i][1], newPos[j][1]], "#ff0000");
     }
-    equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
     rigidOptions = "<option value=''>Select</option><option value='yes'>Yes</option><option value='no'>No</option>";

@@ -1,13 +1,13 @@
 var steps = ["Step 1: What type of transformation has been performed on the graph on the left to produce the graph on the right?", "Step 2: What is the degree of the transformation?"];
 var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 var ans;
+var mixup = shuffle([5, 6, 7, 8, 9]);
+var rigid = shuffle([10, 11, 12, 13, 14]);
 
 function setQuestion()
 {
     var pos = [[0,0],[1,0.5],[2,0],[3,1],[1,2]];
     var ifRigid;
-    var mixup = shuffle([5, 6, 7, 8, 9]);
-    var rigid = shuffle([10, 11, 12, 13, 14]);
 
     switch(questionNum)
     {
