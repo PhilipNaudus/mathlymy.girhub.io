@@ -5,38 +5,59 @@ var ans;
 function setQuestion()
 {
     var pos = [[0,0],[1,0.5],[2,0],[3,1],[1,2]];
+    var ifRigid;
+    var mixup = getRandom(5,9,1);
+    var rigid = getRandom(10,14,1);
 
     switch(questionNum)
     {
 	    case 0:
+	    case mixup[0]:
+	    case rigid[0]:
 		    var transPos = getRandom(-4,2,2,[0]);
 		    newPos = translate(pos, transPos[0], transPos[1]);
 		    ans = ["Translation", transPos[0], transPos[1]];
+		    ifRigid = true;
 		    break;
 	    case 1:
+	    case mixup[0]:
+	    case rigid[0]:
 		    newPos = reflectX(pos);
 		    ans = ["Reflection", 'x'];
+		    ifRigid = true;
 		    break;
 	    case 2:
+	    case mixup[0]:
+	    case rigid[0]:
 		    newPos = reflectY(pos);
 		    ans = ["Reflection", 'y'];
+		    ifRigid = true;
 		    break;
 	    case 3:
+	    case mixup[0]:
+	    case rigid[0]:
 		    var chooseAngles = [90, 180];
-		    var choose = getRandom(0,3,1);
+		    var choose = getRandom(0,1,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
 		    ans = ["Rotation", chooseAngles[choose[0]]];
+		    ifRigid = true;
 		    break;
 	    case 4:
+	    case mixup[0]:
+	    case rigid[0]:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
 		    ans = ["Enlargement", chooseEnlarge[choose[0]]];
+		    ifRigid = false;
 		    break;
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": THIS LESSON IS NOT YET COMPLETE!! Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    if(questionNum<10) quest = ": What type of transformation has been performed on the purple figure to produce the red figure?";
+    else quest = "";
+
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     for(var i=0; i<pos.length; i++)
     {
@@ -44,14 +65,12 @@ function setQuestion()
 	    plotData([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]]);
 	    plotData([newPos[i][0], newPos[j][0]], [newPos[i][1], newPos[j][1]], "#ff0000");
     }
-    /*plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
-    plotData([newPos[2][0], newPos[3][0]], [newPos[2][1], newPos[3][1]]);
-    plotData([newPos[3][0], newPos[4][0]], [newPos[3][1], newPos[4][1]]);
-    plotData([newPos[4][0], newPos[0][0]], [newPos[4][1], newPos[0][1]])*/
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
-    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input class='mathinput' type='text' id='i1'> <span id='exp2'></span> <input class='mathinput' type='text' id='i2'> <span id='exp3'></span>", [ans]]];
+    rigidOptions = "<option value=''>Select</option><option value='yes'>Yes</option><option value='no'>No</option>";
+    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input class='mathinput' type='text' id='i1'> <span id='exp2'></span> <input class='mathinput' type='text' id='i2'> <span id='exp3'></span>", [ans]],
+	        ["", "<select class='mathinput' id='i0'>"+rigidOptions+"</select>", [[ifRigid?"yes":"no"]]]];
 }
 
 function step1(ifResetScrolling)
@@ -160,4 +179,4 @@ function enlarge(pos, factor)
 	return [[factor*pos[0][0], factor*pos[0][1]], [factor*pos[1][0], factor*pos[1][1]], [factor*pos[2][0], factor*pos[2][1]], [factor*pos[3][0], factor*pos[3][1]], [factor*pos[4][0], factor*pos[4][1]]];
 }
 
-var numQuestions = 5;
+var numQuestions = 15;
