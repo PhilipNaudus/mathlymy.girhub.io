@@ -4,7 +4,7 @@ var ans;
 
 function setQuestion()
 {
-    var pos = [[-1,-1],[0,-0.5],[1,-1],[0,1]];
+    var pos = [[-1,-1],[0,-0.5],[1,-1],[1,0],[0,1]];
 
     switch(questionNum)
     {
@@ -25,13 +25,13 @@ function setQuestion()
 		    var chooseAngles = [45, 90, 135, 180];
 		    var choose = getRandom(0,3,1);
 		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
-		    ans = ["Rotation", chooseAngles[choose[0]];
+		    ans = ["Rotation", chooseAngles[choose[0]]];
 		    break;
 	    case 4:
 		    var chooseEnlarge = [2, 3, 4];
 		    var choose = getRandom(0,3,1);
 		    newPos = enlarge(pos, chooseEnlarge[choose[0]]);
-		    ans = ["Enlargement", chooseEnlarge[choose[0]];
+		    ans = ["Enlargement", chooseEnlarge[choose[0]]];
 		    break;
     }
 
@@ -41,7 +41,8 @@ function setQuestion()
     plotData([newPos[0][0], newPos[1][0]], [newPos[0][1], newPos[1][1]]);
     plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
     plotData([newPos[2][0], newPos[3][0]], [newPos[2][1], newPos[3][1]]);
-    plotData([newPos[3][0], newPos[0][0]], [newPos[3][1], newPos[0][1]]);
+    plotData([newPos[3][0], newPos[4][0]], [newPos[3][1], newPos[4][1]]);
+    plotData([newPos[4][0], newPos[0][0]], [newPos[4][1], newPos[0][1]]);
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";

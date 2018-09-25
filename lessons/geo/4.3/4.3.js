@@ -4,7 +4,7 @@ var ans;
 
 function setQuestion()
 {
-    var pos = [[-1,-1],[0,-0.5],[1,-1],[0,1]];
+    var pos = [[-1,-1],[0,-0.5],[1,-1],[1,0],[0,1]];
 
     switch(questionNum)
     {
@@ -41,7 +41,8 @@ function setQuestion()
     plotData([newPos[0][0], newPos[1][0]], [newPos[0][1], newPos[1][1]]);
     plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
     plotData([newPos[2][0], newPos[3][0]], [newPos[2][1], newPos[3][1]]);
-    plotData([newPos[3][0], newPos[0][0]], [newPos[3][1], newPos[0][1]]);
+    plotData([newPos[3][0], newPos[4][0]], [newPos[3][1], newPos[4][1]]);
+    plotData([newPos[4][0], newPos[0][0]], [newPos[4][1], newPos[0][1]]);
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
@@ -127,27 +128,27 @@ function giveHint()
 
 function translate(pos, x, y)
 {
-	return [[pos[0][0]+x, pos[0][1]+y], [pos[1][0]+x, pos[1][1]+y], [pos[2][0]+x, pos[2][1]+y], [pos[3][0]+x, pos[3][1]+y]];
+	return [[pos[0][0]+x, pos[0][1]+y], [pos[1][0]+x, pos[1][1]+y], [pos[2][0]+x, pos[2][1]+y], [pos[3][0]+x, pos[3][1]+y], [pos[4][0]+x, pos[4][1]+y]];
 }
 
 function reflectX(pos)
 {
-	return [[pos[0][0], -pos[0][1]], [pos[1][0], -pos[1][1]], [pos[2][0], -pos[2][1]], [pos[3][0], -pos[3][1]]];
+	return [[pos[0][0], -pos[0][1]], [pos[1][0], -pos[1][1]], [pos[2][0], -pos[2][1]], [pos[3][0], -pos[3][1]], [pos[4][0], -pos[4][1]]];
 }
 
 function reflectY(pos)
 {
-	return [[-pos[0][0], pos[0][1]], [-pos[1][0], pos[1][1]], [-pos[2][0], pos[2][1]], [-pos[3][0], pos[3][1]]];
+	return [[-pos[0][0], pos[0][1]], [-pos[1][0], pos[1][1]], [-pos[2][0], pos[2][1]], [-pos[3][0], pos[3][1]], [-pos[4][0], pos[4][1]]];
 }
 
 function rotate(pos, angle)
 {
-	return [[(pos[0][0]*Math.cos(angle))+(pos[0][1]*Math.sin(angle)), (-pos[0][0]*Math.sin(angle))+(pos[1][1]*Math.cos(angle))], [(pos[1][0]*Math.cos(angle))+(pos[1][1]*Math.sin(angle)), (-pos[1][0]*Math.sin(angle))+(pos[1][1]*Math.cos(angle))],[(pos[2][0]*Math.cos(angle))+(pos[2][1]*Math.sin(angle)), (-pos[2][0]*Math.sin(angle))+(pos[2][1]*Math.cos(angle))],[(pos[3][0]*Math.cos(angle))+(pos[3][1]*Math.sin(angle)), (-pos[3][0]*Math.sin(angle))+(pos[3][1]*Math.cos(angle))]];
+	return [[(pos[0][0]*Math.cos(angle))+(pos[0][1]*Math.sin(angle)), (-pos[0][0]*Math.sin(angle))+(pos[1][1]*Math.cos(angle))], [(pos[1][0]*Math.cos(angle))+(pos[1][1]*Math.sin(angle)), (-pos[1][0]*Math.sin(angle))+(pos[1][1]*Math.cos(angle))],[(pos[2][0]*Math.cos(angle))+(pos[2][1]*Math.sin(angle)), (-pos[2][0]*Math.sin(angle))+(pos[2][1]*Math.cos(angle))],[(pos[3][0]*Math.cos(angle))+(pos[3][1]*Math.sin(angle)), (-pos[3][0]*Math.sin(angle))+(pos[3][1]*Math.cos(angle))],[(pos[4][0]*Math.cos(angle))+(pos[4][1]*Math.sin(angle)), (-pos[4][0]*Math.sin(angle))+(pos[4][1]*Math.cos(angle))]];
 }
 
 function enlarge(pos, factor)
 {
-	return [[factor*pos[0][0], factor*pos[0][1]], [factor*pos[1][0], factor*pos[1][1]], [factor*pos[2][0], factor*pos[2][1]], [factor*pos[3][0], factor*pos[3][1]]];
+	return [[factor*pos[0][0], factor*pos[0][1]], [factor*pos[1][0], factor*pos[1][1]], [factor*pos[2][0], factor*pos[2][1]], [factor*pos[3][0], factor*pos[3][1]], [factor*pos[4][0], factor*pos[4][1]]];
 }
 
 var numQuestions = 5;
