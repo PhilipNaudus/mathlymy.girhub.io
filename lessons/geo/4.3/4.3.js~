@@ -38,7 +38,7 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": THIS LESSON IS NOT YET COMPLETE!! Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    for(int i=0; i<pos.length; i++)
+    for(var i=0; i<pos.length; i++)
     {
 	    j = (i==pos.length-1)?0:i+1;
 	    plotData([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]]);
