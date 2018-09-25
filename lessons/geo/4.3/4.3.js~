@@ -73,28 +73,28 @@ function changeSelect()
 			document.getElementById("exp1").innerHTML = "";
 			document.getElementById("exp2").innerHTML = "units in the X direction and ";
 			document.getElementById("exp3").innerHTML = "units in the Y direction";
-			document.getElementById("i1").style.display = "visible";
-			document.getElementById("i2").style.display = "visible";
+			document.getElementById("i1").style.display = "inline";
+			document.getElementById("i2").style.display = "inline";
 			break;
 		case "Reflection":
 			document.getElementById("exp1").innerHTML = "about the";
 			document.getElementById("exp2").innerHTML = "axis";
 			document.getElementById("exp3").innerHTML = "";
-			document.getElementById("i1").style.display = "visible";
+			document.getElementById("i1").style.display = "inline";
 			document.getElementById("i2").style.display = "none";
 			break;
 		case "Rotation":
 			document.getElementById("exp1").innerHTML = "of";
 			document.getElementById("exp2").innerHTML = "degrees";
 			document.getElementById("exp3").innerHTML = "";
-			document.getElementById("i1").style.display = "visible";
+			document.getElementById("i1").style.display = "inline";
 			document.getElementById("i2").style.display = "none";
 			break;
 		case "Enlargement":
 			document.getElementById("exp1").innerHTML = "by a factor of";
 			document.getElementById("exp2").innerHTML = "";
 			document.getElementById("exp3").innerHTML = "";
-			document.getElementById("i1").style.display = "visible";
+			document.getElementById("i1").style.display = "inline";
 			document.getElementById("i2").style.display = "none";
 			break;
 	}
