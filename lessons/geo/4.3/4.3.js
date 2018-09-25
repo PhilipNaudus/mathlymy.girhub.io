@@ -83,10 +83,13 @@ function step1(ifResetScrolling)
     endLoading();
     currentStep = 2;
 
-    document.getElementById("step").innerHTML = "";
-    document.getElementById("math").innerHTML = equations[equationNum][1];
-    document.getElementById("i1").style.visibility = "hidden";
-    document.getElementById("i2").style.visibility = "hidden";
+    if(questionNum<10)
+    {
+	    document.getElementById("step").innerHTML = "";
+	    document.getElementById("math").innerHTML = equations[equationNum][1];
+	    document.getElementById("i1").style.visibility = "hidden";
+	    document.getElementById("i2").style.visibility = "hidden";
+    }
 
     addInputEventListeners();
 
