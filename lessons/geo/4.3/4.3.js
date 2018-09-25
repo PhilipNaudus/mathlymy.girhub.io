@@ -43,7 +43,7 @@ function setQuestion()
     plotData([newPos[3][0], newPos[0][0]], [newPos[3][1], newPos[0][1]]);
     equationNum = 0;
 
-    options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Enlargement'>Enlargement</option>";
+    options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotationn'>Rotation</option><option value='Enlargement'>Enlargement</option>";
     equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
 }
 
