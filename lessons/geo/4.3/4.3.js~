@@ -42,7 +42,7 @@ function setQuestion()
     {
 	    j = (i==pos.length-1)?0:i+1;
 	    plotData([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]]);
-	    plotData([newPos[i][0], newPos[j][0]], [newPos[i][1], newPos[j][1]]);
+	    plotData([newPos[i][0], newPos[j][0]], [newPos[i][1], newPos[j][1]], "#ff0000");
     }
     /*plotData([newPos[1][0], newPos[2][0]], [newPos[1][1], newPos[2][1]]);
     plotData([newPos[2][0], newPos[3][0]], [newPos[2][1], newPos[3][1]]);
