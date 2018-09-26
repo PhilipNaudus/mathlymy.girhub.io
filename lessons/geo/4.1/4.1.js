@@ -61,7 +61,8 @@ function setQuestion()
     {
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
 	    equationNum = 0;
-    } else
+    } else if(false)
+    {
 	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the sum of angles x, y, and z?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 	    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
@@ -74,8 +75,22 @@ function setQuestion()
 
 	    ans = 180;
 	    equationNum = 1;
+    } else
     {
+	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
+	    var angles = getRandom(10,80,2);
+	    var obtuse = getRandom(100,170,1);
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
+	    addText([-2, -1.5], acute[0]);
+	    addText([0, 1.5], 'x');
+	    addText([3.5, -1.5], obtuse[0]);
+	    plotData([-3, 5], [-2, -2]);
+	    plotData([3, 0], [-2, 2]);
+	    plotData([0, -3], [2, -2]);
 
+	    ans = ;
+	    equationNum = 1;
     }
 
     equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]],
