@@ -398,10 +398,10 @@ function help()
           text: "What would you like to do?",
           icon: "info",
           buttons: {
-            video: {
+            /*video: {
               text: "Watch a video explanation",
               value: "video"
-            },
+            },*/
             ask: {
               text: "Ask a question",
               value: "ask",

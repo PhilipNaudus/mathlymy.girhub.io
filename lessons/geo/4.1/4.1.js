@@ -1,81 +1,65 @@
-var steps = ["Step 1: What type of transformation has been performed on the graph on the left to produce the graph on the right?", "Step 2: What is the degree of the transformation?"];
 var ans;
-var transformVideos = ["a", "a", "a", "a", "a"];
-var rigidmVideos = ["b", "b", "b", "b", "b"];
-var transform = shuffle([0, 1, 2, 3, 4]);
-var rigid = shuffle([5, 6, 7, 8, 9]);
+var sideVids = ["a", "a", "a"];
+var angleVids = ["b", "b", "b", "b"];
+var side = shuffle([0, 1, 2]);
+var angle = shuffle([3, 4, 5, 6]);
 
 var videos = new Array();
-for(var i=0; i<5; i++) videos.push(transformVideos[transform[i]]);
-for(var i=0; i<5; i++) videos.push(rigidVideos[rigid[i]]);
+for(var i=0; i<5; i++) videos.push(sideVideos[side[i]]);
+for(var i=0; i<5; i++) videos.push(angleVideos[angle[i]]);
 
 function setQuestion()
 {
     var pos = [[0,0],[1,0.5],[2,0],[3,1],[1,2]];
     var ifRigid;
 
-    switch(questionNum)
-    {
-	    case transform[0]:
-	    case rigid[0]:
-		    var transPos = getRandom(-4,2,2,[0]);
-		    newPos = translate(pos, transPos[0], transPos[1]);
-		    ans = ["Translation", transPos[0], transPos[1]];
-		    ifRigid = true;
-		    break;
-	    case transform[1]:
-	    case rigid[1]:
-		    newPos = reflectX(pos);
-		    ans = ["Reflection", 'x'];
-		    ifRigid = true;
-		    break;
-	    case transform[2]:
-	    case rigid[2]:
-		    newPos = reflectY(pos);
-		    ans = ["Reflection", 'y'];
-		    ifRigid = true;
-		    break;
-	    case transform[3]:
-	    case rigid[3]:
-		    var chooseAngles = [90, 180];
-		    var choose = getRandom(0,1,1);
-		    newPos = rotate(pos, (chooseAngles[choose[0]]*Math.PI/180));
-		    ans = ["Rotation", chooseAngles[choose[0]]];
-		    ifRigid = true;
-		    break;
-	    case transform[4]:
-	    case rigid[4]:
-		    var factor = getRandom(2,3,1);
-		    newPos = enlarge(pos, factor[0]);
-		    ans = ["Enlargement", factor[0]];
-		    ifRigid = false;
-		    break;
-    }
 
-    var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    if(questionNum<5)
+    if(questionNum<3)
     {
-	    quest = "What type of transformation has been performed on the purple figure to produce the red figure?";
-	    equationNum = 0;
+	    quest = "Is the triangle shown below scalene, isosceles, or equilateral?";
+	    options = "<option value=''>Select</option><option value='Scalene Triangle'>Scalene Triangle</option><option value='Isosceles Triangle'>Isosceles Triangle</option><option value='Equilateral Triangle'>Equilateral Triangle</option>";
     } else
     {
-	    quest = "Is the transformation shown below (from the purple figure to the red figure) a rigid transformation?";
-	    equationNum = 1;
+	    quest = "Is the triangle shown below acute, right, obtuse, or equiangular?";
+	    options = "<option value=''>Select</option><option value='Acute Triangle'>Acute Triangle</option><option value='Right Triangle'>Right Triangle</option><option value='Obtuse Triangle'>Obtuse Triangle</option><option value='Equiangular Triangle'>Equiangular Triangle</option>";
     }
 
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    for(var i=0; i<pos.length; i++)
+
+    switch(questionNum)
     {
-	    j = (i==pos.length-1)?0:i+1;
-	    plotData([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]]);
-	    plotData([newPos[i][0], newPos[j][0]], [newPos[i][1], newPos[j][1]], "#ff0000");
+	    case side[0]:
+		    img = "00.png";
+		    ans = "Scalene Triangle";
+		    break;
+	    case side[1]:
+		    img = "01.png";
+		    ans = "Isosceles Triangle";
+		    break;
+	    case side[2]:
+		    img = "02.png";
+		    ans = "Equilateral Triangle";
+		    break;
+	    case angle[0]:
+		    img = "10.png";
+		    ans = "Acute Triangle";
+		    break;
+	    case angle[1]:
+		    img = "11.png";
+		    ans = "Right Triangle";
+		    break;
+	    case angle[2]:
+		    img = "12.png";
+		    ans = "Obtuse Triangle";
+		    break;
+	    case angle[2]:
+		    img = "13.png";
+		    ans = "Equiangular Triangle";
+		    break;
     }
 
-    options = "<option value=''>Select</option><option value='Translation'>Translation</option><option value='Reflection'>Reflection</option><option value='Rotation'>Rotation</option><option value='Enlargement'>Enlargement</option>";
-    rigidOptions = "<option value=''>Select</option><option value='yes'>Yes</option><option value='no'>No</option>";
-    equations = [["", "<select class='mathinput' onchange='changeSelect()' id='i0'>"+options+"</select> <span id='exp1'></span> <input class='mathinput' type='text' id='i1'> <span id='exp2'></span> <input class='mathinput' type='text' id='i2'> <span id='exp3'></span>", [ans]],
-	        ["", "<select class='mathinput' id='i0'>"+rigidOptions+"</select>", [[ifRigid?"yes":"no"]]]];
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='/lessons/geo/4.1/"+img+"' />";
+
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
 }
 
 function step1(ifResetScrolling)

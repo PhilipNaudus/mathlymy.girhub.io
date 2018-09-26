@@ -1,8 +1,13 @@
 var steps = ["Step 1: What type of transformation has been performed on the graph on the left to produce the graph on the right?", "Step 2: What is the degree of the transformation?"];
-var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 var ans;
-var mixup = shuffle([5, 6, 7, 8, 9]);
-var rigid = shuffle([10, 11, 12, 13, 14]);
+var transformVideos = ["a", "a", "a", "a", "a"];
+var rigidmVideos = ["b", "b", "b", "b", "b"];
+var transform = shuffle([0, 1, 2, 3, 4]);
+var rigid = shuffle([5, 6, 7, 8, 9]);
+
+var videos = new Array();
+for(var i=0; i<5; i++) videos.push(transformVideos[transform[i]]);
+for(var i=0; i<5; i++) videos.push(rigidVideos[rigid[i]]);
 
 function setQuestion()
 {
@@ -11,30 +16,26 @@ function setQuestion()
 
     switch(questionNum)
     {
-	    case 0:
-	    case mixup[0]:
+	    case transform[0]:
 	    case rigid[0]:
 		    var transPos = getRandom(-4,2,2,[0]);
 		    newPos = translate(pos, transPos[0], transPos[1]);
 		    ans = ["Translation", transPos[0], transPos[1]];
 		    ifRigid = true;
 		    break;
-	    case 1:
-	    case mixup[1]:
+	    case transform[1]:
 	    case rigid[1]:
 		    newPos = reflectX(pos);
 		    ans = ["Reflection", 'x'];
 		    ifRigid = true;
 		    break;
-	    case 2:
-	    case mixup[2]:
+	    case transform[2]:
 	    case rigid[2]:
 		    newPos = reflectY(pos);
 		    ans = ["Reflection", 'y'];
 		    ifRigid = true;
 		    break;
-	    case 3:
-	    case mixup[3]:
+	    case transform[3]:
 	    case rigid[3]:
 		    var chooseAngles = [90, 180];
 		    var choose = getRandom(0,1,1);
@@ -42,8 +43,7 @@ function setQuestion()
 		    ans = ["Rotation", chooseAngles[choose[0]]];
 		    ifRigid = true;
 		    break;
-	    case 4:
-	    case mixup[4]:
+	    case transform[4]:
 	    case rigid[4]:
 		    var factor = getRandom(2,3,1);
 		    newPos = enlarge(pos, factor[0]);
@@ -84,10 +84,10 @@ function step1(ifResetScrolling)
     currentStep = 2;
 
     document.getElementById("step").innerHTML = "";
+    document.getElementById("math").innerHTML = equations[equationNum][1];
 
     if(questionNum<10)
     {
-	    document.getElementById("math").innerHTML = equations[equationNum][1];
 	    document.getElementById("i1").style.visibility = "hidden";
 	    document.getElementById("i2").style.visibility = "hidden";
     }
@@ -188,4 +188,4 @@ function enlarge(pos, factor)
 	return [[factor*pos[0][0], factor*pos[0][1]], [factor*pos[1][0], factor*pos[1][1]], [factor*pos[2][0], factor*pos[2][1]], [factor*pos[3][0], factor*pos[3][1]], [factor*pos[4][0], factor*pos[4][1]]];
 }
 
-var numQuestions = 15;
+var numQuestions = 10;
