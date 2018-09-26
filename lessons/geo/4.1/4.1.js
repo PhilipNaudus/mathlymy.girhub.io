@@ -51,7 +51,7 @@ function setQuestion()
 		    img = "12.png";
 		    ans = "Obtuse Triangle";
 		    break;
-	    case angle[2]:
+	    case angle[3]:
 		    img = "13.png";
 		    ans = "Equiangular Triangle";
 		    break;
