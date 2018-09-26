@@ -53,7 +53,7 @@ function setQuestion()
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    if(questionNum<10)
+    if(questionNum<5)
     {
 	    quest = "What type of transformation has been performed on the purple figure to produce the red figure?";
 	    equationNum = 0;

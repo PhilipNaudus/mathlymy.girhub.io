@@ -1,7 +1,7 @@
 var steps = ["Step 1: What type of transformation has been performed on the graph on the left to produce the graph on the right?", "Step 2: What is the degree of the transformation?"];
 var ans;
 var transformVideos = ["a", "a", "a", "a", "a"];
-var rigidmVideos = ["b", "b", "b", "b", "b"];
+var rigidVideos = ["b", "b", "b", "b", "b"];
 var transform = shuffle([0, 1, 2, 3, 4]);
 var rigid = shuffle([5, 6, 7, 8, 9]);
 
