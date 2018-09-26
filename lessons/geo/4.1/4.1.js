@@ -55,41 +55,43 @@ function setQuestion()
 		    img = "13.png";
 		    ans = "Equiangular Triangle";
 		    break;
+	    case 7:
+		    var w = Math.min(window.innerWidth, window.innerHeight, 400);
+		    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the sum of angles x, y, and z?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+		    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
+		    addText([-2, -1.5], 'x');
+		    addText([2, -1.5], 'y');
+		    addText([0, 1.5], 'z');
+		    plotData([-3, 3], [-2, -2]);
+		    plotData([3, 0], [-2, 2]);
+		    plotData([0, -3], [2, -2]);
+
+		    ans = 180;
+		    equationNum = 1;
+		    break;
+	    case 8:
+	    case 9:
+		    var w = Math.min(window.innerWidth, window.innerHeight, 400);
+		    var angles = getRandom(10,80,2);
+		    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+		    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
+		    addText([-2, -1.5], angles[0]);
+		    addText([0, 1.5], angles[1]);
+		    addText([3.5, -1.5], 'x');
+		    plotData([-3, 5], [-2, -2]);
+		    plotData([3, 0], [-2, 2]);
+		    plotData([0, -3], [2, -2]);
+
+		    ans = angles[0]+angles[1];
+		    equationNum = 1;
+		    break;
+
     }
 
-    if(questionNum > 7)
+    if(questionNum < 7)
     {
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
 	    equationNum = 0;
-    } else if(false)
-    {
-	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the sum of angles x, y, and z?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-	    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-	    addText([-2, -1.5], 'x');
-	    addText([2, -1.5], 'y');
-	    addText([0, 1.5], 'z');
-	    plotData([-3, 3], [-2, -2]);
-	    plotData([3, 0], [-2, 2]);
-	    plotData([0, -3], [2, -2]);
-
-	    ans = 180;
-	    equationNum = 1;
-    } else
-    {
-	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
-	    var angles = getRandom(10,80,2);
-	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
-	    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-	    addText([-2, -1.5], angles[0]);
-	    addText([0, 1.5], angles[1]);
-	    addText([3.5, -1.5], 'x');
-	    plotData([-3, 5], [-2, -2]);
-	    plotData([3, 0], [-2, 2]);
-	    plotData([0, -3], [2, -2]);
-
-	    ans = angles[0]+angles[1];
-	    equationNum = 1;
     }
 
     equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]],
