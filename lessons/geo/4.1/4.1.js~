@@ -62,6 +62,7 @@ function setQuestion()
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
 	    equationNum = 0;
     } else
+	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the sum of angles x, y, and z?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 	    plotData([-3, 3], [-2, -2]);
 	    plotData([3, 0], [-2, 2]);
