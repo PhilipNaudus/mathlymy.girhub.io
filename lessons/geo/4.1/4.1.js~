@@ -78,8 +78,8 @@ function setQuestion()
 
     }
 
-    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]],
-	         ["", "<input class='mathinput' type='number' id='i0' />", [[ans]]];
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]],
+	         ["", "<input class='mathinput' type='number' id='i0' />", [[ans]]]];
 }
 
 function step1(ifResetScrolling)

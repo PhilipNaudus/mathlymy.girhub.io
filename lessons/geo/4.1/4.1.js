@@ -65,12 +65,12 @@ function setQuestion()
 	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the sum of angles x, y, and z?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 	    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-	    plotData([-3, 3], [-2, -2]);
-	    plotData([3, 0], [-2, 2]);
-	    plotData([0, -3], [2, -2]);
 	    addText([-2, -1.5], 'x');
 	    addText([2, -1.5], 'y');
 	    addText([0, 1.5], 'z');
+	    plotData([-3, 3], [-2, -2]);
+	    plotData([3, 0], [-2, 2]);
+	    plotData([0, -3], [2, -2]);
 
 	    ans = 180;
 	    equationNum = 1;
