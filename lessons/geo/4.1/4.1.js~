@@ -71,9 +71,9 @@ function setQuestion()
 	    addText([-2, -1.5], 'x');
 	    addText([2, -1.5], 'y');
 	    addText([0, 1.5], 'z');
-	    equationNum = 1;
 
 	    ans = 180;
+	    equationNum = 1;
     {
 
     }
