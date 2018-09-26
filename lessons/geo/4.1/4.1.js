@@ -1,6 +1,6 @@
 var ans;
-var sideVids = ["a", "a", "a"];
-var angleVids = ["b", "b", "b", "b"];
+var sideVideos = ["a", "a", "a"];
+var angleVideos = ["b", "b", "b", "b"];
 var side = shuffle([0, 1, 2]);
 var angle = shuffle([3, 4, 5, 6]);
 
@@ -57,7 +57,7 @@ function setQuestion()
 		    break;
     }
 
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img src='/lessons/geo/4.1/"+img+"' />";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
 
     equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
 }
