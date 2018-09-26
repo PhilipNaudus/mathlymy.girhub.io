@@ -86,7 +86,7 @@ function step1(ifResetScrolling)
     document.getElementById("step").innerHTML = "";
     document.getElementById("math").innerHTML = equations[equationNum][1];
 
-    if(questionNum<10)
+    if(questionNum<5)
     {
 	    document.getElementById("i1").style.visibility = "hidden";
 	    document.getElementById("i2").style.visibility = "hidden";
