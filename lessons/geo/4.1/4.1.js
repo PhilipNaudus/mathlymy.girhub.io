@@ -57,8 +57,18 @@ function setQuestion()
 		    break;
     }
 
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
-    equationNum = 0;
+    if(questionNum > 7)
+    {
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
+	    equationNum = 0;
+    } else
+	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the sum of angles x, y, and z?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+	    plotData([-3, 3], [-2, -2]);
+	    plotData([3, 0], [-2, 2]);
+	    plotData([0, -3], [2, -2]);
+    {
+
+    }
 
     equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
 }
