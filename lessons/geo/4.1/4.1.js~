@@ -78,7 +78,7 @@ function setQuestion()
     } else
     {
 	    var w = Math.min(window.innerWidth, window.innerHeight, 400);
-	    var acute = getRandom(10,80,1);
+	    var angles = getRandom(10,80,2);
 	    var obtuse = getRandom(100,170,1);
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
 	    initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
@@ -89,7 +89,7 @@ function setQuestion()
 	    plotData([3, 0], [-2, 2]);
 	    plotData([0, -3], [2, -2]);
 
-	    ans = 180;
+	    ans = ;
 	    equationNum = 1;
     }
 
