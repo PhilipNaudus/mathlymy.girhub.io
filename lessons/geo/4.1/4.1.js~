@@ -57,7 +57,7 @@ function setQuestion()
 		    break;
     }
 
-    if(questionNum < 7)
+    if(questionNum > 7)
     {
 	    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><img style='width: 100px; height: auto;' src='/lessons/geo/4.1/"+img+"' />";
 	    equationNum = 0;
