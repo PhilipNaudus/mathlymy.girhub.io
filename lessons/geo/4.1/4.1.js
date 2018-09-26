@@ -69,13 +69,17 @@ function setQuestion()
 	    plotData([3, 0], [-2, 2]);
 	    plotData([0, -3], [2, -2]);
 	    addText([-2, -1.5], 'x');
-	    addText([2, -1.5], 'x');
-	    addText([0, 1.5], 'x');
+	    addText([2, -1.5], 'y');
+	    addText([0, 1.5], 'z');
+
+	    ans = 180;
+	    equationNum = 1;
     {
 
     }
 
-    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]],
+	         ["", "<input class='mathinput' type='number' id='i0' />", [[ans]]];
 }
 
 function step1(ifResetScrolling)
