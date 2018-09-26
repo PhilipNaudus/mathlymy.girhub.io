@@ -68,6 +68,9 @@ function setQuestion()
 	    plotData([-3, 3], [-2, -2]);
 	    plotData([3, 0], [-2, 2]);
 	    plotData([0, -3], [2, -2]);
+	    addText([-2, -1.5], 'x');
+	    addText([2, -1.5], 'x');
+	    addText([0, 1.5], 'x');
     {
 
     }
