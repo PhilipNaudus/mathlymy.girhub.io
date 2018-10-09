@@ -7,78 +7,72 @@ function setQuestion()
     var vars = getRandom(2, 9, 2);
     var ans;
     var ang;
-    var pos = shuffle([[0,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-3, -1.5,1], [-1,-1.5,0], [-3.5,-2.5,0], [-1.5,-2.5,1]]);
+    var pos = [[0,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-3, -1.5,1], [-1,-1.5,0], [-3.5,-2.5,0], [-1.5,-2.5,1]];
+    var posShuffle = shuffle(pos);
 
-    if(pos[0][2]==0 && pos[1][2]==0)
-    {
-	    do
-	    {
-		    ans = getRandom(5, 45, 1);
-		    ang = (ans*vars[0])+vars[1];
-	    } while(ang >= 90);
-    } else if(pos[0][2]==1 && pos[1][2]==1)
-    {
-	    do
-	    {
-		    ans = getRandom(5, 90, 1);
-		    ang = (ans*vars[0])+vars[1];
-	    } while(ang <= 90 || ang >= 180);
-    } else if(pos[0][2]==0 && pos[1][2]==1)
-    {
-	    do
-	    {
-		    ans = getRandom(5, 90, 1);
-		    ang = 180-((ans*vars[0])+vars[1]);
-	    } while(ang <= 90 || ang >= 180 || ang <= 0);
-    } else if(pos[0][2]==1 && pos[1][2]==0)
-    {
-	    do
-	    {
-		    ans = getRandom(5, 90, 1);
-		    ang = 180-((ans*vars[0])+vars[1]);
-	    } while(ang >= 90 || ang <= 0);
-    }
-    /*switch(questionNum)
-    {
-        case 0:
-	    ang = "a";
-	    ans = 180-vars[0];
-	    break;
-        case 1:
-	    ang = "b";
-	    ans = vars[0];
-            break;
-        case 2:
-	    ang = "c";
-	    ans = 180-vars[0];
-            break;
-    }*/
+    var quest;
+    if(questionNum < 3) quest = "If both horizontal lines are parallel, what is the value of x?";
+    else quest = "Prove that x = 60.";
+
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the value of x?<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    addText([pos[0][0], pos[0][1]], vars[0]+"x+"+vars[1]);
-    addText([pos[1][0], pos[1][1]], ang);
-    /*addText([pos[2][0], pos[2][1]], "x+"+vars[1]);
-    addText([pos[3][0], pos[3][1]], "x+"+vars[1]);
-    addText([pos[4][0], pos[4][1]], "x+"+vars[1]);
-    addText([pos[5][0], pos[5][1]], "x+"+vars[1]);
-    addText([pos[6][0], pos[6][1]], "x+"+vars[1]);
-    addText([pos[7][0], pos[7][1]], "x+"+vars[1]);
-    /*addText([-1,0.5], vars[0]);
-    addText(, "a");
-    addText(, "b");
-    addText(, "c");
-    addText(, "d");
-    addText(, "e");
-    addText(, "f");
-    addText(, "g");
-    addText(, "h");*/
+
+    if(questionNum<3)
+    {
+	    if(posShuffle[0][2]==0 && posShuffle[1][2]==0)
+	    {
+		    do
+		    {
+			    ans = getRandom(5, 45, 1);
+			    ang = (ans*vars[0])+vars[1];
+		    } while(ang >= 90);
+	    } else if(posShuffle[0][2]==1 && posShuffle[1][2]==1)
+	    {
+		    do
+		    {
+			    ans = getRandom(5, 90, 1);
+			    ang = (ans*vars[0])+vars[1];
+		    } while(ang <= 90 || ang >= 180);
+	    } else if(posShuffle[0][2]==0 && posShuffle[1][2]==1)
+	    {
+		    do
+		    {
+			    ans = getRandom(5, 90, 1);
+			    ang = 180-((ans*vars[0])+vars[1]);
+		    } while(ang <= 90 || ang >= 180 || ang <= 0);
+	    } else if(posShuffle[0][2]==1 && posShuffle[1][2]==0)
+	    {
+		    do
+		    {
+			    ans = getRandom(5, 90, 1);
+			    ang = 180-((ans*vars[0])+vars[1]);
+		    } while(ang >= 90 || ang <= 0);
+	    }
+	    addText([posShuffle[0][0], posShuffle[0][1]], vars[0]+"x+"+vars[1]);
+	    addText([posShuffle[1][0], posShuffle[1][1]], ang);
+	    equationNum = 0;
+    } else
+    {
+	    addText([pos[0][0], pos[0][1]], "115");
+	    addText([pos[3][0], pos[3][1]], "a");
+	    addText([pos[5][0], pos[5][1]], "x+5");
+	    equationNum = 1;
+    }
+
     plotData([-5,5], [2,2]);
     plotData([-5,5], [-2,-2]);
     plotData([-4,3], [-5,5]);
-    equationNum = 0;
 
-    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]]];
+    options = "<option value=''>Select</option><option value='consecutive interior angles theorem'>consecutive interior angles theorem</option><option value='vertical angles theorem'>vertical angles theorem</option><option value='subtraction property of equality'>subtraction property of equality</option><option value='substitution'>substitution</option><option value='transitive property'>transitive property</option><option value='combine like terms (addition)'>combine like terms (addition)</option>";
+    equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]],
+	      ["", "<table border='0'>"
+		      +"<tr><td>m&ang;a = 115</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		      +"<tr><td>m&ang;a + (x+5) = 180</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		      +"<tr><td>115 + (x+5) = 180</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		      +"<tr><td>x + 120 = 180</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		      +"<tr><td>x = 60</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		      +"</table>", [["vertical angles theorem", "consecutive interior angles theorem", "substitution", "combine like terms (addition)", "subtraction property of equality"]]]];
 }
 
 function step1(ifResetScrolling)

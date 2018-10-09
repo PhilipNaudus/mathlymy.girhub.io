@@ -36,7 +36,7 @@ function setQuestion()
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='corresponding angles'>corresponding angles</option><option value='alternate interior angles'>alternate interior angles</option><option value='alternate exterior angles'>alternate exterior angles</option><option value='consecutive interior angles'>consecutive interior angles</option>";
-    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[selectPos[0][2]]]]];
 }
 
 function step1(ifResetScrolling)
