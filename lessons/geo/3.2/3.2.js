@@ -18,7 +18,7 @@ function setQuestion()
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest+"<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
 
-    if(questionNum<3)
+    if(questionNum>3)
     {
 	    if(posShuffle[0][2]==0 && posShuffle[1][2]==0)
 	    {
@@ -119,4 +119,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 3;
+var numQuestions = 4;

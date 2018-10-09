@@ -119,4 +119,4 @@ function giveHint()
     }
 }
 
-var numQuestions = 3;
+var numQuestions = 4;
