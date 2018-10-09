@@ -56,7 +56,7 @@ function setQuestion()
     {
 	    addText([pos[0][0], pos[0][1]], "115");
 	    addText([pos[3][0], pos[3][1]], "a");
-	    addText([pos[4][0], pos[4][1]], "x+5");
+	    addText([pos[5][0], pos[5][1]], "x+5");
 	    equationNum = 1;
     }
 
