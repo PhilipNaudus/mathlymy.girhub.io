@@ -56,7 +56,7 @@ function setQuestion()
     {
 	    addText([pos[0][0], pos[0][1]], "115");
 	    addText([pos[3][0], pos[3][1]], "a");
-	    addText([pos[5][0], pos[5][1]], "x+5");
+	    addText([pos[4][0], pos[4][1]], "x+5");
 	    equationNum = 1;
     }
 
@@ -68,10 +68,10 @@ function setQuestion()
     equations = [["", "<input type='number' class='mathinput' id='i0' />", [[ans]]],
 	      ["", "<table border='0'>"
 		      +"<tr><td>m&ang;a = 115</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		      +"<tr><td>m&ang;a + (x+5) = 180</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		      +"<tr><td>115 + (x+5) = 180</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		      +"<tr><td>x + 120 = 180</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
-		      +"<tr><td>x = 60</td><td><select class='mathinput' id='i0'>"+options+"</select></td></tr>"
+		      +"<tr><td>m&ang;a + (x+5) = 180</td><td><select class='mathinput' id='i1'>"+options+"</select></td></tr>"
+		      +"<tr><td>115 + (x+5) = 180</td><td><select class='mathinput' id='i2'>"+options+"</select></td></tr>"
+		      +"<tr><td>x + 120 = 180</td><td><select class='mathinput' id='i3'>"+options+"</select></td></tr>"
+		      +"<tr><td>x = 60</td><td><select class='mathinput' id='i4'>"+options+"</select></td></tr>"
 		      +"</table>", [["vertical angles theorem", "consecutive interior angles theorem", "substitution", "combine like terms (addition)", "subtraction property of equality"]]]];
 }
 
