@@ -3,32 +3,34 @@ var videos = ["a-pUPq_Cw60", "yW3VEDebkf4", "a-pUPq_Cw60"];
 
 function setQuestion()
 {
-    var pos = shuffle([[-2,0.5,1], [-0.5,0.5,0], [2,0.5,1], [3.5,0.5,0], [-2.5, -0.5,0], [-1,-0.5,1], [1.3,-0.5,0], [3,-0.5,1]]);
+    var pos = [[-2,0.5,1], [-0.5,0.5,0], [2,0.5,1], [3.5,0.5,0], [-2.5, -0.5,0], [-1,-0.5,1], [1.3,-0.5,0], [3,-0.5,1]];
+    //var pos = [[-2,0.5,1], [-0.5,0.5,0], [2,0.5], [3.5,0.5], [-2.5, -0.5], [-1,-0.5], [1.3,-0.5], [3,-0.5]];
+    var selectPos = shuffle([[0, 2, "Corresponding angles converse"], [5, 7, "Corresponding angles converse"], [1, 6, "Alternate interior angles converse"], [2, 5, "Alternate interior converse"], [0, 7, "Alternate exterior angles converse"], [3, 4, "Alternate exterior angles converse"], [1, 2, "Consecutive interior angles converse"], [5, 6, "Consecutive interior angles converse"]]);
     var ang = new Array();
 
     var off = getRandom(-1,1,1);
-    var ans = (off[0]==0)?"yes":"no";
+    var ans = (off[0]==0)?"Yes. "+selectPos[0][2]:"No";
 
-    if(pos[0][2]==0 && pos[1][2]==0)
+    if(pos[selectPos[0][0]][2]==0 && pos[selectPos[0][1]][2]==0)
     {
 	    ang[0] = getRandom(10, 80, 1);
 	    ang[1] = parseInt(ang[0])+parseInt(off[0]);
-    } else if(pos[0][2]==1 && pos[1][2]==1)
+    } else if(pos[selectPos[0][0]][2]==1 && pos[selectPos[0][1]][2]==1)
     {
 	    ang[0] = getRandom(100, 170, 1);
 	    ang[1] = parseInt(ang[0])+parseInt(off[0]);
-    } else if(pos[0][2]==0 && pos[1][2]==1)
+    } else if(pos[selectPos[0][0]][2]==0 && pos[selectPos[0][1]][2]==1)
     {
 	    ang[0] = getRandom(10, 80, 1);
 	    ang[1] = 180-parseInt(ang[0])+parseInt(off[0]);
-    } else if(pos[0][2]==1 && pos[1][2]==0)
+    } else if(pos[selectPos[0][0]][2]==1 && pos[selectPos[0][1]][2]==0)
     {
 	    ang[0] = getRandom(100, 170, 1);
 	    ang[1] = 180-parseInt(ang[0])+parseInt(off[0]);
     }
 
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
-    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the two diagonal lines parallel? Please enter <b>yes</b> or <b>no</b>.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
+    document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the two diagonal lines parallel? If you select 'yes,' also select the <b>reason</b> why they are parallel.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
     addText([pos[0][0], pos[0][1]], ang[0]);
     addText([pos[1][0], pos[1][1]], ang[1]);
@@ -37,7 +39,8 @@ function setQuestion()
     plotData([-5,2], [-5,5]);
     equationNum = 0;
 
-    equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
+    options = "<option value=''>Select</option><option value='No'>No</option><option value='Yes. Corresponding angles converse'>Yes. Corresponding angles converse</option><option value='Yes. Alternate interior angles converse'>Yes. Alternate interior angles converse</option><option value='Yes. Alternate exterior angles converse'>Yes. Alternate exterior angles converse</option><option value='Yes. Consecutive interior angles converse'>Yes. Consecutive interior angles converse</option>";
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
