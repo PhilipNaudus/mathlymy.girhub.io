@@ -8,7 +8,7 @@ function setQuestion()
     var ans;
     var ang;
     var pos = [[0,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-3, -1.5,1], [-1,-1.5,0], [-3.5,-2.5,0], [-1.5,-2.5,1]];
-    var posShuffle = shuffle(pos);
+    var posShuffle = shuffle([[0,2.5,1], [2,2.5,0], [-0.5,1.5,0], [1,1.5,1], [-3, -1.5,1], [-1,-1.5,0], [-3.5,-2.5,0], [-1.5,-2.5,1]]);
 
     var quest;
     if(questionNum < 3) quest = "If both horizontal lines are parallel, what is the value of x?";
