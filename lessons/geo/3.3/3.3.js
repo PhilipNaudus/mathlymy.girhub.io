@@ -32,8 +32,8 @@ function setQuestion()
     var w = Math.min(window.innerWidth, window.innerHeight, 400);
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": Are the two diagonal lines parallel? If you select 'yes,' also select the <b>reason</b> why they are parallel.<br /><canvas id='canvas' height='"+w+"' width='"+w+"'></canvas>";
     initCanvas([-5, 5], 1, [-5, 5], 1, ["", ""]);
-    addText([pos[0][0], pos[0][1]], ang[0]);
-    addText([pos[1][0], pos[1][1]], ang[1]);
+    addText([pos[selectPos[0][0]][0], pos[selectPos[0][0]][1]], ang[0]);
+    addText([pos[selectPos[0][1]][0], pos[selectPos[0][1]][1]], ang[1]);
     plotData([-5,5], [0,0]);
     plotData([-1,6], [-5,5]);
     plotData([-5,2], [-5,5]);

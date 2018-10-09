@@ -40,7 +40,7 @@ function setQuestion()
     equationNum = 0;
 
     options = "<option value=''>Select</option><option value='No'>No</option><option value='Yes. Corresponding angles converse'>Yes. Corresponding angles converse</option><option value='Yes. Alternate interior angles converse'>Yes. Alternate interior angles converse</option><option value='Yes. Alternate exterior angles converse'>Yes. Alternate exterior angles converse</option><option value='Yes. Consecutive interior angles converse'>Yes. Consecutive interior angles converse</option>";
-    equations = [["", "<input type='text' class='mathinput' id='i0' />", [[ans]]]];
+    equations = [["", "<select class='mathinput' id='i0'>"+options+"</select>", [[ans]]]];
 }
 
 function step1(ifResetScrolling)
