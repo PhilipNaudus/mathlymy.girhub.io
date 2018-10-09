@@ -19,8 +19,8 @@ function setQuestion()
 			document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": What is the slope of the line which passes through the points ("+vars[0]+","+vars[1]+") and ("+vars[2]+","+vars[3]+")?";
 			break;
 	}
-	var slopeSign = ((vars[0]-vars[2])/(vars[1]-vars[3]))>0?1:-1;
-	var ans = reduce(Math.abs(vars[0]-vars[2]), Math.abs(vars[1]-vars[3]));
+	var slopeSign = ((vars[1]-vars[3])/(vars[0]-vars[2]))>0?1:-1;
+	var ans = reduce(Math.abs(vars[1]-vars[3]), Math.abs(vars[0]-vars[2]));
 
 	if(ans[1]==1) equationNum = (practice)?1:3;
 	else equationNum = (practice)?0:2;
