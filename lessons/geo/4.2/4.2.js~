@@ -38,6 +38,7 @@ function setQuestion()
 		ans = ["Given", "Given", "Third angles theorem (If two angles are congruent, the third angle is also congruent)", "Given", "Given", "Given", "Definition of congruent figures (all sides and angles are congruent)"]
             break;
     }
+    equationNum = 0;
 
     document.getElementById("question").innerHTML = "Question "+(questionNum+1)+": "+quest;
     equations = [["", eq, [ans]]];

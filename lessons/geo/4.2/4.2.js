@@ -11,11 +11,11 @@ function setQuestion()
         case 0:
 		quest = "How do you know that the two triangles shown below are congruent?<br /><img src='/lessons/geo/4.2/congruentTriangles.jpg' />";
 		options = "<option value=''>Select</option><option value='< E'>&angle; E</option><option value='< D'>&angle; D</option><option value='< F'>&angle; F</option><option value='E F'>EF</option><option value='D F'>D F</option><option value='E D'>E D</option>";
-		eq = "&angle; A &cong; <select class='mathinput' id='i0'>"+options+"</select>"
-			+ "&angle B &cong; <select class='mathinput' id='i1'>"+options+"</select>"
-			+ "&angle C &cong; <select class='mathinput' id='i2'>"+options+"</select>"
-			+ "<span style='text-decoration:overline'>AB</span> &cong; <select class='mathinput' id='i2'>"+options+"</select>"
-			+ "<span style='text-decoration:overline'>BC</span> &cong; <select class='mathinput' id='i2'>"+options+"</select>"
+		eq = "&angle; A &cong; <select class='mathinput' id='i0'>"+options+"</select><br />"
+			+ "&angle; B &cong; <select class='mathinput' id='i1'>"+options+"</select><br />"
+			+ "&angle; C &cong; <select class='mathinput' id='i2'>"+options+"</select><br />"
+			+ "<span style='text-decoration:overline'>AB</span> &cong; <select class='mathinput' id='i2'>"+options+"</select><br />"
+			+ "<span style='text-decoration:overline'>BC</span> &cong; <select class='mathinput' id='i2'>"+options+"</select><br />"
 			+ "<span style='text-decoration:overline'>AC</span> &cong; <select class='mathinput' id='i2'>"+options+"</select>";
 		ans = ["< D", "< E", "< F", "E D", "E F", "D F"];
 		break;
